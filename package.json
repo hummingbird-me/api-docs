@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "mkdirp dist | hercule blueprint.apib -o dist/apiary.apib"
+    "start": "mkdirp dist | hercule kitsu.apib -o dist/apiary.apib"
   },
   "dependencies": {
     "hercule": "~4.0.0",
