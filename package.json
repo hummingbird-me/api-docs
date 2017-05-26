@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "hercule apiary.apib"
+  },
+  "dependencies": {
+    "hercule": "^4.0.0"
+  }
+}
