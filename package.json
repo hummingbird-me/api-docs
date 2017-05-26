@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "start": "hercule blueprint.md -o apiary.apib"
-  },
-  "dependencies": {
-    "hercule": "^4.0.0"
-  }
-}
