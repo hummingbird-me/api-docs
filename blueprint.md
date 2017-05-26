@@ -5,6 +5,6 @@ HOST: https://kitsu.io/api/edge
 
 Kitsu is an awesome anime site.
 
-:[Introduction](blueprint/introduction.md)
+:[Introduction](introduction.md)
 
 :[Authentication](blueprint/authentication.md)
