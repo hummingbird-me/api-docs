@@ -7,11 +7,9 @@ cache:
 matrix:
   fast_finish: true
 
-jobs:
-  include:
-  - stage: Prepare Cache
-    script: true
-  - stage: Build
-    script: yarn start
-  - stage: Deploy
-    script: test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "source" && bash deploy.sh
+script: yarn start
+
+after_success: test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "source" && bash deploy.sh
+
+notifications:
+  email: false
