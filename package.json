@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "hercule apiary.apib"
+    "start": "hercule blueprint.md -o apiary.apib"
   },
   "dependencies": {
     "hercule": "^4.0.0"
