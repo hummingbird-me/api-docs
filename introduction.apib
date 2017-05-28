@@ -33,17 +33,17 @@ You can be more specific about the data you want to retrieve by using URL parame
 
 Filtering lets you query data that contains certain matching attributes or relationships. These take the form of `filter[attribute]=value`.
 
-For example, you can request all the anime of the Action genre using `/anime?filter[genres]=action`.
+For example, you can request all the anime of the Adventure genre using `/anime?filter[genres]=adventure`.
 
-You can also search for media based on query text by using `filter[text]={query}`.
+You can also search for media based on the query text by using `filter[text]={query}`.
 
 ## Pagination
 
-You can choose how much of a resource to recieve by specifying pagination parameters. Pagination is supported via `limit` and `offset`. Resources are paginated in groups of `20` by default.
+You can choose how much of a resource to receive by specifying pagination parameters. Pagination is supported via `limit` and `offset`. Resources are paginated in groups of `20` by default.
 
 `/anime?page[limit]=5&page[offset]=0`
 
-The response will include URLs for the first, next and last page of resources in the links object based on your request.
+The response will include URLs for the first, next and last page of resources in the `links` object based on your request.
 
 ```
 "links": {
@@ -57,7 +57,7 @@ The response will include URLs for the first, next and last page of resources in
 
 Sorting by attributes is also supported. By default, sorts are applied in ascending order. You can request a descending order by prepending `-` to the parameter. You can use a comma-delimited list to sort by multiple attributes.
 
-`/users?sort=-folloersCount,-followingCount`
+`/users?sort=-followersCount,-followingCount`
 
 ## Includes
 
@@ -67,7 +67,7 @@ You can include related resources with `include=[relationship]`. You can also sp
 
 ## Sparse Fieldsets
 
-You can request a resource to only return a specific set of fields in its response. For example, to only recieve a user's name and creation date:
+You can request a resource to only return a specific set of fields in its response. For example, to only receive a user's name and creation date:
 
 `/users?fields[users]=name,createdAt`
 
