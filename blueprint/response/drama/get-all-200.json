@@ -1,1 +1,12 @@
-{"data":[],"meta":{"count":0},"links":{"first":"https://kitsu.io/api/edge/dramas?page%5Blimit%5D=10&page%5Boffset%5D=0","last":"https://kitsu.io/api/edge/dramas?page%5Blimit%5D=10&page%5Boffset%5D=0"}}
+{
+  "data":[
+
+  ],
+  "meta":{
+    "count":0
+  },
+  "links":{
+    "first":"https://kitsu.io/api/edge/dramas?page%5Blimit%5D=10&page%5Boffset%5D=0",
+    "last":"https://kitsu.io/api/edge/dramas?page%5Blimit%5D=10&page%5Boffset%5D=0"
+  }
+}

@@ -1,1 +1,22 @@
-{"data":{"id":"1","type":"people","links":{"self":"https://kitsu.io/api/edge/people/1"},"attributes":{"image":"https://media.kitsu.io/people/images/1/original.jpg?1416260317","name":"Masahiko Minami","malId":6519},"relationships":{"castings":{"links":{"self":"https://kitsu.io/api/edge/people/1/relationships/castings","related":"https://kitsu.io/api/edge/people/1/castings"}}}}}
+{
+  "data":{
+    "id":"1",
+    "type":"people",
+    "links":{
+      "self":"https://kitsu.io/api/edge/people/1"
+    },
+    "attributes":{
+      "image":"https://media.kitsu.io/people/images/1/original.jpg?1416260317",
+      "name":"Masahiko Minami",
+      "malId":6519
+    },
+    "relationships":{
+      "castings":{
+        "links":{
+          "self":"https://kitsu.io/api/edge/people/1/relationships/castings",
+          "related":"https://kitsu.io/api/edge/people/1/castings"
+        }
+      }
+    }
+  }
+}
