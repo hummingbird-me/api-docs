@@ -1,19 +1,46 @@
-# Anime [/anime]
+# Group Anime
+
+# Single [/anime/{id}]
 
 TBA
 
-## Add Anime [POST]
++ Parameters
+    + id (number) - ID of the anime
 
-+ Response 200
+## Fetch [GET]
 
-## Delete Anime [DELETE]
++ Request
+    + Headers
 
-+ Response 200
+            :[](headers/jsonapi.apib)
 
-## Get Anime [GET]
++ Response 200 (application/vnd.api+json)
 
-+ Response 200
+        :[](response/anime/get-one-200.json)
 
-## Update Anime [PATCH]
+# List [/anime]
 
-+ Response 200
+TBA
+
+## Fetch [GET]
+
++ Request
+    + Headers
+
+            :[](headers/jsonapi.apib)
+
++ Response 200 (application/vnd.api+json)
+
+        :[](response/anime/get-all-200.json)
+
+## Update [PATCH]
+
++ Response 200 (application/vnd.api+json)
+
+## Create [POST]
+
++ Response 200 (application/vnd.api+json)
+
+## Delete [DELETE]
+
++ Response 200 (application/vnd.api+json)

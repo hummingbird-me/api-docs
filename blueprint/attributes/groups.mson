@@ -1,0 +1,99 @@
+## `links` (object)
+
+- `first`: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+- `next`: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
+- `last`: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1918` (string)
+
+## `avatar` (object)
+
+- `tiny`: `https://media.kitsu.io/groups/avatars/1/tiny.gif?1424323296` (string)
+- `small`: `https://media.kitsu.io/groups/avatars/1/small.gif?1424323296` (string)
+- `medium`: `https://media.kitsu.io/groups/avatars/1/medium.gif?1424323296` (string)
+- `large`: `https://media.kitsu.io/groups/avatars/1/large.gif?1424323296` (string)
+- `original`: `https://media.kitsu.io/groups/avatars/1/original.gif?1424323296` (string)
+
+## `coverImage` (object)
+
+- `tiny`: `https://media.kitsu.io/groups/cover_images/1/tiny.jpg?1424209483` (string)
+- `small`: `https://media.kitsu.io/groups/cover_images/1/small.jpg?1424209483` (string)
+- `large`: `https://media.kitsu.io/groups/cover_images/1/large.jpg?1424209483` (string)
+- `original`: `https://media.kitsu.io/groups/cover_images/1/original.jpeg?1424209483` (string)
+
+## `attributes` (object)
+
+- `slug`: `one-piece-group` (string)
+- `about`: `Group for fans of the One Piece anime and or manga.
+
+1st group on HB
+
+!!REMEMBER TO SPOILER TAG MANGA SPOILERS!!
+Or your post or comment may be deleted without warning.` (string)
+- `locale` (object)
+- `membersCount`: `542` (number)
+- `name`: `One Piece group` (string)
+- `nsfw`: `false` (boolean)
+- `privacy`: `open` (string)
+- `rules` (object)
+- `rulesFormatted` (object)
+- `leadersCount`: `2` (number)
+- `neighborsCount`: `0` (number)
+- `featured`: `false` (boolean)
+- `tagline` (object)
+- `lastActivityAt`: `2017-05-06T18:48:33.944Z` (string)
+- `avatar` (avatar)
+- `coverImage` (coverImage)
+
+## `members` (object)
+
+- `links` (links)
+
+## `neighbors` (object)
+
+- `links` (links)
+
+## `tickets` (object)
+
+- `links` (links)
+
+## `invites` (object)
+
+- `links` (links)
+
+## `reports` (object)
+
+- `links` (links)
+
+## `leaderChatMessages` (object)
+
+- `links` (links)
+
+## `actionLogs` (object)
+
+- `links` (links)
+
+## `category` (object)
+
+- `links` (links)
+
+## `relationships` (object)
+
+- `members` (members)
+- `neighbors` (neighbors)
+- `tickets` (tickets)
+- `invites` (invites)
+- `reports` (reports)
+- `leaderChatMessages` (leaderChatMessages)
+- `actionLogs` (actionLogs)
+- `category` (category)
+
+## `datum` (object)
+
+- `id`: `1` (string)
+- `type`: `groups` (string)
+- `links` (links)
+- `attributes` (attributes)
+- `relationships` (relationships)
+
+## `meta` (object)
+
+- `count`: `1928` (number)

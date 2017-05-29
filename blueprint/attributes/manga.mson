@@ -1,0 +1,126 @@
+## `links` (object)
+
+- `first`: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+- `next`: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
+- `last`: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=30529` (string)
+
+## `titles` (object)
+
+- `en` (object)
+- `en_jp`: `Guardian Dog` (string)
+
+## `ratingFrequencies` (object)
+
+- `2`: `0` (string)
+- `3`: `0` (string)
+- `4`: `0` (string)
+- `5`: `0` (string)
+- `6`: `0` (string)
+- `7`: `0` (string)
+- `8`: `1` (string)
+- `9`: `0` (string)
+- `10`: `3` (string)
+- `11`: `0` (string)
+- `12`: `6` (string)
+- `13`: `0` (string)
+- `14`: `5` (string)
+- `15`: `0` (string)
+- `16`: `3` (string)
+- `17`: `0` (string)
+- `18`: `1` (string)
+- `19`: `0` (string)
+- `20`: `2` (string)
+
+## `posterImage` (object)
+
+- `tiny`: `https://media.kitsu.io/manga/poster_images/1/tiny.jpg?1434249400` (string)
+- `small`: `https://media.kitsu.io/manga/poster_images/1/small.jpg?1434249400` (string)
+- `medium`: `https://media.kitsu.io/manga/poster_images/1/medium.jpg?1434249400` (string)
+- `large`: `https://media.kitsu.io/manga/poster_images/1/large.jpg?1434249400` (string)
+- `original`: `https://media.kitsu.io/manga/poster_images/1/original.jpg?1434249400` (string)
+
+## `attributes` (object)
+
+- `slug`: `guardian-dog` (string)
+- `synopsis`: `Gengo Kurosaka leads a normal life until a run-away alien called "Six-eyes" decides to take refuge in his body. From then on, Gengo becomes Ishtar's target, a beautiful alien in charge of making sure the aliens don't turn planet Earth into hunting grounds. Gengo has now to learn to coexist with his parasite to stay alive...` (string)
+- `coverImageTopOffset`: `0` (number)
+- `titles` (titles)
+- `canonicalTitle`: `Guardian Dog` (string)
+- `abbreviatedTitles` (object)
+- `averageRating` (object)
+- `ratingFrequencies` (ratingFrequencies)
+- `userCount`: `44` (number)
+- `favoritesCount`: `1` (number)
+- `startDate`: `2005-01-01` (string)
+- `endDate` (object)
+- `popularityRank`: `4096` (number)
+- `ratingRank` (object)
+- `ageRating` (object)
+- `ageRatingGuide` (object)
+- `subtype`: `manga` (string)
+- `posterImage` (posterImage)
+- `coverImage` (object)
+- `chapterCount`: `22` (number)
+- `volumeCount`: `4` (number)
+- `serialization`: `Comic Rush` (string)
+- `mangaType`: `manga` (string)
+
+## `genres` (object)
+
+- `links` (links)
+
+## `castings` (object)
+
+- `links` (links)
+
+## `installments` (object)
+
+- `links` (links)
+
+## `mappings` (object)
+
+- `links` (links)
+
+## `reviews` (object)
+
+- `links` (links)
+
+## `mediaRelationships` (object)
+
+- `links` (links)
+
+## `chapters` (object)
+
+- `links` (links)
+
+## `mangaCharacters` (object)
+
+- `links` (links)
+
+## `mangaStaff` (object)
+
+- `links` (links)
+
+## `relationships` (object)
+
+- `genres` (genres)
+- `castings` (castings)
+- `installments` (installments)
+- `mappings` (mappings)
+- `reviews` (reviews)
+- `mediaRelationships` (mediaRelationships)
+- `chapters` (chapters)
+- `mangaCharacters` (mangaCharacters)
+- `mangaStaff` (mangaStaff)
+
+## `datum` (object)
+
+- `id`: `1` (string)
+- `type`: `manga` (string)
+- `links` (links)
+- `attributes` (attributes)
+- `relationships` (relationships)
+
+## `meta` (object)
+
+- `count`: `30539` (number)

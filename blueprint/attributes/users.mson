@@ -1,0 +1,119 @@
+## `links` (object)
+
+- `first`: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+- `next`: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
+- `last`: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=143691` (string)
+
+## `attributes` (object)
+
+- `name`: `Deleted` (string)
+- `pastNames` (array)
+- `about` (string)
+- `bio` (string)
+- `aboutFormatted` (object)
+- `location` (object)
+- `waifuOrHusbando` (object)
+- `followersCount`: `0` (number)
+- `createdAt`: `2017-05-21T04:50:05.075Z` (string)
+- `facebookId` (object)
+- `followingCount`: `0` (number)
+- `lifeSpentOnAnime`: `0` (number)
+- `birthday` (object)
+- `gender` (object)
+- `updatedAt`: `2017-05-21T04:50:05.075Z` (string)
+- `commentsCount`: `0` (number)
+- `favoritesCount`: `0` (number)
+- `likesGivenCount`: `0` (number)
+- `reviewsCount`: `0` (number)
+- `likesReceivedCount`: `0` (number)
+- `postsCount`: `0` (number)
+- `ratingsCount`: `0` (number)
+- `proExpiresAt` (object)
+- `title` (object)
+- `profileCompleted`: `false` (boolean)
+- `feedCompleted`: `false` (boolean)
+- `website` (object)
+- `avatar` (object)
+- `coverImage` (object)
+- `ratingSystem`: `simple` (string)
+- `theme`: `light` (string)
+
+## `waifu` (object)
+
+- `links` (links)
+
+## `pinnedPost` (object)
+
+- `links` (links)
+
+## `followers` (object)
+
+- `links` (links)
+
+## `following` (object)
+
+- `links` (links)
+
+## `blocks` (object)
+
+- `links` (links)
+
+## `linkedAccounts` (object)
+
+- `links` (links)
+
+## `profileLinks` (object)
+
+- `links` (links)
+
+## `mediaFollows` (object)
+
+- `links` (links)
+
+## `userRoles` (object)
+
+- `links` (links)
+
+## `libraryEntries` (object)
+
+- `links` (links)
+
+## `favorites` (object)
+
+- `links` (links)
+
+## `reviews` (object)
+
+- `links` (links)
+
+## `stats` (object)
+
+- `links` (links)
+
+## `relationships` (object)
+
+- `waifu` (waifu)
+- `pinnedPost` (pinnedPost)
+- `followers` (followers)
+- `following` (following)
+- `blocks` (blocks)
+- `linkedAccounts` (linkedAccounts)
+- `profileLinks` (profileLinks)
+- `mediaFollows` (mediaFollows)
+- `userRoles` (userRoles)
+- `libraryEntries` (libraryEntries)
+- `favorites` (favorites)
+- `reviews` (reviews)
+- `stats` (stats)
+
+## `datum` (object)
+
+- `id`: `-10` (string)
+- `type`: `users` (string)
+- `links` (links)
+- `attributes` (attributes)
+- `relationships` (relationships)
+
+## `meta` (object)
+
+- `count`: `143701` (number)
