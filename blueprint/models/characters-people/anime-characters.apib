@@ -1,5 +1,38 @@
-## Anime Characters [/anime-characters]
+## Anime Characters [/anime-characters/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`) ... ID of the anime character
 
-+ Response 200
++ Attributes
+    + role: main (string) - Position of the character
+
+### List anime characters [GET /anime-characters]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (object)
+                + id: 1 (string)
+                + type: animeCharacters (string)
+                + links (object)
+                    + self: `https://kitsu.io/api/edge/anime-characters/1`
+                + attributes (object)
+                    + role: main (string)
+                + relationships (object)
+                    + anime (object)
+                        + links (object)
+                            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime` (string)
+                            + related: `https://kitsu.io/api/edge/anime-characters/1/anime` (string)
+                    + character (object)
+                    + castings (object)
+        + meta (object)
+            + count: 109379 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+
+
+### Show an anime character [GET]
+
++ Response 200 (application/vnd.api+json)
