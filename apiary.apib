@@ -187,16 +187,42 @@ browser-based and mobile apps
         + meta (object)
             + count: 109379 (number)
         + links (object)
-            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
-            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
-            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369` (string)
+            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369`
 
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid page value
+                + detail: 0 is not a valid value for limit page parameter.
+                + code: 118
+                + status: 400
 
 ### GET Single [GET]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (animeCharacters)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Record not found
+                + detail: The record identified by 0 could not be found.
+                + code: 404
+                + status: 404
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid field value
+                + detail: helloworld is not a valid value for id.
+                + code: 103
+                + status: 400
 ## Anime Productions [/anime-productions/{id}]
 
 + Parameters
@@ -213,9 +239,9 @@ browser-based and mobile apps
         + meta (object)
             + count: 109379 (number)
         + links (object)
-            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
-            + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
-            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28387` (string)
+            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28387`
 
 
 ### GET Single [GET]
@@ -307,10 +333,10 @@ browser-based and mobile apps
 # Data Structures
 
 ## animeCharactersAttributes (object)
-+ role: main (string)
++ role: main
 
 ## animeCharacters (object)
-+ id: 1 (string)
++ id: 1
 + type: animeCharacters (enum)
   + animeCharacters
 + links (object)
@@ -319,19 +345,19 @@ browser-based and mobile apps
 + relationships (object)
     + anime (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime` (string)
-            + related: `https://kitsu.io/api/edge/anime-characters/1/anime` (string)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/anime-characters/1/anime`
     + character (object)
-            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character` (string)
-            + related: `https://kitsu.io/api/edge/anime-characters/1/character` (string)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/anime-characters/1/character`
     + castings (object)
-            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings` (string)
-            + related: `https://kitsu.io/api/edge/anime-characters/1/castings` (string)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/anime-characters/1/castings`
 ## animeProductionsAttributes (object)
-+ role: producer (string)
++ role: producer
 
 ## animeProductions (object)
-+ id: 1 (string)
++ id: 1
 + type: animeProductions (enum)
   + animeProductions
 + links (object)
@@ -340,12 +366,12 @@ browser-based and mobile apps
 + relationships (object)
     + anime (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/anime` (string)
-            + related: `https://kitsu.io/api/edge/anime-productions/1/anime` (string)
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/anime-productions/1/anime`
     + producer (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character` (string)
-            + related: `https://kitsu.io/api/edge/anime-productions/1/producer` (string)
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/anime-productions/1/producer`
 
 
 
