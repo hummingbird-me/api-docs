@@ -1,49 +1,78 @@
 # Versioning
 
-Every year, we release a new version of the API, numbered by the last two digits of the current year. For example, the root URL of this (the 2017) release is `https://kitsu.io/api/17/`.
+Every year, we release a new version of the API, numbered by the
+last two digits of the current year. For example, the root URL of
+this (the 2017) release is `https://kitsu.io/api/17/`.
 
-No fields, endpoints, or resources will be removed until the next year's release, but may be changed to return empty values (arrays, empty strings, etc.) before then. Fields, endpoints, and resources may be added throughout the lifetime of a release.
+No fields, endpoints, or resources will be removed until the next
+year's release, but may be changed to return empty values (arrays,
+empty strings, etc.) before then. Fields, endpoints, and resources
+may be added throughout the lifetime of a release.
 
-In addition to these versioned APIs, there is access to the same API our website uses. However, this offers no guarantees: anything could change at any time. We suggest you don't use this, but if you need to, it can be accessed at `https://kitsu.io/api/edge/`.
+In addition to these versioned APIs, there is access to the same API
+our website uses. However, this offers no guarantees: anything could
+change at any time. We suggest you don't use this, but if you need
+to, it can be accessed at `https://kitsu.io/api/edge/`.
 
 # Life Cycle
 
-Upon release of a new version, the previous version will be maintained for one year or until usage drops below 2% of API traffic.
+Upon release of a new version, the previous version will be
+maintained for one year or until usage drops below 2% of API
+traffic.
 
-During this period, it will not be updated to have any new fields, endpoints, or resources. You are expected to keep your applications running on the latest version of the API. For most applications, upgrading should take no more than a few hours of work.
+During this period, it will not be updated to have any new fields,
+endpoints, or resources. You are expected to keep your applications
+running on the latest version of the API. For most applications,
+upgrading should take no more than a few hours of work.
 
 # JSON API
 
-The Kitsu API implements the JSON API specification. This means there are some notable semantics to how you consume it, but understanding it will take a lot of the work of using it out of your hands.
+The Kitsu API implements the JSON API specification. This means
+there are some notable semantics to how you consume it, but
+understanding it will take a lot of the work of using it out of your
+hands.
 
-These docs will include a short overview of the capabilities, but you can consult the [JSON API Specification][jsonapi] for more information.
+These docs will include a short overview of the capabilities, but
+you can consult the [JSON API Specification][jsonapi] for more
+information.
 
-As per the JSON API specification, all requests to the API should contain these headers:
+As per the JSON API specification, all requests to the API should
+contain these headers:
 
 ```
 Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
 ```
 
-You can be more specific about the data you want to retrieve by using URL parameters and are outlined below.
+You can be more specific about the data you want to retrieve by
+using URL parameters and are outlined below.
 
-**Note:** This documentation will display parameters with brackets (`[` and `]`) for readability, but actual URLs will need to be encoded (`%5B` and `%5D`).
+**Note:** This documentation will display parameters with brackets
+(`[` and `]`) for readability, but actual URLs will need to be
+encoded (`%5B` and `%5D`).
 
 ## Filtering and Search
 
-Filtering lets you query data that contains certain matching attributes or relationships. These take the form of `filter[attribute]=value`.
+Filtering lets you query data that contains certain matching
+attributes or relationships. These take the form of
+`filter[attribute]=value`.
 
-For example, you can request all the anime of the Adventure genre using `/anime?filter[genres]=adventure`.
+For example, you can request all the anime of the Adventure genre
+using `/anime?filter[genres]=adventure`.
 
-You can also search for media based on the query text by using `filter[text]={query}`.
+You can also search for media based on the query text by using
+`filter[text]={query}`.
 
 ## Pagination
 
-You can choose how much of a resource to receive by specifying pagination parameters. Pagination is supported via `limit` and `offset`. Resources are paginated in groups of `20` by default.
+You can choose how much of a resource to receive by specifying
+pagination parameters. Pagination is supported via `limit` and
+`offset`. Resources are paginated in groups of `20` by default.
 
 `/anime?page[limit]=5&page[offset]=0`
 
-The response will include URLs for the first, next and last page of resources in the `links` object based on your request.
+The response will include URLs for the first, next and last page of
+resources in the `links` object based on your request.
 
 ```
 "links": {
@@ -55,31 +84,44 @@ The response will include URLs for the first, next and last page of resources in
 
 ## Sorting
 
-Sorting by attributes is also supported. By default, sorts are applied in ascending order. You can request a descending order by prepending `-` to the parameter. You can use a comma-delimited list to sort by multiple attributes.
+Sorting by attributes is also supported. By default, sorts are
+applied in ascending order. You can request a descending order by
+prepending `-` to the parameter. You can use a comma-delimited list
+to sort by multiple attributes.
 
 `/users?sort=-followersCount,-followingCount`
 
 ## Includes
 
-You can include related resources with `include=[relationship]`. You can also specify successive relationships using a `.`. A comma-delimited list can be used to request multiple relationships.
+You can include related resources with `include=[relationship]`.
+You can also specify successive relationships using a `.`. A
+comma-delimited list can be used to request multiple relationships.
 
 `/library-entries?include=user,anime.genres`
 
 ## Sparse Fieldsets
 
-You can request a resource to only return a specific set of fields in its response. For example, to only receive a user's name and creation date:
+You can request a resource to only return a specific set of fields
+in its response. For example, to only receive a user's name and
+creation date:
 
 `/users?fields[users]=name,createdAt`
 
 ## Client Implementations
 
-JSON API has a great advantage in that since its standardised, API-agnostic tools can be made to abstract away the semantics of consuming and working with the data. It is recommended that you use a JSON API client to implement the Kitsu API for this reason.
+JSON API has a great advantage in that since its standardised,
+API-agnostic tools can be made to abstract away the semantics of
+consuming and working with the data. It is recommended that you use
+a JSON API client to implement the Kitsu API for this reason.
 
-Many implementations in over 13 languages can be found on the [JSON API website][jsonapi-client].
+Many implementations in over 13 languages can be found on the
+[JSON API website][jsonapi-client].
 
 # Questions?
 
-If you have any questions, you can join our Slack by sending an email to josh@kitsu.io or pinging [@wopian][wopian], [@matthewdias][matthewdias] or [@nuck][nuck] on Kitsu.
+If you have any questions, you can join our Slack by sending an
+email to josh@kitsu.io or pinging [@wopian][wopian],
+[@matthewdias][matthewdias] or [@nuck][nuck] on Kitsu.
 
 [jsonapi]:http://jsonapi.org/format/
 [jsonapi-client]:http://jsonapi.org/implementations/#client-libraries

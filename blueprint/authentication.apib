@@ -1,10 +1,16 @@
 # Group Authentication
 
-Kitsu uses OAuth 2 for authentication. It is not required to send authenticated requests for most endpoints.
+Kitsu uses OAuth 2 for authentication. It is not required to send
+authenticated requests for most endpoints.
 
-After registering your app, you will receieve a client ID and a client secret. The client ID is considered public information and is used to build login URLs or included in source code. The client secret **must** be kept confidential.
+After registering your app, you will receieve a client ID and a
+client secret. The client ID is considered public information and is
+used to build login URLs or included in source code. The client
+secret **must** be kept confidential.
 
-**NOTE:** Application registration has not yet been implemented, so for now all requests should be  made with the following client ID and client secret:
+**NOTE:** Application registration has not yet been implemented, so
+for now all requests should be  made with the following client ID
+and client secret:
 
 ```
 CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
@@ -13,8 +19,10 @@ CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
 
 # Grant Types
 
-OAuth 2 provides several grant types for different use cases. The grant types defined are:
+OAuth 2 provides several grant types for different use cases. The
+grant types defined are:
 
-- **Authorization Code** for apps running on a web server, browser-based and and mobile apps
+- **Authorization Code** for apps running on a web server,
+browser-based and mobile apps
 - **Password** for logging in with a username and Password
 - **Client Credentials** for application access
