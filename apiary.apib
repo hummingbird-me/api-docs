@@ -121,11 +121,11 @@ OAuth 2 provides several grant types for different use cases. The grant types de
 ## Anime Characters [/anime-characters/{id}]
 
 + Parameters
-    + id (number, `1`) ... ID of the anime character
+    + id (number, `1`) - ID of the anime character
 
 + Attributes (animeCharactersAttributes)
 
-### List anime characters [GET /anime-characters]
+### FETCH List [GET /anime-characters]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
@@ -135,20 +135,41 @@ OAuth 2 provides several grant types for different use cases. The grant types de
             + count: 109379 (number)
         + links (object)
             + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
-            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
-            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
+            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369` (string)
 
 
-### Show an anime character [GET]
+### FETCH Single [GET]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (animeCharacters)
-## Anime Productions [/anime-productions]
+## Anime Characters [/anime-productions/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`)
 
-+ Response 200
++ Attributes (animeProductionsAttributes)
+
+### FETCH List [GET /anime-productions]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (animeProductions)
+        + meta (object)
+            + count: 109379 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+            + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
+            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28387` (string)
+
+
+### FETCH Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (animeProductions)
 ## Anime Staff [/anime-staff]
 
 ### GET [GET]
@@ -198,7 +219,8 @@ OAuth 2 provides several grant types for different use cases. The grant types de
 
 ## animeCharacters (object)
 + id: 1 (string)
-+ type: animeCharacters (string)
++ type: animeCharacters (enum)
+  + animeCharacters
 + links (object)
     + self: `https://kitsu.io/api/edge/anime-characters/1`
 + attributes (animeCharactersAttributes)
@@ -208,4 +230,26 @@ OAuth 2 provides several grant types for different use cases. The grant types de
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime` (string)
             + related: `https://kitsu.io/api/edge/anime-characters/1/anime` (string)
     + character (object)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character` (string)
+            + related: `https://kitsu.io/api/edge/anime-characters/1/character` (string)
     + castings (object)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings` (string)
+            + related: `https://kitsu.io/api/edge/anime-characters/1/castings` (string)
+## animeProductionsAttributes (object)
++ role: producer (string)
+
+## animeProductions (object)
++ id: 1 (string)
++ type: animeProductions (enum)
+  + animeProductions
++ links (object)
+    + self: `https://kitsu.io/api/edge/anime-productions/1`
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/anime` (string)
+            + related: `https://kitsu.io/api/edge/anime-productions/1/anime` (string)
+    + producer (object)
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character` (string)
+            + related: `https://kitsu.io/api/edge/anime-productions/1/producer` (string)
