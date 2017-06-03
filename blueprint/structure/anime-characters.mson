@@ -1,0 +1,16 @@
+## animeCharactersAttributes (object)
++ role: main (string)
+
+## animeCharacters (object)
++ id: 1 (string)
++ type: animeCharacters (string)
++ links (object)
+    + self: `https://kitsu.io/api/edge/anime-characters/1`
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime` (string)
+            + related: `https://kitsu.io/api/edge/anime-characters/1/anime` (string)
+    + character (object)
+    + castings (object)
