@@ -1,8 +1,8 @@
 ## animeCharactersAttributes (object)
-+ role: main (string)
++ role: main
 
 ## animeCharacters (object)
-+ id: 1 (string)
++ id: 1
 + type: animeCharacters (enum)
   + animeCharacters
 + links (object)
@@ -11,11 +11,11 @@
 + relationships (object)
     + anime (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime` (string)
-            + related: `https://kitsu.io/api/edge/anime-characters/1/anime` (string)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/anime-characters/1/anime`
     + character (object)
-            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character` (string)
-            + related: `https://kitsu.io/api/edge/anime-characters/1/character` (string)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/anime-characters/1/character`
     + castings (object)
-            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings` (string)
-            + related: `https://kitsu.io/api/edge/anime-characters/1/castings` (string)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/anime-characters/1/castings`
