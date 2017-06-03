@@ -14,5 +14,6 @@
             + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/anime` (string)
             + related: `https://kitsu.io/api/edge/anime-productions/1/anime` (string)
     + producer (object)
+        + links (object)
             + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character` (string)
             + related: `https://kitsu.io/api/edge/anime-productions/1/producer` (string)
