@@ -171,16 +171,18 @@ browser-based and mobile apps
 - **Client Credentials** for application access
 # Group Characters & People
 
-## Anime Characters [/anime-characters/{id}{?page%5Blimit%5D,page%5Boffset%5D}]
+## Anime Characters [/anime-characters/{id}]
 
 + Parameters
     + id (number, `1`) - ID of the anime character
-    + page%5Blimit%5D (number, `10`)
-    + page%5Boffset%5D (number, `0`)
 
 + Attributes (animeCharactersAttributes)
 
-### GET List [GET /anime-characters]
+### GET List [GET /anime-characters{?page%5Blimit%5D,page%5Boffset%5D}]
+
++ Parameters
+    + page%5Blimit%5D (optional, number, `10`)
+    + page%5Boffset%5D (optional, number, `0`)
 
 + Response 200 (application/vnd.api+json)
     + Attributes
