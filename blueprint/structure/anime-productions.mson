@@ -1,0 +1,18 @@
+## animeProductionsAttributes (object)
++ role: producer (string)
+
+## animeProductions (object)
++ id: 1 (string)
++ type: animeProductions (enum)
+  + animeProductions
++ links (object)
+    + self: `https://kitsu.io/api/edge/anime-productions/1`
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/anime` (string)
+            + related: `https://kitsu.io/api/edge/anime-productions/1/anime` (string)
+    + producer (object)
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character` (string)
+            + related: `https://kitsu.io/api/edge/anime-productions/1/producer` (string)

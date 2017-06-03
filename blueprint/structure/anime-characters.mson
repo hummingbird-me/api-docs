@@ -3,7 +3,8 @@
 
 ## animeCharacters (object)
 + id: 1 (string)
-+ type: animeCharacters (string)
++ type: animeCharacters (enum)
+  + animeCharacters
 + links (object)
     + self: `https://kitsu.io/api/edge/anime-characters/1`
 + attributes (animeCharactersAttributes)
@@ -13,4 +14,8 @@
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime` (string)
             + related: `https://kitsu.io/api/edge/anime-characters/1/anime` (string)
     + character (object)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character` (string)
+            + related: `https://kitsu.io/api/edge/anime-characters/1/character` (string)
     + castings (object)
+            + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings` (string)
+            + related: `https://kitsu.io/api/edge/anime-characters/1/castings` (string)

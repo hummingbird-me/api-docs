@@ -1,5 +1,26 @@
-## Anime Productions [/anime-productions]
+## Anime Characters [/anime-productions/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`)
 
-+ Response 200
++ Attributes (animeProductionsAttributes)
+
+### FETCH List [GET /anime-productions]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (animeProductions)
+        + meta (object)
+            + count: 109379 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` (string)
+            + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10` (string)
+            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28387` (string)
+
+
+### FETCH Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (animeProductions)
