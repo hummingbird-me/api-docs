@@ -48,6 +48,15 @@ These docs will include a short overview of the capabilities, but
 you can consult the [JSON API Specification][jsonapi] for more
 information.
 
+You can be more specific about the data you want to retrieve by
+using URL parameters and are outlined below.
+
+**Note:** This documentation will display parameters with brackets
+(`[` and `]`) for readability, but actual URLs will need to be
+percent-encoded (`%5B` and `%5D`).
+
+## Request Headers
+
 As per the JSON API specification, all requests to the API should
 contain these headers:
 
@@ -56,24 +65,22 @@ Accept: application/vnd.api+json
 Content-Type: application/vnd.api+json
 ```
 
-You can be more specific about the data you want to retrieve by
-using URL parameters and are outlined below.
-
-**Note:** This documentation will display parameters with brackets
-(`[` and `]`) for readability, but actual URLs will need to be
-encoded (`%5B` and `%5D`).
-
 ## Filtering and Search
 
 Filtering lets you query data that contains certain matching
 attributes or relationships. These take the form of
-`filter[attribute]=value`.
+`filter[attribute]=value`. For example, you can request all the
+anime of the Adventure genre:
 
-For example, you can request all the anime of the Adventure genre
-using `/anime?filter[genres]=adventure`.
+```
+/anime?filter[genres]=adventure
+```
 
-You can also search for media based on the query text by using
-`filter[text]={query}`.
+For some models, you can also search based on the query text:
+
+```
+/anime?filter[text]=cowboy%20bebop
+```
 
 ## Pagination
 
