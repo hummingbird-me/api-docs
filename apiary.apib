@@ -181,7 +181,7 @@ browser-based and mobile apps
 ## Anime Characters [/anime-characters/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the anime character
+    + id (number, `1`) - ID of the anime character resource
 
 + Attributes (animeCharactersAttributes)
 
@@ -233,7 +233,7 @@ browser-based and mobile apps
 ## Anime Productions [/anime-productions/{id}]
 
 + Parameters
-    + id (number, `1`)
+    + id (number, `1`) - ID of the anime production resource
 
 + Attributes (animeProductionsAttributes)
 
@@ -244,11 +244,11 @@ browser-based and mobile apps
         + data (array)
             + (animeProductions)
         + meta (object)
-            + count: 109379 (number)
+            + count: 28401 (number)
         + links (object)
             + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28387`
+            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28391`
 
 
 ### GET Single [GET]
@@ -256,41 +256,186 @@ browser-based and mobile apps
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (animeProductions)
-## Anime Staff [/anime-staff]
+## Anime Staff [/anime-staff/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`) - ID of the anime staff resource
 
-+ Response 200
-## Castings [/castings]
++ Attributes (animeStaffAttributes)
 
-### GET [GET]
+### GET List [GET /anime-staff]
 
-+ Response 200
-## Characters [/characters]
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (animeStaff)
+        + meta (object)
+            + count: 88543 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=88533`
 
-### GET [GET]
 
-+ Response 200
-## Manga Characters [/manga-characters]
+### GET Single [GET]
 
-### GET [GET]
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (animeStaff)
+## Castings [/castings/{id}]
 
-+ Response 200
-## Manga Staff [/manga-staff]
++ Parameters
+    + id (number, `1`) - ID of the casting resource
 
-### GET [GET]
++ Attributes (castingsAttributes)
 
-+ Response 200
-## People [/people]
+### GET List [GET /castings]
 
-### GET [GET]
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (castings)
+        + meta (object)
+            + count: 244549 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=244539`
 
-+ Response 200
-## Producers [/producers]
 
-### GET [GET]
+### GET Single [GET]
 
-+ Response 200
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (castings)
+## Characters [/characters/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the character resource
+
++ Attributes (charactersAttributes)
+
+### GET List [GET /characters]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (characters)
+        + meta (object)
+            + count: 95009 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (characters)
+## Manga Characters [/manga-characters/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the manga character resource
+
++ Attributes (mangaCharactersAttributes)
+
+### GET List [GET /manga-characters]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (mangaCharacters)
+        + meta (object)
+            + count: 0 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mangaCharacters)
+## Manga Staff [/manga-staff/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the manga staff resource
+
++ Attributes (mangaStaffAttributes)
+
+### GET List [GET /manga-staff]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (mangaStaff)
+        + meta (object)
+            + count: 1 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mangaStaff)
+## People [/people/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the person resource
+
++ Attributes (peopleAttributes)
+
+### GET List [GET /people]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (people)
+        + meta (object)
+            + count: 27957 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (people)
+## Producers [/producers/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the producer resource
+
++ Attributes (producersAttributes)
+
+### GET List [GET /producers]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (producers)
+        + meta (object)
+            + count: 1333 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1323`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (producers)
 # Group Groups
 
 
@@ -377,15 +522,132 @@ browser-based and mobile apps
             + related: `https://kitsu.io/api/edge/anime-productions/1/anime`
     + producer (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character`
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/producer`
             + related: `https://kitsu.io/api/edge/anime-productions/1/producer`
+## animeStaffAttributes (object)
++ role: producer
 
+## animeStaff (object)
++ id: 1
++ type: animeStaff (enum)
+  + animeStaff
++ links (object)
+    + self: `https://kitsu.io/api/edge/anime-staff/1`
++ attributes (animeStaffAttributes)
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-staff/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/anime-staff/1/anime`
+    + person (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-staff/1/relationships/person`
+            + related: `https://kitsu.io/api/edge/anime-staff/1/person`
+## castingsAttributes (object)
++ role: producer
++ voiceActor: false (boolean)
++ featured: false (boolean)
++ language: English
 
+## castings (object)
++ id: 1
++ type: castings (enum)
+  + castings
++ links (object)
+    + self: `https://kitsu.io/api/edge/castings/1`
++ attributes (castingsAttributes)
++ relationships (object)
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/castings/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/castings/1/media`
+    + character (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/castings/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/castings/1/character`
+    + person (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/castings/1/relationships/person`
+            + related: `https://kitsu.io/api/edge/castings/1/person`
+## charactersAttributes (object)
++ slug: jet-black
++ name: Jet Black
++ malId: 3 (number)
++ description Jet, known on his home satellite as the \"Black Dog\"...
++ image (object)
+    + original: `https://media.kitsu.io/characters/images/1/original.jpg?1483096805`
 
+## characters (object)
++ id: 1
++ type: characters (enum)
+  + characters
++ links (object)
+    + self: `https://kitsu.io/api/edge/characters/1`
++ attributes (charactersAttributes)
++ relationships (object)
+    + primaryMedia (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/characters/1/relationships/primary-media`
+            + related: `https://kitsu.io/api/edge/characters/1/primary-media`
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/characters/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/characters/1/castings`
+## castingsAttributes (object)
 
+## castings (object)
+## mangaStaffAttributes (object)
++ role: producer
 
+## mangaStaff (object)
++ id: 1
++ type: mangaStaff (enum)
+  + mangaStaff
++ links (object)
+    + self: `https://kitsu.io/api/edge/manga-staff/1`
++ attributes (mangaStaffAttributes)
++ relationships (object)
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-staff/1/relationships/manga`
+            + related: `https://kitsu.io/api/edge/manga-staff/1/manga`
+    + person (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-staff/1/relationships/person`
+            + related: `https://kitsu.io/api/edge/manga-staff/1/person`
+## peopleAttributes (object)
++ image: `https://media.kitsu.io/people/images/1/original.jpg?1416260317`
++ name: Masahiko Minami
++ malId: 6519 (number)
 
+## people (object)
++ id: 1
++ type: people (enum)
+  + people
++ links (object)
+    + self: `https://kitsu.io/api/edge/people/1`
++ attributes (peopleAttributes)
++ relationships (object)
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/people/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/people/1/castings`
+## producersAttributes (object)
++ slug: sunrise
++ name: Sunrise
 
+## producers (object)
++ id: 1
++ type: producers (enum)
+  + producers
++ links (object)
+    + self: `https://kitsu.io/api/edge/producers/1`
++ attributes (producersAttributes)
++ relationships (object)
+    + animeProductions (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/producers/1/relationships/anime-productions`
+            + related: `https://kitsu.io/api/edge/producers/1/anime-productions`
 
 
 
