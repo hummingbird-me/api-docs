@@ -1,5 +1,25 @@
-## Manga Staff [/manga-staff]
+## Manga Staff [/manga-staff/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`) - ID of the manga staff resource
 
-+ Response 200
++ Attributes (mangaStaffAttributes)
+
+### GET List [GET /manga-staff]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (mangaStaff)
+        + meta (object)
+            + count: 1 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mangaStaff)

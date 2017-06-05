@@ -1,0 +1,17 @@
+## peopleAttributes (object)
++ image: `https://media.kitsu.io/people/images/1/original.jpg?1416260317`
++ name: Masahiko Minami
++ malId: 6519 (number)
+
+## people (object)
++ id: 1
++ type: people (enum)
+  + people
++ links (object)
+    + self: `https://kitsu.io/api/edge/people/1`
++ attributes (peopleAttributes)
++ relationships (object)
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/people/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/people/1/castings`

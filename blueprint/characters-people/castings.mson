@@ -1,0 +1,26 @@
+## castingsAttributes (object)
++ role: producer
++ voiceActor: false (boolean)
++ featured: false (boolean)
++ language: English
+
+## castings (object)
++ id: 1
++ type: castings (enum)
+  + castings
++ links (object)
+    + self: `https://kitsu.io/api/edge/castings/1`
++ attributes (castingsAttributes)
++ relationships (object)
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/castings/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/castings/1/media`
+    + character (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/castings/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/castings/1/character`
+    + person (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/castings/1/relationships/person`
+            + related: `https://kitsu.io/api/edge/castings/1/person`

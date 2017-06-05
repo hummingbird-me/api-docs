@@ -1,0 +1,16 @@
+## producersAttributes (object)
++ slug: sunrise
++ name: Sunrise
+
+## producers (object)
++ id: 1
++ type: producers (enum)
+  + producers
++ links (object)
+    + self: `https://kitsu.io/api/edge/producers/1`
++ attributes (producersAttributes)
++ relationships (object)
+    + animeProductions (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/producers/1/relationships/anime-productions`
+            + related: `https://kitsu.io/api/edge/producers/1/anime-productions`

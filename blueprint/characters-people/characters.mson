@@ -1,0 +1,24 @@
+## charactersAttributes (object)
++ slug: jet-black
++ name: Jet Black
++ malId: 3 (number)
++ description Jet, known on his home satellite as the \"Black Dog\"...
++ image (object)
+    + original: `https://media.kitsu.io/characters/images/1/original.jpg?1483096805`
+
+## characters (object)
++ id: 1
++ type: characters (enum)
+  + characters
++ links (object)
+    + self: `https://kitsu.io/api/edge/characters/1`
++ attributes (charactersAttributes)
++ relationships (object)
+    + primaryMedia (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/characters/1/relationships/primary-media`
+            + related: `https://kitsu.io/api/edge/characters/1/primary-media`
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/characters/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/characters/1/castings`

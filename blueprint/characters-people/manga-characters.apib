@@ -1,5 +1,25 @@
-## Manga Characters [/manga-characters]
+## Manga Characters [/manga-characters/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`) - ID of the manga character resource
 
-+ Response 200
++ Attributes (mangaCharactersAttributes)
+
+### GET List [GET /manga-characters]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (mangaCharacters)
+        + meta (object)
+            + count: 0 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mangaCharacters)

@@ -15,5 +15,5 @@
             + related: `https://kitsu.io/api/edge/anime-productions/1/anime`
     + producer (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/character`
+            + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/producer`
             + related: `https://kitsu.io/api/edge/anime-productions/1/producer`

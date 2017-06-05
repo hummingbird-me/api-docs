@@ -1,5 +1,26 @@
-## Characters [/characters]
+## Characters [/characters/{id}]
 
-### GET [GET]
++ Parameters
+    + id (number, `1`) - ID of the character resource
 
-+ Response 200
++ Attributes (charactersAttributes)
+
+### GET List [GET /characters]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (characters)
+        + meta (object)
+            + count: 95009 (number)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999`
+
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (characters)

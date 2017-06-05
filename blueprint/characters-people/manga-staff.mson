@@ -1,0 +1,19 @@
+## mangaStaffAttributes (object)
++ role: producer
+
+## mangaStaff (object)
++ id: 1
++ type: mangaStaff (enum)
+  + mangaStaff
++ links (object)
+    + self: `https://kitsu.io/api/edge/manga-staff/1`
++ attributes (mangaStaffAttributes)
++ relationships (object)
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-staff/1/relationships/manga`
+            + related: `https://kitsu.io/api/edge/manga-staff/1/manga`
+    + person (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-staff/1/relationships/person`
+            + related: `https://kitsu.io/api/edge/manga-staff/1/person`

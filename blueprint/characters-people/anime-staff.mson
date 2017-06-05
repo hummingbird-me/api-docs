@@ -1,0 +1,19 @@
+## animeStaffAttributes (object)
++ role: producer
+
+## animeStaff (object)
++ id: 1
++ type: animeStaff (enum)
+  + animeStaff
++ links (object)
+    + self: `https://kitsu.io/api/edge/anime-staff/1`
++ attributes (animeStaffAttributes)
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-staff/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/anime-staff/1/anime`
+    + person (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/anime-staff/1/relationships/person`
+            + related: `https://kitsu.io/api/edge/anime-staff/1/person`
