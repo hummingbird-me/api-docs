@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "mkdirp dist | hercule kitsu.apib -o dist/apiary.apib | node validate"
+    "test": "mkdirp dist | hercule kitsu.apib -o dist/apiary.apib | node tools/validate"
   },
   "dependencies": {
     "api-blueprint-validator-module": "~1.2.2",
