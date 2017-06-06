@@ -1,17 +1,21 @@
 # API Docs [![Travis]][2]
 
-Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
+Kitsu is a modern anime discovery platform that helps you track the
+anime you're watching, discover new anime and socialize with other
+fans.
 
 ---
-**<p align="center">This is our API docs repository.<br />For the actual source code, please check out the [server][0] and [client][1] repository.</p>**
+**<p align="center">This is our API docs repository.<br />For the
+actual source code, please check out the [server][0] and [client][1]
+repository.</p>**
 
 ---
 
 ## Contributing
 
 The documentation is written with [API Blueprint][3] and [MSON][4].
-
-Trivial changes can be added using GitHub's built-in editor. For bigger changes it is highly recommended to follow the steps below.
+Trivial changes can be added using GitHub's built-in editor. For
+bigger changes it is highly recommended to follow the steps below.
 
 ### Requirements
 
