@@ -19,9 +19,9 @@ bigger changes it is highly recommended to follow the steps below.
 
 ### Requirements
 
-- [git](https://git-scm.com) > 2.0.0
-- [node.js](https://nodejs.org) > 7.0.0
-- [yarn](https://yarnpkg.com) > 0.21.0
+- [git](https://git-scm.com) >2.0.0
+- [node.js](https://nodejs.org) >7.0.0
+- [yarn](https://yarnpkg.com) >0.21.0
 
 ### Development
 
