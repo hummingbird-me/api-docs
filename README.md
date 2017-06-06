@@ -15,7 +15,7 @@ repository.</p>**
 
 The documentation is written with [API Blueprint][3] and [MSON][4].
 Trivial changes can be added using GitHub's built-in editor. For
-bigger changes it is highly recommended to follow the steps below.
+bigger changes it is advised to follow the steps below.
 
 ### Requirements
 
