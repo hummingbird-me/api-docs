@@ -1,10 +1,59 @@
-# Kitsu API Docs
+# API Docs
 
 Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
 
 ---
-**<p align="center">This is our API docs repository.<br />For the actual source code, please check out the [server](https://github.com/hummingbird-me/hummingbird-server) and [client](https://github.com/hummingbird-me/hummingbird-client) repository.</p>**
+**<p align="center">This is our API docs repository.<br />For the actual source code, please check out the [server][0] and [client][1] repository.</p>**
 
 ---
 
-If you have any questions don't hesitate to contact us! Feel free to create a topic in the [forum dev category](http://forums.hummingbird.me/category/dev) or [email Josh](mailto:josh@hummingbird.me) to get access to our Slack.
+## Contributing
+
+[![Travis]][2]
+
+The documentation is written with [API Blueprint][3] and [MSON][4].
+
+Trivial changes can be added using GitHub's built-in editor. For bigger changes it is highly recommended to follow the steps below.
+
+### Requirements
+
+- [git](https://git-scm.com) > 2.0.0
+- [node.js](https://nodejs.org) > 7.0.0
+- [yarn](https://yarnpkg.com) > 0.21.0
+
+### Development
+
+1. [Fork the repo][5]
+
+2. Clone the repo (`git clone https://github.com/{yourusername}/api-docs.git`)
+
+3. Create a new branch (`git checkout -b improve-docs`)
+
+4. Install dependencies (`yarn install`)
+
+5. Make the appropriate changes in the source files
+
+6. Check your changes for issues (`yarn test`)
+
+7. Commit your changes (`git commit -am 'Improve docs'`)
+
+8. Push to your branch (`git push origin improve-docs`)
+
+9. [Create a Pull Request][6]
+
+If you have any questions, you can join our Slack by sending an
+email to josh@kitsu.io or pinging [@wopian][wopian],
+[@matthewdias][matthewdias] or [@nuck][nuck] on Kitsu.
+
+[0]:https://github.com/hummingbird-me/hummingbird-server
+[1]:https://github.com/hummingbird-me/hummingbird-client
+[2]:https://travis-ci.org/hummingbird-me/api-docs
+[3]:https://apiblueprint.org
+[4]:https://github.com/apiaryio/mson
+[5]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
+[6]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
+
+[travis]:https://img.shields.io/travis/hummingbird-me/api-docs/source.svg?style=flat-square&label=blueprint
+[wopian]:https://kitsu.io/users/wopian
+[matthewdias]:https://kitsu.io/users/matthewdias
+[nuck]:https://kitsu.io/users/nuck
