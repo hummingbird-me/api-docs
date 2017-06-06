@@ -1,4 +1,4 @@
-# API Docs
+# API Docs [![Travis]][2]
 
 Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
 
@@ -8,8 +8,6 @@ Kitsu is a modern anime discovery platform that helps you track the anime you're
 ---
 
 ## Contributing
-
-[![Travis]][2]
 
 The documentation is written with [API Blueprint][3] and [MSON][4].
 
