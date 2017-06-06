@@ -5,8 +5,7 @@
 
 ## people (object)
 + id: 1
-+ type: people (enum)
-  + people
++ type: people
 + links (object)
     + self: `https://kitsu.io/api/edge/people/1`
 + attributes (peopleAttributes)

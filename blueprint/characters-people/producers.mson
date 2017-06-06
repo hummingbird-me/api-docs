@@ -4,8 +4,7 @@
 
 ## producers (object)
 + id: 1
-+ type: producers (enum)
-  + producers
++ type: producers
 + links (object)
     + self: `https://kitsu.io/api/edge/producers/1`
 + attributes (producersAttributes)

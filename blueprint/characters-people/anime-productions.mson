@@ -3,8 +3,7 @@
 
 ## animeProductions (object)
 + id: 1
-+ type: animeProductions (enum)
-  + animeProductions
++ type: animeProductions
 + links (object)
     + self: `https://kitsu.io/api/edge/anime-productions/1`
 + attributes (animeCharactersAttributes)

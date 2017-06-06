@@ -6,8 +6,7 @@
 
 ## castings (object)
 + id: 1
-+ type: castings (enum)
-  + castings
++ type: castings
 + links (object)
     + self: `https://kitsu.io/api/edge/castings/1`
 + attributes (castingsAttributes)

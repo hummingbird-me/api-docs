@@ -3,8 +3,7 @@
 
 ## animeStaff (object)
 + id: 1
-+ type: animeStaff (enum)
-  + animeStaff
++ type: animeStaff
 + links (object)
     + self: `https://kitsu.io/api/edge/anime-staff/1`
 + attributes (animeStaffAttributes)

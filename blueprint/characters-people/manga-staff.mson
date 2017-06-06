@@ -3,8 +3,7 @@
 
 ## mangaStaff (object)
 + id: 1
-+ type: mangaStaff (enum)
-  + mangaStaff
++ type: mangaStaff
 + links (object)
     + self: `https://kitsu.io/api/edge/manga-staff/1`
 + attributes (mangaStaffAttributes)

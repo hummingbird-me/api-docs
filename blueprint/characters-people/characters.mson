@@ -8,8 +8,7 @@
 
 ## characters (object)
 + id: 1
-+ type: characters (enum)
-  + characters
++ type: characters
 + links (object)
     + self: `https://kitsu.io/api/edge/characters/1`
 + attributes (charactersAttributes)
