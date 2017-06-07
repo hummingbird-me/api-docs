@@ -1,6 +1,6 @@
 ## mappingsAttributes (object)
-+ externalSite: myanimelist/anime (string)
-+ externalId: 31608 (string)
++ externalSite: myanimelist/anime
++ externalId: 31608
 
 ## mappings (object)
 + id: 1 (string, required)
