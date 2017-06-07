@@ -1,0 +1,15 @@
+## mappingsAttributes (object)
++ externalSite: myanimelist/anime (string)
++ externalId: 31608 (string)
+
+## mappings (object)
++ id: 1 (string, required)
++ type: mappings (string, required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/mappings/1`
++ attributes (mappingsAttributes)
++ relationships (object)
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/mappings/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/mappings/1/media`
