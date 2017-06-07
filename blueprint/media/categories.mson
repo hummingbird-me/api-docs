@@ -1,8 +1,8 @@
 ## categoriesAttributes (object)
-+ title: Elf (string)
-+ description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...` (string)
++ title: Elf
++ description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...`
 + totalMediaCount: 32 (number)
-+ slug: elf (string)
++ slug: elf
 + nsfw: false (boolean)
 + childCount: 0 (number)
 + image (object)
