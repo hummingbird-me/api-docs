@@ -1,8 +1,8 @@
 ## franchisesAttributes (object)
 + titles (object)
     + en: Darker than Black (nullable)
-    + en_jp: (nullable)
-+ canonicalTitle (string)
+    + en_jp (nullable)
++ canonicalTitle
 
 ## franchises (object)
 + id: 1 (string, required)
