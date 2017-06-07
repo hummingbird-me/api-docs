@@ -1,7 +1,7 @@
 ## genresAttributes (object)
-+ name: Action (string)
-+ slug: action (string)
-+ description (string)
++ name: Action
++ slug: action
++ description (nullable)
 
 ## genres (object)
 + id: 1 (string, required)
