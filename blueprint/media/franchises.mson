@@ -1,7 +1,7 @@
 ## franchisesAttributes (object)
 + titles (object)
-    + en: Darker than Black
-    + en_jp: (string)
+    + en: Darker than Black (nullable)
+    + en_jp: (nullable)
 + canonicalTitle (string)
 
 ## franchises (object)
@@ -13,5 +13,5 @@
 + relationships (object)
     + installments (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/franchises/66/relationships/installments`
-            + related: `https://kitsu.io/api/edge/franchises/66/installments`
+            + self: `https://kitsu.io/api/edge/franchises/1/relationships/installments`
+            + related: `https://kitsu.io/api/edge/franchises/1/installments`
