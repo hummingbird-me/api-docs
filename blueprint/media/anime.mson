@@ -9,7 +9,7 @@
 + canonicalTitle: Cowboy Bebop
 + abbreviatedTitles: COWBOY BEBOP (array)
 + averageRating: 88.65
-+ ratingFrequencies (array)
++ ratingFrequencies (object)
     + 2: 72
     + 3: 0
     + 4: 292
