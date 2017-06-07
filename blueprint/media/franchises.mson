@@ -11,4 +11,7 @@
     + self: `https://kitsu.io/api/edge/franchises/1`
 + attributes (franchisesAttributes)
 + relationships (object)
-    
+    + installments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/franchises/66/relationships/installments`
+            + related: `https://kitsu.io/api/edge/franchises/66/installments`
