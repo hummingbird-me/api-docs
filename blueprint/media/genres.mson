@@ -1,11 +1,11 @@
 ## genresAttributes (object)
 + name: Action (string)
 + slug: action (string)
-+ description: description (string)
++ description (string)
 
 ## genres (object)
 + id: 1 (string, required)
 + type: genres (string, required)
 + links (object)
-    + self: 'https://kitsu.io/api/edge/genres/1'
+    + self: `https://kitsu.io/api/edge/genres/1`
 + attributes (genresAttributes)
