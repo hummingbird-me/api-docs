@@ -1,0 +1,17 @@
+## franchisesAttributes (object)
++ titles (object)
+    + en: Darker than Black (nullable)
+    + en_jp (nullable)
++ canonicalTitle
+
+## franchises (object)
++ id: 1 (string, required)
++ type: franchises (string, required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/franchises/1`
++ attributes (franchisesAttributes)
++ relationships (object)
+    + installments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/franchises/1/relationships/installments`
+            + related: `https://kitsu.io/api/edge/franchises/1/installments`
