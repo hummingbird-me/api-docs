@@ -1,5 +1,5 @@
 ## animeAttributes (object)
-+ slug: cowboy-bebop
++ slug: `cowboy-bebop`
 + synopsis: `In the year 2071, humanity has colonoized several of the planets and moons...`
 + coverImageTopOffset: 400 (number)
 + titles (object)
