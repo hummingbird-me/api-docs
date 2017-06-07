@@ -1,0 +1,38 @@
+## categoriesAttributes (object)
++ title: Elf
++ description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...`
++ totalMediaCount: 32 (number)
++ slug: elf
++ nsfw: false (boolean)
++ childCount: 0 (number)
++ image (object)
+    + tiny: `https://media.kitsu.io/categories/images/10/tiny.jpg?1496212711`
+    + small: `https://media.kitsu.io/categories/images/10/small.jpg?1496212711`
+    + medium: `https://media.kitsu.io/categories/images/10/medium.jpg?1496212711`
+    + large: `https://media.kitsu.io/categories/images/10/large.jpg?1496212711`
+    + original: `https://media.kitsu.io/categories/images/10/original.jpg?1496212711`
+
+
+## categories (object)
++ id: 10 (string, required)
++ type: categories (string, required) 
++ links (object)
+    + self: `https://kitsu.io/api/edge/categories/10`
++ attributes (categoriesAttributes)
++ relationships (object)
+    + parent (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/categories/10/relationships/parent`
+            + related: `https://kitsu.io/api/edge/categories/10/parent`
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/categories/10/relationships/anime`
+            + related: `https://kitsu.io/api/edge/categories/10/anime`
+    + drama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/categories/10/relationships/drama`
+            + related: `https://kitsu.io/api/edge/categories/10/drama`
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/categories/10/relationships/manga`
+            + related: `https://kitsu.io/api/edge/categories/10/manga`
