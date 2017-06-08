@@ -1,0 +1,19 @@
+## installmentsAttributes (object)
++ tag (nullable)
++ position (number)
+
+## installments (object)
++ id: 1 (required)
++ type: installments (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/anime-characters/1`
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + franchise (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/installments/1/relationships/franchise`
+            + related: `https://kitsu.io/api/edge/installments/1/franchise`
+     + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/installments/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/installments/1/media`
