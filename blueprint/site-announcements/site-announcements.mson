@@ -9,9 +9,9 @@
 + type: siteAnnouncements (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/site-announcements/2`
-+ attributes (animeCharactersAttributes)
++ attributes (siteAnnouncementsAttributes)
 + relationships (object)
     + user (object)
         + links (object)
-            +self: `https://kitsu.io/api/edge/site-announcements/2/relationships/user`
-            +related: `https://kitsu.io/api/edge/site-announcements/2/user`
+            + self: `https://kitsu.io/api/edge/site-announcements/2/relationships/user`
+            + related: `https://kitsu.io/api/edge/site-announcements/2/user`
