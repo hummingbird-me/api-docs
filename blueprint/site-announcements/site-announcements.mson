@@ -1,0 +1,17 @@
+## siteAnnouncementsAttributes (object)
++ title: `It's update time!`
++ description: `A new release is upon us. Featuring mostly bug fixes but a few quality of life tweaks!`
++ imageUrl: `https://media.giphy.com/media/3og0IEXRvwMN0cLSaQ/giphy.gif`
++ link: `https://medium.com/heykitsu/kitsu-release-notes-may-11th-2017-803bacc10e34`
+
+## siteAnnouncements (object)
++ id: 2 (required)
++ type: siteAnnouncements (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/site-announcements/2`
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            +self: `https://kitsu.io/api/edge/site-announcements/2/relationships/user`
+            +related: `https://kitsu.io/api/edge/site-announcements/2/user`
