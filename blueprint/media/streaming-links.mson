@@ -9,7 +9,7 @@
 + type: streamingLinks (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/streaming-links/1`
-+ attributes (animeCharactersAttributes)
++ attributes (streamingLinksAttributes)
 + relationships (object)
     + streamer (object)
         + links (object)
