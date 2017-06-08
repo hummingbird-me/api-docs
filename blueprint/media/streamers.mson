@@ -1,0 +1,16 @@
+## streamersAttributes (object)
++ siteName: Hulu
++ logo: `/logos/original/missing.png`
+
+## streamers (object)
++ id: 1 (required)
++ type: streamers (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/streamers/1`
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + streamingLinks (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streamers/1/relationships/streaming-links`
+            + related: `https://kitsu.io/api/edge/streamers/1/streaming-links`
+            
