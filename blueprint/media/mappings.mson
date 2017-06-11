@@ -3,10 +3,10 @@
 + externalId: 31608
 
 ## mappings (object)
-+ id: 1 (string, required)
-+ type: mappings (string, required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/mappings/1`
++ id: 1 (required)
++ type: mappings (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/mappings/1` (required)
 + attributes (mappingsAttributes)
 + relationships (object)
     + media (object)

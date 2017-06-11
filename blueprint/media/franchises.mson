@@ -5,10 +5,10 @@
 + canonicalTitle
 
 ## franchises (object)
-+ id: 1 (string, required)
-+ type: franchises (string, required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/franchises/1`
++ id: 1 (required)
++ type: franchises (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/franchises/1` (required)
 + attributes (franchisesAttributes)
 + relationships (object)
     + installments (object)
