@@ -5,10 +5,10 @@
 + language: English
 
 ## castings (object)
-+ id: 1
-+ type: castings
-+ links (object)
-    + self: `https://kitsu.io/api/edge/castings/1`
++ id: 1 (required)
++ type: castings (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/castings/1` (required)
 + attributes (castingsAttributes)
 + relationships (object)
     + media (object)

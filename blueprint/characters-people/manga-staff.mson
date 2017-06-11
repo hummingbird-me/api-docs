@@ -2,10 +2,10 @@
 + role: producer
 
 ## mangaStaff (object)
-+ id: 1
-+ type: mangaStaff
-+ links (object)
-    + self: `https://kitsu.io/api/edge/manga-staff/1`
++ id: 1 (required)
++ type: mangaStaff (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/manga-staff/1` (required)
 + attributes (mangaStaffAttributes)
 + relationships (object)
     + manga (object)

@@ -2,10 +2,10 @@
 + role: producer
 
 ## animeStaff (object)
-+ id: 1
-+ type: animeStaff
-+ links (object)
-    + self: `https://kitsu.io/api/edge/anime-staff/1`
++ id: 1 (required)
++ type: animeStaff (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/anime-staff/1` (required)
 + attributes (animeStaffAttributes)
 + relationships (object)
     + anime (object)

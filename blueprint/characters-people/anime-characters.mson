@@ -1,11 +1,11 @@
 ## animeCharactersAttributes (object)
-+ role: main
++ role: main - Role the character plays in the anime
 
 ## animeCharacters (object)
-+ id: 1
-+ type: animeCharacters
-+ links (object)
-    + self: `https://kitsu.io/api/edge/anime-characters/1`
++ id: 1 (required)
++ type: animeCharacters (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/anime-characters/1` (required)
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + anime (object)

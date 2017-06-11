@@ -3,10 +3,10 @@
 + name: Sunrise
 
 ## producers (object)
-+ id: 1
-+ type: producers
-+ links (object)
-    + self: `https://kitsu.io/api/edge/producers/1`
++ id: 1 (required)
++ type: producers (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/producers/1` (required)
 + attributes (producersAttributes)
 + relationships (object)
     + animeProductions (object)

@@ -4,10 +4,10 @@
 + malId: 6519 (number)
 
 ## people (object)
-+ id: 1
-+ type: people
-+ links (object)
-    + self: `https://kitsu.io/api/edge/people/1`
++ id: 1 (required)
++ type: people (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/people/1` (required)
 + attributes (peopleAttributes)
 + relationships (object)
     + castings (object)

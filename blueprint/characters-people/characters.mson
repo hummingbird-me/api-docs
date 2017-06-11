@@ -7,10 +7,10 @@
     + original: `https://media.kitsu.io/characters/images/1/original.jpg?1483096805`
 
 ## characters (object)
-+ id: 1
-+ type: characters
-+ links (object)
-    + self: `https://kitsu.io/api/edge/characters/1`
++ id: 1 (required)
++ type: characters (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/characters/1` (required)
 + attributes (charactersAttributes)
 + relationships (object)
     + primaryMedia (object)
