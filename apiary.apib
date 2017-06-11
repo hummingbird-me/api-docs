@@ -200,23 +200,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (animeCharacters)
-        + meta (object)
-            + count: 109379 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369`
+        + meta (object, required)
+            + count: 109379 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -225,22 +220,10 @@ browser-based and mobile apps
         + data (animeCharacters)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Anime Productions [/anime-productions/{id}]
 
 + Parameters
@@ -252,23 +235,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (animeProductions)
-        + meta (object)
-            + count: 28401 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28391`
+        + meta (object, required)
+            + count: 28401 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28391` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -277,22 +255,10 @@ browser-based and mobile apps
         + data (animeProductions)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Anime Staff [/anime-staff/{id}]
 
 + Parameters
@@ -304,23 +270,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (animeStaff)
-        + meta (object)
-            + count: 88543 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=88533`
+        + meta (object, required)
+            + count: 88543 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=88533` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -329,22 +290,10 @@ browser-based and mobile apps
         + data (animeStaff)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Castings [/castings/{id}]
 
 + Parameters
@@ -356,23 +305,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (castings)
-        + meta (object)
-            + count: 244549 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=244539`
+        + meta (object, required)
+            + count: 244549 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=244539` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -381,22 +325,10 @@ browser-based and mobile apps
         + data (castings)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Characters [/characters/{id}]
 
 + Parameters
@@ -408,23 +340,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (characters)
-        + meta (object)
-            + count: 95009 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999`
+        + meta (object, required)
+            + count: 950090 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -433,22 +360,10 @@ browser-based and mobile apps
         + data (characters)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Manga Characters [/manga-characters/{id}]
 
 + Parameters
@@ -460,22 +375,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (mangaCharacters)
-        + meta (object)
-            + count: 0 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0`
+        + meta (object, required)
+            + count: 0 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -484,22 +395,10 @@ browser-based and mobile apps
         + data (mangaCharacters)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Manga Staff [/manga-staff/{id}]
 
 + Parameters
@@ -511,22 +410,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (mangaStaff)
-        + meta (object)
-            + count: 1 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0`
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -535,22 +430,10 @@ browser-based and mobile apps
         + data (mangaStaff)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## People [/people/{id}]
 
 + Parameters
@@ -562,23 +445,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (people)
-        + meta (object)
-            + count: 27957 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947`
+        + meta (object, required)
+            + count: 27957 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -587,22 +465,10 @@ browser-based and mobile apps
         + data (people)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Producers [/producers/{id}]
 
 + Parameters
@@ -614,23 +480,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (producers)
-        + meta (object)
-            + count: 1333 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1323`
+        + meta (object, required)
+            + count: 1333 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1323` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -639,22 +500,10 @@ browser-based and mobile apps
         + data (producers)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 # Group Groups
 
 ## Group Categories [/group-categories/{id}]
@@ -686,23 +535,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (anime)
-        + meta (object)
-            + count: 12080 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=12070`
+        + meta (object, required)
+            + count: 12080 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=12070` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -711,22 +555,11 @@ browser-based and mobile apps
         + data (anime)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
+
 ## Categories [/categories/{id}]
 
 + Parameters
@@ -738,23 +571,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
-            + (categoriesAttributes)
-        + meta (object)
-            + count: 228 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=218`
+        + data (array, required)
+            + (categories)
+        + meta (object, required)
+            + count: 228 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=218` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -763,22 +591,10 @@ browser-based and mobile apps
         + data (categoriesAttributes)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 
 
 
@@ -793,24 +609,19 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (franchises)
-        + meta (object)
-            + count: 1332 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=1322`
-  
+        + meta (object, required)
+            + count: 1332 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=1322` (required)
+
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -819,22 +630,10 @@ browser-based and mobile apps
         + data (franchises)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 ## Genres [/genres/{id}]
 
 + Parameters
@@ -846,23 +645,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (genres)
-        + meta (object)
-            + count: 61 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=51`
+        + meta (object, required)
+            + count: 61 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=51` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400)
 
 ### GET Single [GET]
 
@@ -871,22 +665,10 @@ browser-based and mobile apps
         + data (genres)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 
 
 ## Mappings [/mappings/{id}]
@@ -900,23 +682,18 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (mappings)
-        + meta (object)
-            + count: 109379 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369`
+        + meta (object, required)
+            + count: 109379 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (errors400))
 
 ### GET Single [GET]
 
@@ -925,22 +702,10 @@ browser-based and mobile apps
         + data (mappings)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (errors404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (errors400)
 
 
 
@@ -1211,10 +976,10 @@ browser-based and mobile apps
 + nsfw: false (boolean)
 
 ## anime (object)
-+ id: 1
-+ type: anime
-+ links (object)
-    + self: `https://kitsu.io/api/edge/anime/1`
++ id: 1 (required)
++ type: anime (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/anime/1` (required)
 + attributes (animeAttributes)
 + relationships (object)
     + genres (object)
@@ -1282,9 +1047,9 @@ browser-based and mobile apps
 
 ## categories (object)
 + id: 10 (string, required)
-+ type: categories (string, required) 
-+ links (object)
-    + self: `https://kitsu.io/api/edge/categories/10`
++ type: categories (string, required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/categories/10` (required)
 + attributes (categoriesAttributes)
 + relationships (object)
     + parent (object)
@@ -1313,10 +1078,10 @@ browser-based and mobile apps
 + canonicalTitle
 
 ## franchises (object)
-+ id: 1 (string, required)
-+ type: franchises (string, required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/franchises/1`
++ id: 1 (required)
++ type: franchises (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/franchises/1` (required)
 + attributes (franchisesAttributes)
 + relationships (object)
     + installments (object)
@@ -1329,10 +1094,10 @@ browser-based and mobile apps
 + description (nullable)
 
 ## genres (object)
-+ id: 1 (string, required)
-+ type: genres (string, required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/genres/1`
++ id: 1 ( required)
++ type: genres ( required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/genres/1` (required)
 + attributes (genresAttributes)
 
 
@@ -1341,16 +1106,17 @@ browser-based and mobile apps
 + externalId: 31608
 
 ## mappings (object)
-+ id: 1 (string, required)
-+ type: mappings (string, required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/mappings/1`
++ id: 1 (required)
++ type: mappings (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/mappings/1` (required)
 + attributes (mappingsAttributes)
 + relationships (object)
     + media (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/mappings/1/relationships/media`
             + related: `https://kitsu.io/api/edge/mappings/1/media`
+
 
 
 
