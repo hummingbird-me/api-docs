@@ -9,13 +9,15 @@
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (siteAnnouncements)
-        + meta (object)
-            + count: 3 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + last: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0`
+        + meta (object, required)
+            + count: 3 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
     + Attributes
