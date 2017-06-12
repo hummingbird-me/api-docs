@@ -1,0 +1,21 @@
+## streamingLinksAttributes (object)
++ role: main
++ url: `http://www.hulu.com/hacklegend-of-the-twilight`
++ subs: en (array)
++ dubs: ja (array)
+
+## streamingLinks (object)
++ id: 1 (required)
++ type: streamingLinks (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/streaming-links/1` (required)
++ attributes (streamingLinksAttributes)
++ relationships (object)
+    + streamer (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streaming-links/1/relationships/streamer`
+            + related: `https://kitsu.io/api/edge/streaming-links/1/streamer`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streaming-links/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/streaming-links/1/media`

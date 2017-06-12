@@ -15,8 +15,10 @@
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime`
             + related: `https://kitsu.io/api/edge/anime-characters/1/anime`
     + character (object)
+        +links (object)
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character`
             + related: `https://kitsu.io/api/edge/anime-characters/1/character`
     + castings (object)
+        + links (object)
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings`
             + related: `https://kitsu.io/api/edge/anime-characters/1/castings`
