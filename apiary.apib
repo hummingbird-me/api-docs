@@ -510,10 +510,72 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the group category resource
+
++ Attributes (groupCategoriesAttributes)
+
+### GET List [GET /group-categories]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupCategories)
+        + meta (object, required)
+            + count: 10 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupCategories)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Group Members [/group-members/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the group members resource
+    + id (number, `1`) - ID of the group member resource
+
++ Attributes (groupMembersAttributes)
+
+### GET List [GET /group-members]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupMembers)
+        + meta (object, required)
+            + count: 241197 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupMembers)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Group Neighbors [/group-neighbors/{id}]
 
 + Parameters
@@ -597,7 +659,41 @@ browser-based and mobile apps
     + Attributes (error400)
 
 
+## Episodes [/episodes/{id}]
 
++ Parameters
+    + id (number, `28`) - ID of the episode resource
+
++ Attributes (episodesAttributes)
+
+### GET List [GET /episodes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (categories)
+        + meta (object, required)
+            + count: 180218 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=180200` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (episodesAttributes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Franchises [/franchises/{id}]
 
 + Parameters
@@ -672,6 +768,41 @@ browser-based and mobile apps
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
 
+## Manga [/manga/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the manga resource
+
++ Attributes (mangaAttributes)
+
+### GET List [GET /manga]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (manga)
+        + meta (object, required)
+            + count: 30634 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=30624` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (manga)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 
 ## Mappings [/mappings/{id}]
 
@@ -708,7 +839,41 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Media Relationships [/media-relationships/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the media relationship resource
+
++ Attributes (mediaRelationshipsAttributes)
+
+### GET List [GET /media-relationships]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (mediaRelationships)
+        + meta (object, required)
+            + count: 17798 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=17788` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaRelationships)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 
 
 # Group Posts
@@ -919,8 +1084,48 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/producers/1/relationships/anime-productions`
             + related: `https://kitsu.io/api/edge/producers/1/anime-productions`
 
+## groupCategoriesAttributes (object)
++ name: `Anime & Manga`
++ slug: `anime-manga`
++ description (nullable)
 
+## groupCategories (object)
++ id: 1 (required)
++ type: groupCategories (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-categories/1` (required)
++ attributes (groupCategoriesAttributes)
+## groupMembersAttributes (object)
++ rank: admin (enum)
+    + admin
+    + mod
+    + pleb
++ createdAt: `2015-02-17T21:16:53.211Z` - ISO 8601 date, YYYY-MM-DDThh:mm:ssTZD
++ unreadCount: 3 (number) - member's unread posts in group
 
+## groupMembers (object)
++ id: 1 (required)
++ type: groupMembers (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-members/1` (required)
++ attributes (groupMembersAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-members/1/group`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-members/1/user`
+    + permissions (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/permissions`
+            + related: `https://kitsu.io/api/edge/group-members/1/permissions`
+    + notes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/notes`
+            + related: `https://kitsu.io/api/edge/group-members/1/notes`
 
 
 
@@ -966,7 +1171,7 @@ browser-based and mobile apps
     + PG - Parental Guidance Suggested
     + R - Restricted
     + R18 - Explicit
-+ ageRatingGuide: `17+ (violence & profanity)`
++ ageRatingGuide: `17+ (violence & profanity)` (nullable)
 + subtype: TV (enum)
     + ONA
     + OVA
@@ -1098,7 +1303,29 @@ browser-based and mobile apps
             + related: `https://kitsu.io/api/edge/categories/10/manga`
 
 
+## episodesAttributes (object)
++ titles: (object)
+    + en_jp: The $$60 Billion Man
++ canonicalTitle: The $$60 Billion Man
++ seasonNumber: 1 (number)
++ number: 1 (number)
++ synopsis: There are many rumors circulating...
++ airdate: 1998-04-01 - YYYY-MM-DD date
++ length (nullable) - length of episode in minutes
++ thumbnail (object)
+    + original: `https://media.kitsu.io/episodes/thumbnails/28/original.jpg?1416327614`
 
+## episodes (object)
++ id: 28 (string, required)
++ type: episodes (string, required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/episodes/28` (required)
++ attributes (episodesAttributes)
++ relationships (object)
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/episodes/10/relationships/media`
+            + related: `https://kitsu.io/api/edge/episodes/10/media`
 ## franchisesAttributes (object)
 + titles (object)
     + en: Darker than Black (nullable)
@@ -1128,7 +1355,133 @@ browser-based and mobile apps
     + self: `https://kitsu.io/api/edge/genres/1` (required)
 + attributes (genresAttributes)
 
+## mangaAttributes (object)
++ slug: `shingeki-no-kyojin`
++ synopsis: `Several hundred years ago...``
++ coverImageTopOffset: 112 (number, nullable)
++ titles (object) - Languages in different languages. Other languages will be listed if they exist.
+    + en: Attack on Titan (nullable)
+    + en_jp: Shingeki no Kyojin (nullable)
+    + ja_jp: 進撃の巨人 (nullable)
++ canonicalTitle: Shingeki no Kyojin
++ abbreviatedTitles (array, nullable)
++ averageRating: 81.54
++ ratingFrequencies (object)
+    + 2: 28
+    + 3: 0
+    + 4: 17
+    + 5: 0
+    + 6: 23
+    + 7: 1
+    + 8: 75
+    + 9: 0
+    + 10: 81
+    + 11: 2
+    + 12: 177
+    + 13: 1
+    + 14: 367
+    + 15: 2
+    + 16: 448
+    + 17: 6
+    + 18: 460
+    + 19: 1
+    + 20: 833
++ userCount: 5170 (number)
++ favoritesCount: 633 (number)
++ startDate: 2009-09-09 (nullable) - YYYY-MM-DD date
++ endDate (nullable) - YYYY-MM-DD date
++ popularityRank: 2 (number)
++ ratingRank: 163 (number)
++ ageRatin: R (enum, nullable)
+    + G - General Audiences
+    + PG - Parental Guidance Suggested
+    + R - Restricted
+    + R18 - Explicit
++ ageRatingGuide: Horror (nullable)
++ subtype: manga (enum)
+    + doujin
+    + manga
+    + manhua
+    + manhwa
+    + novel
+    + oel
+    + oneshot
++ status: finished (enum)
+    + current
+    + finished
+    + tba
+    + unreleased
+    + upcoming
++ posterImage (object)
+    + tiny: `https://media.kitsu.io/manga/poster_images/14916/tiny.jpg?1491099787`
+    + small: `https://media.kitsu.io/manga/poster_images/14916/small.jpg?1491099787`
+    + medium: `https://media.kitsu.io/manga/poster_images/14916/medium.jpg?1491099787`
+    + large: `https://media.kitsu.io/manga/poster_images/14916/large.jpg?1491099787`
+    + original: `https://media.kitsu.io/manga/poster_images/14916/original.jpg?1491099787`
++ coverImage (object)
+    + tiny: `https://media.kitsu.io/manga/cover_images/14916/tiny.jpg?1471880895`
+    + small: `https://media.kitsu.io/manga/cover_images/14916/small.jpg?1471880895`
+    + large: `https://media.kitsu.io/manga/cover_images/14916/large.jpg?1471880895`
+    + original: `https://media.kitsu.io/manga/cover_images/14916/original.jpg?1471880895`
++ chapterCount (number, nullable)
++ volumeCount: 0 (number, nullable)
++ serialization: Bessatsu Shounen Magazine (nullable)
++ mangaType: manga (enum) - Deprecated, use subtype
+    + doujin
+    + manga
+    + manhua
+    + manhwa
+    + novel
+    + oel
+    + oneshot
 
+## manga (object)
++ id: 14916 (required)
++ type: manga (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/manga/14916` (required)
++ attributes (animeAttributes)
++ relationships (object)
+    + genres (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/genres`
+            + related: `https://kitsu.io/api/edge/manga/1/genres`
+    + categories (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/categories`
+            + related: `https://kitsu.io/api/edge/manga/1/categories`
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/manga/1/castings`
+    + installments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/installments`
+            + related: `https://kitsu.io/api/edge/manga/1/installments`
+    + mappings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/mappings`
+            + related: `https://kitsu.io/api/edge/manga/1/mappings`
+    + reviews (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/reviews`
+            + related: `https://kitsu.io/api/edge/manga/1/reviews`
+    + mediaRelationships (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/media-relationships`
+            + related: `https://kitsu.io/api/edge/manga/1/media-relationships`
+    + chapters (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/chapters`
+            + related: `https://kitsu.io/api/edge/manga/1/chapters`
+    + mangaCharacters (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/manga-characters`
+            + related: `https://kitsu.io/api/edge/manga/1/manga-characters`
+    + mangaStaff (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/manga-staff`
+            + related: `https://kitsu.io/api/edge/manga/1/manga-staff`
 ## mappingsAttributes (object)
 + externalSite: myanimelist/anime (enum)
     + anidb
@@ -1149,7 +1502,36 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/mappings/1/relationships/media`
             + related: `https://kitsu.io/api/edge/mappings/1/media`
+## mediaRelationshipsAttributes (object)
++ role: prequel (enum) - Relation to the source media
+    + adaptation
+    + alternative_setting
+    + alternative_version
+    + character
+    + full_story
+    + other
+    + parent_story
+    + prequel
+    + sequel
+    + side_story
+    + spinoff
+    + summary
 
+## mediaRelationships (object)
++ id: 1 (required)
++ type: mediaRelationships (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/media-relationships/1` (required)
++ attributes (mediaRelationshipsAttributes)
++ relationships (object)
+    + source (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-relationships/1/relationships/source`
+            + related: `https://kitsu.io/api/edge/media-relationships/1/source`
+    + destination (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-relationships/1/relationships/destination`
+            + related: `https://kitsu.io/api/edge/media-relationships/1/destination`
 
 
 
