@@ -1,8 +1,8 @@
 ## castingsAttributes (object)
-+ role: producer
++ role: producer - Role of the person (Multiple roles are comma seperated)
 + voiceActor: false (boolean)
 + featured: false (boolean)
-+ language: English
++ language: English (nullable) - Language casted in
 
 ## castings (object)
 + id: 1 (required)

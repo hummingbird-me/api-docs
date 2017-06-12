@@ -1,5 +1,5 @@
 ## mangaStaffAttributes (object)
-+ role: producer
++ role: producer - Role of the person (Multiple roles are comma seperated)
 
 ## mangaStaff (object)
 + id: 1 (required)

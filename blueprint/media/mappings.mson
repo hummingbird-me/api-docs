@@ -1,5 +1,10 @@
 ## mappingsAttributes (object)
-+ externalSite: myanimelist/anime
++ externalSite: myanimelist/anime (enum)
+    + anidb
+    + myanimelist/anime
+    + myanimelist/manga
+    + thetvdb/season
+    + thetvdb/series
 + externalId: 31608
 
 ## mappings (object)

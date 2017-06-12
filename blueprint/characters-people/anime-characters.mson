@@ -1,5 +1,7 @@
 ## animeCharactersAttributes (object)
-+ role: main - Role the character plays in the anime
++ role: main (enum) - Role the character plays in the anime
+    + main
+    + supporting
 
 ## animeCharacters (object)
 + id: 1 (required)

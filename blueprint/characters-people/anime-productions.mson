@@ -1,5 +1,8 @@
 ## animeProductionsAttributes (object)
-+ role: producer
++ role: producer (enum)- role of the producer
+    + licensor
+    + producer
+    + studio
 
 ## animeProductions (object)
 + id: 1 (required)

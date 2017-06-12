@@ -1,8 +1,8 @@
 ## animeAttributes (object)
 + slug: `cowboy-bebop`
 + synopsis: `In the year 2071, humanity has colonoized several of the planets and moons...`
-+ coverImageTopOffset: 400 (number)
-+ titles (object)
++ coverImageTopOffset: 400 (number, nullable)
++ titles (object) - Languages in different languages. Other languages will be listed if they exist.
     + en: Cowboy Bebop (nullable)
     + en_jp: Cowbop Bebop (nullable)
     + ja_jp: カウボーイビバップ (nullable)
@@ -31,14 +31,29 @@
     + 20: 13607
 + userCount: 40405 (number)
 + favoritesCount: 3277 (number)
-+ startDate: 1998-04-03
-+ endDate: 1999-04-04
++ startDate: 1998-04-03 - YYYY-MM-DD date
++ endDate: 1999-04-04 - YYYY-MM-DD date
 + popularityRank: 10 (number)
 + ratingRank: 10 (number)
-+ ageRating: R
++ ageRating: R (enum, nullable)
+    + G - General Audiences
+    + PG - Parental Guidance Suggested
+    + R - Restricted
+    + R18 - Explicit
 + ageRatingGuide: `17+ (violence & profanity)`
-+ subtype: TV
-+ status: finished
++ subtype: TV - (enum)
+    + ONA
+    + OVA
+    + TV
+    + movie
+    + music
+    + special
++ status: finished (enum)
+    + current
+    + finished
+    + tba
+    + unreleased
+    + upcoming
 + posterImage (object)
     + tiny: `https://media.kitsu.io/anime/poster_images/1/tiny.jpg?1431697256`
     + small: `https://media.kitsu.io/anime/poster_images/1/small.jpg?1431697256`
@@ -51,10 +66,16 @@
     + large: `https://media.kitsu.io/anime/cover_images/1/large.jpg?1416336000`
     + original: `https://media.kitsu.io/anime/cover_images/1/original.jpg?1416336000`
 + episodeCount: 26 (number)
-+ episodeLength: 24 (number)
-+ youtubeVideoId: qig4KOK2R2g
-+ showType: TV
-+ nsfw: false (boolean)
++ episodeLength: 24 (number) - Length of episode in minutes
++ youtubeVideoId: qig4KOK2R2g - ID of a youtube trailer
++ showType: TV (enum) - Deprecated, use subtype
+    + ONA
+    + OVA
+    + TV
+    + movie
+    + music
+    + special
++ nsfw: false (boolean) - NSFW media requires authentication
 
 ## anime (object)
 + id: 1 (required)

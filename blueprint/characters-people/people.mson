@@ -1,7 +1,7 @@
 ## peopleAttributes (object)
-+ image: `https://media.kitsu.io/people/images/1/original.jpg?1416260317`
++ image: `https://media.kitsu.io/people/images/1/original.jpg?1416260317` (nullable)
 + name: Masahiko Minami
-+ malId: 6519 (number)
++ malId: 6519 (number, nullable)
 
 ## people (object)
 + id: 1 (required)
