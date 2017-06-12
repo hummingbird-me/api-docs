@@ -41,7 +41,7 @@
     + R - Restricted
     + R18 - Explicit
 + ageRatingGuide: `17+ (violence & profanity)`
-+ subtype: TV - (enum)
++ subtype: TV (enum)
     + ONA
     + OVA
     + TV
