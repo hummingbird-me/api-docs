@@ -1,0 +1,53 @@
+## Anime Characters [/streamers/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the streamer resource
+
++ Attributes (streamersAttributes)
+
+### GET List [GET /streamers]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (animeCharacters)
+        + meta (object, required)
+            + count: 109379 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid page value
+                + detail: 0 is not a valid value for limit page parameter.
+                + code: 118
+                + status: 400
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (streamers)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Record not found
+                + detail: The record identified by 0 could not be found.
+                + code: 404
+                + status: 404
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid field value
+                + detail: helloworld is not a valid value for id.
+                + code: 103
+                + status: 400
