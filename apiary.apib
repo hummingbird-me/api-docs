@@ -767,7 +767,59 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Installments [/installments/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the installment resource
+
++ Attributes (installmentsAttributes)
+
+### GET List [GET /installments]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (installments)
+        + meta (object, required)
+            + count: 5902 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=5892` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid page value
+                + detail: 0 is not a valid value for limit page parameter.
+                + code: 118
+                + status: 400
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (installments)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Record not found
+                + detail: The record identified by 0 could not be found.
+                + code: 404
+                + status: 404
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid field value
+                + detail: helloworld is not a valid value for id.
+                + code: 103
+                + status: 400
 ## Manga [/manga/{id}]
 
 + Parameters
@@ -1391,7 +1443,25 @@ browser-based and mobile apps
 + links (object, required)
     + self: `https://kitsu.io/api/edge/genres/1` (required)
 + attributes (genresAttributes)
+## installmentsAttributes (object)
++ tag (nullable)
++ position (number)
 
+## installments (object)
++ id: 1 (required)
++ type: installments (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/installments/1` (required)
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + franchise (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/installments/1/relationships/franchise`
+            + related: `https://kitsu.io/api/edge/installments/1/franchise`
+     + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/installments/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/installments/1/media`
 ## mangaAttributes (object)
 + slug: `shingeki-no-kyojin`
 + synopsis: `Several hundred years ago...``
