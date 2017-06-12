@@ -1,0 +1,11 @@
+## groupCategoriesAttributes (object)
++ name: `Anime & Manga`
++ slug: `anime-manga`
++ description (nullable)
+
+## groupCategories (object)
++ id: 1 (required)
++ type: groupCategories (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-categories/1` (required)
++ attributes (groupCategoriesAttributes)
