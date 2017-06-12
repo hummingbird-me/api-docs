@@ -7,8 +7,8 @@
 ## streamingLinks (object)
 + id: 1 (required)
 + type: streamingLinks (required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/streaming-links/1`
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/streaming-links/1` (required)
 + attributes (streamingLinksAttributes)
 + relationships (object)
     + streamer (object)

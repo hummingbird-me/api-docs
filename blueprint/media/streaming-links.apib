@@ -9,14 +9,15 @@
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (streamingLinks)
-        + meta (object)
-            + count: 1898 (number)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888`
+        + meta (object, required)
+            + count: 1898 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888` (required)
 
 + Response 400 (application/vnd.api+json)
     + Attributes
