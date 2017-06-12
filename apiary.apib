@@ -456,7 +456,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error00)
+    + Attributes (error400)
 
 ### GET Single [GET]
 
@@ -465,10 +465,10 @@ browser-based and mobile apps
         + data (people)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error04)
+    + Attributes (error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error00)
+    + Attributes (error400)
 ## Producers [/producers/{id}]
 
 + Parameters
@@ -967,7 +967,7 @@ browser-based and mobile apps
     + R - Restricted
     + R18 - Explicit
 + ageRatingGuide: `17+ (violence & profanity)`
-+ subtype: TV - (enum)
++ subtype: TV (enum)
     + ONA
     + OVA
     + TV
