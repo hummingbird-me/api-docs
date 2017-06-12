@@ -1,0 +1,15 @@
+
+## reviewLikes (object)
++ id: 1 (required)
++ type: reviewLikes (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/review-likes/1` (required)
++ relationships (object)
+    + review (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/review-likes/1/relationships/review`
+            + related: `https://kitsu.io/api/edge/review-likes/1/review`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/review-likes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/review-likes/1/user`
