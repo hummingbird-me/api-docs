@@ -1,0 +1,30 @@
+## mediaRelationshipsAttributes (object)
++ role: prequel (enum) - Relation to the source media
+    + adaptation
+    + alternative_setting
+    + alternative_version
+    + character
+    + full_story
+    + other
+    + parent_story
+    + prequel
+    + sequel
+    + side_story
+    + spinoff
+    + summary
+
+## mediaRelationships (object)
++ id: 1 (required)
++ type: mediaRelationships (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/media-relationships/1` (required)
++ attributes (mediaRelationshipsAttributes)
++ relationships (object)
+    + source (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-relationships/1/relationships/source`
+            + related: `https://kitsu.io/api/edge/media-relationships/1/source`
+    + destination (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-relationships/1/relationships/destination`
+            + related: `https://kitsu.io/api/edge/media-relationships/1/destination`
