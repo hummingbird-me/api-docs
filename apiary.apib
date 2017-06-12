@@ -1044,7 +1044,56 @@ browser-based and mobile apps
 ## Reviews [/reviews/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the review resource
+    + id (number, `4`) - ID of the review resource
+
++ Attributes (reviewsAttributes)
+
+### GET List [GET /reviews]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (reviews)
+        + meta (object, required)
+            + count: 14505 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` _ Omitted if on first page
+            + next: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14495` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid page value
+                + detail: 0 is not a valid value for limit page parameter.
+                + code: 118
+                + status: 400
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (reviews)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Record not found
+                + detail: The record identified by 0 could not be found.
+                + code: 404
+                + status: 404
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid field value
+                + detail: helloworld is not a valid value for id.
+                + code: 103
+                + status: 400
 # Site Announcements [/site-announcements/{id}]
 
 + Parameters
@@ -1729,7 +1778,36 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/review-likes/1/relationships/user`
             + related: `https://kitsu.io/api/edge/review-likes/1/user`
+## reviewsAttributes (object)
++ content: `The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
++ contentFormatted: `<p>The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
++ likesCount: 3 (number)
++ progress (nullable)
++ rating: 20 (number)
++ source: hummingbird
++ spoiler: false (boolean)
++ createdAt: `2013-03-04T18:29:01.441Z`
++ updatedAt: `2016-12-19T08:01:58.532Z`
 
+## reviews (object)
++ id: 4 (required)
++ type: reviews (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/reviews/4` (required)
++ attributes (reviewsAttributes)
++ relationships (object)
+    + libraryEntry (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reviews/774/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/reviews/774/library-entry`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reviews/774/relationships/media`
+            + related: `https://kitsu.io/api/edge/reviews/774/media`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reviews/774/relationships/user`
+            + related: `https://kitsu.io/api/edge/reviews/774/user`
 
 
 
