@@ -1,0 +1,31 @@
+## groupMembersAttributes (object)
++ rank: admin (enum)
+    + admin
+    + mod
+    + pleb
++ createdAt: `2015-02-17T21:16:53.211Z` - ISO 8601 date, YYYY-MM-DDThh:mm:ssTZD
++ unreadCount: 3 (number) - member's unread posts in group
+
+## groupMembers (object)
++ id: 1 (required)
++ type: groupMembers (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-members/1` (required)
++ attributes (groupMembersAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-members/1/group`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-members/1/user`
+    + permissions (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/permissions`
+            + related: `https://kitsu.io/api/edge/group-members/1/permissions`
+    + notes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-members/1/relationships/notes`
+            + related: `https://kitsu.io/api/edge/group-members/1/notes`

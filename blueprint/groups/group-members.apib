@@ -1,4 +1,35 @@
 ## Group Members [/group-members/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the group members resource
+    + id (number, `1`) - ID of the group member resource
+
++ Attributes (groupMembersAttributes)
+
+### GET List [GET /group-members]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupMembers)
+        + meta (object, required)
+            + count: 241197 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupMembers)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
