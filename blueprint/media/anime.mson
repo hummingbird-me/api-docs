@@ -40,7 +40,7 @@
     + PG - Parental Guidance Suggested
     + R - Restricted
     + R18 - Explicit
-+ ageRatingGuide: `17+ (violence & profanity)`
++ ageRatingGuide: `17+ (violence & profanity)` (nullable)
 + subtype: TV (enum)
     + ONA
     + OVA

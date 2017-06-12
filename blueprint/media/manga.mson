@@ -1,0 +1,127 @@
+## mangaAttributes (object)
++ slug: `shingeki-no-kyojin`
++ synopsis: `Several hundred years ago...``
++ coverImageTopOffset: 112 (number, nullable)
++ titles (object) - Languages in different languages. Other languages will be listed if they exist.
+    + en: Attack on Titan (nullable)
+    + en_jp: Shingeki no Kyojin (nullable)
+    + ja_jp: 進撃の巨人 (nullable)
++ canonicalTitle: Shingeki no Kyojin
++ abbreviatedTitles (array, nullable)
++ averageRating: 81.54
++ ratingFrequencies (object)
+    + 2: 28
+    + 3: 0
+    + 4: 17
+    + 5: 0
+    + 6: 23
+    + 7: 1
+    + 8: 75
+    + 9: 0
+    + 10: 81
+    + 11: 2
+    + 12: 177
+    + 13: 1
+    + 14: 367
+    + 15: 2
+    + 16: 448
+    + 17: 6
+    + 18: 460
+    + 19: 1
+    + 20: 833
++ userCount: 5170 (number)
++ favoritesCount: 633 (number)
++ startDate: 2009-09-09 (nullable) - YYYY-MM-DD date
++ endDate (nullable) - YYYY-MM-DD date
++ popularityRank: 2 (number)
++ ratingRank: 163 (number)
++ ageRatin: R (enum, nullable)
+    + G - General Audiences
+    + PG - Parental Guidance Suggested
+    + R - Restricted
+    + R18 - Explicit
++ ageRatingGuide: Horror (nullable)
++ subtype: manga (enum)
+    + doujin
+    + manga
+    + manhua
+    + manhwa
+    + novel
+    + oel
+    + oneshot
++ status: finished (enum)
+    + current
+    + finished
+    + tba
+    + unreleased
+    + upcoming
++ posterImage (object)
+    + tiny: `https://media.kitsu.io/manga/poster_images/14916/tiny.jpg?1491099787`
+    + small: `https://media.kitsu.io/manga/poster_images/14916/small.jpg?1491099787`
+    + medium: `https://media.kitsu.io/manga/poster_images/14916/medium.jpg?1491099787`
+    + large: `https://media.kitsu.io/manga/poster_images/14916/large.jpg?1491099787`
+    + original: `https://media.kitsu.io/manga/poster_images/14916/original.jpg?1491099787`
++ coverImage (object)
+    + tiny: `https://media.kitsu.io/manga/cover_images/14916/tiny.jpg?1471880895`
+    + small: `https://media.kitsu.io/manga/cover_images/14916/small.jpg?1471880895`
+    + large: `https://media.kitsu.io/manga/cover_images/14916/large.jpg?1471880895`
+    + original: `https://media.kitsu.io/manga/cover_images/14916/original.jpg?1471880895`
++ chapterCount (number, nullable)
++ volumeCount: 0 (number, nullable)
++ serialization: Bessatsu Shounen Magazine (nullable)
++ mangaType: manga (enum) - Deprecated, use subtype
+    + doujin
+    + manga
+    + manhua
+    + manhwa
+    + novel
+    + oel
+    + oneshot
+
+## manga (object)
++ id: 14916 (required)
++ type: manga (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/manga/14916` (required)
++ attributes (animeAttributes)
++ relationships (object)
+    + genres (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/genres`
+            + related: `https://kitsu.io/api/edge/manga/1/genres`
+    + categories (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/categories`
+            + related: `https://kitsu.io/api/edge/manga/1/categories`
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/manga/1/castings`
+    + installments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/installments`
+            + related: `https://kitsu.io/api/edge/manga/1/installments`
+    + mappings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/mappings`
+            + related: `https://kitsu.io/api/edge/manga/1/mappings`
+    + reviews (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/reviews`
+            + related: `https://kitsu.io/api/edge/manga/1/reviews`
+    + mediaRelationships (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/media-relationships`
+            + related: `https://kitsu.io/api/edge/manga/1/media-relationships`
+    + chapters (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/chapters`
+            + related: `https://kitsu.io/api/edge/manga/1/chapters`
+    + mangaCharacters (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/manga-characters`
+            + related: `https://kitsu.io/api/edge/manga/1/manga-characters`
+    + mangaStaff (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga/1/relationships/manga-staff`
+            + related: `https://kitsu.io/api/edge/manga/1/manga-staff`
