@@ -5,8 +5,8 @@
 ## installments (object)
 + id: 1 (required)
 + type: installments (required)
-+ links (object)
-    + self: `https://kitsu.io/api/edge/installments/1`
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/installments/1` (required)
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + franchise (object)
