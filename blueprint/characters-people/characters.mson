@@ -1,7 +1,7 @@
 ## charactersAttributes (object)
 + slug: jet-black
 + name: Jet Black
-+ malId: 3 (number, nullable))
++ malId: 3 (number, nullable)
 + description: `Jet, known on his home satellite as the \"Black Dog\"...` (nullable)
 + image (object)
     + original: `https://media.kitsu.io/characters/images/1/original.jpg?1483096805` (nullable)

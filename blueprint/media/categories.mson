@@ -3,7 +3,7 @@
 + description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...`
 + totalMediaCount: 32 (number)
 + slug: elf
-+ nsfw: false (boolean)
++ nsfw: false (boolean) - NSFW categories requires authentication
 + childCount: 0 (number)
 + image (object)
     + tiny: `https://media.kitsu.io/categories/images/10/tiny.jpg?1496212711`
