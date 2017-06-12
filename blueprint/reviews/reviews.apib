@@ -1,4 +1,53 @@
 ## Reviews [/reviews/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the review resource
+    + id (number, `4`) - ID of the review resource
+
++ Attributes (reviewsAttributes)
+
+### GET List [GET /reviews]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (reviews)
+        + meta (object, required)
+            + count: 14505 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` _ Omitted if on first page
+            + next: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14495` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid page value
+                + detail: 0 is not a valid value for limit page parameter.
+                + code: 118
+                + status: 400
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (reviews)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Record not found
+                + detail: The record identified by 0 could not be found.
+                + code: 404
+                + status: 404
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid field value
+                + detail: helloworld is not a valid value for id.
+                + code: 103
+                + status: 400

@@ -1,0 +1,30 @@
+## reviewsAttributes (object)
++ content: `The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
++ contentFormatted: `<p>The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
++ likesCount: 3 (number)
++ progress (nullable)
++ rating: 20 (number)
++ source: hummingbird
++ spoiler: false (boolean)
++ createdAt: `2013-03-04T18:29:01.441Z`
++ updatedAt: `2016-12-19T08:01:58.532Z`
+
+## reviews (object)
++ id: 4 (required)
++ type: reviews (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/reviews/4` (required)
++ attributes (reviewsAttributes)
++ relationships (object)
+    + libraryEntry (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reviews/774/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/reviews/774/library-entry`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reviews/774/relationships/media`
+            + related: `https://kitsu.io/api/edge/reviews/774/media`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reviews/774/relationships/user`
+            + related: `https://kitsu.io/api/edge/reviews/774/user`
