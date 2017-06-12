@@ -979,7 +979,59 @@ browser-based and mobile apps
                 + detail: helloworld is not a valid value for id.
                 + code: 103
                 + status: 400
+## Streaming Links [/streaming-links/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the streaming link resource
+
++ Attributes (streamingLinksAttributes)
+
+### GET List [GET /streaming-links]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (streamingLinks)
+        + meta (object, required)
+            + count: 1898 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid page value
+                + detail: 0 is not a valid value for limit page parameter.
+                + code: 118
+                + status: 400
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (streamingLinks)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Record not found
+                + detail: The record identified by 0 could not be found.
+                + code: 404
+                + status: 404
+
++ Response 400 (application/vnd.api+json)
+    + Attributes
+        + errors (array)
+            + (object)
+                + title: Invalid field value
+                + detail: helloworld is not a valid value for id.
+                + code: 103
+                + status: 400
 # Group Posts
 
 ## Comment Likes [/comment-likes/{id}]
@@ -1129,9 +1181,11 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/anime`
             + related: `https://kitsu.io/api/edge/anime-characters/1/anime`
     + character (object)
+        +links (object)
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/character`
             + related: `https://kitsu.io/api/edge/anime-characters/1/character`
     + castings (object)
+        + links (object)
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings`
             + related: `https://kitsu.io/api/edge/anime-characters/1/castings`
 ## animeProductionsAttributes (object)
@@ -1756,7 +1810,27 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/streamers/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/streamers/1/streaming-links`
             
+## streamingLinksAttributes (object)
++ role: main
++ url: `http://www.hulu.com/hacklegend-of-the-twilight`
++ subs: en (array)
++ dubs: ja (array)
 
+## streamingLinks (object)
++ id: 1 (required)
++ type: streamingLinks (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/streaming-links/1` (required)
++ attributes (streamingLinksAttributes)
++ relationships (object)
+    + streamer (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streaming-links/1/relationships/streamer`
+            + related: `https://kitsu.io/api/edge/streaming-links/1/streamer`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streaming-links/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/streaming-links/1/media`
 
 
 
