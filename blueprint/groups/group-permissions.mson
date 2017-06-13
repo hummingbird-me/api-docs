@@ -1,0 +1,20 @@
+## groupPermissionsAttributes (object)
++ permission: community (enum)
+    + owner
+    + tickets
+    + members
+    + leaders
+    + community
+    + content
+
+## groupPermissionsAttributes (object)
++ id: 1 (required)
++ type: groupPermissions (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-permissions/1` (required)
++ attributes (groupPermissionsAttributes)
++ relationships (object)
+    + groupMember (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-permissions/1/relationships/group-member`
+            + related: `https://kitsu.io/api/edge/group-permissions/1/group-member`
