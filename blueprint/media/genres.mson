@@ -4,8 +4,8 @@
 + description (nullable)
 
 ## genres (object)
-+ id: 1 ( required)
-+ type: genres ( required)
++ id: 1 (required)
++ type: genres (required)
 + links (object, required)
     + self: `https://kitsu.io/api/edge/genres/1` (required)
 + attributes (genresAttributes)

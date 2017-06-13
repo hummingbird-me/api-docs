@@ -2,7 +2,7 @@
 + titles (object)
     + en: Darker than Black (nullable)
     + en_jp (nullable)
-+ canonicalTitle
++ canonicalTitle (nullable)
 
 ## franchises (object)
 + id: 1 (required)

@@ -5,14 +5,14 @@
 + seasonNumber: 1 (number)
 + number: 1 (number)
 + synopsis: There are many rumors circulating...
-+ airdate: 1998-04-01 - YYYY-MM-DD date
++ airdate: `1998-04-01` - YYYY-MM-DD date
 + length (nullable) - length of episode in minutes
 + thumbnail (object)
     + original: `https://media.kitsu.io/episodes/thumbnails/28/original.jpg?1416327614`
 
 ## episodes (object)
-+ id: 28 (string, required)
-+ type: episodes (string, required)
++ id: 28 (required)
++ type: episodes (required)
 + links (object, required)
     + self: `https://kitsu.io/api/edge/episodes/28` (required)
 + attributes (episodesAttributes)

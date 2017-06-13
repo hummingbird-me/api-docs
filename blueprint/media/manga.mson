@@ -31,11 +31,11 @@
     + 20: 833
 + userCount: 5170 (number)
 + favoritesCount: 633 (number)
-+ startDate: 2009-09-09 (nullable) - YYYY-MM-DD date
++ startDate: `2009-09-09` (nullable) - YYYY-MM-DD date
 + endDate (nullable) - YYYY-MM-DD date
 + popularityRank: 2 (number)
 + ratingRank: 163 (number)
-+ ageRatin: R (enum, nullable)
++ ageRating: R (enum, nullable)
     + G - General Audiences
     + PG - Parental Guidance Suggested
     + R - Restricted
