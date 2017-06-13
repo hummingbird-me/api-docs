@@ -823,7 +823,7 @@ browser-based and mobile apps
 ## Manga [/manga/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the manga resource
+    + id (number, `14916`) - ID of the manga resource
 
 + Attributes (mangaAttributes)
 
@@ -1457,8 +1457,8 @@ browser-based and mobile apps
     + 20: 13607
 + userCount: 40405 (number)
 + favoritesCount: 3277 (number)
-+ startDate: 1998-04-03 - YYYY-MM-DD date
-+ endDate: 1999-04-04 - YYYY-MM-DD date
++ startDate: `1998-04-03` - YYYY-MM-DD date
++ endDate: `1999-04-04` - YYYY-MM-DD date
 + popularityRank: 10 (number)
 + ratingRank: 10 (number)
 + ageRating: R (enum, nullable)
@@ -1605,14 +1605,14 @@ browser-based and mobile apps
 + seasonNumber: 1 (number)
 + number: 1 (number)
 + synopsis: There are many rumors circulating...
-+ airdate: 1998-04-01 - YYYY-MM-DD date
++ airdate: `1998-04-01` - YYYY-MM-DD date
 + length (nullable) - length of episode in minutes
 + thumbnail (object)
     + original: `https://media.kitsu.io/episodes/thumbnails/28/original.jpg?1416327614`
 
 ## episodes (object)
-+ id: 28 (string, required)
-+ type: episodes (string, required)
++ id: 28 (required)
++ type: episodes (required)
 + links (object, required)
     + self: `https://kitsu.io/api/edge/episodes/28` (required)
 + attributes (episodesAttributes)
@@ -1625,7 +1625,7 @@ browser-based and mobile apps
 + titles (object)
     + en: Darker than Black (nullable)
     + en_jp (nullable)
-+ canonicalTitle
++ canonicalTitle (nullable)
 
 ## franchises (object)
 + id: 1 (required)
@@ -1644,8 +1644,8 @@ browser-based and mobile apps
 + description (nullable)
 
 ## genres (object)
-+ id: 1 ( required)
-+ type: genres ( required)
++ id: 1 (required)
++ type: genres (required)
 + links (object, required)
     + self: `https://kitsu.io/api/edge/genres/1` (required)
 + attributes (genresAttributes)
@@ -1701,11 +1701,11 @@ browser-based and mobile apps
     + 20: 833
 + userCount: 5170 (number)
 + favoritesCount: 633 (number)
-+ startDate: 2009-09-09 (nullable) - YYYY-MM-DD date
++ startDate: `2009-09-09` (nullable) - YYYY-MM-DD date
 + endDate (nullable) - YYYY-MM-DD date
 + popularityRank: 2 (number)
 + ratingRank: 163 (number)
-+ ageRatin: R (enum, nullable)
++ ageRating: R (enum, nullable)
     + G - General Audiences
     + PG - Parental Guidance Suggested
     + R - Restricted
