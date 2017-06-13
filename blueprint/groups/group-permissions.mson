@@ -1,11 +1,11 @@
 ## groupPermissionsAttributes (object)
 + permission: community (enum)
-    + owner
-    + tickets
-    + members
-    + leaders
     + community
     + content
+    + leaders
+    + members
+    + owner
+    + tickets
 
 ## groupPermissionsAttributes (object)
 + id: 1 (required)
