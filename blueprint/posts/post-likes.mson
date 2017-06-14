@@ -6,7 +6,7 @@
 + type: postLikes (string, required)
 + links (object, required)
     + self: `https://kitsu.io/api/edge/post-likes/1` (required)
-+ attributes (categoriesAttributes)
++ attributes (postLikesAttributes)
 + relationships (object)
     + post (object)
         + links (object)
