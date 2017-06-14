@@ -1,0 +1,49 @@
+## postsAttributes (object)
++ content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
++ contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
++ commensCount: 13 (number)
++ postLikesCount: 2 (number)
++ spoiler: false (boolean)
++ nsfw: false (boolean)
++ blocked: false (boolean)
++ deletedAt (nullable)
++ createdAt: `2013-06-21T20:15:54.522Z`
++ updatedAt: `2017-05-21T04:05:30.561Z`
++ topLevelCommentsCount: 12 (number)
++ editedAt (nullable)
+
+## posts (object)
++ id: 167585 (required)
++ type: posts (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/posts/167585` (required)
++ attributes (postsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/user`
+            + related: `https://kitsu.io/api/edge/posts/167585/user`
+    + targetUser (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/target-user`
+            + related: `https://kitsu.io/api/edge/posts/167585/target-user`
+    + targetGroup (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/target-group`
+            + related: `https://kitsu.io/api/edge/posts/167585/target-group`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/media`
+            + related: `https://kitsu.io/api/edge/posts/167585/media`
+    + spoiledUnit (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/spoiled-unit`
+            + related: `https://kitsu.io/api/edge/posts/167585/spoiled-unit`
+    + postLikes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/post-likes`
+            + related: `https://kitsu.io/api/edge/posts/167585/post-likes`
+    + comments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/comments`
+            + related: `https://kitsu.io/api/edge/posts/167585/comments`
