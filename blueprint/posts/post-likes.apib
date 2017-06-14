@@ -2,3 +2,34 @@
 
 + Parameters
     + id (number, `1`) - ID of the post like resource
+
++ Attributes (postLikesAttributes)
+
+### GET List [GET /categories]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (postLikes)
+        + meta (object, required)
+            + count: 1600082 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1600072` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (postLikesAttributes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
