@@ -1,0 +1,14 @@
+## groupNeighbors (object)
++ id: 1 (required)
++ type: groupNeighbors (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-neighbors/1` (required)
++ relationships (object)
+    + source (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/source`
+            + related: `https://kitsu.io/api/edge/group-neighbors/1/source`
+    + destination (object)
+        + links: (object)
+            + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
+            + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
