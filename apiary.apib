@@ -1078,10 +1078,72 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the post like resource
+
++ Attributes (postLikesAttributes)
+
+### GET List [GET /post-likes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (postLikes)
+        + meta (object, required)
+            + count: 1600082 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1600072` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (postLikesAttributes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Posts [/posts/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the post resource
+    + id (number, `167585`) - ID of the post resource
+
++ Attributes (postsAttributes)
+
+### GET List [GET /posts]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (posts)
+        + meta (object, required)
+            + count: 887155 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (postsAttributes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 # Group Reviews
 
 ## Review Likes [/review-likes/{id}]
@@ -1604,7 +1666,6 @@ browser-based and mobile apps
     + large: `https://media.kitsu.io/categories/images/10/large.jpg?1496212711`
     + original: `https://media.kitsu.io/categories/images/10/original.jpg?1496212711`
 
-
 ## categories (object)
 + id: 10 (string, required)
 + type: categories (string, required)
@@ -1954,8 +2015,73 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/comments/7760392/relationships/replies`
             + related: `https://kitsu.io/api/edge/comments/7760392/replies`
+## postLikesAttributes (object)
++ createdAt: `2016-11-02T00:20:19.057Z`
 
+## postLikes (object)
++ id: 1 (required)
++ type: postLikes (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/post-likes/1` (required)
++ attributes (postLikesAttributes)
++ relationships (object)
+    + post (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/post-likes/1/relationships/post`
+            + related: `https://kitsu.io/api/edge/post-likes/1/post`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/post-likes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/post-likes/1/user`
+## postsAttributes (object)
++ content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
++ contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
++ commensCount: 13 (number)
++ postLikesCount: 2 (number)
++ spoiler: false (boolean)
++ nsfw: false (boolean)
++ blocked: false (boolean)
++ deletedAt (nullable)
++ createdAt: `2013-06-21T20:15:54.522Z`
++ updatedAt: `2017-05-21T04:05:30.561Z`
++ topLevelCommentsCount: 12 (number)
++ editedAt (nullable)
 
+## posts (object)
++ id: 167585 (required)
++ type: posts (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/posts/167585` (required)
++ attributes (postsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/user`
+            + related: `https://kitsu.io/api/edge/posts/167585/user`
+    + targetUser (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/target-user`
+            + related: `https://kitsu.io/api/edge/posts/167585/target-user`
+    + targetGroup (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/target-group`
+            + related: `https://kitsu.io/api/edge/posts/167585/target-group`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/media`
+            + related: `https://kitsu.io/api/edge/posts/167585/media`
+    + spoiledUnit (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/spoiled-unit`
+            + related: `https://kitsu.io/api/edge/posts/167585/spoiled-unit`
+    + postLikes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/post-likes`
+            + related: `https://kitsu.io/api/edge/posts/167585/post-likes`
+    + comments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/comments`
+            + related: `https://kitsu.io/api/edge/posts/167585/comments`
 
 
 ## reviewLikes (object)
