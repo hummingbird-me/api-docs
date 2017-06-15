@@ -1,0 +1,38 @@
+## commentsAttributes (object)
++ content: `This is a test.`
++ contentFormatted: `This is a test.`
++ blocked: false (boolean)
++ deletedAt (nullable)
++ createdAt: `2014-08-07T19:08:14.364Z`
++ likesCount: 0 (number)
++ repliesCount: 0 (number)
++ updatedAt: `2014-08-07T19:08:14.364Z`
++ editedAt (nullable)
+
+## comments (object)
++ id: 7760392 (required)
++ type: comments (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/comments/7760392` (required)
++ attributes (commentsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/user`
+            + related: `https://kitsu.io/api/edge/comments/7760392/user`
+    + post (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/post`
+            + related: `https://kitsu.io/api/edge/comments/7760392/post`
+    + parent (object)
+        + links (object)
+          + self: `https://kitsu.io/api/edge/comments/7760392/relationships/parent`
+          + related: `https://kitsu.io/api/edge/comments/7760392/parent`
+    + likes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/likes`
+            + related: `https://kitsu.io/api/edge/comments/7760392/likes`
+    + replies (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/replies`
+            + related: `https://kitsu.io/api/edge/comments/7760392/replies`
