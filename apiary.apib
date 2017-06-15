@@ -1042,6 +1042,38 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the comment resource
+
++ Attributes (commentsAttributes)
+
+### GET List [GET /comments]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (comments)
+        + meta (object, required)
+            + count: 1274779 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=1274769` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (comments)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
 ## Post Likes [/post-likes/{id}]
 
 + Parameters
@@ -1884,7 +1916,44 @@ browser-based and mobile apps
             + related: `https://kitsu.io/api/edge/streaming-links/1/media`
 
 
+## commentsAttributes (object)
++ content: `This is a test.`
++ contentFormatted: `This is a test.`
++ blocked: false (boolean)
++ deletedAt (nullable)
++ createdAt: `2014-08-07T19:08:14.364Z`
++ likesCount: 0 (number)
++ repliesCount: 0 (number)
++ updatedAt: `2014-08-07T19:08:14.364Z`
++ editedAt (nullable)
 
+## comments (object)
++ id: 7760392 (required)
++ type: comments (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/comments/7760392` (required)
++ attributes (commentsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/user`
+            + related: `https://kitsu.io/api/edge/comments/7760392/user`
+    + post (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/post`
+            + related: `https://kitsu.io/api/edge/comments/7760392/post`
+    + parent (object)
+        + links (object)
+          + self: `https://kitsu.io/api/edge/comments/7760392/relationships/parent`
+          + related: `https://kitsu.io/api/edge/comments/7760392/parent`
+    + likes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/likes`
+            + related: `https://kitsu.io/api/edge/comments/7760392/likes`
+    + replies (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/replies`
+            + related: `https://kitsu.io/api/edge/comments/7760392/replies`
 
 
 
