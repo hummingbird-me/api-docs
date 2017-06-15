@@ -3,7 +3,7 @@
 + about: `Group for fans of the One Piece anime and or manga...`
 + locale (nullable)
 + membersCount: 541 (number)
-+ name: `One Piece group`
++ name: One Piece group
 + nsfw: false (boolean)
 + privacy: open (enum)
     + closed
