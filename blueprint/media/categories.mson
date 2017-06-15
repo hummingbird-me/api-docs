@@ -12,7 +12,6 @@
     + large: `https://media.kitsu.io/categories/images/10/large.jpg?1496212711`
     + original: `https://media.kitsu.io/categories/images/10/original.jpg?1496212711`
 
-
 ## categories (object)
 + id: 10 (string, required)
 + type: categories (string, required)
