@@ -579,7 +579,36 @@ browser-based and mobile apps
 ## Group Neighbors [/group-neighbors/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the group neighbors resource
+    + id (number, `1`) - ID of the group neighbor resource
+
+### GET List [GET /group-neighbors]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupNeighbors)
+        + meta (object, required)
+            + count: 296 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=286` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupNeighbors)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Groups [/groups/{id}]
 
 + Parameters
@@ -1546,7 +1575,20 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/group-members/1/relationships/notes`
             + related: `https://kitsu.io/api/edge/group-members/1/notes`
-
+## groupNeighbors (object)
++ id: 1 (required)
++ type: groupNeighbors (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-neighbors/1` (required)
++ relationships (object)
+    + source (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/source`
+            + related: `https://kitsu.io/api/edge/group-neighbors/1/source`
+    + destination (object)
+        + links: (object)
+            + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
+            + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
 ## groupsAttributes (object)
 + slug: `one-piece-group`
 + about: `Group for fans of the One Piece anime and or manga...`
