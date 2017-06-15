@@ -2,8 +2,8 @@
 + createdAt: `2016-11-02T00:20:19.057Z`
 
 ## postLikes (object)
-+ id: 1 (string, required)
-+ type: postLikes (string, required)
++ id: 1 (required)
++ type: postLikes (required)
 + links (object, required)
     + self: `https://kitsu.io/api/edge/post-likes/1` (required)
 + attributes (postLikesAttributes)
