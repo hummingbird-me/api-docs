@@ -1,4 +1,35 @@
 ## Posts [/posts/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the post resource
+    + id (number, `167585`) - ID of the post resource
+
++ Attributes (postsAttributes)
+
+### GET List [GET /posts]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (posts)
+        + meta (object, required)
+            + count: 887155 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (postsAttributes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
