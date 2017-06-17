@@ -506,6 +506,14 @@ browser-based and mobile apps
     + Attributes (error400)
 # Group Groups
 
+## Group Action Logs [/group-action-logs/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group action log resource
+## Group Bans [/group-bans/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group ban resource
 ## Group Categories [/group-categories/{id}]
 
 + Parameters
@@ -541,6 +549,14 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Group Invites [/group-invites/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group invite resource
+## Group Member Notes [/group-member-notes/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group member note resource
 ## Group Members [/group-members/{id}]
 
 + Parameters
@@ -609,6 +625,53 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Group Permissions [/group-permissions/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group permissions resource
+
++ Attributes (groupPermissionsAttributes)
+
+### GET List [GET /group-permissions]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupPermissions)
+        + meta (object, required)
+            + count: 5046 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5036` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupPermissions)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+## Group Reports [/group-reports/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group report resource
+## Group Ticket Messages [/group-ticket-messages/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group ticket message resource
+## Group Tickets [/group-tickets/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the group ticket resource
 ## Groups [/groups/{id}]
 
 + Parameters
@@ -644,6 +707,10 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Leader Chat Messages [/leader-chat-messages/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the leader chat message resource
 # Group Media
 
 ## Anime [/anime/{id}]
@@ -717,8 +784,22 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Category Favorites [/category-favorites/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the category favorite resource
+## Category Recommendations [/category-recommendations/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the category recommendation resource
+## Chapters [/chapters/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the chapter resource
+## Drama [/drama/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the drama resource
 ## Episodes [/episodes/{id}]
 
 + Parameters
@@ -951,6 +1032,26 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Media Attribute Votes [/media-attribute-votes/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media attribute vote resource
+## Media Attributes [/media-attributes/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media attribute resource
+## Media Follows [/media-follows/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media follow resource
+## Media Reaction Votes [/media-reaction-votes/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media reaction vote resource
+## Media Reactions [/media-reactions/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media reaction resource
 ## Media Relationships [/media-relationships/{id}]
 
 + Parameters
@@ -1169,6 +1270,10 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Post Follows [/post-follows/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the post follow resource
 ## Posts [/posts/{id}]
 
 + Parameters
@@ -1204,6 +1309,10 @@ browser-based and mobile apps
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+## Reports [/post-follows/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the report resource
 # Group Reviews
 
 ## Review Likes [/review-likes/{id}]
@@ -1355,17 +1464,62 @@ browser-based and mobile apps
                 + detail: helloworld is not a valid value for id.
                 + code: 103
                 + status: 400
+# Group User Libraries
+
+## Library Entries [/library-entries/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the library entry resource
+## Library Entry Logs [/library-entry-logs/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the library entry log resource
+## Library Events [/library-events/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the library event resource
+## List Imports [/list-imports/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the list import resource
 # Group Users
 
+## Blocks [/blocks/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the block resource
+## Favorites [/favorites/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the favorite resource
+## Follows [/follows/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the follow resource
+## Profile Link Sites [/profile-link-sites/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the profile link site resource
+## Profile Links [/profile-links/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the profile link resource
+## Roles [/roles/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the role resource
+## Stats [/stats/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the stat resource
+## User Roles [/user-roles/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the user role resource
+## Users [/users/{id}]
 
++ Parameters
+    + id (number, `1`) - ID of the user resource
 
 # Data Structures
 
@@ -1533,6 +1687,8 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/producers/1/relationships/anime-productions`
             + related: `https://kitsu.io/api/edge/producers/1/anime-productions`
 
+
+
 ## groupCategoriesAttributes (object)
 + name: `Anime & Manga`
 + slug: `anime-manga`
@@ -1544,6 +1700,8 @@ browser-based and mobile apps
 + links (object, required)
     + self: `https://kitsu.io/api/edge/group-categories/1` (required)
 + attributes (groupCategoriesAttributes)
+
+
 ## groupMembersAttributes (object)
 + rank: admin (enum)
     + admin
@@ -1589,6 +1747,29 @@ browser-based and mobile apps
         + links: (object)
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
+## groupPermissionsAttributes (object)
++ permission: community (enum)
+    + community
+    + content
+    + leaders
+    + members
+    + owner
+    + tickets
+
+## groupPermissionsAttributes (object)
++ id: 1 (required)
++ type: groupPermissions (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/group-permissions/1` (required)
++ attributes (groupPermissionsAttributes)
++ relationships (object)
+    + groupMember (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-permissions/1/relationships/group-member`
+            + related: `https://kitsu.io/api/edge/group-permissions/1/group-member`
+
+
+
 ## groupsAttributes (object)
 + slug: `one-piece-group`
 + about: `Group for fans of the One Piece anime and or manga...`
@@ -1658,6 +1839,8 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/groups/1/relationships/category`
             + related: `https://kitsu.io/api/edge/groups/1/category`
+
+
 
 ## animeAttributes (object)
 + slug: `cowboy-bebop`
@@ -1830,6 +2013,8 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/categories/10/relationships/manga`
             + related: `https://kitsu.io/api/edge/categories/10/manga`
+
+
 
 
 ## episodesAttributes (object)
@@ -2049,6 +2234,11 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/mappings/1/relationships/media`
             + related: `https://kitsu.io/api/edge/mappings/1/media`
+
+
+
+
+
 ## mediaRelationshipsAttributes (object)
 + role: prequel (enum) - Relation to the source media
     + adaptation
@@ -2118,6 +2308,7 @@ browser-based and mobile apps
             + related: `https://kitsu.io/api/edge/streaming-links/1/media`
 
 
+
 ## commentsAttributes (object)
 + content: `This is a test.`
 + contentFormatted: `This is a test.`
@@ -2174,6 +2365,7 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/post-likes/1/relationships/user`
             + related: `https://kitsu.io/api/edge/post-likes/1/user`
+
 ## postsAttributes (object)
 + content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
 + contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
@@ -2223,6 +2415,7 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/posts/167585/relationships/comments`
             + related: `https://kitsu.io/api/edge/posts/167585/comments`
+
 
 
 ## reviewLikes (object)
@@ -2287,29 +2480,3 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/site-announcements/2/relationships/user`
             + related: `https://kitsu.io/api/edge/site-announcements/2/user`
-
-
-
-
-
-
-
-
-
-
-
-## error400 (object)
-+ errors(array)
-    + (object)
-        + title: Invalid page value
-        + detail: 0 is not a valid value for limit page parameter.
-        + code: 118
-        + status: 400
-
-## error404 (object)
-+ errors(array)
-    + (object)
-        + title: Record not found
-        + detail: The record identified by 0 could not be found.
-        + code: 404
-        + status: 404
