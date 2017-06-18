@@ -1,0 +1,14 @@
+## follows (object)
++ id: 3 (required)
++ type: follows (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/follows/3` (required)
++ relationships (object)
+    + follower (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/follows/3/relationships/follower`
+            + related: `https://kitsu.io/api/edge/follows/3/follower`
+    + followed (object)
+        + links: (object)
+            + self: `https://kitsu.io/api/edge/follows/3/relationships/followed`
+            + related: `https://kitsu.io/api/edge/follows/3/followed`
