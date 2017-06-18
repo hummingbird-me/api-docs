@@ -1,0 +1,9 @@
+## profileLinkSitesAttributes (object)
++ name: Twitter
+
+## profileLinkSites (object)
++ id: 1 (required)
++ type: profileLinkSites (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/profile-link-sites/1` (required)
++ attributes (profileLinkSitesAttributes)
