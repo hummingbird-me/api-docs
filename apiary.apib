@@ -378,7 +378,7 @@ browser-based and mobile apps
         + data (array, required)
             + (mangaCharacters)
         + meta (object, required)
-            + count: 0 (number, required)
+            + count: 3 (number, required)
         + links (object, required)
             + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
             + prev: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
@@ -1500,6 +1500,37 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the profile link site resource
+
++ Attributes (profileLinkSitesAttributes)
+
+### GET List [GET /profile-link-sites]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (profileLinkSites)
+        + meta (object, required)
+            + count: 29 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=19` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (profileLinkSites)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Profile Links [/profile-links/{id}]
 
 + Parameters
@@ -1695,8 +1726,25 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/characters/1/relationships/castings`
             + related: `https://kitsu.io/api/edge/characters/1/castings`
 ## mangaCharactersAttributes (object)
++ role: main (enum) - Role the character plays in the manga
+    + main
+    + supporting
 
 ## mangaCharacters (object)
++ id: 1 (required)
++ type: mangaCharacters (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/manga-characters/1` (required)
++ attributes (mangaCharactersAttributes)
++ relationships (object)
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-characters/1/relationships/manga`
+            + related: `https://kitsu.io/api/edge/manga-characters/1/manga`
+    + character (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-characters/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/manga-characters/1/character`
 ## mangaStaffAttributes (object)
 + role: producer - Role of the person (Multiple roles are comma seperated)
 
