@@ -1,3 +1,20 @@
 ## mangaCharactersAttributes (object)
++ role: main (enum) - Role the character plays in the manga
+    + main
+    + supporting
 
 ## mangaCharacters (object)
++ id: 1 (required)
++ type: mangaCharacters (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/manga-characters/1` (required)
++ attributes (mangaCharactersAttributes)
++ relationships (object)
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-characters/1/relationships/manga`
+            + related: `https://kitsu.io/api/edge/manga-characters/1/manga`
+    + character (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/manga-characters/1/relationships/character`
+            + related: `https://kitsu.io/api/edge/manga-characters/1/character`
