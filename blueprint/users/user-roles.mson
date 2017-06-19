@@ -1,0 +1,14 @@
+## userRoles (object)
++ id: 1 (required)
++ type: userRoles (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/user-roles/1` (required)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/user-roles/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/user-roles/1/user`
+    + role (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/user-roles/1/relationships/role`
+            + related: `https://kitsu.io/api/edge/user-roles/1/role`
