@@ -1547,6 +1547,35 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the user role resource
+
+### GET List [GET /user-roles]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (userRoles)
+        + meta (object, required)
+            + count: 103 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=93` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (userRoles)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Users [/users/{id}]
 
 + Parameters
