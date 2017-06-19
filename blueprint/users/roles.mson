@@ -1,0 +1,20 @@
+## rolesAttributes (object)
++ name: admin
++ resourceId (nullable)
++ resourceType (nullable)
+
+## roles (object)
++ id: 1 (required)
++ type: roles (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/roles/1` (required)
++ attributes (rolesAttributes)
++ relationships (object)
+    + userRoles (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/roles/1/relationships/user-roles`
+            + related: `https://kitsu.io/api/edge/roles/1/user-roles`
+    + resource (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/roles/1/relationships/resource`
+            + related: `https://kitsu.io/api/edge/roles/1/resource`
