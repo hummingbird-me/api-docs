@@ -1,0 +1,63 @@
+## libraryEntriesAttributes(object)
++ status: completed
+    + completed
+    + current
+    + dropped
+    + onHold
+    + planned
++ progress: 13 (number)
++ volumesOwned: 0 (number)
++ reconsuming: false (boolean)
++ reconsumeCount: 0 (number)
++ notes (nullable)
++ private: false (boolean)
++ updatedAt: `2016-01-15T05:53:48.037Z`
++ progressedAt: `2016-01-15T05:53:48.037Z`
++ startedAt (object)
++ finishedAt: `2016-01-15T05:53:48.037Z`
++ rating: `3.5`
++ ratingTwenty: 14 (number)
+
+## libraryEntries (object)
++ id: 1644 (required)
++ type: libraryEntries (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/library-entries/1644` (required)
++ attributes (libraryEntriesAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/user`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/user`
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/anime`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/anime`
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/manga`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/manga`
+    + drama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/drama`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/drama`
+    + review (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/review`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/review`
+    + mediaReaction (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/media-reaction`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/media-reaction`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/media`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/media`
+    + unit (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/unit`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/unit`
+    + nextUnit (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/next-unit`
+            + related: `https://kitsu.io/api/edge/library-entries/1644/next-unit`
