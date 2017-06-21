@@ -1,0 +1,19 @@
+## postFollowsAttributes (object)
++ createdAt: `2017-05-04T03:53:54.049Z`
++ updatedAt: `2017-05-04T03:53:54.049Z`
+
+## postFollows (object)
++ id: 3 (required)
++ type: postFollows (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/post-follows/3` (required)
++ attributes (postFollowsAttributes)
++ relationships (object)
+    + post (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/post-follows/3/relationships/post`
+            + related: `https://kitsu.io/api/edge/post-follows/3/post`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/post-follows/3/relationships/user`
+            + related: `https://kitsu.io/api/edge/post-follows/3/user`
