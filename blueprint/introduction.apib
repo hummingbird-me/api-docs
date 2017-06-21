@@ -1,3 +1,31 @@
+<!-- # Versioning
+
+Every year, we release a new version of the API, numbered by the
+last two digits of the current year. For example, the root URL of
+this (the 2017) release is `https://kitsu.io/api/17/`.
+
+No fields, endpoints, or resources will be removed until the next
+year's release, but may be changed to return empty values (arrays,
+empty strings, etc.) before then. Fields, endpoints, and resources
+may be added throughout the lifetime of a release.
+
+In addition to these versioned APIs, there is access to the same API
+our website uses. However, this offers no guarantees: anything could
+change at any time. We suggest you don't use this, but if you need
+to, it can be accessed at `https://kitsu.io/api/edge/`.
+
+## Life Cycle
+
+Upon release of a new version, the previous version will be
+maintained for one year or until usage drops below 2% of API
+traffic.
+
+During this period, it will not be updated to have any new fields,
+endpoints, or resources. You are expected to keep your applications
+running on the latest version of the API. For most applications,
+upgrading should take no more than a few hours of work.
+-->
+
 # JSON API
 
 The Kitsu API implements the JSON API specification. This means
@@ -97,43 +125,44 @@ a JSON API client to implement the Kitsu API for this reason.
 Many implementations in over 13 languages can be found on the
 [JSON API website][jsonapi-client].
 
-# Response Codes
+# HTTP Methods
+
+Method   | Description
+-------- | -----------
+`GET`    | Read - retrieve resources
+`POST`   | Create - create new resources
+`PATCH`  | Update - (partially) modify existing resources
+`DELETE` | Delete - remove resources
+
+# Status Codes & Errors
 
 Code  | Description
 ----- | -----------
-`200` | Success - request has succeeded
-`201` | Success - new resource created
-`400` | Bad Request - malformed request syntax
-`401` | Unauthorized - request lacks valid authentication credentials
+`200` | OK - request succeeded (GET, PATCH, DELETE)
+`201` | Created - new resource created (POST)
+`204` | No Content - request succeeded (DELETE)
+`400` | Bad Request - malformed request
+`401` | Unauthorized - invalid or no authentication details provided
 `404` | Not Found - resource does not exist
+`406` | Not Acceptable - invalid `Accept` header
 `5xx` | Server Error
 
-# Versioning
+## Error Responses
 
-Every year, we release a new version of the API, numbered by the
-last two digits of the current year. For example, the root URL of
-this (the 2017) release is `https://kitsu.io/api/17/`.
+Error responses are human-readable and will always have the following structure:
 
-No fields, endpoints, or resources will be removed until the next
-year's release, but may be changed to return empty values (arrays,
-empty strings, etc.) before then. Fields, endpoints, and resources
-may be added throughout the lifetime of a release.
-
-In addition to these versioned APIs, there is access to the same API
-our website uses. However, this offers no guarantees: anything could
-change at any time. We suggest you don't use this, but if you need
-to, it can be accessed at `https://kitsu.io/api/edge/`.
-
-## Life Cycle
-
-Upon release of a new version, the previous version will be
-maintained for one year or until usage drops below 2% of API
-traffic.
-
-During this period, it will not be updated to have any new fields,
-endpoints, or resources. You are expected to keep your applications
-running on the latest version of the API. For most applications,
-upgrading should take no more than a few hours of work.
+```
+{
+    "errors": [
+        {
+            "title": "Error name"
+            "detail": "Further information about the error",
+            "code": "102",
+            "status": "400"
+        }
+    ]
+}
+```
 
 # Questions?
 
