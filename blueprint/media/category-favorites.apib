@@ -1,4 +1,33 @@
 ## Category Favorites [/category-favorites/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the category favorite resource
+    + id (number, `2`) - ID of the category favorite resource
+
+### GET List [GET /category-favorites]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (categoryFavorites)
+        + meta (object, required)
+            + count: 351 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (categoryFavorites)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
