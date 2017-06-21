@@ -10,9 +10,6 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
-cd dist
-
-git init
 git config user.name "$GH_USERNAME"
 git config user.email "$GH_EMAIL"
 
@@ -22,6 +19,6 @@ git reset upstream/master
 
 touch .
 
-git add -A .
+git add -A apiary.apib
 git commit -a -m "chore: deploy ${rev}"
 git push -q upstream HEAD:master > /dev/null 2>&1
