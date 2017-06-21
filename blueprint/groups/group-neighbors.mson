@@ -9,6 +9,6 @@
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/source`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/source`
     + destination (object)
-        + links: (object)
+        + links (object)
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
