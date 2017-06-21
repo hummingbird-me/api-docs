@@ -7,7 +7,7 @@
     + owner
     + tickets
 
-## groupPermissionsAttributes (object)
+## groupPermissions (object)
 + id: 1 (required)
 + type: groupPermissions (required)
 + links (object, required)
