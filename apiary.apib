@@ -628,7 +628,7 @@ browser-based and mobile apps
 ## Group Permissions [/group-permissions/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the group permissions resource
+    + id (number, `1`) - ID of the group permission resource
 
 + Attributes (groupPermissionsAttributes)
 
@@ -787,7 +787,36 @@ browser-based and mobile apps
 ## Category Favorites [/category-favorites/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the category favorite resource
+    + id (number, `2`) - ID of the category favorite resource
+
+### GET List [GET /category-favorites]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (categoryFavorites)
+        + meta (object, required)
+            + count: 351 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (categoryFavorites)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Category Recommendations [/category-recommendations/{id}]
 
 + Parameters
@@ -1044,6 +1073,35 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the media follow resource
+
+### GET List [GET /media-follows]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (mediaFollows)
+        + meta (object, required)
+            + count: 10256 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10246` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaFollows)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Media Reaction Votes [/media-reaction-votes/{id}]
 
 + Parameters
@@ -1263,7 +1321,7 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (postLikesAttributes)
+        + data (postLikes)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (error404)
@@ -1273,7 +1331,38 @@ browser-based and mobile apps
 ## Post Follows [/post-follows/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the post follow resource
+    + id (number, `3`) - ID of the post follow resource
+
++ Attributes (postFollowsAttributes)
+
+### GET List [GET /post-follows]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (postFollows)
+        + meta (object, required)
+            + count: 2076 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=2066` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (postFollows)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Posts [/posts/{id}]
 
 + Parameters
@@ -1302,14 +1391,14 @@ browser-based and mobile apps
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (postsAttributes)
+        + data (posts)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (error404)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
-## Reports [/post-follows/{id}]
+## Reports [/reports/{id}]
 
 + Parameters
     + id (number, `1`) - ID of the report resource
@@ -1492,6 +1581,37 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the favorite resource
+
++ Attributes (favoritesAttributes)
+
+### GET List [GET /favorites]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (favorites)
+        + meta (object, required)
+            + count: 457266 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=457256` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (favorites)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Follows [/follows/{id}]
 
 + Parameters
@@ -1535,6 +1655,37 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the profile link resource
+
++ Attributes (profileLinksAttributes)
+
+### GET List [GET /profile-links]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (profileLinks)
+        + meta (object, required)
+            + count: 11465 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=11455` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (profileLinks)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Roles [/roles/{id}]
 
 + Parameters
@@ -1852,7 +2003,7 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/source`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/source`
     + destination (object)
-        + links: (object)
+        + links (object)
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
 ## groupPermissionsAttributes (object)
@@ -1864,7 +2015,7 @@ browser-based and mobile apps
     + owner
     + tickets
 
-## groupPermissionsAttributes (object)
+## groupPermissions (object)
 + id: 1 (required)
 + type: groupPermissions (required)
 + links (object, required)
@@ -2121,7 +2272,20 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/categories/10/relationships/manga`
             + related: `https://kitsu.io/api/edge/categories/10/manga`
-
+## categoryFavorites (object)
++ id: 2 (required)
++ type: categoryFavorites (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/category-favorites/2` (required)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/category-favorites/2/relationships/user`
+            + related: `https://kitsu.io/api/edge/category-favorites/2/user`
+    + category (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/category-favorites/2/relationships/category`
+            + related: `https://kitsu.io/api/edge/category-favorites/2/category`
 
 
 
@@ -2344,7 +2508,20 @@ browser-based and mobile apps
             + related: `https://kitsu.io/api/edge/mappings/1/media`
 
 
-
+## mediaFollows (object)
++ id: 1 (required)
++ type: mediaFollows (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/media-follows/1` (required)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-follows/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-follows/1/user`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-follows/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/media-follows/1/media`
 
 
 ## mediaRelationshipsAttributes (object)
@@ -2472,7 +2649,25 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/post-likes/1/relationships/user`
             + related: `https://kitsu.io/api/edge/post-likes/1/user`
+## postFollowsAttributes (object)
++ createdAt: `2017-05-04T03:53:54.049Z`
++ updatedAt: `2017-05-04T03:53:54.049Z`
 
+## postFollows (object)
++ id: 3 (required)
++ type: postFollows (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/post-follows/3` (required)
++ attributes (postFollowsAttributes)
++ relationships (object)
+    + post (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/post-follows/3/relationships/post`
+            + related: `https://kitsu.io/api/edge/post-follows/3/post`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/post-follows/3/relationships/user`
+            + related: `https://kitsu.io/api/edge/post-follows/3/user`
 ## postsAttributes (object)
 + content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
 + contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
@@ -2593,7 +2788,24 @@ browser-based and mobile apps
 
 
 
+## favoritesAttributes (object)
++ favRank: 11 (number)
 
+## favorites (object)
++ id: 1 (required)
++ type: favorites (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/favorites/1` (required)
++ attributes (favoritesAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/favorites/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/favorites/1/user`
+    + item (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/favorites/1/relationships/item`
+            + related: `https://kitsu.io/api/edge/favorites/1/item`
 
 ## profileLinkSitesAttributes (object)
 + name: Twitter
@@ -2604,7 +2816,25 @@ browser-based and mobile apps
 + links (object, required)
     + self: `https://kitsu.io/api/edge/profile-link-sites/1` (required)
 + attributes (profileLinkSitesAttributes)
+## profileLinksAttributes (object)
+ + url: `https://github.com/vevix`
 
+## profileLinks (object)
++ id: 1 (required)
++ type: profileLinks (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/profile-links/1` (required)
++ attributes (profileLinksAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/profile-links/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/profile-links/1/user`
+    + profileLinkSite (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/profile-links/1/relationships/profile-link-site`
+            + related: `https://kitsu.io/api/edge/profile-links/1/profile-link-site`
+                  
 ## rolesAttributes (object)
 + name: admin
 + resourceId (nullable)
