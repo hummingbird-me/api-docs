@@ -1,0 +1,14 @@
+## mediaFollows (object)
++ id: 1 (required)
++ type: mediaFollows (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/media-follows/1` (required)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-follows/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-follows/1/user`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-follows/1/relationships/media`
+            + related: `https://kitsu.io/api/edge/media-follows/1/media`
