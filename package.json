@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "hercule kitsu.apib -o apiary.apib | node tools/validate"
+    "del": "del apiary.apib",
+    "build": "hercule kitsu.apib -o apiary.apib",
+    "validate": "node tools/validate",
+    "test": "run-s del build validate"
   },
   "dependencies": {
     "chalk": "~1.1.3",
+    "del-cli": "~1.0.0",
     "drafter.js": "~2.6.7",
-    "hercule": "~4.0.0"
+    "hercule": "~4.0.0",
+    "npm-run-all": "^4.0.2"
   }
 }
