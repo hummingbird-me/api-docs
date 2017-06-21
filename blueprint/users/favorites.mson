@@ -1,0 +1,18 @@
+## favoritesAttributes (object)
++ favRank: 11 (number)
+
+## favorites (object)
++ id: 1 (required)
++ type: favorites (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/favorites/1` (required)
++ attributes (favoritesAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/favorites/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/favorites/1/user`
+    + item (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/favorites/1/relationships/item`
+            + related: `https://kitsu.io/api/edge/favorites/1/item`
