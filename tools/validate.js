@@ -2,7 +2,7 @@ const { readFileSync } = require('fs')
 const { validate } = require('drafter.js')
 const { gray, red } = require('chalk')
 
-const file = readFileSync('./dist/apiary.apib', 'utf8')
+const file = readFileSync('apiary.apib', 'utf8')
 
 validate(file, {
   requireBlueprintname: true
