@@ -7,10 +7,13 @@
     + completed
     + current
     + dropped
-    + onHold
+    + on_hold
     + planned
 + volumesOwned: 0 (number)
-+ actionPerformed: update
++ actionPerformed: update (enum)
+    + create
+    + destroy
+    + update
 + syncStatus: success (enum)
     + error
     + pending
