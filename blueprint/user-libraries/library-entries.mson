@@ -1,5 +1,5 @@
 ## libraryEntriesAttributes(object)
-+ status: completed
++ status: completed (enum)
     + completed
     + current
     + dropped
