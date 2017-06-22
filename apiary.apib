@@ -1622,7 +1622,38 @@ browser-based and mobile apps
 ## Library Entry Logs [/library-entry-logs/{id}]
 
 + Parameters
-    + id (number, `1`) - ID of the library entry log resource
+    + id (number, `221679`) - ID of the library entry log resource
+
++ Attributes (libraryEntryLogsAttributes)
+
+### GET List [GET /library-entry-logs]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (libraryEntryLogs)
+        + meta (object, required)
+            + count: 6409 (number, required)
+        + links (object, required)
+            + first: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + prev: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=6399` (required)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
+### GET Single [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (libraryEntryLogs)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
 ## Library Events [/library-events/{id}]
 
 + Parameters
@@ -2906,7 +2937,44 @@ browser-based and mobile apps
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/next-unit`
             + related: `https://kitsu.io/api/edge/library-entries/1644/next-unit`
+## libraryEntryLogsAttributes (object)
++ progress: 5 (number)
++ rating (nullable)
++ reconsumeCount: 0 (number)
++ reconsuming: false (boolean)
++ status: current (enum)
+    + completed
+    + current
+    + dropped
+    + on_hold
+    + planned
++ volumesOwned: 0 (number)
++ actionPerformed: update (enum)
+    + create
+    + destroy
+    + update
++ syncStatus: success (enum)
+    + error
+    + pending
+    + success
++ createdAt: `2017-06-20T04:39:42.808Z`
++ errorMessage (nullable)
 
+## libraryEntryLogs (object)
++ id: 221679 (required)
++ type: libraryEntryLogs (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/library-entry-logs/221679` (required)
++ attributes (libraryEntryLogsAttributes)
++ relationships (object)
+    + linkedAccount (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/linked-account`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/linked-account`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/media`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/media`
 
 
 
