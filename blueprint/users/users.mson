@@ -1,0 +1,110 @@
+## usersAttributes (object)
++ name: vikhyat
++ pastNames (array)
++ about (nullable)
++ bio: `Co-founder of Hummingbird. Obsessed with Gumi.`
++ aboutFormatted (nullable)
++ location: `Seattle, WA`
++ waifuOrHusbando: Waifu
++ followersCount: 1716 (number)
++ createdAt: `2013-02-20T16:21:01.289Z`
++ facebookId: 530577081
++ followingCount: 2031 (number)
++ lifeSpentOnAnime: 45474 (number)
++ birthday (nullable)
++ gender (nullable)
++ updatedAt: `2017-06-06T20:17:07.447Z`
++ commentsCount: 0 (number)
++ favoritesCount: 4 (number)
++ likesGivenCount: 34 (number)
++ reviewsCount: 0 (number)
++ likesReceivedCount: 7 (number)
++ postsCount: 1 (number)
++ ratingsCount: 0 (number)
++ proExpiresAt: `2015-01-30T16:49:35.173Z`
++ title (nullable)
++ profileCompleted: false (boolean)
++ feedCompleted: true (boolean)
++ website: `http://twitter.com/vikhyatk`
++ avatar (object)
+    + tiny: `https://media.kitsu.io/users/avatars/1/tiny.jpg?1434087646`
+    + small: `https://media.kitsu.io/users/avatars/1/small.jpg?1434087646`
+    + medium: `https://media.kitsu.io/users/avatars/1/medium.jpg?1434087646`
+    + large: `https://media.kitsu.io/users/avatars/1/large.jpg?1434087646`
+    + original: `https://media.kitsu.io/users/avatars/1/original.jpg?1434087646`
++ coverImage (object)
+    + tiny: `https://media.kitsu.io/users/cover_images/1/small.jpg`
+    + small: `https://media.kitsu.io/users/cover_images/1/small.jpg`
+    + large: `https://media.kitsu.io/users/cover_images/1/small.jpg`
+    + original: `https://media.kitsu.io/users/cover_images/1/original.jpeg`
++ ratingSystem: advanced (enum)
+    + advanced
+    + regular
+    + simple
++ theme: light (enum)
+    + dark
+    + light
+
+## users (object)
++ id: 1 (required)
++ type: users (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/users/1` (required)
++ attributes (animeCharactersAttributes)
++ relationships (object)
+    + waifu (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/waifu`
+            + related: `https://kitsu.io/api/edge/users/1/waifu`
+    + pinnedPost (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/pinned-post`
+            + related: `https://kitsu.io/api/edge/users/1/pinned-post`
+    + followers (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/followers`
+            + related: `https://kitsu.io/api/edge/users/1/followers`
+    + following (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/following`
+            + related: `https://kitsu.io/api/edge/users/1/following`
+    + blocks (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/blocks`
+            + related: `https://kitsu.io/api/edge/users/1/blocks`
+    + linkedAccounts (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/linked-accounts`
+            + related: `https://kitsu.io/api/edge/users/1/linked-accounts`
+    + profileLinks (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/profile-links`
+            + related: `https://kitsu.io/api/edge/users/1/profile-links`
+    + mediaFollows (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/media-follows`
+            + related: `https://kitsu.io/api/edge/users/1/media-follows`
+    + userRoles (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/user-roles`
+            + related: `https://kitsu.io/api/edge/users/1/user-roles`
+    + libraryEntries (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/library-entries`
+            + related: `https://kitsu.io/api/edge/users/1/library-entries`
+    + favorites (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/favorites`
+            + related: `https://kitsu.io/api/edge/users/1/favorites`
+    + reviews (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/reviews`
+            + related: `https://kitsu.io/api/edge/users/1/reviews`
+    +  stats (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/stats`
+            + related: `https://kitsu.io/api/edge/users/1/stats`
+    + oneSignalPlayers (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/one-signal-players`
+            + related: `https://kitsu.io/api/edge/users/1/one-signal-players`
