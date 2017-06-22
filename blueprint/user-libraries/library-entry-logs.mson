@@ -1,0 +1,38 @@
+## libraryEntryLogsAttributes (object)
++ progress: 5 (number)
++ rating (nullable)
++ reconsumeCount: 0 (number)
++ reconsuming: false (boolean)
++ status: current (enum)
+    + completed
+    + current
+    + dropped
+    + on_hold
+    + planned
++ volumesOwned: 0 (number)
++ actionPerformed: update (enum)
+    + create
+    + destroy
+    + update
++ syncStatus: success (enum)
+    + error
+    + pending
+    + success
++ createdAt: `2017-06-20T04:39:42.808Z`
++ errorMessage (nullable)
+
+## libraryEntryLogs (object)
++ id: 221679 (required)
++ type: libraryEntryLogs (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/library-entry-logs/221679` (required)
++ attributes (libraryEntryLogsAttributes)
++ relationships (object)
+    + linkedAccount (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/linked-account`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/linked-account`
+    + media (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/media`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/media`
