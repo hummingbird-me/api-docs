@@ -104,3 +104,7 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/users/1/relationships/stats`
             + related: `https://kitsu.io/api/edge/users/1/stats`
+    + oneSignalPlayers (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/one-signal-players`
+            + related: `https://kitsu.io/api/edge/users/1/one-signal-players`
