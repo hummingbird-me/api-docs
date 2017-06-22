@@ -1,0 +1,70 @@
+## statsAttributes (object)
++ kind: `anime-genre-breakdown` (enum)
+    + `anime-activity-history`
+    + `anime-amount-consumed`
+    + `anime-favorite-year`
+    + `anime-genre-breakdown`
+    + `manga-activity-history`
+    + `manga-amount-consumed`
+    + `manga-favorite-year`
+    + `manga-genre-breakdown`
++ statsData (object)
+    + total: 18 (number) - Total media. Omitted for `amount-consumed` kinds
+    + `all_genres` (object) - `genre-breakdown` kinds only
+        + drama: 2 (number)
+        + mecha: 1 (number)
+        + music: 2 (number)
+        + action: 1 (number)
+        + police: 1 (number)
+        + school: 1 (number)
+        + `sci-fi`: 1 (number)
+        + mystery: 1 (number)
+        + romance: 1 (number)
+        + dementia: 1 (number)
+        + thriller: 1 (number)
+        + friendship: 2 (number)
+        + supernatural: 1 (number)
+        + psychological: 2 (number)
+    + `all_years` (object) - `favorite-year` kinds only
+        + 2004: 1 (number)
+        + 2013: 1 (number)
+        + 2016: 2 (number)
+        + 2017: 8 (number)
+        + 2018: 1 (number)
+    + `all_time` (object) - `amount-consumed` kinds only
+        + `total_time`: 0 (number)
+        + `total_media`: 77 (number)
+        + `total_progress`: 230 (number)
+    + activity (array[object]) - `activity-history` kinds only
+        + (object)
+            + id: 27370 (number)
+            + event: updated
+            + user_id: 42603 (number)
+            + anime_id: 944 (number, nullable)
+            + drama_id (number, nullable)
+            + manga_id (number, nullable)
+            + `created_at`: `2017-06-04T20:05:50.510Z`
+            + `updated_at`: `2017-06-04T20:05:50.510Z`
+            + `changed_data` (object)
+                + status (array)
+                    + planned
+                    + current
+                + `started_at` (array)
+                    + null
+                    + `2017-06-04T20:05:50.488Z`
+                + `updated_at` (array)
+                    + `2015-02-22T23:29:42.209Z`
+                    + `2017-06-04T20:05:50.489Z
+            + `library_entry_id`: 8698407 (number)
+
+## stats (object)
++ id: 413653 (required)
++ type: stats (required)
++ links (object, required)
+    + self: `https://kitsu.io/api/edge/stats/413653` (required)
++ attributes (statsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/stats/413653/relationships/user`
+            + related: `https://kitsu.io/api/edge/stats/413653/user`
