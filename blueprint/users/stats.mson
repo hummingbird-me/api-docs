@@ -9,33 +9,8 @@
     + `manga-favorite-year`
     + `manga-genre-breakdown`
 + statsData (object)
-    + total: 18 (number) - Total media. Omitted for `amount-consumed` kinds
-    + `all_genres` (object) - `genre-breakdown` kinds only
-        + drama: 2 (number)
-        + mecha: 1 (number)
-        + music: 2 (number)
-        + action: 1 (number)
-        + police: 1 (number)
-        + school: 1 (number)
-        + `sci-fi`: 1 (number)
-        + mystery: 1 (number)
-        + romance: 1 (number)
-        + dementia: 1 (number)
-        + thriller: 1 (number)
-        + friendship: 2 (number)
-        + supernatural: 1 (number)
-        + psychological: 2 (number)
-    + `all_years` (object) - `favorite-year` kinds only
-        + 2004: 1 (number)
-        + 2013: 1 (number)
-        + 2016: 2 (number)
-        + 2017: 8 (number)
-        + 2018: 1 (number)
-    + `all_time` (object) - `amount-consumed` kinds only
-        + `total_time`: 0 (number)
-        + `total_media`: 77 (number)
-        + `total_progress`: 230 (number)
-    + activity (array[object]) - `activity-history` kinds only
+    + total: 18 (number) - Total media in collection. Omitted for **amount-consumed** kinds
+    + activity (array) - Omitted if not **activity-history** kind
         + (object)
             + id: 27370 (number)
             + event: updated
@@ -54,8 +29,33 @@
                     + `2017-06-04T20:05:50.488Z`
                 + `updated_at` (array)
                     + `2015-02-22T23:29:42.209Z`
-                    + `2017-06-04T20:05:50.489Z
+                    + `2017-06-04T20:05:50.489Z`
             + `library_entry_id`: 8698407 (number)
+    + `all_genres` (object) - Omitted if not **genre-breakdown** kind
+        + drama: 2 (number)
+        + mecha: 1 (number)
+        + music: 2 (number)
+        + action: 1 (number)
+        + police: 1 (number)
+        + school: 1 (number)
+        + `sci-fi`: 1 (number)
+        + mystery: 1 (number)
+        + romance: 1 (number)
+        + dementia: 1 (number)
+        + thriller: 1 (number)
+        + friendship: 2 (number)
+        + supernatural: 1 (number)
+        + psychological: 2 (number)
+    + `all_time` (object) - Omitted if not **amount-consumed** kind
+        + `total_time`: 0 (number) - Time in minutes
+        + `total_media`: 77 (number)
+        + `total_progress`: 230 (number) - Total episodes or chapters
+    + `all_years` (object) - Omitted if not **favorite-year** kind
+        + 2004: 1 (number)
+        + 2013: 1 (number)
+        + 2016: 2 (number)
+        + 2017: 8 (number)
+        + 2018: 1 (number)
 
 ## stats (object)
 + id: 413653 (required)
