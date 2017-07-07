@@ -1616,11 +1616,81 @@ browser-based and mobile apps
     + Attributes
         + data (libraryEntries)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
 + Response 404 (application/vnd.api+json)
     + Attributes (error404)
 
++ Response 500 (application/vnd.api+json)
+    + Attributes (error500)
+
+### POST Create resource [POST]
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
+
++ Response 401 (application/vnd.api+json)
+
++ Response 403 (application/vnd.api+json)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 409 (application/vnd.api+json)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (error500)
+
+### PATCH Update resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
++ Response 401 (application/vnd.api+json)
+
++ Response 403 (application/vnd.api+json)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 409 (application/vnd.api+json)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (error500)
+
+### DELETE Remove resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (error400)
+
++ Response 401 (application/vnd.api+json)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (error500)
 ## Library Entry Logs [/library-entry-logs/{id}]
 
 + Parameters
@@ -3351,8 +3421,8 @@ browser-based and mobile apps
     + (object)
         + title: Invalid page value
         + detail: 0 is not a valid value for limit page parameter.
-        + code: 118
-        + status: 400
+        + code: 118 - Unique identifier of the problematic parameter
+        + status: 400 - HTTP status code
 
 ## error404 (object)
 + errors(array)
@@ -3360,4 +3430,12 @@ browser-based and mobile apps
         + title: Record not found
         + detail: The record identified by 0 could not be found.
         + code: 404
-        + status: 404
+        + status: 404 - HTTP status code
+
+## error500 (object)
++ errors(array)
+    + (object)
+        + title: Internal Server Error
+        + detail: Internal Server Error
+        + code: 500
+        + status: 500 - HTTP status code
