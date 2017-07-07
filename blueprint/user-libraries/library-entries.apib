@@ -5,7 +5,7 @@
 
 + Attributes (libraryEntriesAttributes)
 
-### GET List [GET /library-entries]
+### Fetch Collection [GET /library-entries]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
@@ -22,7 +22,7 @@
 + Response 400 (application/vnd.api+json)
     + Attributes (error400)
 
-### GET Single [GET]
+### Fetch Resource [GET]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
@@ -37,7 +37,7 @@
 + Response 500 (application/vnd.api+json)
     + Attributes (error500)
 
-### POST Create resource [POST]
+### Create Resource [POST]
 
 + Response 201 (application/vnd.api+json)
 
@@ -60,7 +60,7 @@
 + Response 500 (application/vnd.api+json)
     + Attributes (error500)
 
-### PATCH Update resource [PATCH]
+### Update Resource [PATCH]
 
 + Request (application/vnd.api+json)
 
@@ -85,7 +85,7 @@
 + Response 500 (application/vnd.api+json)
     + Attributes (error500)
 
-### DELETE Remove resource [DELETE]
+### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
 
