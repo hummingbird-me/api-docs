@@ -3,8 +3,8 @@
     + (object)
         + title: Invalid page value
         + detail: 0 is not a valid value for limit page parameter.
-        + code: 118
-        + status: 400
+        + code: 118 - Unique identifier of the problematic parameter
+        + status: 400 - HTTP status code
 
 ## error404 (object)
 + errors(array)
@@ -12,4 +12,12 @@
         + title: Record not found
         + detail: The record identified by 0 could not be found.
         + code: 404
-        + status: 404
+        + status: 404 - HTTP status code
+
+## error500 (object)
++ errors(array)
+    + (object)
+        + title: Internal Server Error
+        + detail: Internal Server Error
+        + code: 500
+        + status: 500 - HTTP status code
