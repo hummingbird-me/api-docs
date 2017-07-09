@@ -224,7 +224,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -232,11 +232,90 @@ browser-based and mobile apps
     + Attributes
         + data (animeCharacters)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Anime Productions [/anime-productions/{id}]
 
 + Parameters
@@ -259,7 +338,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28391` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -267,11 +346,90 @@ browser-based and mobile apps
     + Attributes
         + data (animeProductions)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Anime Staff [/anime-staff/{id}]
 
 + Parameters
@@ -294,7 +452,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=88533` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -302,11 +460,90 @@ browser-based and mobile apps
     + Attributes
         + data (animeStaff)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Castings [/castings/{id}]
 
 + Parameters
@@ -329,7 +566,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=244539` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -338,10 +575,89 @@ browser-based and mobile apps
         + data (castings)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Characters [/characters/{id}]
 
 + Parameters
@@ -364,7 +680,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -373,10 +689,89 @@ browser-based and mobile apps
         + data (characters)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Manga Characters [/manga-characters/{id}]
 
 + Parameters
@@ -399,7 +794,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -408,10 +803,89 @@ browser-based and mobile apps
         + data (mangaCharacters)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Manga Staff [/manga-staff/{id}]
 
 + Parameters
@@ -434,7 +908,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -443,10 +917,89 @@ browser-based and mobile apps
         + data (mangaStaff)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## People [/people/{id}]
 
 + Parameters
@@ -469,7 +1022,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -478,10 +1031,89 @@ browser-based and mobile apps
         + data (people)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Producers [/producers/{id}]
 
 + Parameters
@@ -504,7 +1136,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1323` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -513,10 +1145,89 @@ browser-based and mobile apps
         + data (producers)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 # Group Groups
 
 ## Group Action Logs [/group-action-logs/{id}]
@@ -549,7 +1260,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -558,10 +1269,89 @@ browser-based and mobile apps
         + data (groupCategories)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Invites [/group-invites/{id}]
 
 + Parameters
@@ -592,7 +1382,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -601,10 +1391,89 @@ browser-based and mobile apps
         + data (groupMembers)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Neighbors [/group-neighbors/{id}]
 
 + Parameters
@@ -625,7 +1494,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=286` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -634,10 +1503,89 @@ browser-based and mobile apps
         + data (groupNeighbors)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Permissions [/group-permissions/{id}]
 
 + Parameters
@@ -660,7 +1608,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5036` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -669,10 +1617,89 @@ browser-based and mobile apps
         + data (groupPermissions)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Reports [/group-reports/{id}]
 
 + Parameters
@@ -707,7 +1734,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1907` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -716,10 +1743,89 @@ browser-based and mobile apps
         + data (groups)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Leader Chat Messages [/leader-chat-messages/{id}]
 
 + Parameters
@@ -748,7 +1854,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=12070` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -757,10 +1863,89 @@ browser-based and mobile apps
         + data (anime)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 ## Categories [/categories/{id}]
 
@@ -784,7 +1969,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=218` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -793,10 +1978,89 @@ browser-based and mobile apps
         + data (categoriesAttributes)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Category Favorites [/category-favorites/{id}]
 
 + Parameters
@@ -817,7 +2081,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -826,10 +2090,89 @@ browser-based and mobile apps
         + data (categoryFavorites)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Category Recommendations [/category-recommendations/{id}]
 
 + Parameters
@@ -864,7 +2207,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=180200` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -873,10 +2216,89 @@ browser-based and mobile apps
         + data (episodesAttributes)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Franchises [/franchises/{id}]
 
 + Parameters
@@ -900,7 +2322,7 @@ browser-based and mobile apps
 
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -909,10 +2331,89 @@ browser-based and mobile apps
         + data (franchises)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Genres [/genres/{id}]
 
 **DEPRECATED**: Use `categories` instead
@@ -937,7 +2438,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=51` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -946,10 +2447,89 @@ browser-based and mobile apps
         + data (genres)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Installments [/installments/{id}]
 
 + Parameters
@@ -971,38 +2551,96 @@ browser-based and mobile apps
             + next: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
             + last: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=5892` (required)
 
-+ Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
-
 ### Fetch Resource [GET]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (installments)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Manga [/manga/{id}]
 
 + Parameters
@@ -1025,7 +2663,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=30624` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1034,11 +2672,89 @@ browser-based and mobile apps
         + data (manga)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Mappings [/mappings/{id}]
 
 + Parameters
@@ -1061,7 +2777,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1070,10 +2786,89 @@ browser-based and mobile apps
         + data (mappings)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Media Attribute Votes [/media-attribute-votes/{id}]
 
 + Parameters
@@ -1102,7 +2897,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10246` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1111,10 +2906,89 @@ browser-based and mobile apps
         + data (mediaFollows)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Media Reaction Votes [/media-reaction-votes/{id}]
 
 + Parameters
@@ -1145,7 +3019,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=17788` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1154,10 +3028,89 @@ browser-based and mobile apps
         + data (mediaRelationships)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Streamers [/streamers/{id}]
 
 + Parameters
@@ -1195,22 +3148,89 @@ browser-based and mobile apps
         + data (streamers)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Streaming Links [/streaming-links/{id}]
 
 + Parameters
@@ -1248,22 +3268,89 @@ browser-based and mobile apps
         + data (streamingLinks)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 # Group Posts
 
 ## Comment Likes [/comment-likes/{id}]
@@ -1292,7 +3379,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=1274769` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1301,10 +3388,89 @@ browser-based and mobile apps
         + data (comments)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 ## Post Likes [/post-likes/{id}]
 
@@ -1328,7 +3494,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1600072` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1337,10 +3503,89 @@ browser-based and mobile apps
         + data (postLikes)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Post Follows [/post-follows/{id}]
 
 + Parameters
@@ -1363,7 +3608,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=2066` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1372,10 +3617,89 @@ browser-based and mobile apps
         + data (postFollows)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Posts [/posts/{id}]
 
 + Parameters
@@ -1398,7 +3722,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1407,10 +3731,89 @@ browser-based and mobile apps
         + data (posts)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Reports [/reports/{id}]
 
 + Parameters
@@ -1442,22 +3845,89 @@ browser-based and mobile apps
         + data (reviewLikes)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Reviews [/reviews/{id}]
 
 + Parameters
@@ -1495,22 +3965,89 @@ browser-based and mobile apps
         + data (reviews)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 # Group Site Announcements
 
 ## Site Announcements [/site-announcements/{id}]
@@ -1550,25 +4087,18 @@ browser-based and mobile apps
         + data (siteAnnouncements)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Record not found
-                + detail: The record identified by 0 could not be found.
-                + code: 404
-                + status: 404
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid field value
-                + detail: helloworld is not a valid value for id.
-                + code: 103
-                + status: 400
+    + Attributes (Error400)
 # Group User Libraries
 
 ## Library Entries [/library-entries/{id}]
+
+Permission      | Allowed Methods
+--------------- | -----------
+Unauthenticated | GET (`private: false`)
+Authenticated   | GET, POST, PATCH and DELETE
 
 + Parameters
     + id (number, `1`) - ID of the library entry resource
@@ -1590,7 +4120,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1599,15 +4129,17 @@ browser-based and mobile apps
         + data (libraryEntries)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
-    + Attributes (error500)
+    + Attributes (Error500)
 
 ### Create Resource [POST]
+
++ Request (application/vnd.api+json)
 
 + Response 201 (application/vnd.api+json)
 
@@ -1616,19 +4148,22 @@ browser-based and mobile apps
 + Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 + Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
 
 + Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
 
 + Response 500 (application/vnd.api+json)
-    + Attributes (error500)
+    + Attributes (Error500)
 
 ### Update Resource [PATCH]
 
@@ -1641,19 +4176,22 @@ browser-based and mobile apps
 + Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 + Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
 
 + Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
 
 + Response 500 (application/vnd.api+json)
-    + Attributes (error500)
+    + Attributes (Error500)
 
 ### Delete Resource [DELETE]
 
@@ -1664,15 +4202,16 @@ browser-based and mobile apps
 + Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 + Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
-    + Attributes (error500)
+    + Attributes (Error500)
 ## Library Entry Logs [/library-entry-logs/{id}]
 
 + Parameters
@@ -1695,7 +4234,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=6399` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1704,10 +4243,89 @@ browser-based and mobile apps
         + data (libraryEntryLogs)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Library Events [/library-events/{id}]
 
 + Parameters
@@ -1744,7 +4362,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=457256` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1753,10 +4371,89 @@ browser-based and mobile apps
         + data (favorites)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Follows [/follows/{id}]
 
 + Parameters
@@ -1777,7 +4474,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=385213` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1786,10 +4483,89 @@ browser-based and mobile apps
         + data (follows)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Profile Link Sites [/profile-link-sites/{id}]
 
 + Parameters
@@ -1812,7 +4588,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=19` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1821,10 +4597,89 @@ browser-based and mobile apps
         + data (profileLinkSites)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Profile Links [/profile-links/{id}]
 
 + Parameters
@@ -1847,7 +4702,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=11455` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1856,10 +4711,89 @@ browser-based and mobile apps
         + data (profileLinks)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Roles [/roles/{id}]
 
 + Parameters
@@ -1882,7 +4816,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1891,10 +4825,89 @@ browser-based and mobile apps
         + data (roles)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Stats [/stats/{id}]
 
 + Parameters
@@ -1917,7 +4930,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=36949` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1926,10 +4939,89 @@ browser-based and mobile apps
         + data (stats)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## User Roles [/user-roles/{id}]
 
 + Parameters
@@ -1950,7 +5042,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=93` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1959,10 +5051,89 @@ browser-based and mobile apps
         + data (userRoles)
 
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Users [/users/{id}]
 
 + Parameters
@@ -1985,7 +5156,7 @@ browser-based and mobile apps
             + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=144735` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
 
 ### Fetch Resource [GET]
 
@@ -1993,11 +5164,90 @@ browser-based and mobile apps
     + Attributes
         + data (users)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
 + Response 404 (application/vnd.api+json)
-    + Attributes (error404)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes (error400)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 # Data Structures
 
@@ -3398,26 +6648,37 @@ browser-based and mobile apps
             + self: `https://kitsu.io/api/edge/users/1/relationships/one-signal-players`
             + related: `https://kitsu.io/api/edge/users/1/one-signal-players`
 
-## error400 (object)
-+ errors(array)
-    + (object)
-        + title: Invalid page value
-        + detail: 0 is not a valid value for limit page parameter.
-        + code: 118 - Unique identifier of the problematic parameter
-        + status: 400 - HTTP status code
+## Error (object)
+Error objects provide additional information about errors
+encountered while performing an operation. See
+[JSON API/#error-objects](http://jsonapi.org/format/#error-objects)
 
-## error404 (object)
-+ errors(array)
-    + (object)
-        + title: Record not found
-        + detail: The record identified by 0 could not be found.
-        + code: 404
-        + status: 404 - HTTP status code
+### Properties
++ title (string) - a short, human-readable summary of the error. It SHOULD NOT change from occurence to occurenace
++ detail (string) - a human-readable explanation for this specific error
++ code (string) - a unique identifier for this error type
++ status (string) - a HTTP status code ([RFC2616](https://tools.ietf.org/html/rfc2616#section-6), Section 6) generated by the origin server
++ source (object) - an object containing references to the source of the error
+    + pointer (string) - a JSON Pointer [RFC6901](https://tools.ietf.org/html/rfc6901) to the associated entity in the request
+    + parameter (string) - indicates which URI query parameter caused the error
 
-## error500 (object)
-+ errors(array)
-    + (object)
-        + title: Internal Server Error
-        + detail: Internal Server Error
-        + code: 500
-        + status: 500 - HTTP status code
+## Error400 (object)
++ errors (array[Error])
+
+## Error401 (object)
++ errors (array[Error])
+
+## Error403 (object)
++ errors (array[Error])
+
+## Error404 (object)
++ errors (array[Error])
+
+## Error406 (object)
++ errors (array[Error])
+
+## Error409 (object)
++ errors (array[Error])
+
+## Error500 (object)
++ errors (array[Error])
