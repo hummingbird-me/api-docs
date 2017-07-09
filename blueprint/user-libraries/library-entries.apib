@@ -1,5 +1,13 @@
 ## Library Entries [/library-entries/{id}]
 
+Role | Authenticated | GET | POST | PATCH | DELETE
+---: | :-----------: | :-: | :--: | :---: | :----:
+None | No            |️ Y*  | N   | ❌   | ❌
+None | Yes           | ✔*  | ✔    | ✔     | ✔
+
+\* Resources with `private: true` are not accessible, unless
+authenticated as the user associated with the library entry
+
 Permission      | Allowed Methods
 --------------- | -----------
 Unauthenticated | GET (`private: false`)
