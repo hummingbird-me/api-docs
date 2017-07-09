@@ -39,7 +39,6 @@ endpoints, or resources. You are expected to keep your applications
 running on the latest version of the API. For most applications,
 upgrading should take no more than a few hours of work.
 -->
-
 # JSON API
 
 The Kitsu API implements the JSON API specification. This means
@@ -138,17 +137,15 @@ a JSON API client to implement the Kitsu API for this reason.
 
 Many implementations in over 13 languages can be found on the
 [JSON API website][jsonapi-client].
-
 # HTTP Methods
 
 Method   | Description
 -------- | -----------
-`GET`    | Read - retrieve resources
+`GET`    | Fetch - retrieve resources
 `POST`   | Create - create new resources
 `PATCH`  | Update - (partially) modify existing resources
 `DELETE` | Delete - remove resources
-
-# Status Codes & Errors
+# Status Codes
 
 Code  | Description
 ----- | -----------
@@ -160,28 +157,9 @@ Code  | Description
 `404` | Not Found - resource does not exist
 `406` | Not Acceptable - invalid `Accept` header
 `5xx` | Server Error
-
-## Error Responses
-
-Error responses are human-readable and will always have the following structure:
-
-```
-{
-    "errors": [
-        {
-            "title": "Error name",
-            "detail": "Further information about the error",
-            "code": "102",
-            "status": "400"
-        }
-    ]
-}
-```
-
 # Tutorials
 
 - [You and your Kitsu Anime library](https://github.com/pheyvaer/kitsu-tutorial/blob/master/index.md)
-
 # Questions?
 
 If you have any questions, you can join our Slack by sending an
