@@ -2,6 +2,7 @@
   "name": "kitsu-api-docs",
   "version": "1.0.0",
   "license": "Apache-2.0",
+  "private": true,
   "scripts": {
     "del": "del apiary.apib",
     "build": "hercule kitsu.apib -o apiary.apib",

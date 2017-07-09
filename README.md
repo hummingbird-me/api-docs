@@ -5,9 +5,9 @@ anime you're watching, discover new anime and socialize with other
 fans.
 
 ---
-**<p align="center">This is our API docs repository.<br />For the
-actual source code, please check out the [server][0] and [client][1]
-repository.</p>**
+**<p align="center">This is our [API docs][7] repository.<br />For
+the actual source code, please check out the [server][0] and
+[client][1] repository.</p>**
 
 ---
 
@@ -27,7 +27,8 @@ bigger changes it is advised to follow the steps below.
 
 1. [Fork the repo][5]
 
-2. Clone the repo (`git clone https://github.com/{yourusername}/api-docs.git`)
+2. Clone the repo
+(`git clone https://github.com/{yourusername}/api-docs.git`)
 
 3. Create a new branch (`git checkout -b improve-docs`)
 
@@ -54,6 +55,7 @@ email to josh@kitsu.io or pinging [@wopian][wopian],
 [4]:https://github.com/apiaryio/mson
 [5]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
 [6]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
+[7]:http://docs.kitsu.apiary.io
 
 [travis]:https://img.shields.io/travis/hummingbird-me/api-docs/source.svg?style=flat-square&label=blueprint
 [wopian]:https://kitsu.io/users/wopian
