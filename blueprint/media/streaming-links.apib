@@ -20,13 +20,13 @@
             + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888` (required)
 
 + Response 400 (application/vnd.api+json)
-    + Attributes
-        + errors (array)
-            + (object)
-                + title: Invalid page value
-                + detail: 0 is not a valid value for limit page parameter.
-                + code: 118
-                + status: 400
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 ### Fetch Resource [GET]
 
