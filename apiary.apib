@@ -4362,11 +4362,14 @@ browser-based and mobile apps
 
 Authenticated | Role | GET | POST | PATCH | DELETE
 ------------: | ---: | :-: | :--: | :---: | :----:
-No            |️ None | ⭕* | ❌   | ❌   | ❌
-Yes           | None | ⭕* | ⭕   | ⭕   | ⭕
+No            |️ None | Y*  | N    | N     | N
+Yes           | None | Y*† | Y    | Y     | Y
 
 \* Resources with `private: true` are not accessible, unless
 authenticated as the user associated with the library entry
+
+† Adult content will only be shown if enabled in the authenticated
+user's settings
 
 + Parameters
     + id (number, `1`) - ID of the library entry resource
