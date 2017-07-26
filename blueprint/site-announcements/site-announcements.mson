@@ -7,8 +7,8 @@
 ## siteAnnouncements (object)
 + id: 2 (required)
 + type: siteAnnouncements (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/site-announcements/2` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/site-announcements/2
 + attributes (siteAnnouncementsAttributes)
 + relationships (object)
     + user (object)

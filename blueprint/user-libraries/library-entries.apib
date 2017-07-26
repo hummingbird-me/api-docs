@@ -21,14 +21,14 @@ user's settings
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (libraryEntries)
+            + (libraryEntriesLinks)
         + meta (object, required)
             + count: 0 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -43,7 +43,7 @@ user's settings
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (libraryEntries)
+        + data (libraryEntriesLinks)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -57,6 +57,7 @@ user's settings
 ### Create Resource [POST]
 
 + Request (application/vnd.api+json)
+    + Attributes (libraryEntriesPOST)
 
 + Response 201 (application/vnd.api+json)
 

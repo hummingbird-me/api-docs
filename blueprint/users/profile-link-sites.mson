@@ -4,6 +4,6 @@
 ## profileLinkSites (object)
 + id: 1 (required)
 + type: profileLinkSites (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/profile-link-sites/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/profile-link-sites/1
 + attributes (profileLinkSitesAttributes)

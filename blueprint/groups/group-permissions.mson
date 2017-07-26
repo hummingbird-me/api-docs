@@ -10,8 +10,8 @@
 ## groupPermissions (object)
 + id: 1 (required)
 + type: groupPermissions (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/group-permissions/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/group-permissions/1
 + attributes (groupPermissionsAttributes)
 + relationships (object)
     + groupMember (object)

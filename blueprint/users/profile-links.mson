@@ -4,8 +4,8 @@
 ## profileLinks (object)
 + id: 1 (required)
 + type: profileLinks (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/profile-links/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/profile-links/1
 + attributes (profileLinksAttributes)
 + relationships (object)
     + user (object)
@@ -16,4 +16,3 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/profile-links/1/relationships/profile-link-site`
             + related: `https://kitsu.io/api/edge/profile-links/1/profile-link-site`
-                  

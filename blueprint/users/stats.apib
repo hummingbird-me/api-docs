@@ -13,11 +13,11 @@
             + (stats)
         + meta (object, required)
             + count: 36959 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=36949` (required)
+            + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=36949
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)

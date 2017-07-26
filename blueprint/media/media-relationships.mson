@@ -16,8 +16,8 @@
 ## mediaRelationships (object)
 + id: 1 (required)
 + type: mediaRelationships (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/media-relationships/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/media-relationships/1
 + attributes (mediaRelationshipsAttributes)
 + relationships (object)
     + source (object)

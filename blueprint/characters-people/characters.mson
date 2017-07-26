@@ -9,8 +9,8 @@
 ## characters (object)
 + id: 1 (required)
 + type: characters (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/characters/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/characters/1
 + attributes (charactersAttributes)
 + relationships (object)
     + primaryMedia (object)

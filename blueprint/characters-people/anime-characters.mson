@@ -6,8 +6,8 @@
 ## animeCharacters (object)
 + id: 1 (required)
 + type: animeCharacters (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/anime-characters/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/anime-characters/1
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + anime (object)

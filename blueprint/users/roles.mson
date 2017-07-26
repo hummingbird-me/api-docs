@@ -6,8 +6,8 @@
 ## roles (object)
 + id: 1 (required)
 + type: roles (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/roles/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/roles/1
 + attributes (rolesAttributes)
 + relationships (object)
     + userRoles (object)

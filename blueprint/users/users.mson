@@ -48,8 +48,8 @@
 ## users (object)
 + id: 1 (required)
 + type: users (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/users/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/users/1
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + waifu (object)

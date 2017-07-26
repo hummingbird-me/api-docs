@@ -81,8 +81,8 @@
 ## manga (object)
 + id: 14916 (required)
 + type: manga (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/manga/14916` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/manga/14916
 + attributes (animeAttributes)
 + relationships (object)
     + genres (object)

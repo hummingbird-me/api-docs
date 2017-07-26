@@ -12,8 +12,8 @@
 ## comments (object)
 + id: 7760392 (required)
 + type: comments (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/comments/7760392` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/comments/7760392
 + attributes (commentsAttributes)
 + relationships (object)
     + user (object)

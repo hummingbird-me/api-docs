@@ -7,8 +7,8 @@
 ## franchises (object)
 + id: 1 (required)
 + type: franchises (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/franchises/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/franchises/1
 + attributes (franchisesAttributes)
 + relationships (object)
     + installments (object)
