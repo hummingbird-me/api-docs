@@ -6,7 +6,7 @@ cache:
   yarn: true
 matrix:
   fast_finish: true
-install: travis_retry yarn install
+install: travis_retry yarn install --production
 script: yarn test
 after_success: test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "source" && bash tools/deploy.sh
 notifications:
