@@ -1,27 +1,50 @@
+## libraryEntries (object)
++ id: 1644 (required)
++ type: libraryEntries (required)
++ attributes (libraryEntriesAttributes)
+
 ## libraryEntriesAttributes(object)
++ createdAt: `2013-03-03T23:07:42.713Z` - ISO 8601 date and time
++ updatedAt: `2016-01-15T05:53:48.037Z` - ISO 8601 of last modification
 + status: completed (enum)
     + completed
     + current
     + dropped
     + on_hold
     + planned
-+ progress: 13 (number)
-+ volumesOwned: 0 (number)
++ progress: 13 (number) - Current episode or chapter
++ volumesOwned: 0 (number) - (Manga only)
 + reconsuming: false (boolean)
 + reconsumeCount: 0 (number)
 + notes (nullable)
 + private: false (boolean)
-+ updatedAt: `2016-01-15T05:53:48.037Z`
-+ progressedAt: `2016-01-15T05:53:48.037Z`
-+ startedAt (object)
-+ finishedAt: `2016-01-15T05:53:48.037Z`
-+ rating: `3.5`
-+ ratingTwenty: 14 (number)
++ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last progress modification
++ startedAt (nullable) - ISO 8601 of when the user consumed ch/ep 1
++ finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last ch/ep
++ rating: `3.5` - Deprecated in favour of `ratingTwenty`
++ ratingTwenty: 14 (number) - 2,3..20 rating scale, display as 1,1.5..10
 
-## libraryEntries (object)
-+ id: 1644 (required)
-+ type: libraryEntries (required)
-+ attributes (libraryEntriesAttributes)
+## libraryEntriesRequest (object)
++ data (libraryEntries)
+    + relationships (object)
+        + user (object)
+            + data (users)
+        + anime (object)
+            + data (anime)
+        + manga (object)
+            + data (manga)
+        + drama (object)
+            + data (drama)
+        + review (object)
+            + data (reviews)
+        + mediaReaction (mediaReaction)
+            + data (object)
+        + media (object)
+            + data (anime)
+        + unit (object)
+            + data (episodes)
+        + nextUnit (object)
+            + data (episodes)
 
 ## libraryEntriesLinks (libraryEntries)
 + link (object)
@@ -97,25 +120,3 @@
                 + episodes
                 + chapters
             + id: 1
-
-## libraryEntriesRequest (object)
-+ data (libraryEntries)
-    + relationships (object)
-        + user (object)
-            + data (users)
-        + anime (object)
-            + data (anime)
-        + manga (object)
-            + data (manga)
-        + drama (object)
-            + data (object)
-        + review (object)
-            + data (reviews)
-        + mediaReaction (object)
-            + data (object)
-        + media (object)
-            + data (anime)
-        + unit (object)
-            + data (episodes)
-        + nextUnit (object)
-            + data (episodes)
