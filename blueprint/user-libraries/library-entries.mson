@@ -1,7 +1,6 @@
 ## libraryEntries (object)
 + id: 1644 (required)
 + type: libraryEntries (required)
-+ attributes (libraryEntriesAttributes)
 
 ## libraryEntriesAttributes(object)
 + createdAt: `2013-03-03T23:07:42.713Z` - ISO 8601 date and time
@@ -26,6 +25,7 @@
 
 ## libraryEntriesRequest (object)
 + data (libraryEntries)
+    + attributes (libraryEntriesAttributes)
     + relationships (object)
         + user (object)
             + data (users)
@@ -47,6 +47,7 @@
             + data (episodes)
 
 ## libraryEntriesLinks (libraryEntries)
++ attributes (libraryEntriesAttributes)
 + link (object)
     + self: `https://kitsu.io/api/edge/library-entries/1644
 + relationships (object)
