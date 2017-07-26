@@ -7,7 +7,8 @@
     "del": "del apiary.apib",
     "build": "hercule kitsu.apib -o apiary.apib",
     "validate": "node tools/validate",
-    "test": "run-s del build validate"
+    "test": "run-s del build validate",
+    "start": "yarn test && aglio -i apiary.apib -t attributable -s"
   },
   "dependencies": {
     "chalk": "~2.0.1",
@@ -15,5 +16,9 @@
     "drafter.js": "~2.6.7",
     "hercule": "~4.0.1",
     "npm-run-all": "~4.0.2"
+  },
+  "devDependencies": {
+    "aglio": "^2.3.0",
+    "aglio-theme-attributable": "^1.4.5"
   }
 }
