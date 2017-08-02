@@ -17,7 +17,7 @@
 + reconsumeCount: 0 (number)
 + notes (nullable)
 + private: false (boolean)
-+ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last progress modification
++ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last episode change
 + startedAt (nullable) - ISO 8601 of when the user consumed ch/ep 1
 + finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last ch/ep
 + rating: `3.5` - Deprecated in favour of `ratingTwenty`
@@ -37,8 +37,8 @@
             + data (drama)
         + review (object)
             + data (reviews)
-        + mediaReaction (mediaReaction)
-            + data (object)
+        + mediaReaction (object)
+            + data (mediaReaction)
         + media (object)
             + data (anime)
         + unit (object)
