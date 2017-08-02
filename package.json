@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "del": "del apiary.apib",
-    "build": "hercule kitsu.apib -o apiary.apib",
+    "build": "hercule blueprint/kitsu.apib -o apiary.apib",
     "validate": "node tools/validate",
     "test": "run-s del build validate",
     "start": "yarn test && aglio -i apiary.apib -t attributable -s"
