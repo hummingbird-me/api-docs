@@ -1,6 +1,6 @@
 ## Library Entries [/library-entries/{id}]
 
-**Access Requirements**
+**Authorisation**
 
 Authenticated | Role | GET | POST | PATCH | DELETE
 ------------: | ---: | :-: | :--: | :---: | :----:
@@ -13,22 +13,17 @@ authenticated as the user associated with the library entry
 † Adult content will only be shown if enabled in the authenticated
 user's settings
 
-**Filters**
-
-Filters can be used in `snake_case` or `camelCase` format
-
-Filter       | Example                                  | Notes
------------: | ---------------------------------------: | :----
-`anime_id`   | `1`, `43,2,300`                          |
-`drama_id`   |                                          |
-`following`  |                                          |
-`kind`       | `anime`, `anime,manga`                   | Filter by the related media type
-`manga_id`   | `2`, `8,987`                             |
-`media_id`   |                                          | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
-`media_type` | `anime`, `anime,manga`                   | **DEPRECATED** - use `kind`
-`since`      | `2017-01-28`, `2013-03-25T00:00:00.000Z` | Returns entries updated since the supplied ISO 8601 date
-`status`     | `current`, `onHold`                      | Values of the `status` attribute
-`user_id`    | `42603`, `2,7`                           |
+:[](../filters/HEADER)
+:[](../filters/anime-id)
+:[](../filters/drama-id)
+:[](../filters/following)
+:[](../filters/kind)
+:[](../filters/manga-id)
+:[](../filters/media-id)
+:[](../filters/media-type)
+:[](../filters/since)
+:[](../filters/status)
+:[](../filters/user-id)
 
 + Parameters
     + id (number, `1`) - ID of the library entry resource

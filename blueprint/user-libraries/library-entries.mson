@@ -55,69 +55,35 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/user`
             + related: `https://kitsu.io/api/edge/library-entries/1644/user`
-        + data (object)
-            + type: users
-            + id: 1
     + anime (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/anime`
             + related: `https://kitsu.io/api/edge/library-entries/1644/anime`
-        + data (object)
-            + type: anime
-            + id: 1
     + manga (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/manga`
             + related: `https://kitsu.io/api/edge/library-entries/1644/manga`
-        + data (object)
-            + type: manga
-            + id: 1
     + drama (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/drama`
             + related: `https://kitsu.io/api/edge/library-entries/1644/drama`
-        + data (object)
-            + type: drama
-            + id: 1
     + review (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/review`
             + related: `https://kitsu.io/api/edge/library-entries/1644/review`
-        + data (object)
-            + type: reviews
-            + id: 1
     + mediaReaction (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/media-reaction`
             + related: `https://kitsu.io/api/edge/library-entries/1644/media-reaction`
-        + data (object)
-            + type: mediaReactions
-            + id: 1
     + media (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/media`
             + related: `https://kitsu.io/api/edge/library-entries/1644/media`
-        + data (object)
-            + type: anime (enum)
-                + anime
-                + manga
-                + drama
-            + id: 1
     + unit (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/unit`
             + related: `https://kitsu.io/api/edge/library-entries/1644/unit`
-        + data (object)
-            + type: episodes (enum)
-                + episodes
-                + chapters
-            + id: 1
     + nextUnit (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/next-unit`
             + related: `https://kitsu.io/api/edge/library-entries/1644/next-unit`
-        + data (object)
-            + type: episodes (enum)
-                + episodes
-                + chapters
-            + id: 1

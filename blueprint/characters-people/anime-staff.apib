@@ -1,5 +1,15 @@
 ## Anime Staff [/anime-staff/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            |️ None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin (1) | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+
 + Parameters
     + id (number, `1`) - ID of the anime staff resource
 

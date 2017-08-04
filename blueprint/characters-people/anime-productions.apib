@@ -1,5 +1,18 @@
 ## Anime Productions [/anime-productions/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            |️ None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin (1) | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+:[](../filters/anime-id)
+:[](../filters/producer-id)
+:[](../filters/role)
+
 + Parameters
     + id (number, `1`) - ID of the anime production resource
 
