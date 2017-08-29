@@ -33,12 +33,12 @@
             + data (anime)
         + manga (object)
             + data (manga)
-        + drama (object)
-            + data (drama)
+<!--    drama (object)
+            data (drama) -->
         + review (object)
             + data (reviews)
-        + mediaReaction (mediaReaction)
-            + data (object)
+        + mediaReaction (object)
+            + data (mediaReactions)
         + media (object)
             + data (anime)
         + unit (object)
@@ -49,7 +49,7 @@
 ## libraryEntriesLinks (libraryEntries)
 + attributes (libraryEntriesAttributes)
 + link (object)
-    + self: `https://kitsu.io/api/edge/library-entries/1644
+    + self: `https://kitsu.io/api/edge/library-entries/1644`
 + relationships (object)
     + user (object)
         + links (object)
