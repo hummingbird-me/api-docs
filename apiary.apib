@@ -200,9 +200,26 @@ grant types defined are:
 browser-based and mobile apps
 - **Password** for logging in with a username and Password
 - **Client Credentials** for application access
+
 # Group Characters & People
 
 ## Anime Characters [/anime-characters/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            |️ None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin (1) | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`animeId` | `1`, `43,2,300`
 
 + Parameters
     + id (number, `1`) - ID of the anime character resource
@@ -217,11 +234,11 @@ browser-based and mobile apps
             + (animeCharacters)
         + meta (object, required)
             + count: 109379 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369` (required)
+            + last: `https://kitsu.io/api/edge/anime-characters?page%5Blimit%5D=10&page%5Boffset%5D=109369
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -324,6 +341,24 @@ browser-based and mobile apps
     + Attributes (Error500)
 ## Anime Productions [/anime-productions/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            |️ None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin (1) | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`animeId` | `1`, `43,2,300`
+`producerId` | `1`, `2,3`
+`role` | | Values of the `role` attribute
+
 + Parameters
     + id (number, `1`) - ID of the anime production resource
 
@@ -337,11 +372,11 @@ browser-based and mobile apps
             + (animeProductions)
         + meta (object, required)
             + count: 28401 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28391` (required)
+            + last: `https://kitsu.io/api/edge/anime-productions?page%5Blimit%5D=10&page%5Boffset%5D=28391
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -444,6 +479,21 @@ browser-based and mobile apps
     + Attributes (Error500)
 ## Anime Staff [/anime-staff/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            |️ None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin (1) | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 + Parameters
     + id (number, `1`) - ID of the anime staff resource
 
@@ -457,11 +507,11 @@ browser-based and mobile apps
             + (animeStaff)
         + meta (object, required)
             + count: 88543 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=88533` (required)
+            + last: `https://kitsu.io/api/edge/anime-staff?page%5Blimit%5D=10&page%5Boffset%5D=88533
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -577,11 +627,11 @@ browser-based and mobile apps
             + (castings)
         + meta (object, required)
             + count: 244549 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=244539` (required)
+            + last: `https://kitsu.io/api/edge/castings?page%5Blimit%5D=10&page%5Boffset%5D=244539
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -697,11 +747,11 @@ browser-based and mobile apps
             + (characters)
         + meta (object, required)
             + count: 950090 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999` (required)
+            + last: `https://kitsu.io/api/edge/characters?page%5Blimit%5D=10&page%5Boffset%5D=94999
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -817,11 +867,11 @@ browser-based and mobile apps
             + (mangaCharacters)
         + meta (object, required)
             + count: 3 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/manga-characters?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -937,11 +987,11 @@ browser-based and mobile apps
             + (mangaStaff)
         + meta (object, required)
             + count: 1 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/manga-staff?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1057,11 +1107,11 @@ browser-based and mobile apps
             + (people)
         + meta (object, required)
             + count: 27957 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947` (required)
+            + last: `https://kitsu.io/api/edge/people?page%5Blimit%5D=10&page%5Boffset%5D=27947
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1177,11 +1227,11 @@ browser-based and mobile apps
             + (producers)
         + meta (object, required)
             + count: 1333 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1323` (required)
+            + last: `https://kitsu.io/api/edge/producers?page%5Blimit%5D=10&page%5Boffset%5D=1323
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1282,6 +1332,7 @@ browser-based and mobile apps
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+
 # Group Groups
 
 ## Group Action Logs [/group-action-logs/{id}]
@@ -1307,11 +1358,11 @@ browser-based and mobile apps
             + (groupCategories)
         + meta (object, required)
             + count: 10 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/group-categories?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1435,11 +1486,11 @@ browser-based and mobile apps
             + (groupMembers)
         + meta (object, required)
             + count: 241197 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187` (required)
+            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1553,11 +1604,11 @@ browser-based and mobile apps
             + (groupNeighbors)
         + meta (object, required)
             + count: 296 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=286` (required)
+            + last: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=286
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1673,11 +1724,11 @@ browser-based and mobile apps
             + (groupPermissions)
         + meta (object, required)
             + count: 5046 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5036` (required)
+            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5036
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1805,11 +1856,11 @@ browser-based and mobile apps
             + (groups)
         + meta (object, required)
             + count: 1917 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1907` (required)
+            + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1907
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1914,6 +1965,7 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the leader chat message resource
+
 # Group Media
 
 ## Anime [/anime/{id}]
@@ -1931,11 +1983,11 @@ browser-based and mobile apps
             + (anime)
         + meta (object, required)
             + count: 12080 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=12070` (required)
+            + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=12070
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2052,11 +2104,11 @@ browser-based and mobile apps
             + (categories)
         + meta (object, required)
             + count: 228 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=218` (required)
+            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=218
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2170,11 +2222,11 @@ browser-based and mobile apps
             + (categoryFavorites)
         + meta (object, required)
             + count: 351 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341` (required)
+            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2287,6 +2339,123 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the drama resource
+
++ Attributes (dramaAttributes)
+
+### Fetch Collection [GET /drama]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (drama)
+        + meta (object, required)
+            + count: 12080 (number, required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/drama?page%5Blimit%5D=10&page%5Boffset%5D=0
+            + prev: `https://kitsu.io/api/edge/drama?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/drama?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/drama?page%5Blimit%5D=10&page%5Boffset%5D=12070
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (drama)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
 ## Episodes [/episodes/{id}]
 
 + Parameters
@@ -2302,11 +2471,11 @@ browser-based and mobile apps
             + (categories)
         + meta (object, required)
             + count: 180218 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=180200` (required)
+            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=180200
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2422,11 +2591,11 @@ browser-based and mobile apps
             + (franchises)
         + meta (object, required)
             + count: 1332 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=1322` (required)
+            + last: `https://kitsu.io/api/edge/franchises?page%5Blimit%5D=10&page%5Boffset%5D=1322
 
 
 + Response 400 (application/vnd.api+json)
@@ -2545,11 +2714,11 @@ browser-based and mobile apps
             + (genres)
         + meta (object, required)
             + count: 61 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=51` (required)
+            + last: `https://kitsu.io/api/edge/genres?page%5Blimit%5D=10&page%5Boffset%5D=51
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2665,11 +2834,11 @@ browser-based and mobile apps
             + (installments)
         + meta (object, required)
             + count: 5902 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=5892` (required)
+            + last: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=5892
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2785,11 +2954,11 @@ browser-based and mobile apps
             + (manga)
         + meta (object, required)
             + count: 30634 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=30624` (required)
+            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=30624
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2905,11 +3074,11 @@ browser-based and mobile apps
             + (mappings)
         + meta (object, required)
             + count: 109379 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369` (required)
+            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3031,11 +3200,11 @@ browser-based and mobile apps
             + (mediaFollows)
         + meta (object, required)
             + count: 10256 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10246` (required)
+            + last: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10246
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3136,14 +3305,6 @@ browser-based and mobile apps
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Media Reaction Votes [/media-reaction-votes/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the media reaction vote resource
-## Media Reactions [/media-reactions/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the media reaction resource
 ## Media Relationships [/media-relationships/{id}]
 
 + Parameters
@@ -3159,11 +3320,11 @@ browser-based and mobile apps
             + (mediaRelationships)
         + meta (object, required)
             + count: 17798 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=17788` (required)
+            + last: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=17788
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3279,11 +3440,11 @@ browser-based and mobile apps
             + (animeCharacters)
         + meta (object, required)
             + count: 109379 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3399,11 +3560,11 @@ browser-based and mobile apps
             + (streamingLinks)
         + meta (object, required)
             + count: 1898 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888` (required)
+            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3504,6 +3665,7 @@ browser-based and mobile apps
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+
 # Group Posts
 
 ## Comment Likes [/comment-likes/{id}]
@@ -3525,11 +3687,11 @@ browser-based and mobile apps
             + (comments)
         + meta (object, required)
             + count: 1274779 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=1274769` (required)
+            + last: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=1274769
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3646,11 +3808,11 @@ browser-based and mobile apps
             + (postLikes)
         + meta (object, required)
             + count: 1600082 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1600072` (required)
+            + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1600072
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3766,11 +3928,11 @@ browser-based and mobile apps
             + (postFollows)
         + meta (object, required)
             + count: 2076 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=2066` (required)
+            + last: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=2066
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3886,11 +4048,11 @@ browser-based and mobile apps
             + (posts)
         + meta (object, required)
             + count: 887155 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145` (required)
+            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3995,8 +4157,130 @@ browser-based and mobile apps
 
 + Parameters
     + id (number, `1`) - ID of the report resource
-# Group Reviews
 
+# Group Reactions
+
+## Media Reaction Votes [/media-reaction-votes/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media reaction vote resource
+## Media Reactions [/media-reactions/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media reaction resource
+
+### Fetch Collection [GET /media-reactions]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array)
+            + (mediaReaction)
+        + meta (object, required)
+            + count: 17608 (number)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + next: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=10`
+            + last: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=17598`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaReaction)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Review Likes [/review-likes/{id}]
 
 + Parameters
@@ -4010,7 +4294,7 @@ browser-based and mobile apps
             + (reviewLikes)
         + meta (object, required)
             + count: 27237 (number)
-        + links (object, required)
+        + link (object)
             + first: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + next: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=10`
             + last: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=27227`
@@ -4129,11 +4413,11 @@ browser-based and mobile apps
             + (reviews)
         + meta (object, required)
             + count: 14505 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` _ Omitted if on first page
             + next: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14495` (required)
+            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14495
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4234,6 +4518,7 @@ browser-based and mobile apps
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+
 # Group Site Announcements
 
 ## Site Announcements [/site-announcements/{id}]
@@ -4251,11 +4536,11 @@ browser-based and mobile apps
             + (siteAnnouncements)
         + meta (object, required)
             + count: 3 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4356,9 +4641,12 @@ browser-based and mobile apps
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+
 # Group User Libraries
 
 ## Library Entries [/library-entries/{id}]
+
+**Authorisation**
 
 Authenticated | Role | GET | POST | PATCH | DELETE
 ------------: | ---: | :-: | :--: | :---: | :----:
@@ -4371,6 +4659,23 @@ authenticated as the user associated with the library entry
 † Adult content will only be shown if enabled in the authenticated
 user's settings
 
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`animeId` | `1`, `43,2,300`
+`dramaId`
+`following`
+`kind` | `anime`, `anime,manga` | Filter by the related media type
+`mangaId` | `2`, `8,987`
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+`since` | `2017-01-28`, `2013-03-25T00:00:00.000Z` | Returns entries updated since the supplied ISO 8601 date
+`status` | `current`, `onHold` | Values of the `status` attribute
+`userId` | `42603`, `2,7`
+
 + Parameters
     + id (number, `1`) - ID of the library entry resource
 
@@ -4381,14 +4686,14 @@ user's settings
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (libraryEntries)
+            + (libraryEntriesLinks)
         + meta (object, required)
             + count: 0 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4403,7 +4708,7 @@ user's settings
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (libraryEntries)
+        + data (libraryEntriesLinks)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4417,6 +4722,7 @@ user's settings
 ### Create Resource [POST]
 
 + Request (application/vnd.api+json)
+    + Attributes (libraryEntriesRequest)
 
 + Response 201 (application/vnd.api+json)
 
@@ -4445,6 +4751,7 @@ user's settings
 ### Update Resource [PATCH]
 
 + Request (application/vnd.api+json)
+    + Attributes (libraryEntriesRequest)
 
 + Response 200 (application/vnd.api+json)
 
@@ -4473,6 +4780,7 @@ user's settings
 ### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
+    + Attributes (libraryEntries)
 
 + Response 202 (application/vnd.api+json)
 
@@ -4504,11 +4812,11 @@ user's settings
             + (libraryEntryLogs)
         + meta (object, required)
             + count: 6409 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=6399` (required)
+            + last: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=6399
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4617,6 +4925,7 @@ user's settings
 
 + Parameters
     + id (number, `1`) - ID of the list import resource
+
 # Group Users
 
 ## Blocks [/blocks/{id}]
@@ -4638,11 +4947,11 @@ user's settings
             + (favorites)
         + meta (object, required)
             + count: 457266 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=457256` (required)
+            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=457256
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4756,11 +5065,11 @@ user's settings
             + (follows)
         + meta (object, required)
             + count: 385223 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=385213` (required)
+            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=385213
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4876,11 +5185,11 @@ user's settings
             + (profileLinkSites)
         + meta (object, required)
             + count: 29 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=19` (required)
+            + last: `https://kitsu.io/api/edge/profile-link-sites?page%5Blimit%5D=10&page%5Boffset%5D=19
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4996,11 +5305,11 @@ user's settings
             + (profileLinks)
         + meta (object, required)
             + count: 11465 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=11455` (required)
+            + last: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=11455
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5116,11 +5425,11 @@ user's settings
             + (roles)
         + meta (object, required)
             + count: 9 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+            + last: `https://kitsu.io/api/edge/roles?page%5Blimit%5D=10&page%5Boffset%5D=0
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5236,11 +5545,11 @@ user's settings
             + (stats)
         + meta (object, required)
             + count: 36959 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=36949` (required)
+            + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=36949
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5354,11 +5663,11 @@ user's settings
             + (userRoles)
         + meta (object, required)
             + count: 103 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=93` (required)
+            + last: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=93
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5474,11 +5783,11 @@ user's settings
             + (users)
         + meta (object, required)
             + count: 144745 (number, required)
-        + links (object, required)
-            + first: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0` (required)
+        + link (object)
+            + first: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0
             + prev: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=144735` (required)
+            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=144735
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5590,8 +5899,8 @@ user's settings
 ## animeCharacters (object)
 + id: 1 (required)
 + type: animeCharacters (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/anime-characters/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/anime-characters/1
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + anime (object)
@@ -5615,8 +5924,8 @@ user's settings
 ## animeProductions (object)
 + id: 1 (required)
 + type: animeProductions (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/anime-productions/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/anime-productions/1
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + anime (object)
@@ -5633,8 +5942,8 @@ user's settings
 ## animeStaff (object)
 + id: 1 (required)
 + type: animeStaff (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/anime-staff/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/anime-staff/1
 + attributes (animeStaffAttributes)
 + relationships (object)
     + anime (object)
@@ -5654,8 +5963,8 @@ user's settings
 ## castings (object)
 + id: 1 (required)
 + type: castings (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/castings/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/castings/1
 + attributes (castingsAttributes)
 + relationships (object)
     + media (object)
@@ -5681,8 +5990,8 @@ user's settings
 ## characters (object)
 + id: 1 (required)
 + type: characters (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/characters/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/characters/1
 + attributes (charactersAttributes)
 + relationships (object)
     + primaryMedia (object)
@@ -5701,8 +6010,8 @@ user's settings
 ## mangaCharacters (object)
 + id: 1 (required)
 + type: mangaCharacters (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/manga-characters/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/manga-characters/1
 + attributes (mangaCharactersAttributes)
 + relationships (object)
     + manga (object)
@@ -5719,8 +6028,8 @@ user's settings
 ## mangaStaff (object)
 + id: 1 (required)
 + type: mangaStaff (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/manga-staff/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/manga-staff/1
 + attributes (mangaStaffAttributes)
 + relationships (object)
     + manga (object)
@@ -5739,8 +6048,8 @@ user's settings
 ## people (object)
 + id: 1 (required)
 + type: people (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/people/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/people/1
 + attributes (peopleAttributes)
 + relationships (object)
     + castings (object)
@@ -5754,8 +6063,8 @@ user's settings
 ## producers (object)
 + id: 1 (required)
 + type: producers (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/producers/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/producers/1
 + attributes (producersAttributes)
 + relationships (object)
     + animeProductions (object)
@@ -5773,8 +6082,8 @@ user's settings
 ## groupCategories (object)
 + id: 1 (required)
 + type: groupCategories (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/group-categories/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/group-categories/1
 + attributes (groupCategoriesAttributes)
 
 
@@ -5789,8 +6098,8 @@ user's settings
 ## groupMembers (object)
 + id: 1 (required)
 + type: groupMembers (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/group-members/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/group-members/1
 + attributes (groupMembersAttributes)
 + relationships (object)
     + group (object)
@@ -5812,8 +6121,8 @@ user's settings
 ## groupNeighbors (object)
 + id: 1 (required)
 + type: groupNeighbors (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/group-neighbors/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/group-neighbors/1
 + relationships (object)
     + source (object)
         + links (object)
@@ -5835,8 +6144,8 @@ user's settings
 ## groupPermissions (object)
 + id: 1 (required)
 + type: groupPermissions (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/group-permissions/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/group-permissions/1
 + attributes (groupPermissionsAttributes)
 + relationships (object)
     + groupMember (object)
@@ -5879,8 +6188,8 @@ user's settings
 ## groups (object)
 + id: 1 (required)
 + type: groups (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/groups/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/groups/1
 + attributes (groupsAttributes)
 + relationships (object)
     + members (object)
@@ -5915,7 +6224,6 @@ user's settings
         + links (object)
             + self: `https://kitsu.io/api/edge/groups/1/relationships/category`
             + related: `https://kitsu.io/api/edge/groups/1/category`
-
 
 
 ## animeAttributes (object)
@@ -6000,8 +6308,8 @@ user's settings
 ## anime (object)
 + id: 1 (required)
 + type: anime (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/anime/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/anime/1
 + attributes (animeAttributes)
 + relationships (object)
     + genres (object)
@@ -6069,8 +6377,8 @@ user's settings
 ## categories (object)
 + id: 10 (string, required)
 + type: categories (string, required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/categories/10` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/categories/10
 + attributes (categoriesAttributes)
 + relationships (object)
     + parent (object)
@@ -6092,8 +6400,8 @@ user's settings
 ## categoryFavorites (object)
 + id: 2 (required)
 + type: categoryFavorites (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/category-favorites/2` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/category-favorites/2
 + relationships (object)
     + user (object)
         + links (object)
@@ -6105,7 +6413,120 @@ user's settings
             + related: `https://kitsu.io/api/edge/category-favorites/2/category`
 
 
+## dramaAttributes (object)
++ slug
++ synopsis
++ coverImageTopOffset: 400 (number, nullable)
++ titles (object) - Languages in different languages. Other languages will be listed if they exist.
+    + en (nullable)
+    + en_jp (nullable)
+    + ja_jp (nullable)
++ canonicalTitle
++ abbreviatedTitles (array)
++ averageRating
++ ratingFrequencies (object)
+    + 2: 72
+    + 3: 0
+    + 4: 292
+    + 5: 0
+    + 6: 67
+    + 7: 0
+    + 8: 162
+    + 9: 0
+    + 10: 254
+    + 11: 2
+    + 12: 1393
+    + 13: 10
+    + 14: 1498
+    + 15: 15
+    + 16: 3767
+    + 17: 28
+    + 18: 4392
+    + 19: 40
+    + 20: 13607
++ userCount: 40405 (number)
++ favoritesCount: 3277 (number)
++ startDate: `1998-04-03` - YYYY-MM-DD date
++ endDate: `1999-04-04` - YYYY-MM-DD date
++ popularityRank: 10 (number)
++ ratingRank: 10 (number)
++ ageRating: R (enum, nullable)
+    + G - General Audiences
+    + PG - Parental Guidance Suggested
+    + R - Restricted
+    + R18 - Explicit
++ ageRatingGuide: `17+ (violence & profanity)` (nullable)
++ subtype: TV (enum)
+    + ONA
+    + TV
+    + movie
+    + music
+    + special
++ status: finished (enum)
+    + current
+    + finished
+    + tba
+    + unreleased
+    + upcoming
++ posterImage (object)
+    + tiny: `https://media.kitsu.io/drama/poster_images/1/tiny.jpg?1431697256`
+    + small: `https://media.kitsu.io/drama/poster_images/1/small.jpg?1431697256`
+    + medium: `https://media.kitsu.io/drama/poster_images/1/medium.jpg?1431697256`
+    + large: `https://media.kitsu.io/drama/poster_images/1/large.jpg?1431697256`
+    + original: `https://media.kitsu.io/drama/poster_images/1/original.jpg?1431697256`
++ coverImage (object)
+    + tiny: `https://media.kitsu.io/drama/cover_images/1/tiny.jpg?1416336000`
+    + small: `https://media.kitsu.io/drama/cover_images/1/small.jpg?1416336000`
+    + large: `https://media.kitsu.io/drama/cover_images/1/large.jpg?1416336000`
+    + original: `https://media.kitsu.io/drama/cover_images/1/original.jpg?1416336000`
++ episodeCount: 26 (number)
++ episodeLength: 24 (number) - Length of episode in minutes
++ youtubeVideoId - ID of a youtube trailer
++ nsfw: false (boolean) - NSFW media requires authentication
 
+## drama (object)
++ id: 1 (required)
++ type: drama (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/drama/1
++ attributes (dramaAttributes)
++ relationships (object)
+    + genres (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/genres`
+            + related: `https://kitsu.io/api/edge/drama/1/genres`
+    + categories (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/categories`
+            + related: `https://kitsu.io/api/edge/drama/1/categories`
+    + castings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/castings`
+            + related: `https://kitsu.io/api/edge/drama/1/castings`
+    + installments (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/installments`
+            + related: `https://kitsu.io/api/edge/drama/1/installments`
+    + mappings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/mappings`
+            + related: `https://kitsu.io/api/edge/drama/1/mappings`
+    + reviews (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/reviews`
+            + related: `https://kitsu.io/api/edge/drama/1/reviews`
+    + mediaRelationships (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/media-relationships`
+            + related: `https://kitsu.io/api/edge/drama/1/media-relationships`
+    + episodes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/episodes`
+            + related: `https://kitsu.io/api/edge/drama/1/episodes`
+    + streamingLinks (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/streaming-links`
+            + related: `https://kitsu.io/api/edge/drama/1/streaming-links`
 ## episodesAttributes (object)
 + titles (object)
     + en_jp: The $$60 Billion Man
@@ -6121,8 +6542,8 @@ user's settings
 ## episodes (object)
 + id: 28 (required)
 + type: episodes (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/episodes/28` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/episodes/28
 + attributes (episodesAttributes)
 + relationships (object)
     + media (object)
@@ -6138,8 +6559,8 @@ user's settings
 ## franchises (object)
 + id: 1 (required)
 + type: franchises (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/franchises/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/franchises/1
 + attributes (franchisesAttributes)
 + relationships (object)
     + installments (object)
@@ -6154,8 +6575,8 @@ user's settings
 ## genres (object)
 + id: 1 (required)
 + type: genres (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/genres/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/genres/1
 + attributes (genresAttributes)
 ## installmentsAttributes (object)
 + tag (nullable)
@@ -6164,8 +6585,8 @@ user's settings
 ## installments (object)
 + id: 1 (required)
 + type: installments (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/installments/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/installments/1
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + franchise (object)
@@ -6259,8 +6680,8 @@ user's settings
 ## manga (object)
 + id: 14916 (required)
 + type: manga (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/manga/14916` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/manga/14916
 + attributes (animeAttributes)
 + relationships (object)
     + genres (object)
@@ -6315,8 +6736,8 @@ user's settings
 ## mappings (object)
 + id: 1 (required)
 + type: mappings (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/mappings/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/mappings/1
 + attributes (mappingsAttributes)
 + relationships (object)
     + media (object)
@@ -6328,8 +6749,8 @@ user's settings
 ## mediaFollows (object)
 + id: 1 (required)
 + type: mediaFollows (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/media-follows/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/media-follows/1
 + relationships (object)
     + user (object)
         + links (object)
@@ -6339,8 +6760,6 @@ user's settings
         + links (object)
             + self: `https://kitsu.io/api/edge/media-follows/1/relationships/media`
             + related: `https://kitsu.io/api/edge/media-follows/1/media`
-
-
 ## mediaRelationshipsAttributes (object)
 + role: prequel (enum) - Relation to the source media
     + adaptation
@@ -6359,8 +6778,8 @@ user's settings
 ## mediaRelationships (object)
 + id: 1 (required)
 + type: mediaRelationships (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/media-relationships/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/media-relationships/1
 + attributes (mediaRelationshipsAttributes)
 + relationships (object)
     + source (object)
@@ -6378,8 +6797,8 @@ user's settings
 ## streamers (object)
 + id: 1 (required)
 + type: streamers (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/streamers/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/streamers/1
 + attributes (streamersAttributes)
 + relationships (object)
     + streamingLinks (object)
@@ -6395,8 +6814,8 @@ user's settings
 ## streamingLinks (object)
 + id: 1 (required)
 + type: streamingLinks (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/streaming-links/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/streaming-links/1
 + attributes (streamingLinksAttributes)
 + relationships (object)
     + streamer (object)
@@ -6407,7 +6826,6 @@ user's settings
         + links (object)
             + self: `https://kitsu.io/api/edge/streaming-links/1/relationships/media`
             + related: `https://kitsu.io/api/edge/streaming-links/1/media`
-
 
 
 ## commentsAttributes (object)
@@ -6424,8 +6842,8 @@ user's settings
 ## comments (object)
 + id: 7760392 (required)
 + type: comments (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/comments/7760392` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/comments/7760392
 + attributes (commentsAttributes)
 + relationships (object)
     + user (object)
@@ -6454,8 +6872,8 @@ user's settings
 ## postLikes (object)
 + id: 1 (required)
 + type: postLikes (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/post-likes/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/post-likes/1
 + attributes (postLikesAttributes)
 + relationships (object)
     + post (object)
@@ -6473,8 +6891,8 @@ user's settings
 ## postFollows (object)
 + id: 3 (required)
 + type: postFollows (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/post-follows/3` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/post-follows/3
 + attributes (postFollowsAttributes)
 + relationships (object)
     + post (object)
@@ -6502,8 +6920,8 @@ user's settings
 ## posts (object)
 + id: 167585 (required)
 + type: posts (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/posts/167585` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/posts/167585
 + attributes (postsAttributes)
 + relationships (object)
     + user (object)
@@ -6537,11 +6955,47 @@ user's settings
 
 
 
+## mediaReaction (object)
++ id: 4 (required)
++ type: mediaReactions (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/media-reactions/4`
++ attributes (object)
+    + createdAt
+    + updatedAt
+    + reaction
+    + upVotesCount
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/anime`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/anime`
+    + drama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/drama`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/drama`
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/manga`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/manga`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/user`
+    + libraryEntry (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/library-entry`
+    + votes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/votes`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/votes
+
 ## reviewLikes (object)
 + id: 1 (required)
 + type: reviewLikes (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/review-likes/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/review-likes/1
 + relationships (object)
     + review (object)
         + links (object)
@@ -6565,8 +7019,8 @@ user's settings
 ## reviews (object)
 + id: 4 (required)
 + type: reviews (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/reviews/4` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/reviews/4
 + attributes (reviewsAttributes)
 + relationships (object)
     + libraryEntry (object)
@@ -6591,8 +7045,8 @@ user's settings
 ## siteAnnouncements (object)
 + id: 2 (required)
 + type: siteAnnouncements (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/site-announcements/2` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/site-announcements/2
 + attributes (siteAnnouncementsAttributes)
 + relationships (object)
     + user (object)
@@ -6600,32 +7054,58 @@ user's settings
             + self: `https://kitsu.io/api/edge/site-announcements/2/relationships/user`
             + related: `https://kitsu.io/api/edge/site-announcements/2/user`
 
+## libraryEntries (object)
++ id: 1644 (required)
++ type: libraryEntries (required)
+
 ## libraryEntriesAttributes(object)
++ createdAt: `2013-03-03T23:07:42.713Z` - ISO 8601 date and time
++ updatedAt: `2016-01-15T05:53:48.037Z` - ISO 8601 of last modification
 + status: completed (enum)
     + completed
     + current
     + dropped
     + on_hold
     + planned
-+ progress: 13 (number)
-+ volumesOwned: 0 (number)
++ progress: 13 (number) - Current episode or chapter
++ volumesOwned: 0 (number) - (Manga only)
 + reconsuming: false (boolean)
 + reconsumeCount: 0 (number)
 + notes (nullable)
 + private: false (boolean)
-+ updatedAt: `2016-01-15T05:53:48.037Z`
-+ progressedAt: `2016-01-15T05:53:48.037Z`
-+ startedAt (object)
-+ finishedAt: `2016-01-15T05:53:48.037Z`
-+ rating: `3.5`
-+ ratingTwenty: 14 (number)
++ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last episode change
++ startedAt (nullable) - ISO 8601 of when the user consumed ch/ep 1
++ finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last ch/ep
++ rating: `3.5` - Deprecated in favour of `ratingTwenty`
++ ratingTwenty: 14 (number) - 2,3..20 rating scale, display as 1,1.5..10
 
-## libraryEntries (object)
-+ id: 1644 (required)
-+ type: libraryEntries (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/library-entries/1644` (required)
+## libraryEntriesRequest (object)
++ data (libraryEntries)
+    + attributes (libraryEntriesAttributes)
+    + relationships (object)
+        + user (object)
+            + data (users)
+        + anime (object)
+            + data (anime)
+        + manga (object)
+            + data (manga)
+        + drama (object)
+            + data (drama)
+        + review (object)
+            + data (reviews)
+        + mediaReaction (object)
+            + data (mediaReaction)
+        + media (object)
+            + data (anime)
+        + unit (object)
+            + data (episodes)
+        + nextUnit (object)
+            + data (episodes)
+
+## libraryEntriesLinks (libraryEntries)
 + attributes (libraryEntriesAttributes)
++ link (object)
+    + self: `https://kitsu.io/api/edge/library-entries/1644
 + relationships (object)
     + user (object)
         + links (object)
@@ -6689,8 +7169,8 @@ user's settings
 ## libraryEntryLogs (object)
 + id: 221679 (required)
 + type: libraryEntryLogs (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/library-entry-logs/221679` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/library-entry-logs/221679
 + attributes (libraryEntryLogsAttributes)
 + relationships (object)
     + linkedAccount (object)
@@ -6710,8 +7190,8 @@ user's settings
 ## favorites (object)
 + id: 1 (required)
 + type: favorites (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/favorites/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/favorites/1
 + attributes (favoritesAttributes)
 + relationships (object)
     + user (object)
@@ -6725,8 +7205,8 @@ user's settings
 ## follows (object)
 + id: 3 (required)
 + type: follows (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/follows/3` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/follows/3
 + relationships (object)
     + follower (object)
         + links (object)
@@ -6742,8 +7222,8 @@ user's settings
 ## profileLinkSites (object)
 + id: 1 (required)
 + type: profileLinkSites (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/profile-link-sites/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/profile-link-sites/1
 + attributes (profileLinkSitesAttributes)
 ## profileLinksAttributes (object)
  + url: `https://github.com/vevix`
@@ -6751,8 +7231,8 @@ user's settings
 ## profileLinks (object)
 + id: 1 (required)
 + type: profileLinks (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/profile-links/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/profile-links/1
 + attributes (profileLinksAttributes)
 + relationships (object)
     + user (object)
@@ -6763,7 +7243,6 @@ user's settings
         + links (object)
             + self: `https://kitsu.io/api/edge/profile-links/1/relationships/profile-link-site`
             + related: `https://kitsu.io/api/edge/profile-links/1/profile-link-site`
-                  
 ## rolesAttributes (object)
 + name: admin
 + resourceId (nullable)
@@ -6772,8 +7251,8 @@ user's settings
 ## roles (object)
 + id: 1 (required)
 + type: roles (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/roles/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/roles/1
 + attributes (rolesAttributes)
 + relationships (object)
     + userRoles (object)
@@ -6846,8 +7325,8 @@ user's settings
 ## stats (object)
 + id: 413653 (required)
 + type: stats (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/stats/413653` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/stats/413653
 + attributes (statsAttributes)
 + relationships (object)
     + user (object)
@@ -6857,8 +7336,8 @@ user's settings
 ## userRoles (object)
 + id: 1 (required)
 + type: userRoles (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/user-roles/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/user-roles/1
 + relationships (object)
     + user (object)
         + links (object)
@@ -6918,8 +7397,8 @@ user's settings
 ## users (object)
 + id: 1 (required)
 + type: users (required)
-+ links (object, required)
-    + self: `https://kitsu.io/api/edge/users/1` (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/users/1
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + waifu (object)
