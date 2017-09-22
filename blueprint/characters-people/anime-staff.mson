@@ -4,7 +4,7 @@
 ## animeStaff (object)
 + id: 1 (required)
 + type: animeStaff (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/anime-staff/1
 + attributes (animeStaffAttributes)
 + relationships (object)

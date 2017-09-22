@@ -48,7 +48,7 @@
 ## users (object)
 + id: 1 (required)
 + type: users (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/users/1
 + attributes (animeCharactersAttributes)
 + relationships (object)

@@ -5,7 +5,7 @@
 ## streamers (object)
 + id: 1 (required)
 + type: streamers (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/streamers/1
 + attributes (streamersAttributes)
 + relationships (object)

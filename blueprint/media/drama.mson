@@ -72,7 +72,7 @@
 ## drama (object)
 + id: 1 (required)
 + type: drama (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/drama/1
 + attributes (dramaAttributes)
 + relationships (object)

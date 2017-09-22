@@ -9,7 +9,7 @@
 ## characters (object)
 + id: 1 (required)
 + type: characters (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/characters/1
 + attributes (charactersAttributes)
 + relationships (object)

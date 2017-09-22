@@ -4,7 +4,7 @@
 ## profileLinks (object)
 + id: 1 (required)
 + type: profileLinks (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/profile-links/1
 + attributes (profileLinksAttributes)
 + relationships (object)

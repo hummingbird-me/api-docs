@@ -31,7 +31,7 @@
 ## groups (object)
 + id: 1 (required)
 + type: groups (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/groups/1
 + attributes (groupsAttributes)
 + relationships (object)

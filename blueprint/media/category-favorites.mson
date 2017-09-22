@@ -1,7 +1,7 @@
 ## categoryFavorites (object)
 + id: 2 (required)
 + type: categoryFavorites (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/category-favorites/2
 + relationships (object)
     + user (object)

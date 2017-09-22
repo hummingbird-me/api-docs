@@ -24,7 +24,7 @@
 ## libraryEntryLogs (object)
 + id: 221679 (required)
 + type: libraryEntryLogs (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/library-entry-logs/221679
 + attributes (libraryEntryLogsAttributes)
 + relationships (object)

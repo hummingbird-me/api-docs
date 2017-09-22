@@ -2,7 +2,7 @@
 ## reviewLikes (object)
 + id: 1 (required)
 + type: reviewLikes (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/review-likes/1
 + relationships (object)
     + review (object)

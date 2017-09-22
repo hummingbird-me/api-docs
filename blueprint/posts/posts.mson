@@ -15,7 +15,7 @@
 ## posts (object)
 + id: 167585 (required)
 + type: posts (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/posts/167585
 + attributes (postsAttributes)
 + relationships (object)

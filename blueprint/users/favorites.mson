@@ -4,7 +4,7 @@
 ## favorites (object)
 + id: 1 (required)
 + type: favorites (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/favorites/1
 + attributes (favoritesAttributes)
 + relationships (object)

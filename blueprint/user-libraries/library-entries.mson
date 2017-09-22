@@ -48,7 +48,7 @@
 
 ## libraryEntriesLinks (libraryEntries)
 + attributes (libraryEntriesAttributes)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/library-entries/1644
 + relationships (object)
     + user (object)

@@ -1,7 +1,7 @@
 ## mediaReaction (object)
 + id: 4 (required)
 + type: mediaReactions (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/media-reactions/4`
 + attributes (object)
     + createdAt

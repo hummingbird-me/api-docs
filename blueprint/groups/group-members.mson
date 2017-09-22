@@ -9,7 +9,7 @@
 ## groupMembers (object)
 + id: 1 (required)
 + type: groupMembers (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/group-members/1
 + attributes (groupMembersAttributes)
 + relationships (object)

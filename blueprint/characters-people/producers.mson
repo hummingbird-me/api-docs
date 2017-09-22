@@ -5,7 +5,7 @@
 ## producers (object)
 + id: 1 (required)
 + type: producers (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/producers/1
 + attributes (producersAttributes)
 + relationships (object)

@@ -15,7 +15,7 @@
 ## categories (object)
 + id: 10 (string, required)
 + type: categories (string, required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/categories/10
 + attributes (categoriesAttributes)
 + relationships (object)

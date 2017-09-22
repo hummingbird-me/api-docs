@@ -7,7 +7,7 @@
 ## animeProductions (object)
 + id: 1 (required)
 + type: animeProductions (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/anime-productions/1
 + attributes (animeCharactersAttributes)
 + relationships (object)

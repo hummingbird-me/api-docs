@@ -5,7 +5,7 @@
 ## postFollows (object)
 + id: 3 (required)
 + type: postFollows (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/post-follows/3
 + attributes (postFollowsAttributes)
 + relationships (object)

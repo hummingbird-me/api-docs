@@ -6,6 +6,6 @@
 ## genres (object)
 + id: 1 (required)
 + type: genres (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/genres/1
 + attributes (genresAttributes)

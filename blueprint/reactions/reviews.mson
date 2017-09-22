@@ -12,7 +12,7 @@
 ## reviews (object)
 + id: 4 (required)
 + type: reviews (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/reviews/4
 + attributes (reviewsAttributes)
 + relationships (object)

@@ -60,7 +60,7 @@
 ## stats (object)
 + id: 413653 (required)
 + type: stats (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/stats/413653
 + attributes (statsAttributes)
 + relationships (object)

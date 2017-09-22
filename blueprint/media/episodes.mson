@@ -13,7 +13,7 @@
 ## episodes (object)
 + id: 28 (required)
 + type: episodes (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/episodes/28
 + attributes (episodesAttributes)
 + relationships (object)

@@ -80,7 +80,7 @@
 ## anime (object)
 + id: 1 (required)
 + type: anime (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/anime/1
 + attributes (animeAttributes)
 + relationships (object)

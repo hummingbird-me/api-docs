@@ -7,7 +7,7 @@
 ## castings (object)
 + id: 1 (required)
 + type: castings (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/castings/1
 + attributes (castingsAttributes)
 + relationships (object)

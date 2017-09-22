@@ -6,7 +6,7 @@
 ## mangaCharacters (object)
 + id: 1 (required)
 + type: mangaCharacters (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/manga-characters/1
 + attributes (mangaCharactersAttributes)
 + relationships (object)

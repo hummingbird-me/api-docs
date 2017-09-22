@@ -6,7 +6,7 @@
 ## people (object)
 + id: 1 (required)
 + type: people (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/people/1
 + attributes (peopleAttributes)
 + relationships (object)

@@ -4,7 +4,7 @@
 ## mangaStaff (object)
 + id: 1 (required)
 + type: mangaStaff (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/manga-staff/1
 + attributes (mangaStaffAttributes)
 + relationships (object)

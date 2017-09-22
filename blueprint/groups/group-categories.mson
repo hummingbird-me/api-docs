@@ -6,6 +6,6 @@
 ## groupCategories (object)
 + id: 1 (required)
 + type: groupCategories (required)
-+ link (object)
++ links (object)
     + self: `https://kitsu.io/api/edge/group-categories/1
 + attributes (groupCategoriesAttributes)
