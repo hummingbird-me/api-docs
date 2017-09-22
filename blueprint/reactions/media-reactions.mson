@@ -1,0 +1,35 @@
+## mediaReaction (object)
++ id: 4 (required)
++ type: mediaReactions (required)
++ link (object)
+    + self: `https://kitsu.io/api/edge/media-reactions/4`
++ attributes (object)
+    + createdAt
+    + updatedAt
+    + reaction
+    + upVotesCount
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/anime`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/anime`
+    + drama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/drama`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/drama`
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/manga`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/manga`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/user`
+    + libraryEntry (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/library-entry`
+    + votes (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/votes`
+            + related: `https://kitsu.io/api/edge/media-reactions/4/votes
