@@ -1,0 +1,25 @@
+## chaptersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ titles (object)
+    + en_jp: `Mission 01: Magical Five`
++ canonicalTitle: `Mission 01: Magical Five`
++ volumeNumber: 1 (number)
++ number: 1 (number) - Absolute chapter number
++ synopsis
++ published: `2015-06-25` - YYYY-MM-DD date
++ length: 80 (nullable) - Number of pages in chapter
++ thumbnail (object)
+    + original: `https://media.kitsu.io/chapters/thumbnails/403830/original.jpg?1501195665`
+
+## chapters (object)
++ id: 403830 (required)
++ type: chapters (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/chapters/403830
++ attributes (chaptersAttributes)
++ relationships (object)
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/chapters/403830/relationships/manga`
+            + related: `https://kitsu.io/api/edge/chapters/403830/manga`
