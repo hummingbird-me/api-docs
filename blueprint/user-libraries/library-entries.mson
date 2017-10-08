@@ -20,7 +20,7 @@
 + progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last episode change
 + startedAt (nullable) - ISO 8601 of when the user consumed ch/ep 1
 + finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last ch/ep
-+ rating: `3.5` - Deprecated in favour of `ratingTwenty`
++ rating: `3.5` - Deprecated in favour of ratingTwenty
 + ratingTwenty: 14 (number) - 2,3..20 rating scale, display as 1,1.5..10
 
 ## libraryEntriesRequest (object)
