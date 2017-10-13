@@ -1,4 +1,6 @@
 ## episodesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + titles (object)
     + en_jp: The $$60 Billion Man
 + canonicalTitle: The $$60 Billion Man

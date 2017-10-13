@@ -1,4 +1,6 @@
 ## categoriesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + title: Elf
 + description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...`
 + totalMediaCount: 32 (number)

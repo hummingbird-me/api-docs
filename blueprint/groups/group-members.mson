@@ -1,9 +1,10 @@
 ## groupMembersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + rank: admin (enum)
     + admin
     + mod
     + pleb
-+ createdAt: `2015-02-17T21:16:53.211Z` - ISO 8601 date, YYYY-MM-DDThh:mm:ssTZD
 + unreadCount: 3 (number) - member's unread posts in group
 
 ## groupMembers (object)

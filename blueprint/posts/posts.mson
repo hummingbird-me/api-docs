@@ -1,4 +1,6 @@
 ## postsAttributes (object)
++ createdAt: `2013-06-21T20:15:54.522Z` - ISO 8601 date and time
++ updatedAt: `2017-05-21T04:05:30.561Z` - ISO 8601 of last modification
 + content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
 + contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
 + commensCount: 13 (number)
@@ -7,8 +9,6 @@
 + nsfw: false (boolean)
 + blocked: false (boolean)
 + deletedAt (nullable)
-+ createdAt: `2013-06-21T20:15:54.522Z`
-+ updatedAt: `2017-05-21T04:05:30.561Z`
 + topLevelCommentsCount: 12 (number)
 + editedAt (nullable)
 

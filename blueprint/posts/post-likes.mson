@@ -1,5 +1,6 @@
 ## postLikesAttributes (object)
-+ createdAt: `2016-11-02T00:20:19.057Z`
++ createdAt: `2016-11-02T00:20:19.057Z` - ISO 8601 date and time
++ updatedAt: `2016-11-02T00:20:19.057Z` - ISO 8601 of last modification
 
 ## postLikes (object)
 + id: 1 (required)
