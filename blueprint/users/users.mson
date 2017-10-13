@@ -50,7 +50,7 @@
 + type: users (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/users/1
-+ attributes (animeCharactersAttributes)
++ attributes (usersAttributes)
 + relationships (object)
     + waifu (object)
         + links (object)
