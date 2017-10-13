@@ -1,4 +1,6 @@
 ## libraryEntryLogsAttributes (object)
++ createdAt: `2017-06-20T04:39:42.808Z` - ISO 8601 date and time
++ updatedAt: `2017-06-20T04:39:42.808Z` - ISO 8601 of last modification
 + progress: 5 (number)
 + rating (nullable)
 + reconsumeCount: 0 (number)
@@ -18,7 +20,6 @@
     + error
     + pending
     + success
-+ createdAt: `2017-06-20T04:39:42.808Z`
 + errorMessage (nullable)
 
 ## libraryEntryLogs (object)

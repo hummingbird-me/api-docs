@@ -1,4 +1,6 @@
 ## usersAttributes (object)
++ createdAt: `2013-02-20T16:21:01.289Z` - ISO 8601 date and time
++ updatedAt: `2017-06-06T20:17:07.447Z` - ISO 8601 of last modification
 + name: vikhyat
 + pastNames (array)
 + about (nullable)
@@ -7,13 +9,11 @@
 + location: `Seattle, WA`
 + waifuOrHusbando: Waifu
 + followersCount: 1716 (number)
-+ createdAt: `2013-02-20T16:21:01.289Z`
 + facebookId: 530577081
 + followingCount: 2031 (number)
 + lifeSpentOnAnime: 45474 (number)
 + birthday (nullable)
 + gender (nullable)
-+ updatedAt: `2017-06-06T20:17:07.447Z`
 + commentsCount: 0 (number)
 + favoritesCount: 4 (number)
 + likesGivenCount: 34 (number)

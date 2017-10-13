@@ -1,4 +1,6 @@
 ## categoryFavorites (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 2 (required)
 + type: categoryFavorites (required)
 + links (object)

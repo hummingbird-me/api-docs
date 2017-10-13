@@ -1,12 +1,12 @@
 ## commentsAttributes (object)
++ createdAt: `2014-08-07T19:08:14.364Z` - ISO 8601 date and time
++ updatedAt: `2014-08-07T19:08:14.364Z` - ISO 8601 of last modification
 + content: `This is a test.`
 + contentFormatted: `This is a test.`
 + blocked: false (boolean)
 + deletedAt (nullable)
-+ createdAt: `2014-08-07T19:08:14.364Z`
 + likesCount: 0 (number)
 + repliesCount: 0 (number)
-+ updatedAt: `2014-08-07T19:08:14.364Z`
 + editedAt (nullable)
 
 ## comments (object)

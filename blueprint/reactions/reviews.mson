@@ -1,4 +1,6 @@
 ## reviewsAttributes (object)
++ createdAt: `2013-03-04T18:29:01.441Z` - ISO 8601 date and time
++ updatedAt: `2016-12-19T08:01:58.532Z` - ISO 8601 of last modification
 + content: `The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
 + contentFormatted: `<p>The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
 + likesCount: 3 (number)
@@ -6,8 +8,6 @@
 + rating: 20 (number)
 + source: hummingbird
 + spoiler: false (boolean)
-+ createdAt: `2013-03-04T18:29:01.441Z`
-+ updatedAt: `2016-12-19T08:01:58.532Z`
 
 ## reviews (object)
 + id: 4 (required)
