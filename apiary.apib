@@ -6008,6 +6008,8 @@ Filter | Example | Notes
 # Data Structures
 
 ## animeCharactersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: main (enum) - Role the character plays in the anime
     + main
     + supporting
@@ -6032,6 +6034,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/anime-characters/1/relationships/castings`
             + related: `https://kitsu.io/api/edge/anime-characters/1/castings`
 ## animeProductionsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: producer (enum) - role of the producer
     + licensor
     + producer
@@ -6053,6 +6057,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/anime-productions/1/relationships/producer`
             + related: `https://kitsu.io/api/edge/anime-productions/1/producer`
 ## animeStaffAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: Producer - Role of the person (Multiple roles are comma seperated)
 
 ## animeStaff (object)
@@ -6071,6 +6077,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/anime-staff/1/relationships/person`
             + related: `https://kitsu.io/api/edge/anime-staff/1/person`
 ## castingsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: producer - Role of the person (Multiple roles are comma seperated)
 + voiceActor: false (boolean)
 + featured: false (boolean)
@@ -6096,6 +6104,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/castings/1/relationships/person`
             + related: `https://kitsu.io/api/edge/castings/1/person`
 ## charactersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug: jet-black
 + name: Jet Black
 + malId: 3 (number, nullable)
@@ -6119,6 +6129,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/characters/1/relationships/castings`
             + related: `https://kitsu.io/api/edge/characters/1/castings`
 ## mangaCharactersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: main (enum) - Role the character plays in the manga
     + main
     + supporting
@@ -6139,6 +6151,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/manga-characters/1/relationships/character`
             + related: `https://kitsu.io/api/edge/manga-characters/1/character`
 ## mangaStaffAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: producer - Role of the person (Multiple roles are comma seperated)
 
 ## mangaStaff (object)
@@ -6157,6 +6171,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/manga-staff/1/relationships/person`
             + related: `https://kitsu.io/api/edge/manga-staff/1/person`
 ## peopleAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + image: `https://media.kitsu.io/people/images/1/original.jpg?1416260317` (nullable)
 + name: Masahiko Minami
 + malId: 6519 (number, nullable)
@@ -6173,6 +6189,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/people/1/relationships/castings`
             + related: `https://kitsu.io/api/edge/people/1/castings`
 ## producersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug: sunrise
 + name: Sunrise
 
@@ -6191,6 +6209,8 @@ Filter | Example | Notes
 
 
 ## groupCategoriesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + name: `Anime & Manga`
 + slug: `anime-manga`
 + description (nullable)
@@ -6204,11 +6224,12 @@ Filter | Example | Notes
 
 
 ## groupMembersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + rank: admin (enum)
     + admin
     + mod
     + pleb
-+ createdAt: `2015-02-17T21:16:53.211Z` - ISO 8601 date, YYYY-MM-DDThh:mm:ssTZD
 + unreadCount: 3 (number) - member's unread posts in group
 
 ## groupMembers (object)
@@ -6235,6 +6256,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/group-members/1/relationships/notes`
             + related: `https://kitsu.io/api/edge/group-members/1/notes`
 ## groupNeighbors (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 1 (required)
 + type: groupNeighbors (required)
 + links (object)
@@ -6249,6 +6272,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
 ## groupPermissionsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + permission: community (enum)
     + community
     + content
@@ -6343,6 +6368,8 @@ Filter | Example | Notes
 
 
 ## animeAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug: `cowboy-bebop`
 + synopsis: `In the year 2071, humanity has colonoized several of the planets and moons...`
 + coverImageTopOffset: 400 (number, nullable)
@@ -6477,6 +6504,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/anime/1/relationships/anime-staff`
             + related: `https://kitsu.io/api/edge/anime/1/anime-staff`
 ## categoriesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + title: Elf
 + description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...`
 + totalMediaCount: 32 (number)
@@ -6514,6 +6543,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/categories/10/relationships/manga`
             + related: `https://kitsu.io/api/edge/categories/10/manga`
 ## categoryFavorites (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 2 (required)
 + type: categoryFavorites (required)
 + links (object)
@@ -6554,6 +6585,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/chapters/403830/relationships/manga`
             + related: `https://kitsu.io/api/edge/chapters/403830/manga`
 ## dramaAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug
 + synopsis
 + coverImageTopOffset: 400 (number, nullable)
@@ -6668,6 +6701,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/drama/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/drama/1/streaming-links`
 ## episodesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + titles (object)
     + en_jp: The $$60 Billion Man
 + canonicalTitle: The $$60 Billion Man
@@ -6692,6 +6727,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/episodes/28/relationships/media`
             + related: `https://kitsu.io/api/edge/episodes/28/media`
 ## franchisesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + titles (object)
     + en: Darker than Black (nullable)
     + en_jp (nullable)
@@ -6709,6 +6746,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/franchises/1/relationships/installments`
             + related: `https://kitsu.io/api/edge/franchises/1/installments`
 ## genresAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + name: Action
 + slug: action
 + description (nullable)
@@ -6720,6 +6759,8 @@ Filter | Example | Notes
     + self: `https://kitsu.io/api/edge/genres/1
 + attributes (genresAttributes)
 ## installmentsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + tag (nullable)
 + position (number)
 
@@ -6739,6 +6780,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/installments/1/relationships/media`
             + related: `https://kitsu.io/api/edge/installments/1/media`
 ## mangaAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug: `shingeki-no-kyojin`
 + synopsis: `Several hundred years ago...``
 + coverImageTopOffset: 112 (number, nullable)
@@ -6866,6 +6909,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/manga/1/relationships/manga-staff`
             + related: `https://kitsu.io/api/edge/manga/1/manga-staff`
 ## mappingsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + externalSite: myanimelist/anime (enum)
     + anidb
     + myanimelist/anime
@@ -6888,6 +6933,8 @@ Filter | Example | Notes
 
 
 ## mediaFollows (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 1 (required)
 + type: mediaFollows (required)
 + links (object)
@@ -6902,6 +6949,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/media-follows/1/relationships/media`
             + related: `https://kitsu.io/api/edge/media-follows/1/media`
 ## mediaRelationshipsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: prequel (enum) - Relation to the source media
     + adaptation
     + alternative_setting
@@ -6932,6 +6981,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/media-relationships/1/relationships/destination`
             + related: `https://kitsu.io/api/edge/media-relationships/1/destination`
 ## streamersAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + siteName: Hulu
 + logo: `/logos/original/missing.png`
 
@@ -6947,6 +6998,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/streamers/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/streamers/1/streaming-links`
 ## streamingLinksAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + role: main
 + url: `http://www.hulu.com/hacklegend-of-the-twilight`
 + subs: en (array)
@@ -6970,14 +7023,14 @@ Filter | Example | Notes
 
 
 ## commentsAttributes (object)
++ createdAt: `2014-08-07T19:08:14.364Z` - ISO 8601 date and time
++ updatedAt: `2014-08-07T19:08:14.364Z` - ISO 8601 of last modification
 + content: `This is a test.`
 + contentFormatted: `This is a test.`
 + blocked: false (boolean)
 + deletedAt (nullable)
-+ createdAt: `2014-08-07T19:08:14.364Z`
 + likesCount: 0 (number)
 + repliesCount: 0 (number)
-+ updatedAt: `2014-08-07T19:08:14.364Z`
 + editedAt (nullable)
 
 ## comments (object)
@@ -7008,7 +7061,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/comments/7760392/relationships/replies`
             + related: `https://kitsu.io/api/edge/comments/7760392/replies`
 ## postLikesAttributes (object)
-+ createdAt: `2016-11-02T00:20:19.057Z`
++ createdAt: `2016-11-02T00:20:19.057Z` - ISO 8601 date and time
++ updatedAt: `2016-11-02T00:20:19.057Z` - ISO 8601 of last modification
 
 ## postLikes (object)
 + id: 1 (required)
@@ -7026,8 +7080,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/post-likes/1/relationships/user`
             + related: `https://kitsu.io/api/edge/post-likes/1/user`
 ## postFollowsAttributes (object)
-+ createdAt: `2017-05-04T03:53:54.049Z`
-+ updatedAt: `2017-05-04T03:53:54.049Z`
++ createdAt: `2017-05-04T03:53:54.049Z` - ISO 8601 date and time
++ updatedAt: `2017-05-04T03:53:54.049Z` - ISO 8601 of last modification
 
 ## postFollows (object)
 + id: 3 (required)
@@ -7045,6 +7099,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/post-follows/3/relationships/user`
             + related: `https://kitsu.io/api/edge/post-follows/3/user`
 ## postsAttributes (object)
++ createdAt: `2013-06-21T20:15:54.522Z` - ISO 8601 date and time
++ updatedAt: `2017-05-21T04:05:30.561Z` - ISO 8601 of last modification
 + content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
 + contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
 + commensCount: 13 (number)
@@ -7053,8 +7109,6 @@ Filter | Example | Notes
 + nsfw: false (boolean)
 + blocked: false (boolean)
 + deletedAt (nullable)
-+ createdAt: `2013-06-21T20:15:54.522Z`
-+ updatedAt: `2017-05-21T04:05:30.561Z`
 + topLevelCommentsCount: 12 (number)
 + editedAt (nullable)
 
@@ -7147,6 +7201,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/review-likes/1/relationships/user`
             + related: `https://kitsu.io/api/edge/review-likes/1/user`
 ## reviewsAttributes (object)
++ createdAt: `2013-03-04T18:29:01.441Z` - ISO 8601 date and time
++ updatedAt: `2016-12-19T08:01:58.532Z` - ISO 8601 of last modification
 + content: `The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
 + contentFormatted: `<p>The Anime \"Seinfeld\". Seriously, I love this show. It shines in it's dialog, and if you...`
 + likesCount: 3 (number)
@@ -7154,8 +7210,6 @@ Filter | Example | Notes
 + rating: 20 (number)
 + source: hummingbird
 + spoiler: false (boolean)
-+ createdAt: `2013-03-04T18:29:01.441Z`
-+ updatedAt: `2016-12-19T08:01:58.532Z`
 
 ## reviews (object)
 + id: 4 (required)
@@ -7178,6 +7232,8 @@ Filter | Example | Notes
             + related: `https://kitsu.io/api/edge/reviews/774/user`
 
 ## siteAnnouncementsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + title: `It's update time!`
 + description: `A new release is upon us. Featuring mostly bug fixes but a few quality of life tweaks!`
 + imageUrl: `https://media.giphy.com/media/3og0IEXRvwMN0cLSaQ/giphy.gif`
@@ -7285,6 +7341,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/next-unit`
             + related: `https://kitsu.io/api/edge/library-entries/1644/next-unit`
 ## libraryEntryLogsAttributes (object)
++ createdAt: `2017-06-20T04:39:42.808Z` - ISO 8601 date and time
++ updatedAt: `2017-06-20T04:39:42.808Z` - ISO 8601 of last modification
 + progress: 5 (number)
 + rating (nullable)
 + reconsumeCount: 0 (number)
@@ -7304,7 +7362,6 @@ Filter | Example | Notes
     + error
     + pending
     + success
-+ createdAt: `2017-06-20T04:39:42.808Z`
 + errorMessage (nullable)
 
 ## libraryEntryLogs (object)
@@ -7326,6 +7383,8 @@ Filter | Example | Notes
 
 
 ## favoritesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + favRank: 11 (number)
 
 ## favorites (object)
@@ -7358,6 +7417,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/follows/3/relationships/followed`
             + related: `https://kitsu.io/api/edge/follows/3/followed`
 ## profileLinkSitesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + name: Twitter
 
 ## profileLinkSites (object)
@@ -7367,7 +7428,9 @@ Filter | Example | Notes
     + self: `https://kitsu.io/api/edge/profile-link-sites/1
 + attributes (profileLinkSitesAttributes)
 ## profileLinksAttributes (object)
- + url: `https://github.com/vevix`
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ url: `https://github.com/vevix`
 
 ## profileLinks (object)
 + id: 1 (required)
@@ -7385,6 +7448,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/profile-links/1/relationships/profile-link-site`
             + related: `https://kitsu.io/api/edge/profile-links/1/profile-link-site`
 ## rolesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + name: admin
 + resourceId (nullable)
 + resourceType (nullable)
@@ -7405,6 +7470,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/roles/1/relationships/resource`
             + related: `https://kitsu.io/api/edge/roles/1/resource`
 ## statsAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + kind: `anime-genre-breakdown` (enum)
     + `anime-activity-history`
     + `anime-amount-consumed`
@@ -7489,6 +7556,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/user-roles/1/relationships/role`
             + related: `https://kitsu.io/api/edge/user-roles/1/role`
 ## usersAttributes (object)
++ createdAt: `2013-02-20T16:21:01.289Z` - ISO 8601 date and time
++ updatedAt: `2017-06-06T20:17:07.447Z` - ISO 8601 of last modification
 + name: vikhyat
 + pastNames (array)
 + about (nullable)
@@ -7497,13 +7566,11 @@ Filter | Example | Notes
 + location: `Seattle, WA`
 + waifuOrHusbando: Waifu
 + followersCount: 1716 (number)
-+ createdAt: `2013-02-20T16:21:01.289Z`
 + facebookId: 530577081
 + followingCount: 2031 (number)
 + lifeSpentOnAnime: 45474 (number)
 + birthday (nullable)
 + gender (nullable)
-+ updatedAt: `2017-06-06T20:17:07.447Z`
 + commentsCount: 0 (number)
 + favoritesCount: 4 (number)
 + likesGivenCount: 34 (number)
