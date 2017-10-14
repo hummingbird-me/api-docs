@@ -3,15 +3,15 @@
 + updatedAt: `2017-06-06T20:17:07.447Z` - ISO 8601 of last modification
 + name: vikhyat
 + pastNames (array)
-+ about (nullable)
-+ bio: `Co-founder of Hummingbird. Obsessed with Gumi.`
-+ aboutFormatted (nullable)
++ slug: vikhyat
++ about: `Co-founder of Hummingbird. Obsessed with Gumi.` - Max length of 500 characters
++ aboutFormatted (nullable) - Deprecated
++ bio: `Co-founder of Hummingbird. Obsessed with Gumi.` - Deprecated, use `about`
 + location: `Seattle, WA`
 + waifuOrHusbando: Waifu
 + followersCount: 1716 (number)
-+ facebookId: 530577081
 + followingCount: 2031 (number)
-+ lifeSpentOnAnime: 45474 (number)
++ lifeSpentOnAnime: 45474 (number) - Deprecated
 + birthday (nullable)
 + gender (nullable)
 + commentsCount: 0 (number)
@@ -21,22 +21,48 @@
 + likesReceivedCount: 7 (number)
 + postsCount: 1 (number)
 + ratingsCount: 0 (number)
++ mediaReactionsCount: 0 (number)
 + proExpiresAt: `2015-01-30T16:49:35.173Z`
 + title (nullable)
 + profileCompleted: false (boolean)
 + feedCompleted: true (boolean)
-+ website: `http://twitter.com/vikhyatk`
++ website: `http://twitter.com/vikhyatk` - Deprecated, use the `profileLinks` relationship
 + avatar (object)
     + tiny: `https://media.kitsu.io/users/avatars/1/tiny.jpg?1434087646`
     + small: `https://media.kitsu.io/users/avatars/1/small.jpg?1434087646`
     + medium: `https://media.kitsu.io/users/avatars/1/medium.jpg?1434087646`
     + large: `https://media.kitsu.io/users/avatars/1/large.jpg?1434087646`
     + original: `https://media.kitsu.io/users/avatars/1/original.jpg?1434087646`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/users/cover_images/1/small.jpg`
     + small: `https://media.kitsu.io/users/cover_images/1/small.jpg`
     + large: `https://media.kitsu.io/users/cover_images/1/small.jpg`
     + original: `https://media.kitsu.io/users/cover_images/1/original.jpeg`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + ratingSystem: advanced (enum)
     + advanced
     + regular
@@ -44,12 +70,13 @@
 + theme: light (enum)
     + dark
     + light
++ facebookId: 530577081 (nullable)
 
 ## users (object)
 + id: 1 (required)
 + type: users (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/users/1
+    + self: `https://kitsu.io/api/edge/users/1`
 + attributes (usersAttributes)
 + relationships (object)
     + waifu (object)
@@ -80,10 +107,6 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/users/1/relationships/profile-links`
             + related: `https://kitsu.io/api/edge/users/1/profile-links`
-    + mediaFollows (object)
-        + links (object)
-            + self: `https://kitsu.io/api/edge/users/1/relationships/media-follows`
-            + related: `https://kitsu.io/api/edge/users/1/media-follows`
     + userRoles (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/users/1/relationships/user-roles`
@@ -100,10 +123,14 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/users/1/relationships/reviews`
             + related: `https://kitsu.io/api/edge/users/1/reviews`
-    +  stats (object)
+    + stats (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/users/1/relationships/stats`
             + related: `https://kitsu.io/api/edge/users/1/stats`
+    + notificationSettings (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/users/1/relationships/notification-settings`
+            + related: `https://kitsu.io/api/edge/users/1/notification-settings`
     + oneSignalPlayers (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/users/1/relationships/one-signal-players`
