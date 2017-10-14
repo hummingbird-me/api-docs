@@ -209,9 +209,9 @@ browser-based and mobile apps
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
 ------------: | --------: | :-: | :--: | :---: | :----:
-No            |️ None      | Y   | N    | N     | N
+No            | None      | Y   | N    | N     | N
 Yes           | None      | Y   | N    | N     | N
-Yes           | Admin (1) | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
@@ -345,9 +345,9 @@ Filter | Example | Notes
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
 ------------: | --------: | :-: | :--: | :---: | :----:
-No            |️ None      | Y   | N    | N     | N
+No            | None      | Y   | N    | N     | N
 Yes           | None      | Y   | N    | N     | N
-Yes           | Admin (1) | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
@@ -483,9 +483,9 @@ Filter | Example | Notes
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
 ------------: | --------: | :-: | :--: | :---: | :----:
-No            |️ None      | Y   | N    | N     | N
+No            | None      | Y   | N    | N     | N
 Yes           | None      | Y   | N    | N     | N
-Yes           | Admin (1) | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
@@ -614,6 +614,26 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Castings [/castings/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+`language` | `Japanese`, `English`
+`featured` | `true`, `false`
+`isCharacter` | `true`, `false`
+
 + Parameters
     + id (number, `1`) - ID of the casting resource
 
@@ -733,6 +753,23 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Characters [/characters/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`slug` |
+`name` |
 
 + Parameters
     + id (number, `1`) - ID of the character resource
@@ -854,6 +891,22 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Manga Characters [/manga-characters/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mangaId` | `2`, `8,987`
+
 + Parameters
     + id (number, `1`) - ID of the manga character resource
 
@@ -973,6 +1026,21 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Manga Staff [/manga-staff/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the manga staff resource
@@ -1094,6 +1162,21 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## People [/people/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 + Parameters
     + id (number, `1`) - ID of the person resource
 
@@ -1213,6 +1296,22 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Producers [/producers/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`slug` |
 
 + Parameters
     + id (number, `1`) - ID of the producer resource
