@@ -26,7 +26,7 @@
 + title (nullable)
 + profileCompleted: false (boolean)
 + feedCompleted: true (boolean)
-+ website: `http://twitter.com/vikhyatk` - Deprecated, use the `profile-links` endpoint
++ website: `http://twitter.com/vikhyatk` - Deprecated, use the `profileLinks` relationship
 + avatar (object)
     + tiny: `https://media.kitsu.io/users/avatars/1/tiny.jpg?1434087646`
     + small: `https://media.kitsu.io/users/avatars/1/small.jpg?1434087646`
@@ -76,7 +76,7 @@
 + id: 1 (required)
 + type: users (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/users/1
+    + self: `https://kitsu.io/api/edge/users/1`
 + attributes (usersAttributes)
 + relationships (object)
     + waifu (object)
