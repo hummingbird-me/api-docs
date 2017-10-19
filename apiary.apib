@@ -4377,25 +4377,40 @@ Filter | Example | Notes
 
 ## Media Reaction Votes [/media-reaction-votes/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mediaReactionId` | `1`, `24334`
+`userId` | `42603`, `2,7`
+
 + Parameters
     + id (number, `1`) - ID of the media reaction vote resource
-## Media Reactions [/media-reactions/{id}]
 
-+ Parameters
-    + id (number, `1`) - ID of the media reaction resource
++ Attributes (mediaReactionVotesAttributes)
 
-### Fetch Collection [GET /media-reactions]
+### Fetch Collection [GET /media-reaction-votes]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
-            + (mediaReaction)
+        + data (array, required)
+            + (mediaReactionVotes)
         + meta (object, required)
-            + count: 17608 (number)
+            + count: 16647 (number, required)
         + links (object)
-            + first: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=17598`
+            + first: `https://kitsu.io/api/edge/media-reaction-votes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/media-reaction-votes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-reaction-votes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-reaction-votes?page%5Blimit%5D=10&page%5Boffset%5D=16637`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4410,7 +4425,148 @@ Filter | Example | Notes
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (mediaReaction)
+        + data (mediaReactionVotes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /media-reaction-votes]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Media Reactions [/media-reactions/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`createdAt` |
+`upVotesCount` | `2`, `7`
+`userId` | `42603`, `2,7`
+`animeId` | `1`, `43,2,300`
+`dramaId` |
+`mangaId` | `2`, `8,987`
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+
++ Parameters
+    + id (number, `4`) - ID of the media reaction resource
+
++ Attributes (mediaReactionsAttributes)
+
+### Fetch Collection [GET /media-reactions]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (mediaReactions)
+        + meta (object, required)
+            + count: 24334 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=24324`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaReactions)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
@@ -7250,17 +7406,37 @@ Filter | Example | Notes
             + related: `https://kitsu.io/api/edge/posts/167585/comments`
 
 
+## mediaReactionVotesAttributes (object)
++ createdAt: `2017-07-25T09:42:00.190Z` - ISO 8601 date and time
++ updatedAt: `2017-07-25T09:42:00.190Z` - ISO 8601 of last modification
 
-## mediaReaction (object)
+## mediaReactionVotes (object)
++ id: 1 (required)
++ type: mediaReactionVotes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/media-reaction-votes/1`
++ attributes (mediaReactionVotesAttributes)
++ relationships (object)
+    + mediaReaction (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reaction-votes/1/relationships/media-reaction`
+            + related: `https://kitsu.io/api/edge/media-reaction-votes/1/media-reaction`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-reaction-votes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-reaction-votes/1/user`
+## mediaReactionsAttributes (object)
++ createdAt: `2017-07-25T09:40:43.455Z` - ISO 8601 date and time
++ updatedAt: `2017-07-25T09:40:43.455Z` - ISO 8601 of last modification
++ reaction: `A well-crafted story of paradoxical pain and suffering. Not as painful however as the slow pace of chapter releases.`
++ upVotesCount: 4 (number)
+
+## mediaReactions (object)
 + id: 4 (required)
 + type: mediaReactions (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/media-reactions/4`
-+ attributes (object)
-    + createdAt
-    + updatedAt
-    + reaction
-    + upVotesCount
++ attributes (mediaReactionsAttributes)
 + relationships (object)
     + anime (object)
         + links (object)
@@ -7285,7 +7461,7 @@ Filter | Example | Notes
     + votes (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/votes`
-            + related: `https://kitsu.io/api/edge/media-reactions/4/votes
+            + related: `https://kitsu.io/api/edge/media-reactions/4/votes`
 
 ## reviewLikes (object)
 + id: 1 (required)
@@ -7392,7 +7568,7 @@ Filter | Example | Notes
         + review (object)
             + data (reviews)
         + mediaReaction (object)
-            + data (mediaReaction)
+            + data (mediaReactions)
         + media (object)
             + data (anime)
         + unit (object)
