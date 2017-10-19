@@ -38,7 +38,7 @@
         + review (object)
             + data (reviews)
         + mediaReaction (object)
-            + data (mediaReaction)
+            + data (mediaReactions)
         + media (object)
             + data (anime)
         + unit (object)

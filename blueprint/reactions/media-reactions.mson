@@ -1,13 +1,15 @@
-## mediaReaction (object)
+## mediaReactionsAttributes (object)
++ createdAt: `2017-07-25T09:40:43.455Z` - ISO 8601 date and time
++ updatedAt: `2017-07-25T09:40:43.455Z` - ISO 8601 of last modification
++ reaction: `A well-crafted story of paradoxical pain and suffering. Not as painful however as the slow pace of chapter releases.`
++ upVotesCount: 4 (number)
+
+## mediaReactions (object)
 + id: 4 (required)
 + type: mediaReactions (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/media-reactions/4`
-+ attributes (object)
-    + createdAt
-    + updatedAt
-    + reaction
-    + upVotesCount
++ attributes (mediaReactionsAttributes)
 + relationships (object)
     + anime (object)
         + links (object)
@@ -32,4 +34,4 @@
     + votes (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/votes`
-            + related: `https://kitsu.io/api/edge/media-reactions/4/votes
+            + related: `https://kitsu.io/api/edge/media-reactions/4/votes`
