@@ -1,20 +1,39 @@
 ## Media Reactions [/media-reactions/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+:[](../filters/created-at)
+:[](../filters/up-votes-count)
+:[](../filters/user-id)
+:[](../filters/anime-id)
+:[](../filters/drama-id)
+:[](../filters/manga-id)
+:[](../filters/media-type)
+
 + Parameters
-    + id (number, `1`) - ID of the media reaction resource
+    + id (number, `4`) - ID of the media reaction resource
+
++ Attributes (mediaReactionsAttributes)
 
 ### Fetch Collection [GET /media-reactions]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
-            + (mediaReaction)
+        + data (array, required)
+            + (mediaReactions)
         + meta (object, required)
-            + count: 17608 (number)
+            + count: 24334 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=17598`
+            + prev: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-reactions?page%5Blimit%5D=10&page%5Boffset%5D=24324`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -29,7 +48,7 @@
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (mediaReaction)
+        + data (mediaReactions)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
