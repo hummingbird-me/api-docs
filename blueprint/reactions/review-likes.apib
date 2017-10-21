@@ -22,10 +22,10 @@ Yes           | Admin     | Y   | N    | N     | N
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (reviewLikes)
         + meta (object, required)
-            + count: 27689 (number)
+            + count: 27689 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
