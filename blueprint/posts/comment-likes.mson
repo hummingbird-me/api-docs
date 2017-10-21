@@ -1,0 +1,19 @@
+## commentLikesAttributes (object)
++ createdAt: `2016-12-12T14:42:03.440Z` - ISO 8601 date and time
++ updatedAt: `2016-12-12T14:42:03.440Z` - ISO 8601 of last modification
+
+## commentLikes (object)
++ id: 3 (required)
++ type: commentLikes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/comment-likes/3`
++ attributes (commentLikesAttributes)
++ relationships (object)
+    + comment (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comment-likes/3/relationships/comment`
+            + related: `https://kitsu.io/api/edge/comment-likes/3/comment`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comment-likes/3/relationships/user`
+            + related: `https://kitsu.io/api/edge/comment-likes/3/user`
