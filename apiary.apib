@@ -4382,7 +4382,8 @@ Filter | Example | Notes
 Authenticated | Role      | GET | POST | PATCH | DELETE
 ------------: | --------: | :-: | :--: | :---: | :----:
 No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | Y    | Y     | Y
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
@@ -4519,6 +4520,7 @@ Authenticated | Role      | GET | POST | PATCH | DELETE
 ------------: | --------: | :-: | :--: | :---: | :----:
 No            | None      | Y   | N    | N     | N
 Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | Y
 
 **Filters**
 
@@ -4653,22 +4655,43 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Review Likes [/review-likes/{id}]
+**DEPRECATED**: Use `media-reaction-votes` instead
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`reviewId` | `4`, `14792`
+`userId` | `42603`, `2,7`
 
 + Parameters
     + id (number, `1`) - ID of the review like resource
+
++ Attributes (reviewLikesAttributes)
 
 ### Fetch Collection [GET /review-likes]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (array)
+        + data (array, required)
             + (reviewLikes)
         + meta (object, required)
-            + count: 27237 (number)
+            + count: 27689 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=27227`
+            + prev: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=27679`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4770,6 +4793,25 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Reviews [/reviews/{id}]
+**DEPRECATED**: Use `media-reactions` instead
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+`userId` | `42603`, `2,7`
 
 + Parameters
     + id (number, `4`) - ID of the review resource
@@ -4783,12 +4825,12 @@ Filter | Example | Notes
         + data (array, required)
             + (reviews)
         + meta (object, required)
-            + count: 14505 (number, required)
+            + count: 14802 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` _ Omitted if on first page
+            + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14495`
+            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14792`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -7477,12 +7519,16 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/media-reactions/4/relationships/votes`
             + related: `https://kitsu.io/api/edge/media-reactions/4/votes`
+## reviewLikesAttributes (object)
++ createdAt: `2014-01-04T06:21:44.394Z` - ISO 8601 date and time
++ updatedAt: `2014-01-04T06:21:44.394Z` - ISO 8601 of last modification
 
 ## reviewLikes (object)
 + id: 1 (required)
 + type: reviewLikes (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/review-likes/1
+    + self: `https://kitsu.io/api/edge/review-likes/1`
++ attributes (reviewLikesAttributes)
 + relationships (object)
     + review (object)
         + links (object)
@@ -7507,21 +7553,21 @@ Filter | Example | Notes
 + id: 4 (required)
 + type: reviews (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/reviews/4
+    + self: `https://kitsu.io/api/edge/reviews/4`
 + attributes (reviewsAttributes)
 + relationships (object)
     + libraryEntry (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/reviews/774/relationships/library-entry`
-            + related: `https://kitsu.io/api/edge/reviews/774/library-entry`
+            + self: `https://kitsu.io/api/edge/reviews/4/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/reviews/4/library-entry`
     + media (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/reviews/774/relationships/media`
-            + related: `https://kitsu.io/api/edge/reviews/774/media`
+            + self: `https://kitsu.io/api/edge/reviews/4/relationships/media`
+            + related: `https://kitsu.io/api/edge/reviews/4/media`
     + user (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/reviews/774/relationships/user`
-            + related: `https://kitsu.io/api/edge/reviews/774/user`
+            + self: `https://kitsu.io/api/edge/reviews/4/relationships/user`
+            + related: `https://kitsu.io/api/edge/reviews/4/user`
 
 ## siteAnnouncementsAttributes (object)
 + createdAt: `2017-05-12T02:15:29.309Z` - ISO 8601 date and time
