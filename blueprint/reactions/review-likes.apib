@@ -1,7 +1,21 @@
 ## Review Likes [/review-likes/{id}]
+**DEPRECATED**: Use `media-reaction-votes` instead
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+
+:[](../filters/HEADER)
+:[](../filters/review-id)
+:[](../filters/user-id)
 
 + Parameters
     + id (number, `1`) - ID of the review like resource
+
++ Attributes (reviewLikesAttributes)
 
 ### Fetch Collection [GET /review-likes]
 
@@ -10,11 +24,12 @@
         + data (array)
             + (reviewLikes)
         + meta (object, required)
-            + count: 27237 (number)
+            + count: 27689 (number)
         + links (object)
             + first: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + next: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=10`
-            + last: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=27227`
+            + prev: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/review-likes?page%5Blimit%5D=10&page%5Boffset%5D=27679`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)

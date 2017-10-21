@@ -1,4 +1,17 @@
 ## Reviews [/reviews/{id}]
+**DEPRECATED**: Use `media-reactions` instead
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+:[](../filters/media-id)
+:[](../filters/media-type)
+:[](../filters/user-id)
 
 + Parameters
     + id (number, `4`) - ID of the review resource
@@ -12,12 +25,12 @@
         + data (array, required)
             + (reviews)
         + meta (object, required)
-            + count: 14505 (number, required)
+            + count: 14802 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` _ Omitted if on first page
+            + prev: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14495`
+            + last: `https://kitsu.io/api/edge/reviews?page%5Blimit%5D=10&page%5Boffset%5D=14792`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
