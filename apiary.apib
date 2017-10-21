@@ -4894,6 +4894,21 @@ Filter | Example | Notes
 
 ## Site Announcements [/site-announcements/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 + Parameters
     + id (number, `2`) - ID of the site announcement resource
 
@@ -4906,7 +4921,7 @@ Filter | Example | Notes
         + data (array, required)
             + (siteAnnouncements)
         + meta (object, required)
-            + count: 3 (number, required)
+            + count: 5 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/site-announcements?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
@@ -7509,8 +7524,8 @@ Filter | Example | Notes
             + related: `https://kitsu.io/api/edge/reviews/774/user`
 
 ## siteAnnouncementsAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2017-05-12T02:15:29.309Z` - ISO 8601 date and time
++ updatedAt: `2017-05-12T02:15:29.309Z` - ISO 8601 of last modification
 + title: `It's update time!`
 + description: `A new release is upon us. Featuring mostly bug fixes but a few quality of life tweaks!`
 + imageUrl: `https://media.giphy.com/media/3og0IEXRvwMN0cLSaQ/giphy.gif`
@@ -7520,7 +7535,7 @@ Filter | Example | Notes
 + id: 2 (required)
 + type: siteAnnouncements (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/site-announcements/2
+    + self: `https://kitsu.io/api/edge/site-announcements/2`
 + attributes (siteAnnouncementsAttributes)
 + relationships (object)
     + user (object)
