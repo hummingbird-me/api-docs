@@ -13,18 +13,18 @@
 + id: 4 (required)
 + type: reviews (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/reviews/4
+    + self: `https://kitsu.io/api/edge/reviews/4`
 + attributes (reviewsAttributes)
 + relationships (object)
     + libraryEntry (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/reviews/774/relationships/library-entry`
-            + related: `https://kitsu.io/api/edge/reviews/774/library-entry`
+            + self: `https://kitsu.io/api/edge/reviews/4/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/reviews/4/library-entry`
     + media (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/reviews/774/relationships/media`
-            + related: `https://kitsu.io/api/edge/reviews/774/media`
+            + self: `https://kitsu.io/api/edge/reviews/4/relationships/media`
+            + related: `https://kitsu.io/api/edge/reviews/4/media`
     + user (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/reviews/774/relationships/user`
-            + related: `https://kitsu.io/api/edge/reviews/774/user`
+            + self: `https://kitsu.io/api/edge/reviews/4/relationships/user`
+            + related: `https://kitsu.io/api/edge/reviews/4/user`
