@@ -1,0 +1,37 @@
+## reportsAttributes (object)
++ createdAt: `2017-05-04T03:53:54.049Z` - ISO 8601 date and time
++ updatedAt: `2017-05-04T03:53:54.049Z` - ISO 8601 of last modification
++ reason: bullying (enum)
+    + nsfw
+    + offensive
+    + spoiler
+    + bullying
+    + other
+    + spam
++ status: declined (enum)
+    + reported
+    + resolved
+    + declined
++ explanation (nullable)
++ naughtyType: Comment
++ naughtyId: 28435305 (number)
+
+## reports (object)
++ id: 1 (required)
++ type: reports (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/reports/1`
++ attributes (reportsAttributes)
++ relationships (object)
+    + naughty (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reports/1/relationships/naughty`
+            + related: `https://kitsu.io/api/edge/reports/1/naughty`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reports/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/reports/1/user`
+    + moderator (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reports/1/relationships/moderator`
+            + related: `https://kitsu.io/api/edge/reports/1/moderator`
