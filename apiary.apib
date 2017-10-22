@@ -3885,12 +3885,136 @@ Filter | Example | Notes
 
 ## Comment Likes [/comment-likes/{id}]
 
-+ Parameters
-    + id (number, `1`) - ID of the comment like resource
-## Comments [/comments/{id}]
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`commentId` | `1`
+`userId` | `42603`, `2,7`
 
 + Parameters
-    + id (number, `1`) - ID of the comment resource
+    + id (number, `3`) - ID of the comment like resource
+
++ Attributes (commentsAttributes)
+
+### Fetch Collection [GET /comment-likes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (commentLikes)
+        + meta (object, required)
+            + count: 206579 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/comment-likes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/comment-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/comment-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/comment-likes?page%5Blimit%5D=10&page%5Boffset%5D=206569`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (commentLikes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /comment-likes]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Comments [/comments/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y*    | Y
+Yes           | Admin     | Y   | N    | Y     | Y
+
+\* Comment owner has 30 minutes from creation to edit the resource
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`postId` | `1`
+`parentId` | `1`
+
++ Parameters
+    + id (number, `7760392`) - ID of the comment resource
 
 + Attributes (commentsAttributes)
 
@@ -3901,12 +4025,12 @@ Filter | Example | Notes
         + data (array, required)
             + (comments)
         + meta (object, required)
-            + count: 1274779 (number, required)
+            + count: 1380356 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=1274769`
+            + last: `https://kitsu.io/api/edge/comments?page%5Blimit%5D=10&page%5Boffset%5D=1380346`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4007,8 +4131,24 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
 ## Post Likes [/post-likes/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`postId` | `1`
+`userId` | `42603`, `2,7`
 
 + Parameters
     + id (number, `1`) - ID of the post like resource
@@ -4022,12 +4162,12 @@ Filter | Example | Notes
         + data (array, required)
             + (postLikes)
         + meta (object, required)
-            + count: 1600082 (number, required)
+            + count: 1774249 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1600072`
+            + last: `https://kitsu.io/api/edge/post-likes?page%5Blimit%5D=10&page%5Boffset%5D=1774239`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4081,34 +4221,6 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
@@ -4130,6 +4242,23 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Post Follows [/post-follows/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`postId` | `1`
+`userId` | `42603`, `2,7`
+
 + Parameters
     + id (number, `3`) - ID of the post follow resource
 
@@ -4142,12 +4271,12 @@ Filter | Example | Notes
         + data (array, required)
             + (postFollows)
         + meta (object, required)
-            + count: 2076 (number, required)
+            + count: 2261 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=2066`
+            + last: `https://kitsu.io/api/edge/post-follows?page%5Blimit%5D=10&page%5Boffset%5D=2251`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4201,34 +4330,6 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
@@ -4250,6 +4351,23 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Posts [/posts/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y*    | Y
+Yes           | Admin     | Y   | N    | Y     | Y
+
+\* Post owner has 30 minutes from creation to edit the resource
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 + Parameters
     + id (number, `167585`) - ID of the post resource
 
@@ -4262,12 +4380,12 @@ Filter | Example | Notes
         + data (array, required)
             + (posts)
         + meta (object, required)
-            + count: 887155 (number, required)
+            + count: 945189 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145`
+            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=945179`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4370,8 +4488,144 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Reports [/reports/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | N   | Y    | Y     | N
+Yes           | Admin     | Y   | N    | Y     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+`naughtyId` |
+`naughtyType` | `Post`, `Comment`, `Review`, `Reaction`
+`status` | `current`, `onHold` | Values of the `status` attribute
+`reason` | `nsfw`, `spoiler`
+
 + Parameters
     + id (number, `1`) - ID of the report resource
+
++ Attributes (reports)
+
+### Fetch Collection [GET /reports]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (reports)
+        + meta (object, required)
+            + count: 856 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=846`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (reports)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /reports]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 # Group Reactions
 
@@ -7335,7 +7589,25 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/streaming-links/1/relationships/media`
             + related: `https://kitsu.io/api/edge/streaming-links/1/media`
 
+## commentLikesAttributes (object)
++ createdAt: `2016-12-12T14:42:03.440Z` - ISO 8601 date and time
++ updatedAt: `2016-12-12T14:42:03.440Z` - ISO 8601 of last modification
 
+## commentLikes (object)
++ id: 3 (required)
++ type: commentLikes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/comment-likes/3`
++ attributes (commentLikesAttributes)
++ relationships (object)
+    + comment (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comment-likes/3/relationships/comment`
+            + related: `https://kitsu.io/api/edge/comment-likes/3/comment`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comment-likes/3/relationships/user`
+            + related: `https://kitsu.io/api/edge/comment-likes/3/user`
 ## commentsAttributes (object)
 + createdAt: `2014-08-07T19:08:14.364Z` - ISO 8601 date and time
 + updatedAt: `2014-08-07T19:08:14.364Z` - ISO 8601 of last modification
@@ -7346,12 +7618,14 @@ Filter | Example | Notes
 + likesCount: 0 (number)
 + repliesCount: 0 (number)
 + editedAt (nullable)
++ embed (nullable)
++ embedUrl (nullable)
 
 ## comments (object)
 + id: 7760392 (required)
 + type: comments (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/comments/7760392
+    + self: `https://kitsu.io/api/edge/comments/7760392`
 + attributes (commentsAttributes)
 + relationships (object)
     + user (object)
@@ -7374,6 +7648,10 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/comments/7760392/relationships/replies`
             + related: `https://kitsu.io/api/edge/comments/7760392/replies`
+    + uploads (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/uploads`
+            + related: `https://kitsu.io/api/edge/comments/7760392/uploads`
 ## postLikesAttributes (object)
 + createdAt: `2016-11-02T00:20:19.057Z` - ISO 8601 date and time
 + updatedAt: `2016-11-02T00:20:19.057Z` - ISO 8601 of last modification
@@ -7382,7 +7660,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: postLikes (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/post-likes/1
+    + self: `https://kitsu.io/api/edge/post-likes/1`
 + attributes (postLikesAttributes)
 + relationships (object)
     + post (object)
@@ -7401,7 +7679,7 @@ Filter | Example | Notes
 + id: 3 (required)
 + type: postFollows (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/post-follows/3
+    + self: `https://kitsu.io/api/edge/post-follows/3`
 + attributes (postFollowsAttributes)
 + relationships (object)
     + post (object)
@@ -7414,10 +7692,10 @@ Filter | Example | Notes
             + related: `https://kitsu.io/api/edge/post-follows/3/user`
 ## postsAttributes (object)
 + createdAt: `2013-06-21T20:15:54.522Z` - ISO 8601 date and time
-+ updatedAt: `2017-05-21T04:05:30.561Z` - ISO 8601 of last modification
-+ content: `"I like cats. http://i.imgur.com/mJBJfzf.jpg`
-+ contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\"...`
-+ commensCount: 13 (number)
++ updatedAt: `2017-06-27T14:08:22.843Z` - ISO 8601 of last modification
++ content: `I like cats. http://i.imgur.com/mJBJfzf.jpg`
++ contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\" target=\"_blank\">http://i.imgur.com/mJBJfzf.jpg</a><br><a href='http://i.imgur.com/mJBJfzf.jpg'><img class='autoembed' src='http://i.imgur.com/mJBJfzf.jpg' style='max-height: 500px; width: auto;' /></a>`
++ commentsCount: 13 (number)
 + postLikesCount: 2 (number)
 + spoiler: false (boolean)
 + nsfw: false (boolean)
@@ -7425,12 +7703,15 @@ Filter | Example | Notes
 + deletedAt (nullable)
 + topLevelCommentsCount: 12 (number)
 + editedAt (nullable)
++ targetInterest (nullable)
++ embed (nullable)
++ embedUrl (nullable)
 
 ## posts (object)
 + id: 167585 (required)
 + type: posts (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/posts/167585
+    + self: `https://kitsu.io/api/edge/posts/167585`
 + attributes (postsAttributes)
 + relationships (object)
     + user (object)
@@ -7453,6 +7734,10 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/posts/167585/relationships/spoiled-unit`
             + related: `https://kitsu.io/api/edge/posts/167585/spoiled-unit`
+    + ama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/ama`
+            + related: `https://kitsu.io/api/edge/posts/167585/ama`
     + postLikes (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/posts/167585/relationships/post-likes`
@@ -7461,7 +7746,47 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/posts/167585/relationships/comments`
             + related: `https://kitsu.io/api/edge/posts/167585/comments`
+    + uploads (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/posts/167585/relationships/uploads`
+            + related: `https://kitsu.io/api/edge/posts/167585/uploads`
+## reportsAttributes (object)
++ createdAt: `2017-05-04T03:53:54.049Z` - ISO 8601 date and time
++ updatedAt: `2017-05-04T03:53:54.049Z` - ISO 8601 of last modification
++ reason: bullying (enum)
+    + nsfw
+    + offensive
+    + spoiler
+    + bullying
+    + other
+    + spam
++ status: declined (enum)
+    + reported
+    + resolved
+    + declined
++ explanation (nullable)
++ naughtyType: Comment
++ naughtyId: 28435305 (number)
 
+## reports (object)
++ id: 1 (required)
++ type: reports (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/reports/1`
++ attributes (reportsAttributes)
++ relationships (object)
+    + naughty (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reports/1/relationships/naughty`
+            + related: `https://kitsu.io/api/edge/reports/1/naughty`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reports/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/reports/1/user`
+    + moderator (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/reports/1/relationships/moderator`
+            + related: `https://kitsu.io/api/edge/reports/1/moderator`
 
 ## mediaReactionVotesAttributes (object)
 + createdAt: `2017-07-25T09:42:00.190Z` - ISO 8601 date and time
