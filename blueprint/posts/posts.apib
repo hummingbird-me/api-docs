@@ -1,5 +1,17 @@
 ## Posts [/posts/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N*    | Y
+Yes           | Admin     | Y   | N    | Y     | Y
+
+\* Post owner has 30 minutes from creation to edit the resource
+
+:[](../filters/HEADER)
+
 + Parameters
     + id (number, `167585`) - ID of the post resource
 
@@ -12,12 +24,12 @@
         + data (array, required)
             + (posts)
         + meta (object, required)
-            + count: 887155 (number, required)
+            + count: 945189 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=887145`
+            + last: `https://kitsu.io/api/edge/posts?page%5Blimit%5D=10&page%5Boffset%5D=945179`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
