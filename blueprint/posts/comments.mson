@@ -8,12 +8,14 @@
 + likesCount: 0 (number)
 + repliesCount: 0 (number)
 + editedAt (nullable)
++ embed (nullable)
++ embedUrl (nullable)
 
 ## comments (object)
 + id: 7760392 (required)
 + type: comments (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/comments/7760392
+    + self: `https://kitsu.io/api/edge/comments/7760392`
 + attributes (commentsAttributes)
 + relationships (object)
     + user (object)
@@ -36,3 +38,7 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/comments/7760392/relationships/replies`
             + related: `https://kitsu.io/api/edge/comments/7760392/replies`
+    + uploads (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/comments/7760392/relationships/uploads`
+            + related: `https://kitsu.io/api/edge/comments/7760392/uploads`
