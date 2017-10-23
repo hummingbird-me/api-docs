@@ -5330,10 +5330,11 @@ Filter | Example | Notes
 
 **Authorisation**
 
-Authenticated | Role | GET | POST | PATCH | DELETE
-------------: | ---: | :-: | :--: | :---: | :----:
-No            |️ None | Y*  | N    | N     | N
-Yes           | None | Y*† | Y    | Y     | Y
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y*  | N    | N     | N
+Yes           | None      | Y*† | Y    | Y     | Y
+Yes           | Admin     | Y*  | N    | N     | N
 
 \* Resources with `private: true` are not accessible, unless
 authenticated as the user associated with the library entry
@@ -5359,7 +5360,7 @@ Filter | Example | Notes
 `userId` | `42603`, `2,7`
 
 + Parameters
-    + id (number, `1`) - ID of the library entry resource
+    + id (number, `1644`) - ID of the library entry resource
 
 + Attributes (libraryEntriesAttributes)
 
@@ -5368,8 +5369,14 @@ Filter | Example | Notes
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (libraryEntriesLinks)
+            + (libraryEntries)
         + meta (object, required)
+            + statusCounts (object)
+                + current: 102 (number)
+                + planned: 346 (number)
+                + completed: 266 (number)
+                + onHold: 130 (number)
+                + dropped: 3 (number)
             + count: 0 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/library-entries?page%5Blimit%5D=10&page%5Boffset%5D=0`
@@ -5390,7 +5397,7 @@ Filter | Example | Notes
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (libraryEntriesLinks)
+        + data (libraryEntries)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5404,7 +5411,6 @@ Filter | Example | Notes
 ### Create Resource [POST /library-entries]
 
 + Request (application/vnd.api+json)
-    + Attributes (libraryEntriesRequest)
 
 + Response 201 (application/vnd.api+json)
 
@@ -5433,7 +5439,6 @@ Filter | Example | Notes
 ### Update Resource [PATCH]
 
 + Request (application/vnd.api+json)
-    + Attributes (libraryEntriesRequest)
 
 + Response 200 (application/vnd.api+json)
 
@@ -5462,7 +5467,6 @@ Filter | Example | Notes
 ### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
-    + Attributes (libraryEntries)
 
 + Response 202 (application/vnd.api+json)
 
@@ -5481,8 +5485,25 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Library Entry Logs [/library-entry-logs/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`linkedAccountId` |
+`syncStatus` | `pending`, `success`, `error`
+
 + Parameters
-    + id (number, `221679`) - ID of the library entry log resource
+    + id (number, `917564`) - ID of the library entry log resource
 
 + Attributes (libraryEntryLogsAttributes)
 
@@ -5493,12 +5514,12 @@ Filter | Example | Notes
         + data (array, required)
             + (libraryEntryLogs)
         + meta (object, required)
-            + count: 6409 (number, required)
+            + count: 159818 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=6399`
+            + last: `https://kitsu.io/api/edge/library-entry-logs?page%5Blimit%5D=10&page%5Boffset%5D=159808`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5601,12 +5622,175 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Library Events [/library-events/{id}]
 
-+ Parameters
-    + id (number, `1`) - ID of the library event resource
-## List Imports [/list-imports/{id}]
+**NOTE**: Not yet available.
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+`createdAt` |
 
 + Parameters
-    + id (number, `1`) - ID of the list import resource
+    + id (number, `1`) - ID of the library event resource
+
++ Attributes (libraryEventsAttributes)
+
+### Fetch Collection [GET /library-events]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (libraryEvents)
+        + meta (object, required)
+            + count: 0 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/library-events?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/library-events?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/library-events?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/library-events?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (libraryEvents)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## List Imports [/list-imports/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | N
+Yes           | Admin     | N   | Y    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+
++ Parameters
+    + id (number, `8665`) - ID of the list import resource
+
++ Attributes (listImportsAttributes)
+
+### Fetch Collection [GET /list-imports]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (listImports)
+        + meta (object, required)
+            + count: 2 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=2` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=2`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (listImports)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /list-imports]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 # Group Users
 
@@ -7914,10 +8098,6 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/site-announcements/2/relationships/user`
             + related: `https://kitsu.io/api/edge/site-announcements/2/user`
 
-## libraryEntries (object)
-+ id: 1644 (required)
-+ type: libraryEntries (required)
-
 ## libraryEntriesAttributes(object)
 + createdAt: `2013-03-03T23:07:42.713Z` - ISO 8601 date and time
 + updatedAt: `2016-01-15T05:53:48.037Z` - ISO 8601 of last modification
@@ -7933,39 +8113,22 @@ Filter | Example | Notes
 + reconsumeCount: 0 (number)
 + notes (nullable)
 + private: false (boolean)
-+ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last episode change
-+ startedAt (nullable) - ISO 8601 of when the user consumed ch/ep 1
-+ finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last ch/ep
++ reactionSkipped: unskipped (enum)
+    + unskipped
+    + skipped
+    + ignored
++ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last chapter/episode change
++ startedAt (nullable) - ISO 8601 of when the user consumed the first chapter/episode
++ finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last chapter/episode
 + rating: `3.5` - Deprecated in favour of `ratingTwenty`
-+ ratingTwenty: 14 (number) - 2,3..20 rating scale, display as 1,1.5..10
++ ratingTwenty: 14 (number) - 2,3..20 rating scale, displayed as 1,1.5..10
 
-## libraryEntriesRequest (object)
-+ data (libraryEntries)
-    + attributes (libraryEntriesAttributes)
-    + relationships (object)
-        + user (object)
-            + data (users)
-        + anime (object)
-            + data (anime)
-        + manga (object)
-            + data (manga)
-        + drama (object)
-            + data (drama)
-        + review (object)
-            + data (reviews)
-        + mediaReaction (object)
-            + data (mediaReactions)
-        + media (object)
-            + data (anime)
-        + unit (object)
-            + data (episodes)
-        + nextUnit (object)
-            + data (episodes)
-
-## libraryEntriesLinks (libraryEntries)
+## libraryEntries (object)
++ id: 1644 (required)
++ type: libraryEntries (required)
 + attributes (libraryEntriesAttributes)
 + links (object)
-    + self: `https://kitsu.io/api/edge/library-entries/1644
+    + self: `https://kitsu.io/api/edge/library-entries/1644`
 + relationships (object)
     + user (object)
         + links (object)
@@ -8004,10 +8167,10 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/library-entries/1644/relationships/next-unit`
             + related: `https://kitsu.io/api/edge/library-entries/1644/next-unit`
 ## libraryEntryLogsAttributes (object)
-+ createdAt: `2017-06-20T04:39:42.808Z` - ISO 8601 date and time
-+ updatedAt: `2017-06-20T04:39:42.808Z` - ISO 8601 of last modification
-+ progress: 5 (number)
-+ rating (nullable)
++ createdAt: `2017-09-23T00:00:37.565Z` - ISO 8601 date and time
++ updatedAt: `2017-09-23T00:00:38.677Z` - ISO 8601 of last modification
++ progress: 8 (number)
++ rating: 14 (number, nullable)
 + reconsumeCount: 0 (number)
 + reconsuming: false (boolean)
 + status: current (enum)
@@ -8022,28 +8185,109 @@ Filter | Example | Notes
     + destroy
     + update
 + syncStatus: success (enum)
-    + error
     + pending
     + success
+    + error
 + errorMessage (nullable)
 
 ## libraryEntryLogs (object)
-+ id: 221679 (required)
++ id: 917564 (required)
 + type: libraryEntryLogs (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/library-entry-logs/221679
+    + self: `https://kitsu.io/api/edge/library-entry-logs/917564`
 + attributes (libraryEntryLogsAttributes)
 + relationships (object)
     + linkedAccount (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/linked-account`
-            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/linked-account`
+            + self: `https://kitsu.io/api/edge/library-entry-logs/917564/relationships/linked-account`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/917564/linked-account`
     + media (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/media`
-            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/media`
+            + self: `https://kitsu.io/api/edge/library-entry-logs/917564/relationships/media`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/917564/media`
+## libraryEventsAttributes (object)
++ createdAt: `2017-09-23T00:00:37.565Z` - ISO 8601 date and time
++ updatedAt: `2017-09-23T00:00:37.565Z` - ISO 8601 of last modification
++ notes (nullable)
++ nsfw: false (boolean)
++ private: false (boolean)
++ progress: 2 (number)
++ rating: 14 (number, nullable)
++ reconsuming: false (boolean)
++ reconsumeCount: 0 (number)
++ volumesOwned: 0 (number)
++ timeSpent: 0 (number)
++ status: completed (enum)
+    + completed
+    + current
+    + dropped
+    + on_hold
+    + planned
++ event: updated (enum)
+    + added
+    + updated
++ changedData
 
+## libraryEvents (object)
++ id: 1 (required)
++ type: libraryEvents (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/library-events/1`
++ attributes (libraryEventsAttributes)
++ relationships (object)
+    + libraryEntry (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-events/1/relationships/library-entry`
+            + related: `https://kitsu.io/api/edge/library-events/1/library-entry`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-events/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/library-events/1/user`
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-events/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/library-events/1/anime`
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-events/1/relationships/manga`
+            + related: `https://kitsu.io/api/edge/library-events/1/manga`
+    + drama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/library-events/1/relationships/drama`
+            + related: `https://kitsu.io/api/edge/library-events/1/drama`
+## listImportsAttributes (object)
++ createdAt: `2017-08-22T20:37:04.815Z` - ISO 8601 date and time
++ updatedAt: `2017-08-22T20:41:29.814Z` - ISO 8601 of last modification
++ kind: `my-anime-list-xml`
++ inputText (nullable)
++ strategy: greater (enum)
+    + greater
+    + obliterate
++ inputFile (object)
+    + original: `https://media.kitsu.io/list_import/my_anime_list_xmls/input_files/8665/original.gz?1503434224`
+    + meta (object)
+        + dimensions (object)
++ progress: 388 (number)
++ status: completed (enum)
+     + queued
+     + running
+     + failed
+     + completed
++ total: 388 (number)
++ errorMessage (nullable)
++ errorTrace (nullable)
 
+## listImports (object)
++ id: 8665 (required)
++ type: listImports (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/list-imports/8665`
++ attributes (listImportsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/list-imports/8665/relationships/user`
+            + related: `https://kitsu.io/api/edge/list-imports/8665/user`
 
 ## favoritesAttributes (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
