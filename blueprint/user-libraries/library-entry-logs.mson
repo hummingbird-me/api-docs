@@ -1,8 +1,8 @@
 ## libraryEntryLogsAttributes (object)
-+ createdAt: `2017-06-20T04:39:42.808Z` - ISO 8601 date and time
-+ updatedAt: `2017-06-20T04:39:42.808Z` - ISO 8601 of last modification
-+ progress: 5 (number)
-+ rating (nullable)
++ createdAt: `2017-09-23T00:00:37.565Z` - ISO 8601 date and time
++ updatedAt: `2017-09-23T00:00:38.677Z` - ISO 8601 of last modification
++ progress: 8 (number)
++ rating: 14 (number, nullable)
 + reconsumeCount: 0 (number)
 + reconsuming: false (boolean)
 + status: current (enum)
@@ -17,23 +17,23 @@
     + destroy
     + update
 + syncStatus: success (enum)
-    + error
     + pending
     + success
+    + error
 + errorMessage (nullable)
 
 ## libraryEntryLogs (object)
-+ id: 221679 (required)
++ id: 917564 (required)
 + type: libraryEntryLogs (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/library-entry-logs/221679
+    + self: `https://kitsu.io/api/edge/library-entry-logs/917564`
 + attributes (libraryEntryLogsAttributes)
 + relationships (object)
     + linkedAccount (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/linked-account`
-            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/linked-account`
+            + self: `https://kitsu.io/api/edge/library-entry-logs/917564/relationships/linked-account`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/917564/linked-account`
     + media (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/library-entry-logs/221679/relationships/media`
-            + related: `https://kitsu.io/api/edge/library-entry-logs/221679/media`
+            + self: `https://kitsu.io/api/edge/library-entry-logs/917564/relationships/media`
+            + related: `https://kitsu.io/api/edge/library-entry-logs/917564/media`

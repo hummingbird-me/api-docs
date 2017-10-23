@@ -1,4 +1,83 @@
 ## List Imports [/list-imports/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | N
+Yes           | Admin     | N   | Y    | N     | N
+
+:[](../filters/HEADER)
+:[](../filters/user-id)
+
 + Parameters
-    + id (number, `1`) - ID of the list import resource
+    + id (number, `8665`) - ID of the list import resource
+
++ Attributes (listImportsAttributes)
+
+### Fetch Collection [GET /list-imports]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (listImports)
+        + meta (object, required)
+            + count: 2 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=2` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/list-imports?page%5Blimit%5D=10&page%5Boffset%5D=2`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (listImports)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /list-imports]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)

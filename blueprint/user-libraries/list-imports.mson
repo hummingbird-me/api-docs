@@ -1,0 +1,33 @@
+## listImportsAttributes (object)
++ createdAt: `2017-08-22T20:37:04.815Z` - ISO 8601 date and time
++ updatedAt: `2017-08-22T20:41:29.814Z` - ISO 8601 of last modification
++ kind: `my-anime-list-xml`
++ inputText (nullable)
++ strategy: greater (enum)
+    + greater
+    + obliterate
++ inputFile (object)
+    + original: `https://media.kitsu.io/list_import/my_anime_list_xmls/input_files/8665/original.gz?1503434224`
+    + meta (object)
+        + dimensions (object)
++ progress: 388 (number)
++ status: completed (enum)
+     + queued
+     + running
+     + failed
+     + completed
++ total: 388 (number)
++ errorMessage (nullable)
++ errorTrace (nullable)
+
+## listImports (object)
++ id: 8665 (required)
++ type: listImports (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/list-imports/8665`
++ attributes (listImportsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/list-imports/8665/relationships/user`
+            + related: `https://kitsu.io/api/edge/list-imports/8665/user`

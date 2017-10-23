@@ -1,7 +1,3 @@
-## libraryEntries (object)
-+ id: 1644 (required)
-+ type: libraryEntries (required)
-
 ## libraryEntriesAttributes(object)
 + createdAt: `2013-03-03T23:07:42.713Z` - ISO 8601 date and time
 + updatedAt: `2016-01-15T05:53:48.037Z` - ISO 8601 of last modification
@@ -17,39 +13,22 @@
 + reconsumeCount: 0 (number)
 + notes (nullable)
 + private: false (boolean)
-+ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last episode change
-+ startedAt (nullable) - ISO 8601 of when the user consumed ch/ep 1
-+ finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last ch/ep
++ reactionSkipped: unskipped (enum)
+    + unskipped
+    + skipped
+    + ignored
++ progressedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of last chapter/episode change
++ startedAt (nullable) - ISO 8601 of when the user consumed the first chapter/episode
++ finishedAt: `2016-01-15T05:53:48.037Z` (nullable) - ISO 8601 of when the user consumed the last chapter/episode
 + rating: `3.5` - Deprecated in favour of `ratingTwenty`
-+ ratingTwenty: 14 (number) - 2,3..20 rating scale, display as 1,1.5..10
++ ratingTwenty: 14 (number) - 2,3..20 rating scale, displayed as 1,1.5..10
 
-## libraryEntriesRequest (object)
-+ data (libraryEntries)
-    + attributes (libraryEntriesAttributes)
-    + relationships (object)
-        + user (object)
-            + data (users)
-        + anime (object)
-            + data (anime)
-        + manga (object)
-            + data (manga)
-        + drama (object)
-            + data (drama)
-        + review (object)
-            + data (reviews)
-        + mediaReaction (object)
-            + data (mediaReactions)
-        + media (object)
-            + data (anime)
-        + unit (object)
-            + data (episodes)
-        + nextUnit (object)
-            + data (episodes)
-
-## libraryEntriesLinks (libraryEntries)
+## libraryEntries (object)
++ id: 1644 (required)
++ type: libraryEntries (required)
 + attributes (libraryEntriesAttributes)
 + links (object)
-    + self: `https://kitsu.io/api/edge/library-entries/1644
+    + self: `https://kitsu.io/api/edge/library-entries/1644`
 + relationships (object)
     + user (object)
         + links (object)
