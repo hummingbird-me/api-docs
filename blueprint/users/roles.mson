@@ -1,6 +1,6 @@
 ## rolesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2016-12-12T14:32:06.707Z` - ISO 8601 date and time
++ updatedAt: `2016-12-12T14:32:06.707Z` - ISO 8601 of last modification
 + name: admin
 + resourceId (nullable)
 + resourceType (nullable)
@@ -9,7 +9,7 @@
 + id: 1 (required)
 + type: roles (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/roles/1
+    + self: `https://kitsu.io/api/edge/roles/1`
 + attributes (rolesAttributes)
 + relationships (object)
     + userRoles (object)
