@@ -5796,9 +5796,159 @@ Filter | Example | Notes
 
 ## Blocks [/blocks/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | N   | N    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`user` |
+
 + Parameters
     + id (number, `1`) - ID of the block resource
+
++ Attributes (blocksAttributes)
+
+### Fetch Collection [GET /blocks]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (blocks)
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/blocks?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/blocks?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/blocks?page%5Blimit%5D=10&page%5Boffset%5D=1` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/blocks?page%5Blimit%5D=10&page%5Boffset%5D=1`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (blocks)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /blocks]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Favorites [/favorites/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+`itemType` | `Media`, `Character`, `Person`
+`itemId` |
 
 + Parameters
     + id (number, `1`) - ID of the favorite resource
@@ -5812,12 +5962,12 @@ Filter | Example | Notes
         + data (array, required)
             + (favorites)
         + meta (object, required)
-            + count: 457266 (number, required)
+            + count: 493326 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=457256`
+            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=493316`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -5920,8 +6070,27 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Follows [/follows/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`follower` |
+`followed` |
+
 + Parameters
     + id (number, `3`) - ID of the follow resource
+
++ Attributes (followsAttributes)
 
 ### Fetch Collection [GET /follows]
 
@@ -5930,12 +6099,12 @@ Filter | Example | Notes
         + data (array, required)
             + (follows)
         + meta (object, required)
-            + count: 385223 (number, required)
+            + count: 392871 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=385213`
+            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=392861`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -6038,6 +6207,21 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Profile Link Sites [/profile-link-sites/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 + Parameters
     + id (number, `1`) - ID of the profile link site resource
 
@@ -6080,83 +6264,22 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /profile-link-sites]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Profile Links [/profile-links/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the profile link resource
@@ -6170,12 +6293,12 @@ Filter | Example | Notes
         + data (array, required)
             + (profileLinks)
         + meta (object, required)
-            + count: 11465 (number, required)
+            + count: 14827 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=11455`
+            + last: `https://kitsu.io/api/edge/profile-links?page%5Blimit%5D=10&page%5Boffset%5D=14817`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -6277,6 +6400,21 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Roles [/roles/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the role resource
@@ -6398,8 +6536,24 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Stats [/stats/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+
 + Parameters
-    + id (number, `413653`) - ID of the stat resource
+    + id (number, `587798`) - ID of the stat resource
 
 + Attributes (statsAttributes)
 
@@ -6410,12 +6564,12 @@ Filter | Example | Notes
         + data (array, required)
             + (stats)
         + meta (object, required)
-            + count: 36959 (number, required)
+            + count: 570652 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=36949`
+            + last: `https://kitsu.io/api/edge/stats?page%5Blimit%5D=10&page%5Boffset%5D=570642`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -6441,62 +6595,6 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Create Resource [POST /stats]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
@@ -6518,8 +6616,25 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## User Roles [/user-roles/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | N     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 + Parameters
     + id (number, `1`) - ID of the user role resource
+
++ Attributes (userRolesAttributes)
 
 ### Fetch Collection [GET /user-roles]
 
@@ -6528,12 +6643,12 @@ Filter | Example | Notes
         + data (array, required)
             + (userRoles)
         + meta (object, required)
-            + count: 103 (number, required)
+            + count: 115 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=93`
+            + last: `https://kitsu.io/api/edge/user-roles?page%5Blimit%5D=10&page%5Boffset%5D=105`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -6587,34 +6702,6 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
@@ -6636,6 +6723,24 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Users [/users/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | Y    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`slug` |
+`name` |
+`self` | `true`
+
 + Parameters
     + id (number, `1`) - ID of the user resource
 
@@ -6648,12 +6753,12 @@ Filter | Example | Notes
         + data (array, required)
             + (users)
         + meta (object, required)
-            + count: 144745 (number, required)
+            + count: 155476 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=144735`
+            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=155466`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -8289,16 +8394,35 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/list-imports/8665/relationships/user`
             + related: `https://kitsu.io/api/edge/list-imports/8665/user`
 
+## blocksAttributes (object)
++ createdAt: `2017-09-23T00:00:37.565Z` - ISO 8601 date and time
++ updatedAt: `2017-09-23T00:00:37.565Z` - ISO 8601 of last modification
+
+## blocks (object)
++ id: 1 (required)
++ type: blocks (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/blocks/1`
++ attributes (blocksAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/blocks/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/blocks/1/user`
+    + blocked (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/blocks/1/relationships/blocked`
+            + related: `https://kitsu.io/api/edge/blocks/1/blocked`
 ## favoritesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
-+ favRank: 11 (number)
++ createdAt: `2013-09-06T17:25:17.578Z` - ISO 8601 date and time
++ updatedAt: `2017-02-05T14:15:58.435Z` - ISO 8601 of last modification
++ favRank: 10 (number)
 
 ## favorites (object)
 + id: 1 (required)
 + type: favorites (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/favorites/1
+    + self: `https://kitsu.io/api/edge/favorites/1`
 + attributes (favoritesAttributes)
 + relationships (object)
     + user (object)
@@ -8309,11 +8433,16 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/favorites/1/relationships/item`
             + related: `https://kitsu.io/api/edge/favorites/1/item`
+## followsAttributes (object)
++ createdAt: `2013-05-05T18:10:52.800Z` - ISO 8601 date and time
++ updatedAt: `2013-05-05T18:10:52.800Z` - ISO 8601 of last modification
+
 ## follows (object)
 + id: 3 (required)
 + type: follows (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/follows/3
+    + self: `https://kitsu.io/api/edge/follows/3`
++ attributes (followsAttributes)
 + relationships (object)
     + follower (object)
         + links (object)
@@ -8323,16 +8452,49 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/follows/3/relationships/followed`
             + related: `https://kitsu.io/api/edge/follows/3/followed`
+## linkedAccountsAttributes (object)
++ createdAt: `2017-08-22T20:36:46.580Z` - ISO 8601 date and time
++ updatedAt: `2017-08-22T20:36:46.580Z` - ISO 8601 of last modification
++ kind: `my-anime-list`
++ externalUserId: synthtech
++ token (object)
+    + `resource_owner_id`: 29629 (number)
+    + scopes (array)
+        + public
+    + `expires_in_seconds`: 2592000 (number)
+    + application (object)
+        + uid
+    + `created_at`: 1508818017 (number)
++ shareTo: false (boolean)
++ shareFrom: false (boolean)
++ syncTo: true (boolean)
++ disabledReason (nullable)
+
+## linkedAccounts (object)
++ id: 1911 (required)
++ type: linkedAccounts (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/linked-accounts/1911`
++ attributes (linkedAccountsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/linked-accounts/1911/relationships/user`
+            + related: `https://kitsu.io/api/edge/linked-accounts/1911/user`
+    + libraryEntryLogs (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/linked-accounts/1911/relationships/library-entry-logs`
+            + related: `https://kitsu.io/api/edge/linked-accounts/1911/library-entry-logs`
 ## profileLinkSitesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2017-01-11T03:41:35.005Z` - ISO 8601 date and time
++ updatedAt: `2017-02-09T00:03:02.975Z` - ISO 8601 of last modification
 + name: Twitter
 
 ## profileLinkSites (object)
 + id: 1 (required)
 + type: profileLinkSites (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/profile-link-sites/1
+    + self: `https://kitsu.io/api/edge/profile-link-sites/1`
 + attributes (profileLinkSitesAttributes)
 ## profileLinksAttributes (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
@@ -8343,7 +8505,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: profileLinks (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/profile-links/1
+    + self: `https://kitsu.io/api/edge/profile-links/1`
 + attributes (profileLinksAttributes)
 + relationships (object)
     + user (object)
@@ -8355,8 +8517,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/profile-links/1/relationships/profile-link-site`
             + related: `https://kitsu.io/api/edge/profile-links/1/profile-link-site`
 ## rolesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2016-12-12T14:32:06.707Z` - ISO 8601 date and time
++ updatedAt: `2016-12-12T14:32:06.707Z` - ISO 8601 of last modification
 + name: admin
 + resourceId (nullable)
 + resourceType (nullable)
@@ -8365,7 +8527,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: roles (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/roles/1
+    + self: `https://kitsu.io/api/edge/roles/1`
 + attributes (rolesAttributes)
 + relationships (object)
     + userRoles (object)
@@ -8377,59 +8539,60 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/roles/1/relationships/resource`
             + related: `https://kitsu.io/api/edge/roles/1/resource`
 ## statsAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
-+ kind: `anime-genre-breakdown` (enum)
++ createdAt: `2017-07-28T02:14:07.389Z` - ISO 8601 date and time
++ updatedAt: `2017-10-20T19:07:02.241Z` - ISO 8601 of last modification
++ kind: `anime-category-breakdown` (enum)
     + `anime-activity-history`
     + `anime-amount-consumed`
+    + `anime-category-breakdown`
     + `anime-favorite-year`
-    + `anime-genre-breakdown`
     + `manga-activity-history`
     + `manga-amount-consumed`
+    + `manga-category-breakdown`
     + `manga-favorite-year`
-    + `manga-genre-breakdown`
 + statsData (object)
-    + total: 18 (number) - Total media in collection. Omitted for **amount-consumed** kinds
+    + total: 1500 (number) - Total media in collection. Omitted for **amount-consumed** kinds
+    + `total_media`: 343 (number) - Omitted if not **category-breakdown** or **favorite-year** kind
     + activity (array) - Omitted if not **activity-history** kind
         + (object)
-            + id: 27370 (number)
+            + id: 231341 (number)
             + event: updated
-            + user_id: 42603 (number)
-            + anime_id: 944 (number, nullable)
+            + user_id: 18097 (number)
+            + anime_id: 41 (number, nullable)
             + drama_id (number, nullable)
             + manga_id (number, nullable)
-            + `created_at`: `2017-06-04T20:05:50.510Z`
-            + `updated_at`: `2017-06-04T20:05:50.510Z`
+            + `created_at`: `2017-06-13T05:12:24.186Z`
+            + `updated_at`: `2017-06-13T05:12:24.186Z`
             + `changed_data` (object)
                 + status (array)
                     + planned
                     + current
                 + `started_at` (array)
                     + null
-                    + `2017-06-04T20:05:50.488Z`
+                    + `2017-06-13T05:12:24.169Z`
                 + `updated_at` (array)
-                    + `2015-02-22T23:29:42.209Z`
-                    + `2017-06-04T20:05:50.489Z`
-            + `library_entry_id`: 8698407 (number)
-    + `all_genres` (object) - Omitted if not **genre-breakdown** kind
-        + drama: 2 (number)
-        + mecha: 1 (number)
-        + music: 2 (number)
-        + action: 1 (number)
-        + police: 1 (number)
-        + school: 1 (number)
-        + `sci-fi`: 1 (number)
-        + mystery: 1 (number)
-        + romance: 1 (number)
-        + dementia: 1 (number)
-        + thriller: 1 (number)
-        + friendship: 2 (number)
-        + supernatural: 1 (number)
-        + psychological: 2 (number)
+                    + `2017-06-01T19:34:37.663Z`
+                    + `2017-06-13T05:12:24.170Z`
+            + `library_entry_id`: 17413724 (number)
+    + `all_categories` (object) - Omitted if not **category-breakdown** kind
+        + war: 13 (number)
+        + asia: 106 (number)
+        + cops: 10 (number)
+        + idol: 4 (number)
+        + mars: 2 (number)
+        + navy: 3 (number)
+        + past: 11 (number)
+        + alien: 21 (number)
+        + angel: 2 (number)
+        + angst: 32 (number)
+        + china: 1 (number)
+        + crime: 10 (number)
+        + deity: 6 (number)
+        + demon: 6 (number)
     + `all_time` (object) - Omitted if not **amount-consumed** kind
-        + `total_time`: 0 (number) - Time in minutes
-        + `total_media`: 77 (number)
-        + `total_progress`: 230 (number) - Total episodes or chapters
+        + `total_time`: 144734 (number) - Time in minutes
+        + `total_media`: 273 (number)
+        + `total_progress`: 5728 (number) - Total chapters or episodes
     + `all_years` (object) - Omitted if not **favorite-year** kind
         + 2004: 1 (number)
         + 2013: 1 (number)
@@ -8438,21 +8601,26 @@ Filter | Example | Notes
         + 2018: 1 (number)
 
 ## stats (object)
-+ id: 413653 (required)
++ id: 587798 (required)
 + type: stats (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/stats/413653
+    + self: `https://kitsu.io/api/edge/stats/587798`
 + attributes (statsAttributes)
 + relationships (object)
     + user (object)
         + links (object)
-            + self: `https://kitsu.io/api/edge/stats/413653/relationships/user`
-            + related: `https://kitsu.io/api/edge/stats/413653/user`
+            + self: `https://kitsu.io/api/edge/stats/587798/relationships/user`
+            + related: `https://kitsu.io/api/edge/stats/587798/user`
+## userRolesAttributes (object)
++ createdAt: `2016-12-12T14:32:06.707Z` - ISO 8601 date and time
++ updatedAt: `2016-12-12T14:32:06.707Z` - ISO 8601 of last modification
+
 ## userRoles (object)
 + id: 1 (required)
 + type: userRoles (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/user-roles/1
+    + self: `https://kitsu.io/api/edge/user-roles/1`
++ attributes (userRolesAttributes)
 + relationships (object)
     + user (object)
         + links (object)
@@ -8475,7 +8643,7 @@ Filter | Example | Notes
 + waifuOrHusbando: Waifu
 + followersCount: 1716 (number)
 + followingCount: 2031 (number)
-+ lifeSpentOnAnime: 45474 (number) - Deprecated
++ lifeSpentOnAnime: 45474 (number) - Deprecated, use the `stats` relationship
 + birthday (nullable)
 + gender (nullable)
 + commentsCount: 0 (number)
