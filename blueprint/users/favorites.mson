@@ -1,13 +1,13 @@
 ## favoritesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
-+ favRank: 11 (number)
++ createdAt: `2013-09-06T17:25:17.578Z` - ISO 8601 date and time
++ updatedAt: `2017-02-05T14:15:58.435Z` - ISO 8601 of last modification
++ favRank: 10 (number)
 
 ## favorites (object)
 + id: 1 (required)
 + type: favorites (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/favorites/1
+    + self: `https://kitsu.io/api/edge/favorites/1`
 + attributes (favoritesAttributes)
 + relationships (object)
     + user (object)
