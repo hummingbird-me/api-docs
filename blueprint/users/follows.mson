@@ -1,8 +1,13 @@
+## followsAttributes (object)
++ createdAt: `2013-05-05T18:10:52.800Z` - ISO 8601 date and time
++ updatedAt: `2013-05-05T18:10:52.800Z` - ISO 8601 of last modification
+
 ## follows (object)
 + id: 3 (required)
 + type: follows (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/follows/3
+    + self: `https://kitsu.io/api/edge/follows/3`
++ attributes (followsAttributes)
 + relationships (object)
     + follower (object)
         + links (object)

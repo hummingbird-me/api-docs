@@ -1,7 +1,21 @@
 ## Follows [/follows/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+:[](../filters/HEADER)
+:[](../filters/follower)
+:[](../filters/followed)
+
 + Parameters
     + id (number, `3`) - ID of the follow resource
+
++ Attributes (followsAttributes)
 
 ### Fetch Collection [GET /follows]
 
@@ -10,12 +24,12 @@
         + data (array, required)
             + (follows)
         + meta (object, required)
-            + count: 385223 (number, required)
+            + count: 392871 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=385213`
+            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=392861`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)

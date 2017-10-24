@@ -1,36 +1,34 @@
-## Users [/users/{id}]
+## Linked Accounts [/linked-accounts/{id}]
 
 **Authorisation**
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
 ------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | Y    | N     | N
+No            | None      | N   | N    | N     | N
 Yes           | None      | Y   | Y    | Y     | Y
-Yes           | Admin     | Y   | Y    | Y     | Y
+Yes           | Admin     | N   | N    | N     | N
 
 :[](../filters/HEADER)
-:[](../filters/slug)
-:[](../filters/name)
-:[](../filters/self)
+:[](../filters/user-id)
 
 + Parameters
-    + id (number, `1`) - ID of the user resource
+    + id (number, `1911`) - ID of the linked account resource
 
-+ Attributes (usersAttributes)
++ Attributes (linkedAccountsAttributes)
 
-### Fetch Collection [GET /users]
+### Fetch Collection [GET /linked-accounts]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (users)
+            + (linkedAccounts)
         + meta (object, required)
-            + count: 155476 (number, required)
+            + count: 1 (number, required)
         + links (object)
-            + first: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=155466`
+            + first: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=1` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=1`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -45,18 +43,18 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (users)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
+        + data (linkedAccounts)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
 
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Create Resource [POST /users]
+### Create Resource [POST /linked-accounts]
 
 + Request (application/vnd.api+json)
 

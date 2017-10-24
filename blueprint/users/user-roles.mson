@@ -1,8 +1,13 @@
+## userRolesAttributes (object)
++ createdAt: `2016-12-12T14:32:06.707Z` - ISO 8601 date and time
++ updatedAt: `2016-12-12T14:32:06.707Z` - ISO 8601 of last modification
+
 ## userRoles (object)
 + id: 1 (required)
 + type: userRoles (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/user-roles/1
+    + self: `https://kitsu.io/api/edge/user-roles/1`
++ attributes (userRolesAttributes)
 + relationships (object)
     + user (object)
         + links (object)

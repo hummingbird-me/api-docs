@@ -1,5 +1,18 @@
 ## Favorites [/favorites/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+:[](../filters/HEADER)
+:[](../filters/user-id)
+:[](../filters/item-type)
+:[](../filters/item-id)
+
 + Parameters
     + id (number, `1`) - ID of the favorite resource
 
@@ -12,12 +25,12 @@
         + data (array, required)
             + (favorites)
         + meta (object, required)
-            + count: 457266 (number, required)
+            + count: 493326 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=457256`
+            + last: `https://kitsu.io/api/edge/favorites?page%5Blimit%5D=10&page%5Boffset%5D=493316`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
