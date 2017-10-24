@@ -19,7 +19,7 @@
 + event: updated (enum)
     + added
     + updated
-+ changedData
++ changedData (object)
 
 ## libraryEvents (object)
 + id: 1 (required)
