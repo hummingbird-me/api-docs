@@ -11,7 +11,7 @@
 + waifuOrHusbando: Waifu
 + followersCount: 1716 (number)
 + followingCount: 2031 (number)
-+ lifeSpentOnAnime: 45474 (number) - Deprecated
++ lifeSpentOnAnime: 45474 (number) - Deprecated, use the `stats` relationship
 + birthday (nullable)
 + gender (nullable)
 + commentsCount: 0 (number)

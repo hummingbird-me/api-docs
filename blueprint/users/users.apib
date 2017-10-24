@@ -1,5 +1,18 @@
 ## Users [/users/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | Y    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+:[](../filters/slug)
+:[](../filters/name)
+:[](../filters/self)
+
 + Parameters
     + id (number, `1`) - ID of the user resource
 
@@ -12,12 +25,12 @@
         + data (array, required)
             + (users)
         + meta (object, required)
-            + count: 144745 (number, required)
+            + count: 155476 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=144735`
+            + last: `https://kitsu.io/api/edge/users?page%5Blimit%5D=10&page%5Boffset%5D=155466`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
