@@ -1,0 +1,19 @@
+## blocksAttributes (object)
++ createdAt: `2017-09-23T00:00:37.565Z` - ISO 8601 date and time
++ updatedAt: `2017-09-23T00:00:37.565Z` - ISO 8601 of last modification
+
+## blocks (object)
++ id: 1 (required)
++ type: blocks (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/blocks/1`
++ attributes (blocksAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/blocks/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/blocks/1/user`
+    + blocked (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/blocks/1/relationships/blocked`
+            + related: `https://kitsu.io/api/edge/blocks/1/blocked`
