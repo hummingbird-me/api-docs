@@ -8,7 +8,7 @@
 + id: 1 (required)
 + type: producers (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/producers/1
+    + self: `https://kitsu.io/api/edge/producers/1`
 + attributes (producersAttributes)
 + relationships (object)
     + animeProductions (object)
