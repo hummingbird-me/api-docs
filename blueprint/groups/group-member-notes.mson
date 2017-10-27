@@ -1,0 +1,22 @@
+## groupMemberNotesAttributes (object)
++ createdAt: `2017-03-12T16:55:27.999Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T19:45:12.292Z` - ISO 8601 of last modification
++ content (nullable)
++ contentFormatted (nullable)
+
+## groupMemberNotes (object)
++ id: 1 (required)
++ type: groupMemberNotes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-member-notes/1`
++ attributes (groupMemberNotesAttributes)
++ relationships (object)
+    + groupMember (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-member-notes/1/relationships/groupMember`
+            + related: `https://kitsu.io/api/edge/group-member-notes/1/groupMember`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-member-notes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-member-notes/1/user`
+
