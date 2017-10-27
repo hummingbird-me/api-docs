@@ -1,0 +1,23 @@
+## groupTicketMessagesAttributes (object)
++ createdAt: `2017-06-16T09:11:46.241Z` - ISO 8601 date and time
++ updatedAt: `2017-06-16T09:11:46.241Z` - ISO 8601 of last modification
++ kind: message (enum)
+    + message
+    + `mod_note`
++ content: `Could u please add this recap episode to the series...`
+
+## groupTicketMessages (object)
++ id: 89 (required)
++ type: groupTicketMessages (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-ticket-messages/89`
++ attributes (groupTicketMessagesAttributes)
++ relationships (object)
+    + ticket (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-ticket-messages/89/relationships/ticket`
+            + related: `https://kitsu.io/api/edge/group-ticket-messages/89/ticket`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-ticket-messages/89/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-ticket-messages/89/user`
