@@ -1,5 +1,15 @@
 ## Group Permissions [/group-permissions/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+:[](../filters/HEADER)
+
 + Parameters
     + id (number, `1`) - ID of the group permission resource
 
@@ -12,12 +22,12 @@
         + data (array, required)
             + (groupPermissions)
         + meta (object, required)
-            + count: 5046 (number, required)
+            + count: 5144 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5036`
+            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5134`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -48,34 +58,6 @@
 + Request (application/vnd.api+json)
 
 + Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
 
 + Response 202 (application/vnd.api+json)
 
