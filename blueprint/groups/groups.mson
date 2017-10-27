@@ -1,15 +1,15 @@
 ## groupsAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2015-02-17T21:16:53.207Z` - ISO 8601 date and time
++ updatedAt: `2017-10-26T20:51:24.215Z` - ISO 8601 of last modification
 + slug: `one-piece-group`
 + about: `Group for fans of the One Piece anime and or manga...`
 + locale (nullable)
-+ membersCount: 541 (number)
++ membersCount: 548 (number)
 + name: One Piece group
 + nsfw: false (boolean)
 + privacy: open (enum)
-    + closed
     + open
+    + closed
     + restricted
 + rules (nullable)
 + rulesFormatted (nullable)
@@ -17,24 +17,49 @@
 + neighborsCount: 0 (number)
 + featured: false (boolean)
 + tagline (nullable)
-+ lastActivityAt: `2017-05-06T18:48:33.944Z`
++ lastActivityAt: `2017-10-26T17:56:45.259Z`
 + avatar (object)
     + tiny: `https://media.kitsu.io/groups/avatars/1/tiny.gif?1424323296`
     + small: `https://media.kitsu.io/groups/avatars/1/small.gif?1424323296`
     + medium: `https://media.kitsu.io/groups/avatars/1/medium.gif?1424323296`
     + large: `https://media.kitsu.io/groups/avatars/1/large.gif?1424323296`
     + original: `https://media.kitsu.io/groups/avatars/1/original.gif?1424323296`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/groups/cover_images/1/tiny.jpg?1424209483`
     + small: `https://media.kitsu.io/groups/cover_images/1/small.jpg?1424209483`
     + large: `https://media.kitsu.io/groups/cover_images/1/large.jpg?1424209483`
     + original: `https://media.kitsu.io/groups/cover_images/1/original.jpeg?1424209483`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 
 ## groups (object)
 + id: 1 (required)
 + type: groups (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/groups/1
+    + self: `https://kitsu.io/api/edge/groups/1`
 + attributes (groupsAttributes)
 + relationships (object)
     + members (object)
@@ -69,3 +94,7 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/groups/1/relationships/category`
             + related: `https://kitsu.io/api/edge/groups/1/category`
+    + pinnedPost (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/groups/1/relationships/pinned-post`
+            + related: `https://kitsu.io/api/edge/groups/1/pinned-post`
