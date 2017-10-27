@@ -1,0 +1,22 @@
+## leaderChatMessagesAttributes (object)
++ createdAt: `2017-03-12T17:23:36.640Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T17:23:36.640Z` - ISO 8601 of last modification
++ content: `Does this work?`
++ contentFormatted: `<p>Does this work?</p>\n`
++ editedAt: `2017-03-12T17:23:36.640Z`
+
+## leaderChatMessages (object)
++ id: 19 (required)
++ type: leaderChatMessages (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/leader-chat-messages/19`
++ attributes (leaderChatMessagesAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/leader-chat-messages/19/relationships/group`
+            + related: `https://kitsu.io/api/edge/leader-chat-messages/19/group`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/leader-chat-messages/19/relationships/user`
+            + related: `https://kitsu.io/api/edge/leader-chat-messages/19/user`
