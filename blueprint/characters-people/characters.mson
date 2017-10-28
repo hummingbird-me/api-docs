@@ -12,7 +12,7 @@
 + id: 1 (required)
 + type: characters (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/characters/1
+    + self: `https://kitsu.io/api/edge/characters/1`
 + attributes (charactersAttributes)
 + relationships (object)
     + primaryMedia (object)

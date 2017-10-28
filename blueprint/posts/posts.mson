@@ -2,7 +2,7 @@
 + createdAt: `2013-06-21T20:15:54.522Z` - ISO 8601 date and time
 + updatedAt: `2017-06-27T14:08:22.843Z` - ISO 8601 of last modification
 + content: `I like cats. http://i.imgur.com/mJBJfzf.jpg`
-+ contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\" target=\"_blank\">http://i.imgur.com/mJBJfzf.jpg</a><br><a href='http://i.imgur.com/mJBJfzf.jpg'><img class='autoembed' src='http://i.imgur.com/mJBJfzf.jpg' style='max-height: 500px; width: auto;' /></a>`
++ contentFormatted: `I like cats. <a href="http://i.imgur.com/mJBJfzf.jpg" target="_blank">...`
 + commentsCount: 13 (number)
 + postLikesCount: 2 (number)
 + spoiler: false (boolean)
