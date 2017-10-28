@@ -1,0 +1,42 @@
+## groupReportsAttributes (object)
++ createdAt: `2017-03-12T05:12:42.823Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T05:12:42.823Z` - ISO 8601 of last modification
++ reason: nsfw (enum)
+    + nsfw
+    + offensive
+    + spoiler
+    + bullying
+    + other
+    + spam
++ status: reported (enum)
+    + reported
+    + resolved
+    + declined
+    + escalated
++ explanation (nullable)
++ naughtyType: Comment
++ naughtyId: 1 (number)
+
+## groupReports (object)
++ id: 1 (required)
++ type: groupReports (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-reports/1`
++ attributes (groupReportsAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-reports/1/group`
+    + naughty (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/naughty`
+            + related: `https://kitsu.io/api/edge/group-reports/1/naughty`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-reports/1/user`
+    + moderator (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/moderator`
+            + related: `https://kitsu.io/api/edge/group-reports/1/moderator`

@@ -1,5 +1,24 @@
 ## Group Members [/group-members/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+:[](../filters/HEADER)
+:[](../filters/rank)
+:[](../filters/group)
+:[](../filters/user)
+:[](../filters/query-group)
+:[](../filters/query-user)
+:[](../filters/query-rank)
+:[](../filters/group-category)
+:[](../filters/group-name)
+:[](../filters/query)
+
 + Parameters
     + id (number, `1`) - ID of the group member resource
 
@@ -12,12 +31,12 @@
         + data (array, required)
             + (groupMembers)
         + meta (object, required)
-            + count: 241197 (number, required)
+            + count: 264193 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187`
+            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=264183`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)

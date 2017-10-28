@@ -1,0 +1,25 @@
+## groupBansAttributes (object)
++ createdAt: `2017-03-12T16:40:59.662Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T16:40:59.662Z` - ISO 8601 of last modification
++ notes (nullable)
++ notesFormatted (nullable)
+
+## groupBans (object)
++ id: 1 (required)
++ type: groupBans (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-bans/1`
++ attributes (groupBansAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-bans/1/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-bans/1/group`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-bans/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-bans/1/user`
+    + moderator (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-bans/1/relationships/moderator`
+            + related: `https://kitsu.io/api/edge/group-bans/1/moderator`

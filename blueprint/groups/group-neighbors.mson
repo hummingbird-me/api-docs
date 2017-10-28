@@ -1,10 +1,13 @@
+## groupNeighborsAttributes (object)
++ createdAt: `2017-03-12T07:09:00.302Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T07:09:00.302Z` - ISO 8601 of last modification
+
 ## groupNeighbors (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 1 (required)
 + type: groupNeighbors (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/group-neighbors/1
+    + self: `https://kitsu.io/api/edge/group-neighbors/1`
++ attributes (groupNeighborsAttributes)
 + relationships (object)
     + source (object)
         + links (object)

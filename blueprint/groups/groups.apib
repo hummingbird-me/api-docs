@@ -1,5 +1,19 @@
 ## Groups [/groups/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+:[](../filters/HEADER)
+:[](../filters/featured)
+:[](../filters/category)
+:[](../filters/privacy)
+:[](../filters/query)
+
 + Parameters
     + id (number, `1`) - ID of the group resource
 
@@ -12,12 +26,12 @@
         + data (array, required)
             + (groups)
         + meta (object, required)
-            + count: 1917 (number, required)
+            + count: 1998 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1907`
+            + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1988`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
