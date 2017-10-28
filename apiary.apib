@@ -1436,13 +1436,189 @@ Filter | Example | Notes
 
 ## Group Action Logs [/group-action-logs/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`group` |
+
 + Parameters
-    + id (number, `1`) - ID of the group action log resource
+    + id (number, `647`) - ID of the group action log resource
+
++ Attributes (groupActionLogsAttributes)
+
+### Fetch Collection [GET /group-action-logs]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupActionLogs)
+        + meta (object, required)
+            + count: 58 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-action-logs?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-action-logs?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-action-logs?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-action-logs?page%5Blimit%5D=10&page%5Boffset%5D=48`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupActionLogs)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Bans [/group-bans/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`group` |
 
 + Parameters
     + id (number, `1`) - ID of the group ban resource
+
++ Attributes (groupBansAttributes)
+
+### Fetch Collection [GET /group-bans]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupBans)
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-bans?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-bans?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-bans?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-bans?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupBans)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /group-bans]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Categories [/group-categories/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`slug` |
 
 + Parameters
     + id (number, `1`) - ID of the group category resource
@@ -1564,13 +1740,303 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Group Invites [/group-invites/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`group` |
+`sender` |
+`user` |
+`status` | `current`, `onHold` | Values of the `status` attribute
+
 + Parameters
-    + id (number, `1`) - ID of the group invite resource
+    + id (number, `28`) - ID of the group invite resource
+
++ Attributes (groupInvitesAttributes)
+
+### Fetch Collection [GET /group-invites]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupInvites)
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-invites?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-invites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-invites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-invites?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupInvites)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /group-invites]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Member Notes [/group-member-notes/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the group member note resource
+
++ Attributes (groupMemberNotesAttributes)
+
+### Fetch Collection [GET /group-member-notes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupMemberNotes)
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-member-notes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-member-notes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-member-notes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-member-notes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupMemberNotes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /group-member-notes]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Group Members [/group-members/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`rank` |
+`group` |
+`user` |
+`queryGroup` |
+`queryUser` |
+`queryRank` |
+`groupCategory` |
+`groupName` |
+`query` | | Search resource
 
 + Parameters
     + id (number, `1`) - ID of the group member resource
@@ -1584,12 +2050,12 @@ Filter | Example | Notes
         + data (array, required)
             + (groupMembers)
         + meta (object, required)
-            + count: 241197 (number, required)
+            + count: 264193 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=241187`
+            + last: `https://kitsu.io/api/edge/group-members?page%5Blimit%5D=10&page%5Boffset%5D=264183`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1692,6 +2158,23 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Group Neighbors [/group-neighbors/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`source` |
+`destination` |
+
 + Parameters
     + id (number, `1`) - ID of the group neighbor resource
 
@@ -1702,12 +2185,12 @@ Filter | Example | Notes
         + data (array, required)
             + (groupNeighbors)
         + meta (object, required)
-            + count: 296 (number, required)
+            + count: 347 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=286`
+            + last: `https://kitsu.io/api/edge/group-neighbors?page%5Blimit%5D=10&page%5Boffset%5D=337`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1761,11 +2244,90 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Update Resource [PATCH]
+### Delete Resource [DELETE]
 
 + Request (application/vnd.api+json)
 
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Group Permissions [/group-permissions/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | N     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
++ Parameters
+    + id (number, `1`) - ID of the group permission resource
+
++ Attributes (groupPermissionsAttributes)
+
+### Fetch Collection [GET /group-permissions]
+
 + Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupPermissions)
+        + meta (object, required)
+            + count: 5144 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5134`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupPermissions)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /group-permissions]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
 
 + Response 202 (application/vnd.api+json)
 
@@ -1808,26 +2370,47 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Group Permissions [/group-permissions/{id}]
+## Group Reports [/group-reports/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | N
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`group` |
+`user` |
+`naughty` |
+`naughtyType` | `Post`, `Comment`, `Review`, `Reaction`
+`reason` | `nsfw`, `spoiler`
+`status` | `current`, `onHold` | Values of the `status` attribute
 
 + Parameters
-    + id (number, `1`) - ID of the group permission resource
+    + id (number, `1`) - ID of the group report resource
 
-+ Attributes (groupPermissionsAttributes)
++ Attributes (groupReportsAttributes)
 
-### Fetch Collection [GET /group-permissions]
+### Fetch Collection [GET /group-reports]
 
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (groupPermissions)
+            + (groupReports)
         + meta (object, required)
-            + count: 5046 (number, required)
+            + count: 1 (number, required)
         + links (object)
-            + first: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/group-permissions?page%5Blimit%5D=10&page%5Boffset%5D=5036`
+            + first: `https://kitsu.io/api/edge/group-reports?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-reports?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-reports?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-reports?page%5Blimit%5D=10&page%5Boffset%5D=0`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -1842,7 +2425,7 @@ Filter | Example | Notes
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (groupPermissions)
+        + data (groupReports)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
@@ -1853,7 +2436,123 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Create Resource [POST /group-permissions]
+### Create Resource [POST /group-reports]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Group Ticket Messages [/group-ticket-messages/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`ticket` |
+
++ Parameters
+    + id (number, `89`) - ID of the group ticket message resource
+
++ Attributes (groupTicketMessagesAttributes)
+
+### Fetch Collection [GET /group-ticket-messages]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupTicketMessages)
+        + meta (object, required)
+            + count: 2 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-ticket-messages?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-ticket-messages?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-ticket-messages?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-ticket-messages?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupTicketMessages)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /group-ticket-messages]
 
 + Request (application/vnd.api+json)
 
@@ -1928,19 +2627,147 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Group Reports [/group-reports/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the group report resource
-## Group Ticket Messages [/group-ticket-messages/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the group ticket message resource
 ## Group Tickets [/group-tickets/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | N
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`group` |
+`user` |
+`assignee` |
+`status` | `current`, `onHold` | Values of the `status` attribute
+`queryGroup` |
+`query` | | Search resource
+
 + Parameters
-    + id (number, `1`) - ID of the group ticket resource
+    + id (number, `41`) - ID of the group ticket resource
+
++ Attributes (groupTicketsAttributes)
+
+### Fetch Collection [GET /group-tickets]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (groupTickets)
+        + meta (object, required)
+            + count: 2 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/group-tickets?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/group-tickets?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/group-tickets?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/group-tickets?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (groupTickets)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /group-tickets]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Groups [/groups/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`featured` | `true`, `false`
+`category` |
+`privacy` | `open`, `closed`, `restricted`
+`query` | | Search resource
 
 + Parameters
     + id (number, `1`) - ID of the group resource
@@ -1954,12 +2781,12 @@ Filter | Example | Notes
         + data (array, required)
             + (groups)
         + meta (object, required)
-            + count: 1917 (number, required)
+            + count: 1998 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1907`
+            + last: `https://kitsu.io/api/edge/groups?page%5Blimit%5D=10&page%5Boffset%5D=1988`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -2062,8 +2889,140 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Leader Chat Messages [/leader-chat-messages/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`groupId` |
+
 + Parameters
-    + id (number, `1`) - ID of the leader chat message resource
+    + id (number, `19`) - ID of the leader chat message resource
+
++ Attributes (leaderChatMessagesAttributes)
+
+### Fetch Collection [GET /leader-chat-messages]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (leaderChatMessages)
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/leader-chat-messages?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/leader-chat-messages?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/leader-chat-messages?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/leader-chat-messages?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (leaderChatMessages)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /leader-chat-messages]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 
 # Group Media
 
@@ -7061,11 +8020,58 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/producers/1/relationships/anime-productions`
             + related: `https://kitsu.io/api/edge/producers/1/anime-productions`
 
+## groupActionLogsAttributes (object)
++ createdAt: `2017-03-12T16:40:59.662Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T16:40:59.662Z` - ISO 8601 of last modification
++ verb: `about_changed`
 
+## groupActionLogs (object)
++ id: 647 (required)
++ type: groupActionLogs (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-action-logs/647`
++ attributes (groupActionLogsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-action-logs/647/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-action-logs/647/user`
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-action-logs/647/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-action-logs/647/group`
+    + target (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-action-logs/647/relationships/target`
+            + related: `https://kitsu.io/api/edge/group-action-logs/647/target`
+## groupBansAttributes (object)
++ createdAt: `2017-03-12T16:40:59.662Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T16:40:59.662Z` - ISO 8601 of last modification
++ notes (nullable)
++ notesFormatted (nullable)
 
+## groupBans (object)
++ id: 1 (required)
++ type: groupBans (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-bans/1`
++ attributes (groupBansAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-bans/1/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-bans/1/group`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-bans/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-bans/1/user`
+    + moderator (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-bans/1/relationships/moderator`
+            + related: `https://kitsu.io/api/edge/group-bans/1/moderator`
 ## groupCategoriesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2017-03-12T06:24:28.884Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T06:24:28.884Z` - ISO 8601 of last modification
 + name: `Anime & Manga`
 + slug: `anime-manga`
 + description (nullable)
@@ -7074,24 +8080,70 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: groupCategories (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/group-categories/1
+    + self: `https://kitsu.io/api/edge/group-categories/1`
 + attributes (groupCategoriesAttributes)
+## groupInvitesAttributes (object)
++ createdAt: `2017-03-12T16:55:27.999Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T19:45:12.292Z` - ISO 8601 of last modification
++ acceptedAt: `2017-03-12T19:45:12.186Z`
++ declinedAt (nullable)
++ revokedAt (nullable)
 
+## groupInvites (object)
++ id: 28 (required)
++ type: groupInvites (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-invites/28`
++ attributes (groupInvitesAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-invites/28/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-invites/28/user`
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-invites/28/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-invites/28/group`
+    + sender (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-invites/28/relationships/sender`
+            + related: `https://kitsu.io/api/edge/group-invites/28/sender`
+## groupMemberNotesAttributes (object)
++ createdAt: `2017-03-12T16:55:27.999Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T19:45:12.292Z` - ISO 8601 of last modification
++ content (nullable)
++ contentFormatted (nullable)
+
+## groupMemberNotes (object)
++ id: 1 (required)
++ type: groupMemberNotes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-member-notes/1`
++ attributes (groupMemberNotesAttributes)
++ relationships (object)
+    + groupMember (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-member-notes/1/relationships/groupMember`
+            + related: `https://kitsu.io/api/edge/group-member-notes/1/groupMember`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-member-notes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-member-notes/1/user`
 
 ## groupMembersAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2015-02-17T21:16:53.211Z` - ISO 8601 date and time
++ updatedAt: `2015-02-17T21:16:53.211Z` - ISO 8601 of last modification
 + rank: admin (enum)
     + admin
     + mod
     + pleb
-+ unreadCount: 3 (number) - member's unread posts in group
++ unreadCount: 16 (number) - member's unread posts in group
 
 ## groupMembers (object)
 + id: 1 (required)
 + type: groupMembers (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/group-members/1
+    + self: `https://kitsu.io/api/edge/group-members/1`
 + attributes (groupMembersAttributes)
 + relationships (object)
     + group (object)
@@ -7110,13 +8162,16 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/group-members/1/relationships/notes`
             + related: `https://kitsu.io/api/edge/group-members/1/notes`
+## groupNeighborsAttributes (object)
++ createdAt: `2017-03-12T07:09:00.302Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T07:09:00.302Z` - ISO 8601 of last modification
+
 ## groupNeighbors (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 1 (required)
 + type: groupNeighbors (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/group-neighbors/1
+    + self: `https://kitsu.io/api/edge/group-neighbors/1`
++ attributes (groupNeighborsAttributes)
 + relationships (object)
     + source (object)
         + links (object)
@@ -7127,8 +8182,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/group-neighbors/1/relationships/destination`
             + related: `https://kitsu.io/api/edge/group-neighbors/1/destination`
 ## groupPermissionsAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2017-03-12T05:12:42.823Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T05:12:42.823Z` - ISO 8601 of last modification
 + permission: community (enum)
     + community
     + content
@@ -7141,28 +8196,125 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: groupPermissions (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/group-permissions/1
+    + self: `https://kitsu.io/api/edge/group-permissions/1`
 + attributes (groupPermissionsAttributes)
 + relationships (object)
     + groupMember (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/group-permissions/1/relationships/group-member`
             + related: `https://kitsu.io/api/edge/group-permissions/1/group-member`
+## groupReportsAttributes (object)
++ createdAt: `2017-03-12T05:12:42.823Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T05:12:42.823Z` - ISO 8601 of last modification
++ reason: nsfw (enum)
+    + nsfw
+    + offensive
+    + spoiler
+    + bullying
+    + other
+    + spam
++ status: reported (enum)
+    + reported
+    + resolved
+    + declined
+    + escalated
++ explanation (nullable)
++ naughtyType: Comment
++ naughtyId: 1 (number)
 
+## groupReports (object)
++ id: 1 (required)
++ type: groupReports (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-reports/1`
++ attributes (groupReportsAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-reports/1/group`
+    + naughty (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/naughty`
+            + related: `https://kitsu.io/api/edge/group-reports/1/naughty`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-reports/1/user`
+    + moderator (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-reports/1/relationships/moderator`
+            + related: `https://kitsu.io/api/edge/group-reports/1/moderator`
+## groupTicketMessagesAttributes (object)
++ createdAt: `2017-06-16T09:11:46.241Z` - ISO 8601 date and time
++ updatedAt: `2017-06-16T09:11:46.241Z` - ISO 8601 of last modification
++ kind: message (enum)
+    + message
+    + `mod_note`
++ content: `Could u please add this recap episode to the series...`
 
+## groupTicketMessages (object)
++ id: 89 (required)
++ type: groupTicketMessages (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-ticket-messages/89`
++ attributes (groupTicketMessagesAttributes)
++ relationships (object)
+    + ticket (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-ticket-messages/89/relationships/ticket`
+            + related: `https://kitsu.io/api/edge/group-ticket-messages/89/ticket`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-ticket-messages/89/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-ticket-messages/89/user`
+## groupTicketsAttributes (object)
++ createdAt: `2017-06-16T09:11:46.042Z` - ISO 8601 date and time
++ updatedAt: `2017-07-24T20:02:51.697Z` - ISO 8601 of last modification
++ status: resolved (enum)
+    + created
+    + assigned
+    + resolved
 
+## groupTickets (object)
++ id: 41 (required)
++ type: groupTickets (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/group-tickets/41`
++ attributes (groupTicketsAttributes)
++ relationships (object)
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-tickets/41/relationships/user`
+            + related: `https://kitsu.io/api/edge/group-tickets/41/user`
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-tickets/41/relationships/group`
+            + related: `https://kitsu.io/api/edge/group-tickets/41/group`
+    + assignee (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-tickets/41/relationships/assignee`
+            + related: `https://kitsu.io/api/edge/group-tickets/41/assignee`
+    + messages (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-tickets/41/relationships/messages`
+            + related: `https://kitsu.io/api/edge/group-tickets/41/messages`
+    + firstMessage (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/group-tickets/41/relationships/firstMessage`
+            + related: `https://kitsu.io/api/edge/group-tickets/41/firstMessage`
 ## groupsAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2015-02-17T21:16:53.207Z` - ISO 8601 date and time
++ updatedAt: `2017-10-26T20:51:24.215Z` - ISO 8601 of last modification
 + slug: `one-piece-group`
 + about: `Group for fans of the One Piece anime and or manga...`
 + locale (nullable)
-+ membersCount: 541 (number)
++ membersCount: 548 (number)
 + name: One Piece group
 + nsfw: false (boolean)
 + privacy: open (enum)
-    + closed
     + open
+    + closed
     + restricted
 + rules (nullable)
 + rulesFormatted (nullable)
@@ -7170,24 +8322,49 @@ Filter | Example | Notes
 + neighborsCount: 0 (number)
 + featured: false (boolean)
 + tagline (nullable)
-+ lastActivityAt: `2017-05-06T18:48:33.944Z`
++ lastActivityAt: `2017-10-26T17:56:45.259Z`
 + avatar (object)
     + tiny: `https://media.kitsu.io/groups/avatars/1/tiny.gif?1424323296`
     + small: `https://media.kitsu.io/groups/avatars/1/small.gif?1424323296`
     + medium: `https://media.kitsu.io/groups/avatars/1/medium.gif?1424323296`
     + large: `https://media.kitsu.io/groups/avatars/1/large.gif?1424323296`
     + original: `https://media.kitsu.io/groups/avatars/1/original.gif?1424323296`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/groups/cover_images/1/tiny.jpg?1424209483`
     + small: `https://media.kitsu.io/groups/cover_images/1/small.jpg?1424209483`
     + large: `https://media.kitsu.io/groups/cover_images/1/large.jpg?1424209483`
     + original: `https://media.kitsu.io/groups/cover_images/1/original.jpeg?1424209483`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 
 ## groups (object)
 + id: 1 (required)
 + type: groups (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/groups/1
+    + self: `https://kitsu.io/api/edge/groups/1`
 + attributes (groupsAttributes)
 + relationships (object)
     + members (object)
@@ -7222,7 +8399,32 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/groups/1/relationships/category`
             + related: `https://kitsu.io/api/edge/groups/1/category`
+    + pinnedPost (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/groups/1/relationships/pinned-post`
+            + related: `https://kitsu.io/api/edge/groups/1/pinned-post`
+## leaderChatMessagesAttributes (object)
++ createdAt: `2017-03-12T17:23:36.640Z` - ISO 8601 date and time
++ updatedAt: `2017-03-12T17:23:36.640Z` - ISO 8601 of last modification
++ content: `Does this work?`
++ contentFormatted: `<p>Does this work?</p>\n`
++ editedAt: `2017-03-12T17:23:36.640Z`
 
+## leaderChatMessages (object)
++ id: 19 (required)
++ type: leaderChatMessages (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/leader-chat-messages/19`
++ attributes (leaderChatMessagesAttributes)
++ relationships (object)
+    + group (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/leader-chat-messages/19/relationships/group`
+            + related: `https://kitsu.io/api/edge/leader-chat-messages/19/group`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/leader-chat-messages/19/relationships/user`
+            + related: `https://kitsu.io/api/edge/leader-chat-messages/19/user`
 
 ## animeAttributes (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
