@@ -88,7 +88,8 @@ For some models, you can also search based on the query text:
 
 You can choose how much of a resource to receive by specifying
 pagination parameters. Pagination is supported via `limit` and
-`offset`. Resources are paginated in groups of `20` by default.
+`offset`. Resources are paginated in groups of `10` by default and can be
+increased to a maximum of `20`.
 
 `/anime?page[limit]=5&page[offset]=0`
 
@@ -6316,6 +6317,7 @@ Filter | Example | Notes
 `mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
 `since` | `2017-01-28`, `2013-03-25T00:00:00.000Z` | Returns entries updated since the supplied ISO 8601 date
 `status` | `current`, `onHold` | Values of the `status` attribute
+`title` | | Search resource
 `userId` | `42603`, `2,7`
 
 + Parameters
@@ -7164,6 +7166,142 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+## Linked Accounts [/linked-accounts/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | N   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+
++ Parameters
+    + id (number, `1911`) - ID of the linked account resource
+
++ Attributes (linkedAccountsAttributes)
+
+### Fetch Collection [GET /linked-accounts]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (linkedAccounts)
+        + meta (object, required)
+            + count: 1 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=1` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/follows?page%5Blimit%5D=10&page%5Boffset%5D=1`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (linkedAccounts)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /linked-accounts]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Profile Link Sites [/profile-link-sites/{id}]
 
 **Authorisation**
@@ -7699,6 +7837,7 @@ Filter | Example | Notes
 `slug` |
 `name` |
 `self` | `true`
+`query` | | Search resource
 
 + Parameters
     + id (number, `1`) - ID of the user resource
@@ -7832,7 +7971,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: animeCharacters (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/anime-characters/1
+    + self: `https://kitsu.io/api/edge/anime-characters/1`
 + attributes (animeCharactersAttributes)
 + relationships (object)
     + anime (object)
@@ -7859,8 +7998,8 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: animeProductions (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/anime-productions/1
-+ attributes (animeCharactersAttributes)
+    + self: `https://kitsu.io/api/edge/anime-productions/1`
++ attributes (animeProductionsAttributes)
 + relationships (object)
     + anime (object)
         + links (object)
@@ -7879,7 +8018,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: animeStaff (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/anime-staff/1
+    + self: `https://kitsu.io/api/edge/anime-staff/1`
 + attributes (animeStaffAttributes)
 + relationships (object)
     + anime (object)
@@ -7902,7 +8041,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: castings (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/castings/1
+    + self: `https://kitsu.io/api/edge/castings/1`
 + attributes (castingsAttributes)
 + relationships (object)
     + media (object)
@@ -7931,7 +8070,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: characters (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/characters/1
+    + self: `https://kitsu.io/api/edge/characters/1`
 + attributes (charactersAttributes)
 + relationships (object)
     + primaryMedia (object)
@@ -7953,7 +8092,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: mangaCharacters (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/manga-characters/1
+    + self: `https://kitsu.io/api/edge/manga-characters/1`
 + attributes (mangaCharactersAttributes)
 + relationships (object)
     + manga (object)
@@ -7973,7 +8112,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: mangaStaff (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/manga-staff/1
+    + self: `https://kitsu.io/api/edge/manga-staff/1`
 + attributes (mangaStaffAttributes)
 + relationships (object)
     + manga (object)
@@ -7995,7 +8134,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: people (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/people/1
+    + self: `https://kitsu.io/api/edge/people/1`
 + attributes (peopleAttributes)
 + relationships (object)
     + castings (object)
@@ -8012,7 +8151,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: producers (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/producers/1
+    + self: `https://kitsu.io/api/edge/producers/1`
 + attributes (producersAttributes)
 + relationships (object)
     + animeProductions (object)
@@ -9185,7 +9324,7 @@ Filter | Example | Notes
 + createdAt: `2013-06-21T20:15:54.522Z` - ISO 8601 date and time
 + updatedAt: `2017-06-27T14:08:22.843Z` - ISO 8601 of last modification
 + content: `I like cats. http://i.imgur.com/mJBJfzf.jpg`
-+ contentFormatted: `I like cats. <a href=\"http://i.imgur.com/mJBJfzf.jpg\" target=\"_blank\">http://i.imgur.com/mJBJfzf.jpg</a><br><a href='http://i.imgur.com/mJBJfzf.jpg'><img class='autoembed' src='http://i.imgur.com/mJBJfzf.jpg' style='max-height: 500px; width: auto;' /></a>`
++ contentFormatted: `I like cats. <a href="http://i.imgur.com/mJBJfzf.jpg" target="_blank">...`
 + commentsCount: 13 (number)
 + postLikesCount: 2 (number)
 + spoiler: false (boolean)
@@ -9533,7 +9672,7 @@ Filter | Example | Notes
 + event: updated (enum)
     + added
     + updated
-+ changedData
++ changedData (object)
 
 ## libraryEvents (object)
 + id: 1 (required)
