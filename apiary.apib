@@ -3150,6 +3150,9 @@ Filter | Example | Notes
 
 ## Categories [/categories/{id}]
 
+**Pagination**
+The maximum page limit is unlimited for this resource.
+
 + Parameters
     + id (number, `1`) - ID of the category resource
 
@@ -3876,6 +3879,9 @@ Filter | Example | Notes
 
 **DEPRECATED**: Use `categories` instead
 
+**Pagination**
+The maximum page limit is unlimited for this resource.
+
 + Parameters
     + id (number, `1`) - ID of the genre resource
 
@@ -4360,6 +4366,9 @@ Filter | Example | Notes
     + id (number, `1`) - ID of the media attribute vote resource
 ## Media Attributes [/media-attributes/{id}]
 
+**Pagination**
+The maximum page limit is unlimited for this resource.
+
 + Parameters
     + id (number, `1`) - ID of the media attribute resource
 ## Media Follows [/media-follows/{id}]
@@ -4601,6 +4610,9 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Streamers [/streamers/{id}]
+
+**Pagination**
+The maximum page limit is unlimited for this resource.
 
 + Parameters
     + id (number, `1`) - ID of the streamer resource
@@ -6320,6 +6332,9 @@ Filter | Example | Notes
 `title` | | Search resource
 `userId` | `42603`, `2,7`
 
+**Pagination**
+The maximum page limit is `500` for this resource.
+
 + Parameters
     + id (number, `1644`) - ID of the library entry resource
 
@@ -6462,6 +6477,9 @@ Filter | Example | Notes
 -----: | :------ | :----
 `linkedAccountId` |
 `syncStatus` | `pending`, `success`, `error`
+
+**Pagination**
+The maximum page limit is unlimited for this resource.
 
 + Parameters
     + id (number, `917564`) - ID of the library entry log resource
@@ -7318,6 +7336,9 @@ Filters can be used in `camelCase` or `snake_case` format
 
 Filter | Example | Notes
 -----: | :------ | :----
+
+**Pagination**
+The maximum page limit is unlimited for this resource.
 
 + Parameters
     + id (number, `1`) - ID of the profile link site resource
