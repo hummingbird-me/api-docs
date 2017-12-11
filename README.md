@@ -10,7 +10,7 @@ fans.
 [meta]:https://github.com/hummingbird-me/hummingbird
 [client]:https://github.com/hummingbird-me/hummingbird-client
 [server]:https://github.com/hummingbird-me/hummingbird-server
-[api docs]:https://docs.kitsu.apiary.io
+[api docs]:https://kitsu.docs.apiary.io
 
 ---
 
