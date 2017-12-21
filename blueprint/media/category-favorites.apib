@@ -1,5 +1,17 @@
 ## Category Favorites [/category-favorites/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+:[](../filters/user-id)
+:[](../filters/category-id)
+
 + Parameters
     + id (number, `2`) - ID of the category favorite resource
 
@@ -10,12 +22,12 @@
         + data (array, required)
             + (categoryFavorites)
         + meta (object, required)
-            + count: 351 (number, required)
+            + count: 3018 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341`
+            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=3008`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
