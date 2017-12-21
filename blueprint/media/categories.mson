@@ -29,8 +29,8 @@
                 + height (nullable)
 
 ## categories (object)
-+ id: 10 (string, required)
-+ type: categories (string, required)
++ id: 10 (required)
++ type: categories (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/categories/10`
 + attributes (categoriesAttributes)

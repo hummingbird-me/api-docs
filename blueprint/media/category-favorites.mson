@@ -3,8 +3,8 @@
 + updatedAt: `2017-05-31T13:32:16.323Z` - ISO 8601 of last modification
 
 ## categoryFavorites (object)
-+ id: 2 (string, required)
-+ type: categoryFavorites (string, required)
++ id: 2 (required)
++ type: categoryFavorites (required)
 + links (object)
     + self: `https://kitsu.io/api/edge/category-favorites/2`
 + attributes (categoryFavoritesAttributes)

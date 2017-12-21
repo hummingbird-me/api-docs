@@ -56,7 +56,7 @@
     + tba
     + unreleased
     + upcoming
-+ tba (nullable)
++ tba
 + posterImage (object)
     + tiny: `https://media.kitsu.io/anime/poster_images/1/tiny.jpg?1431697256`
     + small: `https://media.kitsu.io/anime/poster_images/1/small.jpg?1431697256`
