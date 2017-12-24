@@ -1,6 +1,6 @@
 ## episodesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-02-20T18:20:39.003Z` - ISO 8601 date and time
++ updatedAt: `2014-11-18T16:20:14.856Z` - ISO 8601 of last modification
 + titles (object)
     + en_jp: The $$60 Billion Man
 + canonicalTitle: The $$60 Billion Man
@@ -12,15 +12,21 @@
 + length (nullable) - length of episode in minutes
 + thumbnail (object)
     + original: `https://media.kitsu.io/episodes/thumbnails/28/original.jpg?1416327614`
+    + meta (object)
+        + dimensions (object)
 
 ## episodes (object)
 + id: 28 (required)
 + type: episodes (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/episodes/28
+    + self: `https://kitsu.io/api/edge/episodes/28`
 + attributes (episodesAttributes)
 + relationships (object)
     + media (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/episodes/28/relationships/media`
             + related: `https://kitsu.io/api/edge/episodes/28/media`
+    + video (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/episodes/28/relationships/videos`
+            + related: `https://kitsu.io/api/edge/episodes/28/videos`
