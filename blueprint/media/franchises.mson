@@ -1,6 +1,6 @@
 ## franchisesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-07-07T07:44:54.484Z` - ISO 8601 date and time
++ updatedAt: `2013-07-07T07:44:54.484Z` - ISO 8601 of last modification
 + titles (object)
     + en: Darker than Black (nullable)
     + en_jp (nullable)
@@ -10,7 +10,7 @@
 + id: 1 (required)
 + type: franchises (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/franchises/1
+    + self: `https://kitsu.io/api/edge/franchises/1`
 + attributes (franchisesAttributes)
 + relationships (object)
     + installments (object)
