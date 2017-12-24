@@ -1,6 +1,6 @@
 ## genresAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-02-20T16:00:15.623Z` - ISO 8601 date and time
++ updatedAt: `2016-07-17T19:30:56.164Z` - ISO 8601 of last modification
 + name: Action
 + slug: action
 + description (nullable)
@@ -9,5 +9,5 @@
 + id: 1 (required)
 + type: genres (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/genres/1
+    + self: `https://kitsu.io/api/edge/genres/1`
 + attributes (genresAttributes)
