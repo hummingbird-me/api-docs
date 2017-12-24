@@ -13,7 +13,7 @@
 + id: 1 (required)
 + type: mappings (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/mappings/1
+    + self: `https://kitsu.io/api/edge/mappings/1`
 + attributes (mappingsAttributes)
 + relationships (object)
     + item (object)

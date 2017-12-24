@@ -1,5 +1,17 @@
 ## Mappings [/mappings/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+:[](../filters/external-site)
+:[](../filters/external-id)
+
 + Parameters
     + id (number, `1`) - ID of the mapping resource
 
@@ -12,12 +24,12 @@
         + data (array, required)
             + (mappings)
         + meta (object, required)
-            + count: 109379 (number, required)
+            + count: 67654 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369`
+            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=67644`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -39,82 +51,6 @@
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /mappings]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
