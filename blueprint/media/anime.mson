@@ -4,7 +4,7 @@
 + slug: `cowboy-bebop`
 + synopsis: `In the year 2071, humanity has colonoized several of the planets and moons...`
 + coverImageTopOffset: 400 (number, nullable) - Deprecated
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en: Cowboy Bebop (nullable)
     + en_jp: Cowbop Bebop (nullable)
     + ja_jp: カウボーイビバップ (nullable)

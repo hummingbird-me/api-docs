@@ -4,7 +4,7 @@
 + slug: `shingeki-no-kyojin`
 + synopsis: `Several hundred years ago...`
 + coverImageTopOffset: 112 (number, nullable) - Deprecated
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en: Attack on Titan (nullable)
     + en_jp: Shingeki no Kyojin (nullable)
     + ja_jp: 進撃の巨人 (nullable)
