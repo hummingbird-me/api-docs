@@ -19,7 +19,7 @@
 + id: 1 (required)
 + type: mediaRelationships (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/media-relationships/1
+    + self: `https://kitsu.io/api/edge/media-relationships/1`
 + attributes (mediaRelationshipsAttributes)
 + relationships (object)
     + source (object)
