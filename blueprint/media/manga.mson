@@ -1,42 +1,42 @@
 ## mangaAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-12-18T13:59:39.232Z` - ISO 8601 date and time
++ updatedAt: `2017-12-24T00:00:19.819Z` - ISO 8601 of last modification
 + slug: `shingeki-no-kyojin`
-+ synopsis: `Several hundred years ago...``
-+ coverImageTopOffset: 112 (number, nullable)
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ synopsis: `Several hundred years ago...`
++ coverImageTopOffset: 112 (number, nullable) - Deprecated
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en: Attack on Titan (nullable)
     + en_jp: Shingeki no Kyojin (nullable)
     + ja_jp: 進撃の巨人 (nullable)
-+ canonicalTitle: Shingeki no Kyojin
++ canonicalTitle: Attack on Titan
 + abbreviatedTitles (array, nullable)
-+ averageRating: 81.54
++ averageRating: 82.47
 + ratingFrequencies (object)
-    + 2: 28
+    + 2: 39
     + 3: 0
-    + 4: 17
+    + 4: 18
     + 5: 0
-    + 6: 23
-    + 7: 1
-    + 8: 75
+    + 6: 27
+    + 7: 4
+    + 8: 126
     + 9: 0
-    + 10: 81
-    + 11: 2
-    + 12: 177
-    + 13: 1
-    + 14: 367
-    + 15: 2
-    + 16: 448
-    + 17: 6
-    + 18: 460
-    + 19: 1
-    + 20: 833
-+ userCount: 5170 (number)
-+ favoritesCount: 633 (number)
+    + 10: 85
+    + 11: 4
+    + 12: 192
+    + 13: 5
+    + 14: 635
+    + 15: 3
+    + 16: 528
+    + 17: 12
+    + 18: 534
+    + 19: 2
+    + 20: 1379
++ userCount: 7137 (number)
++ favoritesCount: 758 (number)
 + startDate: `2009-09-09` (nullable) - YYYY-MM-DD date
 + endDate (nullable) - YYYY-MM-DD date
 + popularityRank: 2 (number)
-+ ratingRank: 163 (number)
++ ratingRank: 138 (number)
 + ageRating: R (enum, nullable)
     + G - General Audiences
     + PG - Parental Guidance Suggested
@@ -57,21 +57,47 @@
     + tba
     + unreleased
     + upcoming
++ tba
 + posterImage (object)
     + tiny: `https://media.kitsu.io/manga/poster_images/14916/tiny.jpg?1491099787`
     + small: `https://media.kitsu.io/manga/poster_images/14916/small.jpg?1491099787`
     + medium: `https://media.kitsu.io/manga/poster_images/14916/medium.jpg?1491099787`
     + large: `https://media.kitsu.io/manga/poster_images/14916/large.jpg?1491099787`
     + original: `https://media.kitsu.io/manga/poster_images/14916/original.jpg?1491099787`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/manga/cover_images/14916/tiny.jpg?1471880895`
     + small: `https://media.kitsu.io/manga/cover_images/14916/small.jpg?1471880895`
     + large: `https://media.kitsu.io/manga/cover_images/14916/large.jpg?1471880895`
     + original: `https://media.kitsu.io/manga/cover_images/14916/original.jpg?1471880895`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + chapterCount (number, nullable)
 + volumeCount: 0 (number, nullable)
 + serialization: Bessatsu Shounen Magazine (nullable)
-+ mangaType: manga (enum) - Deprecated, use subtype
++ mangaType: manga (enum) - Deprecated, use `subtype`
     + doujin
     + manga
     + manhua
@@ -84,8 +110,8 @@
 + id: 14916 (required)
 + type: manga (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/manga/14916
-+ attributes (animeAttributes)
+    + self: `https://kitsu.io/api/edge/manga/14916`
++ attributes (mangaAttributes)
 + relationships (object)
     + genres (object)
         + links (object)

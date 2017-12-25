@@ -2,16 +2,21 @@
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + siteName: Hulu
-+ logo: `/logos/original/missing.png`
++ streamingLinksCount: 760 (number)
++ logo (nullable)
 
 ## streamers (object)
 + id: 1 (required)
 + type: streamers (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/streamers/1
+    + self: `https://kitsu.io/api/edge/streamers/1`
 + attributes (streamersAttributes)
 + relationships (object)
     + streamingLinks (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/streamers/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/streamers/1/streaming-links`
+    + videos (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streamers/1/relationships/videos`
+            + related: `https://kitsu.io/api/edge/streamers/1/videos`

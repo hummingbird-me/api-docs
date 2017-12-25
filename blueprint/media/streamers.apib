@@ -1,6 +1,17 @@
 ## Streamers [/streamers/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+:[](../filters/HEADER)
+
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
@@ -13,9 +24,9 @@ The maximum page limit is unlimited for this resource.
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (animeCharacters)
+            + (streamers)
         + meta (object, required)
-            + count: 109379 (number, required)
+            + count: 6 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
@@ -42,82 +53,6 @@ The maximum page limit is unlimited for this resource.
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /streamers]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)

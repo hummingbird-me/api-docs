@@ -3,8 +3,8 @@
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug
 + synopsis
-+ coverImageTopOffset: 400 (number, nullable)
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ coverImageTopOffset: 400 (number, nullable) - Deprecated
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en (nullable)
     + en_jp (nullable)
     + ja_jp (nullable)
@@ -55,17 +55,43 @@
     + tba
     + unreleased
     + upcoming
++ tba
 + posterImage (object)
     + tiny: `https://media.kitsu.io/drama/poster_images/1/tiny.jpg?1431697256`
     + small: `https://media.kitsu.io/drama/poster_images/1/small.jpg?1431697256`
     + medium: `https://media.kitsu.io/drama/poster_images/1/medium.jpg?1431697256`
     + large: `https://media.kitsu.io/drama/poster_images/1/large.jpg?1431697256`
     + original: `https://media.kitsu.io/drama/poster_images/1/original.jpg?1431697256`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/drama/cover_images/1/tiny.jpg?1416336000`
     + small: `https://media.kitsu.io/drama/cover_images/1/small.jpg?1416336000`
     + large: `https://media.kitsu.io/drama/cover_images/1/large.jpg?1416336000`
     + original: `https://media.kitsu.io/drama/cover_images/1/original.jpg?1416336000`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + episodeCount: 26 (number)
 + episodeLength: 24 (number) - Length of episode in minutes
 + youtubeVideoId - ID of a youtube trailer
@@ -75,7 +101,7 @@
 + id: 1 (required)
 + type: drama (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/drama/1
+    + self: `https://kitsu.io/api/edge/drama/1`
 + attributes (dramaAttributes)
 + relationships (object)
     + genres (object)
@@ -114,3 +140,11 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/drama/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/drama/1/streaming-links`
+    + dramaCharacters (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/drama-characters`
+            + related: `https://kitsu.io/api/edge/drama/1/drama-characters`
+    + dramaStaff (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/drama-staff`
+            + related: `https://kitsu.io/api/edge/drama/1/drama-staff`

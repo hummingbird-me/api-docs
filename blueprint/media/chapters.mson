@@ -11,12 +11,14 @@
 + length: 80 (nullable) - Number of pages in chapter
 + thumbnail (object)
     + original: `https://media.kitsu.io/chapters/thumbnails/403830/original.jpg?1501195665`
+    + meta (object)
+        + dimensions (object)
 
 ## chapters (object)
 + id: 403830 (required)
 + type: chapters (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/chapters/403830
+    + self: `https://kitsu.io/api/edge/chapters/403830`
 + attributes (chaptersAttributes)
 + relationships (object)
     + manga (object)
