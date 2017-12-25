@@ -3029,6 +3029,25 @@ Filter | Example | Notes
 
 ## Anime [/anime/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`season` | `winter`, `spring`, `summer`, `fall`
+`seasonYear` | `2017`, `2005,2006`
+`streamers` | `Crunchyroll`
+`ageRating` | `G`, `PG,R,R18`
+
 + Parameters
     + id (number, `1`) - ID of the anime resource
 
@@ -3041,12 +3060,12 @@ Filter | Example | Notes
         + data (array, required)
             + (anime)
         + meta (object, required)
-            + count: 12080 (number, required)
+            + count: 13797 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=12070`
+            + last: `https://kitsu.io/api/edge/anime?page%5Blimit%5D=10&page%5Boffset%5D=13787`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3071,90 +3090,32 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /anime]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ## Categories [/categories/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`parentId` | `1`
+`slug` |
+`nsfw` | `true`, `false`
+
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
-    + id (number, `1`) - ID of the category resource
+    + id (number, `10`) - ID of the category resource
 
 + Attributes (categoriesAttributes)
 
@@ -3165,12 +3126,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (categories)
         + meta (object, required)
-            + count: 228 (number, required)
+            + count: 229 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=218`
+            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=219`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3185,96 +3146,39 @@ The maximum page limit is unlimited for this resource.
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (categoriesAttributes)
+        + data (categories)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /categories]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Category Favorites [/category-favorites/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+`categoryId` |
+
 + Parameters
     + id (number, `2`) - ID of the category favorite resource
+
++ Attributes (categoryFavoritesAttributes)
 
 ### Fetch Collection [GET /category-favorites]
 
@@ -3283,12 +3187,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (categoryFavorites)
         + meta (object, required)
-            + count: 351 (number, required)
+            + count: 3018 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=341`
+            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=3008`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3395,6 +3299,23 @@ The maximum page limit is unlimited for this resource.
     + id (number, `1`) - ID of the category recommendation resource
 ## Chapters [/chapters/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mangaId` | `2`, `8,987`
+`number` |
+
 + Parameters
     + id (number, `403830`) - ID of the chapter resource
 
@@ -3407,12 +3328,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (chapters)
         + meta (object, required)
-            + count: 601419 (number, required)
+            + count: 652186 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/chapters?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/chapters?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/chapters?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/chapters?page%5Blimit%5D=10&page%5Boffset%5D=601409`
+            + last: `https://kitsu.io/api/edge/chapters?page%5Blimit%5D=10&page%5Boffset%5D=652176`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3427,93 +3348,32 @@ The maximum page limit is unlimited for this resource.
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (chaptersAttributes)
+        + data (chapters)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /chapters]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Drama [/drama/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the drama resource
@@ -3557,84 +3417,25 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /drama]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ## Episodes [/episodes/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+`number` |
 
 + Parameters
     + id (number, `28`) - ID of the episode resource
@@ -3646,14 +3447,14 @@ The maximum page limit is unlimited for this resource.
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (categories)
+            + (episodes)
         + meta (object, required)
-            + count: 180218 (number, required)
+            + count: 212384 (number, required)
         + links (object)
-            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=180200`
+            + first: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=212374`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -3668,93 +3469,32 @@ The maximum page limit is unlimited for this resource.
 
 + Response 200 (application/vnd.api+json)
     + Attributes
-        + data (episodesAttributes)
+        + data (episodes)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /episodes]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Franchises [/franchises/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the franchise resource
@@ -3799,87 +3539,27 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /franchises]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Genres [/genres/{id}]
 
 **DEPRECATED**: Use `categories` instead
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
@@ -3924,83 +3604,24 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /genres]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Installments [/installments/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
 
 + Parameters
     + id (number, `1`) - ID of the installment resource
@@ -4014,12 +3635,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (installments)
         + meta (object, required)
-            + count: 5902 (number, required)
+            + count: 5903 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=5892`
+            + last: `https://kitsu.io/api/edge/installments?page%5Blimit%5D=10&page%5Boffset%5D=5893`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4044,83 +3665,23 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /installments]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Manga [/manga/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`chapterCount` |
 
 + Parameters
     + id (number, `14916`) - ID of the manga resource
@@ -4134,12 +3695,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (manga)
         + meta (object, required)
-            + count: 30634 (number, required)
+            + count: 40278 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=30624`
+            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=40268`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4164,83 +3725,24 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /manga]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Mappings [/mappings/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`externalSite` | `myanimelist/anime`
+`externalId` |
 
 + Parameters
     + id (number, `1`) - ID of the mapping resource
@@ -4254,12 +3756,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (mappings)
         + meta (object, required)
-            + count: 109379 (number, required)
+            + count: 67654 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=109369`
+            + last: `https://kitsu.io/api/edge/mappings?page%5Blimit%5D=10&page%5Boffset%5D=67644`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4284,8 +3786,70 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+## Media Attribute Votes [/media-attribute-votes/{id}]
 
-### Create Resource [POST /mappings]
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`createdAt` |
+`userId` | `42603`, `2,7`
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
+
++ Parameters
+    + id (number, `1`) - ID of the media attribute vote resource
+
++ Attributes (mediaAttributeVotesAttributes)
+
+### Fetch Collection [GET /media-attribute-votes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (mediaAttributeVotes)
+        + meta (object, required)
+            + count: 0 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/media-attribute-votes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/media-attribute-votes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-attribute-votes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-attribute-votes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaAttributeVotes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /media-attribute-votes]
 
 + Request (application/vnd.api+json)
 
@@ -4360,17 +3924,70 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Media Attribute Votes [/media-attribute-votes/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the media attribute vote resource
 ## Media Attributes [/media-attributes/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`slug` |
+
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
     + id (number, `1`) - ID of the media attribute resource
+
++ Attributes (mediaAttributesAttributes)
+
+### Fetch Collection [GET /media-attributes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (mediaAttributes)
+        + meta (object, required)
+            + count: 0 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/media-attributes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/media-attributes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-attributes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-attributes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaAttributes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Media Follows [/media-follows/{id}]
 
 + Parameters
@@ -4491,6 +4108,25 @@ The maximum page limit is unlimited for this resource.
     + Attributes (Error500)
 ## Media Relationships [/media-relationships/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`role` | | Values of the `role` attribute
+`sourceType` |
+`sourceId` |
+`destinationId` |
+
 + Parameters
     + id (number, `1`) - ID of the media relationship resource
 
@@ -4503,12 +4139,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (mediaRelationships)
         + meta (object, required)
-            + count: 17798 (number, required)
+            + count: 19573 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=17788`
+            + last: `https://kitsu.io/api/edge/media-relationships?page%5Blimit%5D=10&page%5Boffset%5D=19563`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4533,85 +4169,25 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /media-relationships]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Streamers [/streamers/{id}]
 
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
@@ -4624,9 +4200,9 @@ The maximum page limit is unlimited for this resource.
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (array, required)
-            + (animeCharacters)
+            + (streamers)
         + meta (object, required)
-            + count: 109379 (number, required)
+            + count: 6 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/streamers?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
@@ -4656,83 +4232,22 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-
-### Create Resource [POST /streamers]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
 ## Streaming Links [/streaming-links/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
 
 + Parameters
     + id (number, `1`) - ID of the streaming link resource
@@ -4746,12 +4261,12 @@ The maximum page limit is unlimited for this resource.
         + data (array, required)
             + (streamingLinks)
         + meta (object, required)
-            + count: 1898 (number, required)
+            + count: 2076 (number, required)
         + links (object)
             + first: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0`
             + prev: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
             + next: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=1888`
+            + last: `https://kitsu.io/api/edge/streaming-links?page%5Blimit%5D=10&page%5Boffset%5D=2066`
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
@@ -4776,76 +4291,96 @@ The maximum page limit is unlimited for this resource.
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+## Trending Anime [/trending/anime]
 
-### Create Resource [POST /streaming-links]
+**Authorisation**
 
-+ Request (application/vnd.api+json)
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
 
-+ Response 201 (application/vnd.api+json)
+**Filters**
 
-+ Response 202 (application/vnd.api+json)
+Filters can be used in `camelCase` or `snake_case` format
 
-+ Response 204 (application/vnd.api+json)
+Filter | Example | Notes
+-----: | :------ | :----
 
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
+### Fetch Collection [GET /trending/anime]
 
 + Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (anime)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
 
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+## Trending Drama [/trending/drama]
 
-### Delete Resource [DELETE]
+**Authorisation**
 
-+ Request (application/vnd.api+json)
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
 
-+ Response 202 (application/vnd.api+json)
+**Filters**
 
-+ Response 204 (application/vnd.api+json)
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
+### Fetch Collection [GET /trending/drama]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (drama)
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
 
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Trending Manga [/trending/manga]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
+### Fetch Collection [GET /trending/manga]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (manga)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
@@ -6220,82 +5755,6 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-### Create Resource [POST /site-announcements]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 # Group User Libraries
 
 ## Library Entries [/library-entries/{id}]
@@ -6333,6 +5792,7 @@ Filter | Example | Notes
 `userId` | `42603`, `2,7`
 
 **Pagination**
+
 The maximum page limit is `500` for this resource.
 
 + Parameters
@@ -6479,6 +5939,7 @@ Filter | Example | Notes
 `syncStatus` | `pending`, `success`, `error`
 
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
@@ -7338,6 +6799,7 @@ Filter | Example | Notes
 -----: | :------ | :----
 
 **Pagination**
+
 The maximum page limit is unlimited for this resource.
 
 + Parameters
@@ -8587,42 +8049,42 @@ Filter | Example | Notes
             + related: `https://kitsu.io/api/edge/leader-chat-messages/19/user`
 
 ## animeAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-02-20T16:00:13.609Z` - ISO 8601 date and time
++ updatedAt: `2017-12-20T00:00:09.270Z` - ISO 8601 of last modification
 + slug: `cowboy-bebop`
 + synopsis: `In the year 2071, humanity has colonoized several of the planets and moons...`
-+ coverImageTopOffset: 400 (number, nullable)
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ coverImageTopOffset: 400 (number, nullable) - Deprecated
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en: Cowboy Bebop (nullable)
     + en_jp: Cowbop Bebop (nullable)
     + ja_jp: カウボーイビバップ (nullable)
 + canonicalTitle: Cowboy Bebop
 + abbreviatedTitles: COWBOY BEBOP (array)
-+ averageRating: 88.65
++ averageRating: 88.55
 + ratingFrequencies (object)
-    + 2: 72
+    + 2: 83
     + 3: 0
-    + 4: 292
+    + 4: 296
     + 5: 0
     + 6: 67
-    + 7: 0
-    + 8: 162
-    + 9: 0
-    + 10: 254
-    + 11: 2
-    + 12: 1393
-    + 13: 10
-    + 14: 1498
-    + 15: 15
-    + 16: 3767
-    + 17: 28
-    + 18: 4392
-    + 19: 40
-    + 20: 13607
-+ userCount: 40405 (number)
-+ favoritesCount: 3277 (number)
+    + 7: 2
+    + 8: 200
+    + 9: 1
+    + 10: 271
+    + 11: 3
+    + 12: 1414
+    + 13: 11
+    + 14: 1709
+    + 15: 35
+    + 16: 3917
+    + 17: 56
+    + 18: 4638
+    + 19: 69
+    + 20: 14276
++ userCount: 43409 (number)
++ favoritesCount: 3485 (number)
 + startDate: `1998-04-03` - YYYY-MM-DD date
-+ endDate: `1999-04-04` - YYYY-MM-DD date
++ endDate: `1999-04-24` - YYYY-MM-DD date
 + popularityRank: 10 (number)
 + ratingRank: 10 (number)
 + ageRating: R (enum, nullable)
@@ -8644,21 +8106,47 @@ Filter | Example | Notes
     + tba
     + unreleased
     + upcoming
++ tba
 + posterImage (object)
     + tiny: `https://media.kitsu.io/anime/poster_images/1/tiny.jpg?1431697256`
     + small: `https://media.kitsu.io/anime/poster_images/1/small.jpg?1431697256`
     + medium: `https://media.kitsu.io/anime/poster_images/1/medium.jpg?1431697256`
     + large: `https://media.kitsu.io/anime/poster_images/1/large.jpg?1431697256`
     + original: `https://media.kitsu.io/anime/poster_images/1/original.jpg?1431697256`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/anime/cover_images/1/tiny.jpg?1416336000`
     + small: `https://media.kitsu.io/anime/cover_images/1/small.jpg?1416336000`
     + large: `https://media.kitsu.io/anime/cover_images/1/large.jpg?1416336000`
     + original: `https://media.kitsu.io/anime/cover_images/1/original.jpg?1416336000`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + episodeCount: 26 (number)
-+ episodeLength: 24 (number) - Length of episode in minutes
++ episodeLength: 25 (number) - Length of episode in minutes
 + youtubeVideoId: qig4KOK2R2g - ID of a youtube trailer
-+ showType: TV (enum) - Deprecated, use subtype
++ showType: TV (enum) - Deprecated, use `subtype`
     + ONA
     + OVA
     + TV
@@ -8671,7 +8159,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: anime (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/anime/1
+    + self: `https://kitsu.io/api/edge/anime/1`
 + attributes (animeAttributes)
 + relationships (object)
     + genres (object)
@@ -8723,11 +8211,11 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/anime/1/relationships/anime-staff`
             + related: `https://kitsu.io/api/edge/anime/1/anime-staff`
 ## categoriesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2017-05-31T06:38:31.311Z` - ISO 8601 date and time
++ updatedAt: `2017-05-31T06:39:36.873Z` - ISO 8601 of last modification
 + title: Elf
 + description: `The origin of Elves (Norse; álfar(elves), álfr(elf)) can be found in ancient Norse mythology...`
-+ totalMediaCount: 32 (number)
++ totalMediaCount: 40 (number)
 + slug: elf
 + nsfw: false (boolean) - NSFW categories requires authentication
 + childCount: 0 (number)
@@ -8737,12 +8225,26 @@ Filter | Example | Notes
     + medium: `https://media.kitsu.io/categories/images/10/medium.jpg?1496212711`
     + large: `https://media.kitsu.io/categories/images/10/large.jpg?1496212711`
     + original: `https://media.kitsu.io/categories/images/10/original.jpg?1496212711`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 
 ## categories (object)
-+ id: 10 (string, required)
-+ type: categories (string, required)
++ id: 10 (required)
++ type: categories (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/categories/10
+    + self: `https://kitsu.io/api/edge/categories/10`
 + attributes (categoriesAttributes)
 + relationships (object)
     + parent (object)
@@ -8761,13 +8263,16 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/categories/10/relationships/manga`
             + related: `https://kitsu.io/api/edge/categories/10/manga`
+## categoryFavoritesAttributes (object)
++ createdAt: `2017-05-31T13:32:16.323Z` - ISO 8601 date and time
++ updatedAt: `2017-05-31T13:32:16.323Z` - ISO 8601 of last modification
+
 ## categoryFavorites (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + id: 2 (required)
 + type: categoryFavorites (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/category-favorites/2
+    + self: `https://kitsu.io/api/edge/category-favorites/2`
++ attributes (categoryFavoritesAttributes)
 + relationships (object)
     + user (object)
         + links (object)
@@ -8791,12 +8296,14 @@ Filter | Example | Notes
 + length: 80 (nullable) - Number of pages in chapter
 + thumbnail (object)
     + original: `https://media.kitsu.io/chapters/thumbnails/403830/original.jpg?1501195665`
+    + meta (object)
+        + dimensions (object)
 
 ## chapters (object)
 + id: 403830 (required)
 + type: chapters (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/chapters/403830
+    + self: `https://kitsu.io/api/edge/chapters/403830`
 + attributes (chaptersAttributes)
 + relationships (object)
     + manga (object)
@@ -8808,8 +8315,8 @@ Filter | Example | Notes
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + slug
 + synopsis
-+ coverImageTopOffset: 400 (number, nullable)
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ coverImageTopOffset: 400 (number, nullable) - Deprecated
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en (nullable)
     + en_jp (nullable)
     + ja_jp (nullable)
@@ -8860,17 +8367,43 @@ Filter | Example | Notes
     + tba
     + unreleased
     + upcoming
++ tba
 + posterImage (object)
     + tiny: `https://media.kitsu.io/drama/poster_images/1/tiny.jpg?1431697256`
     + small: `https://media.kitsu.io/drama/poster_images/1/small.jpg?1431697256`
     + medium: `https://media.kitsu.io/drama/poster_images/1/medium.jpg?1431697256`
     + large: `https://media.kitsu.io/drama/poster_images/1/large.jpg?1431697256`
     + original: `https://media.kitsu.io/drama/poster_images/1/original.jpg?1431697256`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/drama/cover_images/1/tiny.jpg?1416336000`
     + small: `https://media.kitsu.io/drama/cover_images/1/small.jpg?1416336000`
     + large: `https://media.kitsu.io/drama/cover_images/1/large.jpg?1416336000`
     + original: `https://media.kitsu.io/drama/cover_images/1/original.jpg?1416336000`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + episodeCount: 26 (number)
 + episodeLength: 24 (number) - Length of episode in minutes
 + youtubeVideoId - ID of a youtube trailer
@@ -8880,7 +8413,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: drama (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/drama/1
+    + self: `https://kitsu.io/api/edge/drama/1`
 + attributes (dramaAttributes)
 + relationships (object)
     + genres (object)
@@ -8919,9 +8452,17 @@ Filter | Example | Notes
         + links (object)
             + self: `https://kitsu.io/api/edge/drama/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/drama/1/streaming-links`
+    + dramaCharacters (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/drama-characters`
+            + related: `https://kitsu.io/api/edge/drama/1/drama-characters`
+    + dramaStaff (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/drama/1/relationships/drama-staff`
+            + related: `https://kitsu.io/api/edge/drama/1/drama-staff`
 ## episodesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-02-20T18:20:39.003Z` - ISO 8601 date and time
++ updatedAt: `2014-11-18T16:20:14.856Z` - ISO 8601 of last modification
 + titles (object)
     + en_jp: The $$60 Billion Man
 + canonicalTitle: The $$60 Billion Man
@@ -8933,21 +8474,27 @@ Filter | Example | Notes
 + length (nullable) - length of episode in minutes
 + thumbnail (object)
     + original: `https://media.kitsu.io/episodes/thumbnails/28/original.jpg?1416327614`
+    + meta (object)
+        + dimensions (object)
 
 ## episodes (object)
 + id: 28 (required)
 + type: episodes (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/episodes/28
+    + self: `https://kitsu.io/api/edge/episodes/28`
 + attributes (episodesAttributes)
 + relationships (object)
     + media (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/episodes/28/relationships/media`
             + related: `https://kitsu.io/api/edge/episodes/28/media`
+    + videos (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/episodes/28/relationships/videos`
+            + related: `https://kitsu.io/api/edge/episodes/28/videos`
 ## franchisesAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-07-07T07:44:54.484Z` - ISO 8601 date and time
++ updatedAt: `2013-07-07T07:44:54.484Z` - ISO 8601 of last modification
 + titles (object)
     + en: Darker than Black (nullable)
     + en_jp (nullable)
@@ -8957,7 +8504,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: franchises (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/franchises/1
+    + self: `https://kitsu.io/api/edge/franchises/1`
 + attributes (franchisesAttributes)
 + relationships (object)
     + installments (object)
@@ -8965,8 +8512,8 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/franchises/1/relationships/installments`
             + related: `https://kitsu.io/api/edge/franchises/1/installments`
 ## genresAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-02-20T16:00:15.623Z` - ISO 8601 date and time
++ updatedAt: `2016-07-17T19:30:56.164Z` - ISO 8601 of last modification
 + name: Action
 + slug: action
 + description (nullable)
@@ -8975,7 +8522,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: genres (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/genres/1
+    + self: `https://kitsu.io/api/edge/genres/1`
 + attributes (genresAttributes)
 ## installmentsAttributes (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
@@ -8987,8 +8534,8 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: installments (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/installments/1
-+ attributes (animeCharactersAttributes)
+    + self: `https://kitsu.io/api/edge/installments/1`
++ attributes (installmentsAttributes)
 + relationships (object)
     + franchise (object)
         + links (object)
@@ -8999,44 +8546,44 @@ Filter | Example | Notes
             + self: `https://kitsu.io/api/edge/installments/1/relationships/media`
             + related: `https://kitsu.io/api/edge/installments/1/media`
 ## mangaAttributes (object)
-+ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
-+ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ createdAt: `2013-12-18T13:59:39.232Z` - ISO 8601 date and time
++ updatedAt: `2017-12-24T00:00:19.819Z` - ISO 8601 of last modification
 + slug: `shingeki-no-kyojin`
-+ synopsis: `Several hundred years ago...``
-+ coverImageTopOffset: 112 (number, nullable)
-+ titles (object) - Languages in different languages. Other languages will be listed if they exist.
++ synopsis: `Several hundred years ago...`
++ coverImageTopOffset: 112 (number, nullable) - Deprecated
++ titles (object) - Titles in different languages. Other languages will be listed if they exist.
     + en: Attack on Titan (nullable)
     + en_jp: Shingeki no Kyojin (nullable)
     + ja_jp: 進撃の巨人 (nullable)
-+ canonicalTitle: Shingeki no Kyojin
++ canonicalTitle: Attack on Titan
 + abbreviatedTitles (array, nullable)
-+ averageRating: 81.54
++ averageRating: 82.47
 + ratingFrequencies (object)
-    + 2: 28
+    + 2: 39
     + 3: 0
-    + 4: 17
+    + 4: 18
     + 5: 0
-    + 6: 23
-    + 7: 1
-    + 8: 75
+    + 6: 27
+    + 7: 4
+    + 8: 126
     + 9: 0
-    + 10: 81
-    + 11: 2
-    + 12: 177
-    + 13: 1
-    + 14: 367
-    + 15: 2
-    + 16: 448
-    + 17: 6
-    + 18: 460
-    + 19: 1
-    + 20: 833
-+ userCount: 5170 (number)
-+ favoritesCount: 633 (number)
+    + 10: 85
+    + 11: 4
+    + 12: 192
+    + 13: 5
+    + 14: 635
+    + 15: 3
+    + 16: 528
+    + 17: 12
+    + 18: 534
+    + 19: 2
+    + 20: 1379
++ userCount: 7137 (number)
++ favoritesCount: 758 (number)
 + startDate: `2009-09-09` (nullable) - YYYY-MM-DD date
 + endDate (nullable) - YYYY-MM-DD date
 + popularityRank: 2 (number)
-+ ratingRank: 163 (number)
++ ratingRank: 138 (number)
 + ageRating: R (enum, nullable)
     + G - General Audiences
     + PG - Parental Guidance Suggested
@@ -9057,21 +8604,47 @@ Filter | Example | Notes
     + tba
     + unreleased
     + upcoming
++ tba
 + posterImage (object)
     + tiny: `https://media.kitsu.io/manga/poster_images/14916/tiny.jpg?1491099787`
     + small: `https://media.kitsu.io/manga/poster_images/14916/small.jpg?1491099787`
     + medium: `https://media.kitsu.io/manga/poster_images/14916/medium.jpg?1491099787`
     + large: `https://media.kitsu.io/manga/poster_images/14916/large.jpg?1491099787`
     + original: `https://media.kitsu.io/manga/poster_images/14916/original.jpg?1491099787`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + medium (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/manga/cover_images/14916/tiny.jpg?1471880895`
     + small: `https://media.kitsu.io/manga/cover_images/14916/small.jpg?1471880895`
     + large: `https://media.kitsu.io/manga/cover_images/14916/large.jpg?1471880895`
     + original: `https://media.kitsu.io/manga/cover_images/14916/original.jpg?1471880895`
+    + meta (object)
+        + dimensions (object)
+            + tiny (object)
+                + width (nullable)
+                + height (nullable)
+            + small (object)
+                + width (nullable)
+                + height (nullable)
+            + large (object)
+                + width (nullable)
+                + height (nullable)
 + chapterCount (number, nullable)
 + volumeCount: 0 (number, nullable)
 + serialization: Bessatsu Shounen Magazine (nullable)
-+ mangaType: manga (enum) - Deprecated, use subtype
++ mangaType: manga (enum) - Deprecated, use `subtype`
     + doujin
     + manga
     + manhua
@@ -9084,8 +8657,8 @@ Filter | Example | Notes
 + id: 14916 (required)
 + type: manga (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/manga/14916
-+ attributes (animeAttributes)
+    + self: `https://kitsu.io/api/edge/manga/14916`
++ attributes (mangaAttributes)
 + relationships (object)
     + genres (object)
         + links (object)
@@ -9142,15 +8715,68 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: mappings (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/mappings/1
+    + self: `https://kitsu.io/api/edge/mappings/1`
 + attributes (mappingsAttributes)
 + relationships (object)
     + item (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/mappings/1/relationships/item`
             + related: `https://kitsu.io/api/edge/mappings/1/item`
+## mediaAttributeVotesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ vote: 1
 
+## mediaAttributeVotes (object)
++ id: 1 (required)
++ type: mediaAttributeVotes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/media-attribute-votes/1`
++ attributes (mediaAttributeVotesAttributes)
++ relationships (object)
+    + animeMediaAttribute (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/anime-media-attribute`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/anime-media-attribute`
+    + mangaMediaAttribute (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/manga-media-attribute`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/manga-media-attribute`
+    + dramasMediaAttribute (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/dramas-media-attribute`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/dramas-media-attribute`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/user`
+## mediaAttributesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ title
++ highTitle
++ neutralTitle
++ lowTitle
 
+## mediaAttributes (object)
++ id: 1 (required)
++ type: mediaAttributes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/media-attributes/1`
++ attributes (mediaAttributesAttributes)
++ relationships (object)
+    + anime (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attributes/1/relationships/anime`
+            + related: `https://kitsu.io/api/edge/media-attributes/1/anime`
+    + drama (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attributes/1/relationships/drama`
+            + related: `https://kitsu.io/api/edge/media-attributes/1/drama`
+    + manga (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attributes/1/relationships/manga`
+            + related: `https://kitsu.io/api/edge/media-attributes/1/manga`
 ## mediaFollows (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
@@ -9188,7 +8814,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: mediaRelationships (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/media-relationships/1
+    + self: `https://kitsu.io/api/edge/media-relationships/1`
 + attributes (mediaRelationshipsAttributes)
 + relationships (object)
     + source (object)
@@ -9203,23 +8829,27 @@ Filter | Example | Notes
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
 + siteName: Hulu
-+ logo: `/logos/original/missing.png`
++ streamingLinksCount: 760 (number)
++ logo (nullable)
 
 ## streamers (object)
 + id: 1 (required)
 + type: streamers (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/streamers/1
+    + self: `https://kitsu.io/api/edge/streamers/1`
 + attributes (streamersAttributes)
 + relationships (object)
     + streamingLinks (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/streamers/1/relationships/streaming-links`
             + related: `https://kitsu.io/api/edge/streamers/1/streaming-links`
+    + videos (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/streamers/1/relationships/videos`
+            + related: `https://kitsu.io/api/edge/streamers/1/videos`
 ## streamingLinksAttributes (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
-+ role: main
 + url: `http://www.hulu.com/hacklegend-of-the-twilight`
 + subs: en (array)
 + dubs: ja (array)
@@ -9228,7 +8858,7 @@ Filter | Example | Notes
 + id: 1 (required)
 + type: streamingLinks (required)
 + links (object)
-    + self: `https://kitsu.io/api/edge/streaming-links/1
+    + self: `https://kitsu.io/api/edge/streaming-links/1`
 + attributes (streamingLinksAttributes)
 + relationships (object)
     + streamer (object)
