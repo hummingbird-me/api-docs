@@ -1,0 +1,28 @@
+## mediaAttributeVotesAttributes (object)
++ createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
++ updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
++ vote: 1
+
+## mediaAttributeVotes (object)
++ id: 1 (required)
++ type: mediaAttributeVotes (required)
++ links (object)
+    + self: `https://kitsu.io/api/edge/media-attribute-votes/1`
++ attributes (mediaAttributeVotesAttributes)
++ relationships (object)
+    + animeMediaAttribute (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/anime-media-attribute`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/anime-media-attribute`
+    + mangaMediaAttribute (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/manga-media-attribute`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/manga-media-attribute`
+    + dramasMediaAttribute (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/dramas-media-attribute`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/dramas-media-attribute`
+    + user (object)
+        + links (object)
+            + self: `https://kitsu.io/api/edge/media-attribute-votes/1/relationships/user`
+            + related: `https://kitsu.io/api/edge/media-attribute-votes/1/user`
