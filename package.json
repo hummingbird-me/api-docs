@@ -11,7 +11,7 @@
     "start": "yarn test && aglio -i apiary.apib -t attributable -s"
   },
   "dependencies": {
-    "chalk": "~2.1.0",
+    "chalk": "~2.3.0",
     "del-cli": "~1.1.0",
     "drafter.js": "~2.6.7",
     "hercule": "~4.1.0",
