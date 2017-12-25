@@ -26,7 +26,7 @@
         + links (object)
             + self: `https://kitsu.io/api/edge/episodes/28/relationships/media`
             + related: `https://kitsu.io/api/edge/episodes/28/media`
-    + video (object)
+    + videos (object)
         + links (object)
             + self: `https://kitsu.io/api/edge/episodes/28/relationships/videos`
             + related: `https://kitsu.io/api/edge/episodes/28/videos`
