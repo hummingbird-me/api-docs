@@ -206,6 +206,8 @@ browser-based and mobile apps
 
 ## Anime Characters [/anime-characters/{id}]
 
+**Status**: In development. Replaces `castings`.
+
 **Authorisation**
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
@@ -479,6 +481,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Anime Staff [/anime-staff/{id}]
+
+**Status**: In development. Replaces `castings`.
 
 **Authorisation**
 
@@ -892,6 +896,8 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Manga Characters [/manga-characters/{id}]
 
+**Status**: In development. Replaces `castings`.
+
 **Authorisation**
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
@@ -1027,6 +1033,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Manga Staff [/manga-staff/{id}]
+
+**Status**: In development. Replaces `castings`.
 
 **Authorisation**
 
@@ -3360,6 +3368,8 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Drama [/drama/{id}]
 
+**Status**: In development.
+
 **Authorisation**
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
@@ -3481,6 +3491,8 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Franchises [/franchises/{id}]
 
+**Status**: Deprecated. Use `media-relationships` instead.
+
 **Authorisation**
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
@@ -3541,7 +3553,7 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Genres [/genres/{id}]
 
-**DEPRECATED**: Use `categories` instead
+**Status**: Deprecated. Use `categories` instead.
 
 **Authorisation**
 
@@ -3605,6 +3617,8 @@ The maximum page limit is unlimited for this resource.
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Installments [/installments/{id}]
+
+**Status**: Deprecated. Use `media-relationships` instead.
 
 **Authorisation**
 
@@ -3788,6 +3802,8 @@ Filter | Example | Notes
     + Attributes (Error500)
 ## Media Attribute Votes [/media-attribute-votes/{id}]
 
+**Status**: In development.
+
 **Authorisation**
 
 Authenticated | Role      | GET | POST | PATCH | DELETE
@@ -3925,6 +3941,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Media Attributes [/media-attributes/{id}]
+
+**Status**: In development.
 
 **Authorisation**
 
@@ -4324,6 +4342,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Trending Drama [/trending/drama]
+
+**Status**: In development.
 
 **Authorisation**
 
@@ -5416,7 +5436,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Review Likes [/review-likes/{id}]
-**DEPRECATED**: Use `media-reaction-votes` instead
+
+**Status**: Deprecated. Use `media-reaction-votes` instead.
 
 **Authorisation**
 
@@ -5554,7 +5575,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Reviews [/reviews/{id}]
-**DEPRECATED**: Use `media-reactions` instead
+
+**Status**: Deprecated. Use `media-reactions` instead.
 
 **Authorisation**
 
@@ -5748,82 +5770,6 @@ Filter | Example | Notes
 
 + Response 400 (application/vnd.api+json)
     + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /site-announcements]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
@@ -6138,7 +6084,7 @@ The maximum page limit is unlimited for this resource.
     + Attributes (Error500)
 ## Library Events [/library-events/{id}]
 
-**NOTE**: Not yet available.
+**Status**: In development.
 
 **Authorisation**
 
@@ -7191,6 +7137,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 ## Stats [/stats/{id}]
+
+**Status**: In development.
 
 **Authorisation**
 
