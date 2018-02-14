@@ -7,13 +7,15 @@ used to build login URLs or included in source code. The client
 secret **must** be kept confidential.
 
 **NOTE:** Application registration has not yet been implemented, so
-for now all requests should be  made with the following client ID
-and client secret:
+for now all requests should be made with the following client ID
+and secret:
 
 ```
 CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
 CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
 ```
+
+OAuth2 path: `https://kitsu.io/api/oauth`
 
 # Grant Types
 
@@ -24,3 +26,42 @@ grant types defined are:
 browser-based and mobile apps
 - **Password** for logging in with a username and Password
 - **Client Credentials** for application access
+
+# Getting the Access Token
+
+It is advised to use an oAuth2 client for the language you're using, however it is not required.
+
+## Authorization Code Grant
+
+Not yet implemented
+
+## Password Grant
+
+Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containing:
+
+```
+grant_type=password
+&username=<username>
+&password=<password>
+```
+
+If the authorization was successful, the request will respond with the following data:
+
+```json5
+{
+    access_token: "abc123", // Token used in Authorization header
+    created_at: 1518235801,
+    expires_in: 2591963, // Seconds until the access_token expires (30 days default)
+    refresh_token: "123abc", // Token used to get a new access_token
+    scope: "public",
+    token_type: "bearer"
+}
+```
+
+## Client Credentials Grant
+
+Not yet implemented
+
+# Using the Access Token
+
+Once you've obtained the `access_token`, you can add it to the `Authorization` header of all API requests: `Authorization: Bearer <access_token>`
