@@ -16,6 +16,11 @@ Kitsu is a modern anime discovery platform that helps you track the anime you're
 
 The documentation is written with [API Blueprint][3] and [MSON][4]. Trivial changes can be added using GitHub's built-in editor. For bigger changes it is advised to follow the steps below.
 
+If you have any questions you can:
+- Join our [Discord server][7]
+- Join our Slack by sending an email to josh@kitsu.io
+- Ping [@wopian], [@matthewdias] or [@nuck] on Kitsu.
+
 ### Requirements
 
 - [git](https://git-scm.com) > `2.0.0`
@@ -41,11 +46,6 @@ The documentation is written with [API Blueprint][3] and [MSON][4]. Trivial chan
 8. Push to your branch (`git push origin improve-docs`)
 
 9. [Create a Pull Request][6]
-
-If you have any questions you can:
-- Join our [Discord server][7]
-- Join our Slack by sending an email to josh@kitsu.io
-- Ping [@wopian], [@matthewdias] or [@nuck] on Kitsu.
 
 [0]:https://github.com/hummingbird-me/hummingbird-server
 [1]:https://github.com/hummingbird-me/hummingbird-client
