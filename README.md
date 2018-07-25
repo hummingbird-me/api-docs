@@ -1,8 +1,6 @@
 # API Docs [![Travis]][2]
 
-Kitsu is a modern anime discovery platform that helps you track the
-anime you're watching, discover new anime and socialize with other
-fans.
+Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
 
 ---
 **<p align="center">This is our [api docs] repository.<br />Check out the [meta], [client] and [server] repositories.</p>**
@@ -16,9 +14,7 @@ fans.
 
 ## Contributing
 
-The documentation is written with [API Blueprint][3] and [MSON][4].
-Trivial changes can be added using GitHub's built-in editor. For
-bigger changes it is advised to follow the steps below.
+The documentation is written with [API Blueprint][3] and [MSON][4]. Trivial changes can be added using GitHub's built-in editor. For bigger changes it is advised to follow the steps below.
 
 ### Requirements
 
@@ -30,8 +26,7 @@ bigger changes it is advised to follow the steps below.
 
 1. [Fork the repo][5]
 
-2. Clone the repo
-(`git clone https://github.com/{yourusername}/api-docs.git`)
+2. Clone the repo (`git clone https://github.com/{yourusername}/api-docs.git`)
 
 3. Create a new branch (`git checkout -b improve-docs`)
 
@@ -47,9 +42,10 @@ bigger changes it is advised to follow the steps below.
 
 9. [Create a Pull Request][6]
 
-If you have any questions, you can join our Slack by sending an
-email to josh@kitsu.io or pinging [@wopian]
-[@matthewdias] or [@nuck] on Kitsu.
+If you have any questions you can:
+- Join our [Discord server][7]
+- Join our Slack by sending an email to josh@kitsu.io
+- Ping [@wopian], [@matthewdias] or [@nuck] on Kitsu.
 
 [0]:https://github.com/hummingbird-me/hummingbird-server
 [1]:https://github.com/hummingbird-me/hummingbird-client
@@ -58,6 +54,7 @@ email to josh@kitsu.io or pinging [@wopian]
 [4]:https://github.com/apiaryio/mson
 [5]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
 [6]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
+[7]:https://invite.gg/kitsu
 
 [travis]:https://img.shields.io/travis/hummingbird-me/api-docs/source.svg?style=flat-square&label=blueprint
 [@wopian]:https://kitsu.io/users/wopian
