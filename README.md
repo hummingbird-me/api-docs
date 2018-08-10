@@ -56,7 +56,7 @@ If you have any questions you can:
 [6]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
 [7]:https://invite.gg/kitsu
 
-[travis]:https://img.shields.io/travis/hummingbird-me/api-docs/source.svg?style=flat-square&label=blueprint
+[travis]:https://flat.badgen.net/travis/hummingbird-me/api-docs/source?label=blueprint
 [@wopian]:https://kitsu.io/users/wopian
 [@matthewdias]:https://kitsu.io/users/matthewdias
 [@nuck]:https://kitsu.io/users/nuck
