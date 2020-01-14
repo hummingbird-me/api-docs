@@ -1,0 +1,18 @@
+html:
+  basePath: ./
+  sidebar:
+    groupOrder: auto
+  playground:
+    enabled: true
+    env: production
+    environments:
+      production:
+        url: https://kitsu.io/api/edge
+        #authorizeUrl: https://kitsu.io/api/oauth
+        tokenUrl: https://kitsu.io/api/oauth/token
+        callbackUrl: https://kitsu.io
+        clientId:
+        clientSecret:
+        scopes:
+
+

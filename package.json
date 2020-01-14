@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "del": "del apiary.apib",
-    "build": "hercule blueprint/kitsu.apib -o apiary.apib",
+    "build": "hercule blueprint/kitsu.apib -o apiary.apib -c",
+    "build-html": "snowboard html -o docs -c tools/snowboard.config.yml apiary.apib",
     "validate": "node tools/validate",
     "test": "run-s del build validate",
-    "snow": "snowboard http apiary.apib --watch",
+    "snow": "snowboard http apiary.apib -c tools/snowboard.config.yml --watch",
     "start": "yarn test && yarn snow"
   },
   "dependencies": {
