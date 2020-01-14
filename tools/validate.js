@@ -36,7 +36,7 @@ function showIssues ({ content: contents }, type) {
 }
 
 validate(file, {
-  requireBlueprintname: true
+  requireBlueprintName: true
 }, (err, res) => {
   if (err) showIssues(err, 'error')
   if (res) showIssues(res, 'semantic issue')
