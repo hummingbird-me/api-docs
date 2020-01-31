@@ -9687,11 +9687,9 @@ Filter | Example | Notes
 + createdAt: `2013-02-20T16:21:01.289Z` - ISO 8601 date and time
 + updatedAt: `2017-06-06T20:17:07.447Z` - ISO 8601 of last modification
 + name: vikhyat
-+ pastNames (array)
++ pastNames array[string]
 + slug: vikhyat
 + about: `Co-founder of Hummingbird. Obsessed with Gumi.` - Max length of 500 characters
-+ aboutFormatted (nullable) - Deprecated
-+ bio: `Co-founder of Hummingbird. Obsessed with Gumi.` - Deprecated, use `about`
 + location: `Seattle, WA`
 + waifuOrHusbando: Waifu
 + followersCount: 1716 (number)
@@ -9709,9 +9707,10 @@ Filter | Example | Notes
 + mediaReactionsCount: 0 (number)
 + proExpiresAt: `2015-01-30T16:49:35.173Z`
 + title (nullable)
-+ profileCompleted: false (boolean)
-+ feedCompleted: true (boolean)
++ profileCompleted: false (boolean) - Completed profile onboarding
++ feedCompleted: true (boolean) - Completed feeds onboarding
 + website: `http://twitter.com/vikhyatk` - Deprecated, use the `profileLinks` relationship
++ proTier: pro
 + avatar (object)
     + tiny: `https://media.kitsu.io/users/avatars/1/tiny.jpg?1434087646`
     + small: `https://media.kitsu.io/users/avatars/1/small.jpg?1434087646`
@@ -9721,17 +9720,17 @@ Filter | Example | Notes
     + meta (object)
         + dimensions (object)
             + tiny (object)
-                + width (nullable)
-                + height (nullable)
+                + width: 40 (number)
+                + height: 40 (number)
             + small (object)
-                + width (nullable)
-                + height (nullable)
+                + width: 64 (number)
+                + height 64 (number)
             + medium (object)
-                + width (nullable)
-                + height (nullable)
+                + width: 100 (number)
+                + height: 100 (number)
             + large (object)
-                + width (nullable)
-                + height (nullable)
+                + width: 200 (number)
+                + height: 200 (number)
 + coverImage (object)
     + tiny: `https://media.kitsu.io/users/cover_images/1/small.jpg`
     + small: `https://media.kitsu.io/users/cover_images/1/small.jpg`
@@ -9740,22 +9739,39 @@ Filter | Example | Notes
     + meta (object)
         + dimensions (object)
             + tiny (object)
-                + width (nullable)
-                + height (nullable)
+                + width: 840 (number)
+                + height: 200 (number)
             + small (object)
-                + width (nullable)
-                + height (nullable)
+                + width: 1680 (number)
+                + height: 400 (number)
             + large (object)
-                + width (nullable)
-                + height (nullable)
-+ ratingSystem: advanced (enum)
-    + advanced
-    + regular
-    + simple
-+ theme: light (enum)
+                + width: 3360 (number)
+                + height: 800 (number)
++ email - Logged in user only
++ password (nullable) - Logged in user only. Used to set new password, always displays null
++ confirmed: true (boolean) - Logged in user only. Email confirmed
++ previousEmail (nullable) - Logged in user only
++ language (nullable) - Logged in user only
++ timeZone (nullable) - Logged in user only
++ country: US - Logged in user only.
++ shareToGlobal: true (boolean) - Logged in user only
++ titleLanguagePreference canonical (enum) - Logged in user only
+    + canonical
+    + romanized
+    + english
++ sfwFilter: false (boolean) - Logged in user only. Toggle visibility of NSFW media and posts
++ ratingSystem: advanced (enum) - Logged in user only
+    + advanced - 0.5, 1...10
+    + regular - 0.5, 1...5
+    + simple - :( :| :) :D
++ theme: light (enum) - Logged in user only
     + dark
     + light
-+ facebookId: 530577081 (nullable)
++ facebookId (nullable) - Logged in user only
++ hasPassword: true (boolean) - Logged in user only
++ status: registered
++ subscribedToNewsletter: true (boolean)
++ aoPro (nullable) - Logged in user only. Aozora user imports that had Aozora Pro - treated as Kitsu Pro
 
 ## users (object)
 + id: 1 (required)
