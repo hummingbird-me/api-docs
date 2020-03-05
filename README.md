@@ -3,11 +3,12 @@
 Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
 
 ---
-**<p align="center">This is our [api docs] repository.<br />Check out the [meta], [client] and [server] repositories.</p>**
+**<p align="center">This is our [api docs] repository.<br />Check out the [tools], [client], [server] and [mobile app] repositories.</p>**
 
-[meta]:https://github.com/hummingbird-me/hummingbird
+[tools]:https://github.com/hummingbird-me/hummingbird
 [client]:https://github.com/hummingbird-me/hummingbird-client
 [server]:https://github.com/hummingbird-me/hummingbird-server
+[mobile app]:https://github.com/hummingbird-me/kitsu-mobile
 [api docs]:https://kitsu.docs.apiary.io
 
 ---
