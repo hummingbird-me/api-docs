@@ -1,8 +1,10 @@
 ## mappingsAttributes (object)
 + createdAt: `2017-07-27T22:21:26.824Z` - ISO 8601 date and time
 + updatedAt: `2017-07-27T22:47:45.129Z` - ISO 8601 of last modification
-+ externalSite: myanimelist/anime (enum)
++ externalSite: myanimelist/anime (enum) - Non-exaustive list, new sites may be added over time
     + anidb
+    + anilist/anime
+    + anilist/manga
     + myanimelist/anime
     + myanimelist/manga
     + thetvdb/season
