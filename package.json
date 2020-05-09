@@ -8,15 +8,15 @@
     "build": "hercule blueprint/kitsu.apib -o apiary.apib -c",
     "lint": "snowboard lint apiary.apib",
     "test": "run-s del build lint",
-    "snow": "snowboard http --watch apiary.apib",
-    "snow-html": "snowboard html -optimized --output docs apiary.apib",
+    "snow": "snowboard http --template osaka --watch apiary.apib",
+    "snow-html": "snowboard html --optimized --output docs apiary.apib",
     "start": "yarn test && yarn snow"
   },
   "dependencies": {
     "del-cli": "~3.0.0",
     "hercule": "~4.1.1",
     "npm-run-all": "~4.1.5",
-    "snowboard": "4.1.5",
+    "snowboard": "4.0.4",
     "snowboard-theme-osaka": "~1.0.2"
   }
 }
