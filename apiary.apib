@@ -308,101 +308,6 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Trending Anime [/trending/anime]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | N    | N     | N
-Yes           | Admin     | Y   | N    | N     | N
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-
-### Fetch Collection [GET /trending/anime]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (anime)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-## Episodes [/episodes/{id}]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | N    | N     | N
-Yes           | Admin     | Y   | Y    | Y     | Y
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
-`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
-`number` |
-
-+ Parameters
-    + id (number, `28`) - ID of the episode resource
-
-+ Attributes (episodesAttributes)
-
-### Fetch Collection [GET /episodes]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (episodes)
-        + meta (object, required)
-            + count: 212384 (number, required)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=212374`
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Fetch Resource [GET]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (episodes)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ## Manga [/manga/{id}]
 
 **Authorisation**
@@ -463,6 +368,39 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+
+## Trending Anime [/trending/anime]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
+### Fetch Collection [GET /trending/anime]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (anime)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Trending Manga [/trending/manga]
 
 **Authorisation**
@@ -492,6 +430,69 @@ Filter | Example | Notes
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+## Episodes [/episodes/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`mediaId` | | **DEPRECATED** - use `anime_id`, `manga_id` or `drama_id`
+`mediaType` | `anime`, `anime,manga` | **DEPRECATED** - use `kind`
+`number` |
+
++ Parameters
+    + id (number, `28`) - ID of the episode resource
+
++ Attributes (episodesAttributes)
+
+### Fetch Collection [GET /episodes]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (episodes)
+        + meta (object, required)
+            + count: 212384 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/episodes?page%5Blimit%5D=10&page%5Boffset%5D=212374`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (episodes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
