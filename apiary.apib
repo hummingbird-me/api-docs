@@ -559,6 +559,216 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
+# Group Categories 
+
+## Categories [/categories/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`parentId` | `1`
+`slug` | |
+`nsfw` | `true`, `false`
+
+**Pagination**
+
+The maximum page limit is unlimited for this resource.
+
++ Parameters
+    + id (number, `10`) - ID of the category resource
+
++ Attributes (categoriesAttributes)
+
+### Fetch Collection [GET /categories]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (categories)
+        + meta (object, required)
+            + count: 229 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=219`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (categories)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Category Favorites [/category-favorites/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | Y    | Y     | Y
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+`categoryId` |
+
++ Parameters
+    + id (number, `2`) - ID of the category favorite resource
+
++ Attributes (categoryFavoritesAttributes)
+
+### Fetch Collection [GET /category-favorites]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (categoryFavorites)
+        + meta (object, required)
+            + count: 3018 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=3008`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (categoryFavorites)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /category-favorites]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Category Recommendations [/category-recommendations/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the category recommendation resource
+
 # Group Media Relations
 
 ## Media Relationships [/media-relationships/{id}]
@@ -811,6 +1021,126 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
+# Group Media Follows
+
+## Media Follows [/media-follows/{id}]
+
++ Parameters
+    + id (number, `1`) - ID of the media follow resource
+
+### Fetch Collection [GET /media-follows]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (mediaFollows)
+        + meta (object, required)
+            + count: 10256 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10246`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (mediaFollows)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /media-follows]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
 ## Media Attributes [/media-attributes/{id}]
 
 **Status**: In development.
@@ -1017,334 +1347,6 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Media Follows [/media-follows/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the media follow resource
-
-### Fetch Collection [GET /media-follows]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (mediaFollows)
-        + meta (object, required)
-            + count: 10256 (number, required)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/media-follows?page%5Blimit%5D=10&page%5Boffset%5D=10246`
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Fetch Resource [GET]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (mediaFollows)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /media-follows]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-# Group Categories 
-
-## Categories [/categories/{id}]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | N    | N     | N
-Yes           | Admin     | Y   | Y    | Y     | Y
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-`parentId` | `1`
-`slug` | |
-`nsfw` | `true`, `false`
-
-**Pagination**
-
-The maximum page limit is unlimited for this resource.
-
-+ Parameters
-    + id (number, `10`) - ID of the category resource
-
-+ Attributes (categoriesAttributes)
-
-### Fetch Collection [GET /categories]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (categories)
-        + meta (object, required)
-            + count: 229 (number, required)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/categories?page%5Blimit%5D=10&page%5Boffset%5D=219`
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Fetch Resource [GET]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (categories)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-## Category Favorites [/category-favorites/{id}]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | Y    | Y     | Y
-Yes           | Admin     | Y   | Y    | Y     | Y
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-`userId` | `42603`, `2,7`
-`categoryId` |
-
-+ Parameters
-    + id (number, `2`) - ID of the category favorite resource
-
-+ Attributes (categoryFavoritesAttributes)
-
-### Fetch Collection [GET /category-favorites]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (categoryFavorites)
-        + meta (object, required)
-            + count: 3018 (number, required)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/category-favorites?page%5Blimit%5D=10&page%5Boffset%5D=3008`
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Fetch Resource [GET]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (categoryFavorites)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /category-favorites]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-## Category Recommendations [/category-recommendations/{id}]
-
-+ Parameters
-    + id (number, `1`) - ID of the category recommendation resource
 
 # Group Streamers
 
