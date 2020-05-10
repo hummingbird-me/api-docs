@@ -243,7 +243,7 @@ Not yet implemented
 
 Once you've obtained the `access_token`, you can add it to the `Authorization` header of all API requests: `Authorization: Bearer <access_token>`
 
-# Group Anime & Manga
+# Group Anime
 
 ## Anime [/anime/{id}]
 
@@ -308,132 +308,6 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
-## Manga [/manga/{id}]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | N    | N     | N
-Yes           | Admin     | Y   | Y    | Y     | Y
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-`chapterCount` |
-
-+ Parameters
-    + id (number, `14916`) - ID of the manga resource
-
-+ Attributes (mangaAttributes)
-
-### Fetch Collection [GET /manga]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (manga)
-        + meta (object, required)
-            + count: 40278 (number, required)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=40268`
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Fetch Resource [GET]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (manga)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-## Trending Anime [/trending/anime]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | N    | N     | N
-Yes           | Admin     | Y   | N    | N     | N
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-
-### Fetch Collection [GET /trending/anime]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (anime)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-## Trending Manga [/trending/manga]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | Y   | N    | N     | N
-Yes           | None      | Y   | N    | N     | N
-Yes           | Admin     | Y   | N    | N     | N
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-
-### Fetch Collection [GET /trending/manga]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (manga)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
 ## Episodes [/episodes/{id}]
 
 **Authorisation**
@@ -487,6 +361,101 @@ Filter | Example | Notes
 + Response 200 (application/vnd.api+json)
     + Attributes
         + data (episodes)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+## Trending Anime [/trending/anime]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
+### Fetch Collection [GET /trending/anime]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (anime)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+# Group Manga
+
+## Manga [/manga/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | Y    | Y     | Y
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`chapterCount` |
+
++ Parameters
+    + id (number, `14916`) - ID of the manga resource
+
++ Attributes (mangaAttributes)
+
+### Fetch Collection [GET /manga]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (manga)
+        + meta (object, required)
+            + count: 40278 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/manga?page%5Blimit%5D=10&page%5Boffset%5D=40268`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (manga)
 
 + Response 404 (application/vnd.api+json)
     + Attributes (Error404)
@@ -557,6 +526,40 @@ Filter | Example | Notes
 
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
+## Trending Manga [/trending/manga]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | Y   | N    | N     | N
+Yes           | None      | Y   | N    | N     | N
+Yes           | Admin     | Y   | N    | N     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+
+### Fetch Collection [GET /trending/manga]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (manga)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+# Group Media Relations
 
 ## Media Relationships [/media-relationships/{id}]
 
@@ -3718,7 +3721,7 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
-# Group Posts, Comments & Reports
+# Group Posts
 
 ## Posts [/posts/{id}]
 
@@ -4076,6 +4079,8 @@ Filter | Example | Notes
 + Response 500 (application/vnd.api+json)
     + Attributes (Error500)
 
+# Group Comments
+
 ## Comments [/comments/{id}]
 
 **Authorisation**
@@ -4282,147 +4287,6 @@ Filter | Example | Notes
 + Request (application/vnd.api+json)
 
 + Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Delete Resource [DELETE]
-
-+ Request (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-## Reports [/reports/{id}]
-
-**Authorisation**
-
-Authenticated | Role      | GET | POST | PATCH | DELETE
-------------: | --------: | :-: | :--: | :---: | :----:
-No            | None      | N   | N    | N     | N
-Yes           | None      | N   | Y    | Y     | N
-Yes           | Admin     | Y   | N    | Y     | N
-
-**Filters**
-
-Filters can be used in `camelCase` or `snake_case` format
-
-Filter | Example | Notes
------: | :------ | :----
-`userId` | `42603`, `2,7`
-`naughtyId` |
-`naughtyType` | `Post`, `Comment`, `Review`, `Reaction`
-`status` | `current`, `onHold` | Values of the `status` attribute
-`reason` | `nsfw`, `spoiler`
-
-+ Parameters
-    + id (number, `1`) - ID of the report resource
-
-+ Attributes (reportsAttributes)
-
-### Fetch Collection [GET /reports]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (array, required)
-            + (reports)
-        + meta (object, required)
-            + count: 856 (number, required)
-        + links (object)
-            + first: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=0`
-            + prev: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
-            + next: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
-            + last: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=846`
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Fetch Resource [GET]
-
-+ Response 200 (application/vnd.api+json)
-    + Attributes
-        + data (reports)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Create Resource [POST /reports]
-
-+ Request (application/vnd.api+json)
-
-+ Response 201 (application/vnd.api+json)
-
-+ Response 202 (application/vnd.api+json)
-
-+ Response 204 (application/vnd.api+json)
-
-+ Response 400 (application/vnd.api+json)
-    + Attributes (Error400)
-
-+ Response 401 (application/vnd.api+json)
-    + Attributes (Error401)
-
-+ Response 403 (application/vnd.api+json)
-    + Attributes (Error403)
-
-+ Response 404 (application/vnd.api+json)
-    + Attributes (Error404)
-
-+ Response 409 (application/vnd.api+json)
-    + Attributes (Error409)
-
-+ Response 500 (application/vnd.api+json)
-    + Attributes (Error500)
-
-### Update Resource [PATCH]
-
-+ Request (application/vnd.api+json)
-
-+ Response 200 (application/vnd.api+json)
 
 + Response 202 (application/vnd.api+json)
 
@@ -7223,6 +7087,149 @@ Filter | Example | Notes
     + Attributes (Error500)
 
 ### Create Resource [POST /leader-chat-messages]
+
++ Request (application/vnd.api+json)
+
++ Response 201 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Update Resource [PATCH]
+
++ Request (application/vnd.api+json)
+
++ Response 200 (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 403 (application/vnd.api+json)
+    + Attributes (Error403)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 409 (application/vnd.api+json)
+    + Attributes (Error409)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Delete Resource [DELETE]
+
++ Request (application/vnd.api+json)
+
++ Response 202 (application/vnd.api+json)
+
++ Response 204 (application/vnd.api+json)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 401 (application/vnd.api+json)
+    + Attributes (Error401)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+# Group Reports
+
+## Reports [/reports/{id}]
+
+**Authorisation**
+
+Authenticated | Role      | GET | POST | PATCH | DELETE
+------------: | --------: | :-: | :--: | :---: | :----:
+No            | None      | N   | N    | N     | N
+Yes           | None      | N   | Y    | Y     | N
+Yes           | Admin     | Y   | N    | Y     | N
+
+**Filters**
+
+Filters can be used in `camelCase` or `snake_case` format
+
+Filter | Example | Notes
+-----: | :------ | :----
+`userId` | `42603`, `2,7`
+`naughtyId` |
+`naughtyType` | `Post`, `Comment`, `Review`, `Reaction`
+`status` | `current`, `onHold` | Values of the `status` attribute
+`reason` | `nsfw`, `spoiler`
+
++ Parameters
+    + id (number, `1`) - ID of the report resource
+
++ Attributes (reportsAttributes)
+
+### Fetch Collection [GET /reports]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (array, required)
+            + (reports)
+        + meta (object, required)
+            + count: 856 (number, required)
+        + links (object)
+            + first: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=0`
+            + prev: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=0` - Omitted if on first page
+            + next: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=10` - Omitted if on last page
+            + last: `https://kitsu.io/api/edge/reports?page%5Blimit%5D=10&page%5Boffset%5D=846`
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Fetch Resource [GET]
+
++ Response 200 (application/vnd.api+json)
+    + Attributes
+        + data (reports)
+
++ Response 404 (application/vnd.api+json)
+    + Attributes (Error404)
+
++ Response 400 (application/vnd.api+json)
+    + Attributes (Error400)
+
++ Response 500 (application/vnd.api+json)
+    + Attributes (Error500)
+
+### Create Resource [POST /reports]
 
 + Request (application/vnd.api+json)
 
