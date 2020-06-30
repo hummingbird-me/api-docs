@@ -10,7 +10,7 @@ fans.
 With the Kitsu API you can do everything the client can do and much
 more.
 
-API path: `https://kitsu.io/api/edge`
+Base API path: `https://kitsu.io/api/edge`
 
 <!-- # Versioning
 
@@ -138,6 +138,92 @@ a JSON API client to implement the Kitsu API for this reason.
 
 Many implementations in over 13 languages can be found on the
 [JSON API website][jsonapi-client].
+# Authentication
+
+Kitsu uses OAuth 2 for authentication. 
+It is not required to send authenticated requests for most endpoints.
+NSFW/R18 content (feed posts, media, categories etc.) are hidden for all unauthenticated requests and for accounts that have NSFW content disabled in their settings.
+
+After registering your app, you will receieve a client ID and a client secret. 
+The client ID is considered public information and is used to build login URLs or included in source code. 
+The client secret **must** be kept confidential.
+
+**NOTE:** Application registration has not yet been implemented. 
+For now, `client_id` and `client_secret` can be provided as empty strings or with the following:
+
+```
+CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
+CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
+```
+
+OAuth2 base path: `https://kitsu.io/api/oauth`
+
+## Headers
+
+OAuth does not use the JSON:API headers, instead the following headers are required:
+
+```
+Content-Type: application/x-www-form-urlencoded
+```
+
+## Grant Types
+
+OAuth 2 provides several grant types for different use cases. 
+The grant types defined are:
+
+- **Authorization Code** for apps running on a web server,
+browser-based and mobile apps
+- **Password** for logging in with a username and Password
+- **Client Credentials** for application access
+
+## Getting the Access Token
+
+It is advised to use an OAuth2 client for the language you're using, however it is not required.
+
+### Authorization Code Grant
+
+Not yet implemented.
+
+### Password Grant
+
+Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containing:
+
+```
+grant_type=password&username=<email>&password=<password>
+```
+
+### Client Credentials Grant
+
+Not yet implemented.
+
+## Grant Responses
+
+If the authorization was successful, the request will respond with the following data:
+
+```json5
+{
+    access_token: "abc123", // Token used in Authorization header
+    created_at: 1518235801,
+    expires_in: 2591963, // Seconds until the access_token expires (30 days default)
+    refresh_token: "123abc", // Token used to get a new access_token
+    scope: "public",
+    token_type: "bearer"
+}
+```
+
+## Using the Access Token
+
+Once you've obtained the `access_token`, you can add it to the `Authorization` header of all API requests: `Authorization: Bearer <access_token>`
+
+## Refreshing Access Tokens
+
+Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containing the following.
+
+**NOTE:** If the token was issued using a `client_secret` then the `client_id` and `client_secret` parameters must be provided.
+
+```
+grant_type=refresh_token&refresh_token=<refresh_token>
+```
 # HTTP Methods
 
 Method   | Description
@@ -164,8 +250,7 @@ Code  | Description
 # Questions?
 
 If you have any questions you can:
-- Join our [Discord server][discord]
-- Join our Slack by sending an email to josh@kitsu.io
+- Join our [Discord server][discord] (recommended)
 - Ping [@wopian][wopian], [@matthewdias][matthewdias] or [@nuck][nuck] on Kitsu.
 
 [jsonapi]:http://jsonapi.org/format/
@@ -174,82 +259,6 @@ If you have any questions you can:
 [matthewdias]:https://kitsu.io/users/matthewdias
 [nuck]:https://kitsu.io/users/nuck
 [discord]:https://invite.gg/kitsu
-
-# Group Authentication
-
-Kitsu uses OAuth 2 for authentication. It is not required to send
-authenticated requests for most endpoints.
-
-After registering your app, you will receieve a client ID and a
-client secret. The client ID is considered public information and is
-used to build login URLs or included in source code. The client
-secret **must** be kept confidential.
-
-**NOTE:** Application registration has not yet been implemented, so
-for now all requests should be made with the following client ID
-and secret:
-
-```
-CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
-CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
-```
-
-OAuth2 base path: `https://kitsu.io/api/oauth`
-
-# Headers
-
-OAuth does not use the JSON:API headers, instead the following headers are required:
-
-```
-Content-Type: application/x-www-form-urlencoded
-```
-
-# Grant Types
-
-OAuth 2 provides several grant types for different use cases. The
-grant types defined are:
-
-- **Authorization Code** for apps running on a web server,
-browser-based and mobile apps
-- **Password** for logging in with a username and Password
-- **Client Credentials** for application access
-
-# Getting the Access Token
-
-It is advised to use an oAuth2 client for the language you're using, however it is not required.
-
-## Authorization Code Grant
-
-Not yet implemented
-
-## Password Grant
-
-Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containing:
-
-```
-grant_type=password&username=<email>&password=<password>
-```
-
-If the authorization was successful, the request will respond with the following data:
-
-```json5
-{
-    access_token: "abc123", // Token used in Authorization header
-    created_at: 1518235801,
-    expires_in: 2591963, // Seconds until the access_token expires (30 days default)
-    refresh_token: "123abc", // Token used to get a new access_token
-    scope: "public",
-    token_type: "bearer"
-}
-```
-
-## Client Credentials Grant
-
-Not yet implemented
-
-# Using the Access Token
-
-Once you've obtained the `access_token`, you can add it to the `Authorization` header of all API requests: `Authorization: Bearer <access_token>`
 
 # Group Anime
 
