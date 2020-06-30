@@ -23,7 +23,7 @@ Base OAuth2 path: `https://kitsu.io/api/oauth`
 OAuth does not use the JSON:API headers, instead the following headers are required:
 
 ```
-Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
 ```
 
 ## Grant Types
@@ -46,10 +46,14 @@ Not yet implemented.
 
 ### Password Grant
 
-Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containing:
+Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following body:
 
-```
-grant_type=password&username=<email>&password=<password>
+```json5
+{
+  grant_type: 'password',
+  username: '<email>',
+  password: '<password>'
+}
 ```
 
 ### Client Credentials Grant
@@ -81,6 +85,9 @@ Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containi
 
 **NOTE:** If the token was issued using a `client_secret` then the `client_id` and `client_secret` parameters must be provided.
 
-```
-grant_type=refresh_token&refresh_token=<refresh_token>
+```json5
+{
+  grant_type: 'refresh_token',
+  refresh_token: '<refresh_token>'
+}
 ```
