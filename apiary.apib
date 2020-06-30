@@ -194,7 +194,15 @@ CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
 CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
 ```
 
-OAuth2 path: `https://kitsu.io/api/oauth`
+OAuth2 base path: `https://kitsu.io/api/oauth`
+
+# Headers
+
+OAuth does not use the JSON:API headers, instead the following headers are required:
+
+```
+Content-Type: application/x-www-form-urlencoded
+```
 
 # Grant Types
 
