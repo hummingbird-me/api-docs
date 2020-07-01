@@ -52,7 +52,7 @@ Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following b
 ```json5
 {
   grant_type: 'password',
-  username: '<email>',
+  username: '<email|slug>',
   password: '<password>' // RFC3986 URl encoded string
 }
 ```
@@ -60,7 +60,7 @@ Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following b
 #### application/x-www-form-urlencoded
 
 ```
-grant_type=password&username=<email>&password=<password>
+grant_type=password&username=<email|slug>&password=<password>
 ```
 
 **IMPORTANT**: If you use `x-www-form-urlencoded`, you **must** URL encode the password field using the [RFC3986 encoding scheme](http://whatwebwhat.com/en/page/350/oauth-and-url-encoding).
