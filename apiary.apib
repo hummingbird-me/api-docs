@@ -140,30 +140,35 @@ Many implementations in over 13 languages can be found on the
 [JSON API website][jsonapi-client].
 # Authentication
 
-Kitsu uses OAuth 2 for authentication. 
-It is not required to send authenticated requests for most endpoints.
-NSFW/R18 content (feed posts, media, categories etc.) are hidden for all unauthenticated requests and for accounts that have NSFW content disabled in their settings.
+Kitsu uses OAuth 2 for authentication.
+Authentication is not required for most public-facing `GET` endpoints.
+
+It is advised to use an OAuth2 client for the language you're using, however it is not required.
+
+**NOTE:** NSFW/R18 content (feed posts, media, categories etc.) are hidden for all unauthenticated requests and for accounts that have NSFW content disabled in their settings.
+
+Base OAuth2 path: `https://kitsu.io/api/oauth`
+
+## Request Headers
+
+OAuth does not use the JSON:API headers, instead one of the following headers are required:
+
+| Header       | json               | x-www-form-urlencoded
+| ------------ | ------------------ | ---------------------
+| Content-Type | application/json   | application/x-www-form-urlencoded
+
+## App Registration
 
 After registering your app, you will receieve a client ID and a client secret. 
 The client ID is considered public information and is used to build login URLs or included in source code. 
 The client secret **must** be kept confidential.
 
 **NOTE:** Application registration has not yet been implemented. 
-For now, `client_id` and `client_secret` can be provided as empty strings or with the following:
+For now, `client_id` and `client_secret` can be omitted, provided as empty strings or with the following:
 
 ```
 CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
 CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
-```
-
-Base OAuth2 path: `https://kitsu.io/api/oauth`
-
-## Request Headers
-
-OAuth does not use the JSON:API headers, instead the following headers are required:
-
-```
-Content-Type: application/json
 ```
 
 ## Grant Types
@@ -172,64 +177,100 @@ OAuth 2 provides several grant types for different use cases.
 The grant types defined are:
 
 - **Authorization Code** for apps running on a web server,
-browser-based and mobile apps
+browser-based and mobile apps (not yet implemented)
 - **Password** for logging in with a username and Password
-- **Client Credentials** for application access
+- **Client Credentials** for application access (not yet implemented)
 
-## Getting the Access Token
-
-It is advised to use an OAuth2 client for the language you're using, however it is not required.
-
-### Authorization Code Grant
-
-Not yet implemented.
+## Obtaining an Access Token
 
 ### Password Grant
 
 Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following body:
 
+#### application/json
+
 ```json5
 {
   grant_type: 'password',
   username: '<email>',
-  password: '<password>'
+  password: '<password>' // RFC3986 URl encoded string
 }
 ```
 
-### Client Credentials Grant
+#### application/x-www-form-urlencoded
 
-Not yet implemented.
-
-## Grant Responses
-
-If the authorization was successful, the request will respond with the following data:
-
-```json5
-{
-    access_token: "abc123", // Token used in Authorization header
-    created_at: 1518235801,
-    expires_in: 2591963, // Seconds until the access_token expires (30 days default)
-    refresh_token: "123abc", // Token used to get a new access_token
-    scope: "public",
-    token_type: "bearer"
-}
+```
+grant_type=password&username=<email>&password=<password>
 ```
 
-## Using the Access Token
+**IMPORTANT**: If you use `x-www-form-urlencoded`, you **must** URL encode the password field using the [RFC3986 encoding scheme](http://whatwebwhat.com/en/page/350/oauth-and-url-encoding).
 
-Once you've obtained the `access_token`, you can add it to the `Authorization` header of all API requests: `Authorization: Bearer <access_token>`
+## Refreshing an Access Token
 
-## Refreshing Access Tokens
-
-Send a `POST` request to `https://kitsu.io/api/oauth/token` with a body containing the following.
+Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following body:
 
 **NOTE:** If the token was issued using a `client_secret` then the `client_id` and `client_secret` parameters must be provided.
+
+#### application/json
 
 ```json5
 {
   grant_type: 'refresh_token',
   refresh_token: '<refresh_token>'
 }
+```
+
+#### application/x-www-form-urlencoded
+
+```
+grant_type=refresh_token&refresh_token=<refresh_token>
+```
+
+## Access Token Responses
+
+### Successful Response
+
+If the request for an access token is valid, the server will respond with the following data:
+
+```json5
+{
+  access_token: 'abc123', // Token used in Authorization header
+  created_at: 1518235801,
+  expires_in: 2591963, // Seconds until the access_token expires (30 days default)
+  refresh_token: '123abc', // Token used to get a new access_token
+  scope: 'public',
+  token_type: 'bearer'
+}
+```
+
+### Unsuccessful Response
+
+If the access token request is invalid, the server will respond with one of six errors in the following format:
+
+```json5
+{
+  error: 'invalid_request',
+  error_description: '<reason why>'
+}
+```
+
+These six errors are:
+
+| Error                    | Status | Explanation
+| ------------------------ | ------ | -----------
+| `invalid_request`        | `400`  | The request is missing a parameter, uses an unsupported parameter or repeats a parameter.
+| `invalid_client`         | `401`  | The request contains an invalid client ID or secret.
+| `invalid_grant`          | `400`  | The authorization code (or password with the password grant) is invalid or expired.
+| `invalid_scope`          | `400`  | The request contains an invalid scope (password or client credential grants).
+| `unauthorized_client`    | `400`  | The client is not authorized to use the requested grant type.
+| `unsupported_grant_type` | `400`  | The grant type requested is not recognized by the server.
+
+## Using an Access Token
+
+Once you've obtained the `access_token` using one of the grant types, you can add the following header to all API requests:
+
+```
+Authorization: Bearer <access_token>
 ```
 # HTTP Methods
 
