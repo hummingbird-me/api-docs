@@ -86,6 +86,15 @@ Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following b
 grant_type=refresh_token&refresh_token=<refresh_token>
 ```
 
+## Using an Access Token
+
+Once you've obtained the `access_token` using one of the grant types, you can add the following header to all API requests:
+
+```
+Authorization: Bearer <access_token>
+```
+
+
 ## Access Token Responses
 
 ### Successful Response
@@ -124,11 +133,3 @@ These six errors are:
 | `invalid_scope`          | `400`  | The request contains an invalid scope (password or client credential grants).
 | `unauthorized_client`    | `400`  | The client is not authorized to use the requested grant type.
 | `unsupported_grant_type` | `400`  | The grant type requested is not recognized by the server.
-
-## Using an Access Token
-
-Once you've obtained the `access_token` using one of the grant types, you can add the following header to all API requests:
-
-```
-Authorization: Bearer <access_token>
-```
