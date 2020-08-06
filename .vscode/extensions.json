@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "vncz.vscode-apielements",
-    "EditorConfig.editorconfig"
+    "EditorConfig.editorconfig",
+    "42Crunch.vscode-openapi"
   ]
 }

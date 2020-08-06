@@ -4,18 +4,9 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "del": "del apiary.apib",
-    "build": "hercule blueprint/kitsu.apib -o apiary.apib -c",
-    "lint": "snowboard lint apiary.apib",
-    "test": "run-s del build lint",
-    "snow": "snowboard http apiary.apib -c tools/snowboard.config.yml --watch",
-    "snow-html": "snowboard html -o docs -c tools/snowboard.config.yml apiary.apib",
-    "start": "yarn test && yarn snow"
+    "start": "redoc-cli serve kitsu.yml --options.hideLoading=false --options.pathInMiddlePanel=false --options.nativeScrollbars --options.expandSingleSchemaField=true --options.expandResponses=200 --options.requiredPropsFirst=true --options.sortPropsAlphabetically=true --options.hideSingleRequestSampleTab=true --options.theme.typography.links.color=#f75239 --options.theme.colors.primary.main=#464646 --options.theme.colors.success.main=#19b698 --options.theme.colors.warning.main=#f39c12 --options.theme.colors.error.main=#ff4136 --options.theme.colors.text.primary=#464646 --options.theme.schema.labelsTextSize=0.9rem --options.theme.rightPanel.backgroundColor=#332532 --options.theme.rightPanel.textColor=#edf0f1 --options.theme.sidebar.backgroundColor=#332532 --options.theme.sidebar.textColor=#edf0f1 --options.theme.sidebar.width=250px --options.theme.sidebar.level1Items.textTransform=capitalize --options.theme.typography.fontSize=1rem --options.theme.typography.code.fontSize=1rem --options.theme.typography.headings.lineHeight=1.1 --options.theme.typography.headings.fontWeight=700 --options.theme.schema.arrow.size=1rem --options.theme.typography.lineHeight=1.5rem --options.theme.colors.border.dark=#332532 --options.theme.colors.border.light=#edf0f1"
   },
   "dependencies": {
-    "del-cli": "~3.0.0",
-    "hercule": "~4.1.1",
-    "npm-run-all": "~4.1.5",
-    "snowboard": "~3.7.5"
+    "redoc-cli": "~0.9.10"
   }
 }
