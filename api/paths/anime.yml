@@ -1,0 +1,34 @@
+get:
+  tags:
+  - Anime
+  summary: Get Anime Collection
+  description: Get a collection of anime resources
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: ../resources/anime/collection.yml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../resources/anime/collection.yml
+  parameters:
+  - name: filter[test]
+    in: query
+    description: Test example
+    schema:
+      description: Hi
+post:
+  tags:
+  - Anime
+  summary: Create Anime
+  description: |
+    Users must be authenticated and have the `admin` User Role to create a resource.
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json: {}

@@ -1,0 +1,35 @@
+openapi: 3.0.3
+
+info:
+  version: 'edge'
+  title: Kitsu JSON:API
+  description: NYI
+  termsOfService: https://kitsu.io/terms
+  contact:
+    url: https://kitsu.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+- url: https://kitsu.io/api/edge
+  description: Production API
+#- url: https://latest.staging.kitsu.io/api/edge
+#  description: Staging API
+
+x-tagGroups:
+  - name: Media
+    tags:
+    - Anime
+
+paths:
+  /anime:
+    $ref: ./paths/anime.yml
+  /anime/{id}:
+    $ref: ./paths/anime-id.yml
+
+
+components:
+  schemas:
+    Anime:
+      $ref: ./schemas/resources/anime.yml

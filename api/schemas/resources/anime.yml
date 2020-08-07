@@ -1,0 +1,14 @@
+type: object
+required:
+- id
+- type
+properties:
+  id:
+    type: string
+  type:
+    type: string
+  attributes:
+    type: object
+    properties:
+      canonicalTitle:
+        type: string

@@ -1,0 +1,5 @@
+type: object
+properties:
+  data:
+    type: object
+    $ref: ../../schemas/resources/anime.yml

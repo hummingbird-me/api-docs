@@ -1,0 +1,24 @@
+type: object
+required:
+- data
+properties:
+  data:
+    type: array
+    items:
+      $ref: ../../schemas/resources/anime.yml
+  meta:
+    type: object
+    readOnly: true
+    properties:
+      count:
+        type: integer
+        example: 15000
+  links:
+    $ref: ../../schemas/links.yml
+  included:
+    type: array
+    readOnly: true
+    items:
+      type: object
+
+
