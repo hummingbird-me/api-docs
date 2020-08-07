@@ -1,0 +1,41 @@
+type: object
+required:
+- id
+- type
+properties:
+  id:
+    type: string
+    example: 1
+  type:
+    type: string
+    example: 'activityGroup'
+  links:
+    $ref: ../links/self.yml
+  attributes:
+    type: object
+    properties:
+      group:
+        type: string
+      isSeen:
+        type: boolean
+        example: false
+      isRead:
+        type: boolean
+        example: false
+  relationships:
+    type: object
+    properties:
+      activities:
+        type: object
+        links:
+          $ref: ../links/self-related.yml
+        data:
+          type: array
+          description: Only included in the response with `?include=activities`
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              type:
+                type: string

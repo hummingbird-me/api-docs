@@ -1,0 +1,7 @@
+type: object
+readOnly: true
+properties:
+  self:
+    type: string
+    description: Link to the individual resource
+    example: https://kitsu.io/api/edge/...

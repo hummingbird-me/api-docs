@@ -14,7 +14,7 @@ properties:
         type: integer
         example: 15000
   links:
-    $ref: ../../schemas/links.yml
+    $ref: ../../schemas/links/pagination.yml
   included:
     type: array
     readOnly: true
