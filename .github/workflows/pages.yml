@@ -1,0 +1,35 @@
+name: GitHub Pages
+on:
+  push:
+    branches:
+    - openapi3
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: Use node 14
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Restore cache
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: yarn-
+    - name: Install yarn dependencies
+      run: yarn install
+    - name: Build documentation
+      run: yarn start:bundle
+    - name: Deploy to GitHub Pages
+      if: success()
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: docs
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
