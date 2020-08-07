@@ -31,211 +31,211 @@ paths:
 components:
   # https://github.com/hummingbird-me/kitsu-server/tree/the-future/app/resources
   schemas:
-    ActivityGroup:
-      $ref: ./schemas/resources/activityGroup.yml
-    Activity:
-      $ref: ./schemas/resources/activity.yml
-    Actor:
-      $ref: ./schemas/resources/actor.yml
-    AMA:
-      $ref: ./schemas/resources/ama.yml
-    AMASubscriber:
-      $ref: ./schemas/resources/ama-subscriber.yml
-    AnimeCasting:
-      $ref: ./schemas/resources/anime-casting.yml
-    AnimeCharacter:
-      $ref: ./schemas/resources/anime-character.yml
-    AnimeMediaAttribute:
-      $ref: ./schemas/resources/anime-media-attribute.yml
-    AnimeProductionResource:
-      $ref: ./schemas/resources/anime-production-resource.yml
+    #ActivityGroup:
+    #  $ref: ./schemas/resources/activityGroup.yml
+    #Activity:
+    #  $ref: ./schemas/resources/activity.yml
+    #Actor:
+    #  $ref: ./schemas/resources/actor.yml
+    #AMA:
+    #  $ref: ./schemas/resources/ama.yml
+    #AMASubscriber:
+    #  $ref: ./schemas/resources/ama-subscriber.yml
+    #AnimeCasting:
+    #  $ref: ./schemas/resources/anime-casting.yml
+    #AnimeCharacter:
+    #  $ref: ./schemas/resources/anime-character.yml
+    #AnimeMediaAttribute:
+    #  $ref: ./schemas/resources/anime-media-attribute.yml
+    #AnimeProductionResource:
+    ##  $ref: ./schemas/resources/anime-production-resource.yml
     Anime:
       $ref: ./schemas/resources/anime.yml
-    AnimeStaff:
-      $ref: ./schemas/resources/anime-staff.yml
-    Base: # Inherited by all resources
-      $ref: ./schemas/resources/base.yml
-    Block:
-      $ref: ./schemas/resources/block.yml
-    Casting:
-      $ref: ./schemas/resources/casting.yml
-    CategoryFavorite:
-      $ref: ./schemas/resources/category-favorite.yml
-    CategoryRecommendation:
-      $ref: ./schemas/resources/category-recommendation.yml
-    Category:
-      $ref: ./schemas/resources/category.yml
-    Chapter:
-      $ref: ./schemas/resources/chapter.yml
-    Character:
-      $ref: ./schemas/resources/character.yml
-    CharacterVoice:
-      $ref: ./schemas/resources/character-voice.yml
-    CommentLike:
-      $ref: ./schemas/resources/comment-like.yml
-    Comment:
-      $ref: ./schemas/resources/comment.yml
-    CommunityRecommendationFollow:
-      $ref: ./schemas/resources/community-recommendation-follow.yml
-    CommunityRecommendationRequest:
-      $ref: ./schemas/resources/community-recommendation-request.yml
-    CommunityRecommendation:
-      $ref: ./schemas/resources/community-recommendation.yml
-    Destination:
-      $ref: ./schemas/resources/destination.yml
-    DramaCasting:
-      $ref: ./schemas/resources/drama-casting.yml
-    DramaCharacter:
-      $ref: ./schemas/resources/drama-character.yml
-    Drama:
-      $ref: ./schemas/resources/drama.yml
-    DramasMediaAttribute: # DramaMediaAttribute?
-      $ref: ./schemas/resources/dramas-media-attribute.yml
-    Episode:
-      $ref: ./schemas/resources/episode.yml
-    Favorite:
-      $ref: ./schemas/resources/favorite.yml
-    Feed:
-      $ref: ./schemas/resources/feed.yml
-    Follow:
-      $ref: ./schemas/resources/follow.yml
-    Franchise: # deprecated
-      $ref: ./schemas/resources/franchise.yml
-    Genre: # deprecated
-      $ref: ./schemas/resources/genre.yml
-    GroupActionLog:
-      $ref: ./schemas/resources/group-action-log.yml
-    GroupBan:
-      $ref: ./schemas/resources/group-ban.yml
-    GroupCategory:
-      $ref: ./schemas/resources/group-category.yml
-    GroupInvite:
-      $ref: ./schemas/resources/group-invite.yml
-    GroupMemberNote:
-      $ref: ./schemas/resources/group-member-note.yml
-    GroupMember:
-      $ref: ./schemas/resources/group-member.yml
-    GroupNeighbor:
-      $ref: ./schemas/resources/group-neighbor.yml
-    GroupPermission:
-      $ref: ./schemas/resources/group-permission.yml
-    GroupReport:
-      $ref: ./schemas/resources/group-report.yml
-    Group:
-      $ref: ./schemas/resources/group.yml
-    GroupTicketMessage:
-      $ref: ./schemas/resources/group-ticket-message.yml
-    GroupTicket:
-      $ref: ./schemas/resources/group-ticket.yml
-    Installment: # deprecated
-      $ref: ./schemas/resources/installment.yml
-    Item:
-      $ref: ./schemas/resources/item.yml
-    LeaderChatMessage:
-      $ref: ./schemas/resources/leader-chat-message.yml
-    LibraryEntryLog:
-      $ref: ./schemas/resources/library-entry-log.yml
-    LibraryEntry:
-      $ref: ./schemas/resources/library-entry.yml
-    LibraryEvent:
-      $ref: ./schemas/resources/library-event.yml
-    LinkedAccount:
-      $ref: ./schemas/resources/linked-account.yml
-    ListImport:
-      $ref: ./schemas/resources/list-import.yml
-    MangaCharacter:
-      $ref: ./schemas/resources/manga-character.yml
-    MangaMediaAttribute:
-      $ref: ./schemas/resources/manga-media-attribute.yml
-    Manga:
-      $ref: ./schemas/resources/manga.yml
-    MangaStaff:
-      $ref: ./schemas/resources/manga-staff.yml
-    Mapping:
-      $ref: ./schemas/resources/mapping.yml
-    MediaAttribute:
-      $ref: ./schemas/resources/media-attribute.yml
-    MediaAttributeVote:
-      $ref: ./schemas/resources/media-attribute-vote.yml
-    MediaCharacter:
-      $ref: ./schemas/resources/media-character.yml
-    MediaIgnore:
-      $ref: ./schemas/resources/media-ignore.yml
-    MediaProduction:
-      $ref: ./schemas/resources/media-production.yml
-    MediaReaction:
-      $ref: ./schemas/resources/media-reaction.yml
-    MediaReactionVote:
-      $ref: ./schemas/resources/media-reaction-vote.yml
-    MediaRelationship:
-      $ref: ./schemas/resources/media-relationship.yml
-    Media:
-      $ref: ./schemas/resources/media.yml
-    MediaStaff:
-      $ref: ./schemas/resources/media-staff.yml
-    Naughty:
-      $ref: ./schemas/resources/naughty.yml
-    NextUnit:
-      $ref: ./schemas/resources/next-unit.yml
-    NotificationSetting:
-      $ref: ./schemas/resources/notification-setting.yml
-    OneSignalPlayer:
-      $ref: ./schemas/resources/one-signal-player.yml
-    Owner:
-      $ref: ./schemas/resources/owner.yml
-    Person:
-      $ref: ./schemas/resources/person.yml
-    PostFollow:
-      $ref: ./schemas/resources/post-follow.yml
-    PostLike:
-      $ref: ./schemas/resources/post-like.yml
-    Post:
-      $ref: ./schemas/resources/post.yml
-    Producer:
-      $ref: ./schemas/resources/producer.yml
-    ProfileLink:
-      $ref: ./schemas/resources/profile-link.yml
-    ProfileLinkSite:
-      $ref: ./schemas/resources/profile-link-site.yml
-    QuoteLike:
-      $ref: ./schemas/resources/quote-like.yml
-    Quote:
-      $ref: ./schemas/resources/quote.yml
-    Report:
-      $ref: ./schemas/resources/report.yml
-    Repost:
-      $ref: ./schemas/resources/repost.yml
-    Resource:
-      $ref: ./schemas/resources/resource.yml
-    ReviewLike: #deprecated
-      $ref: ./schemas/resources/review-like.yml
-    Review: #deprecated
-      $ref: ./schemas/resources/review.yml
-    Role:
-      $ref: ./schemas/resources/role.yml
-    SiteAnnouncement:
-      $ref: ./schemas/resources/site-announcement.yml
-    Source:
-      $ref: ./schemas/resources/source.yml
-    SpoiledUnit:
-      $ref: ./schemas/resources/spoiled-unit.yml
-    Stat:
-      $ref: ./schemas/resources/stat.yml
-    Streamer:
-      $ref: ./schemas/resources/streamer.yml
-    StreamingLink:
-      $ref: ./schemas/resources/streaming-link.yml
-    Subject:
-      $ref: ./schemas/resources/subject.yml
-    Target:
-      $ref: ./schemas/resources/target.yml
-    Unit:
-      $ref: ./schemas/resources/unit.yml
-    Upload:
-      $ref: ./schemas/resources/upload.yml
-    User:
-      $ref: ./schemas/resources/user.yml
-    UserRole:
-      $ref: ./schemas/resources/user-role.yml
-    Video:
-      $ref: ./schemas/resources/video.yml
+    #AnimeStaff:
+    #  $ref: ./schemas/resources/anime-staff.yml
+    #Base: # Inherited by all resources
+    #  $ref: ./schemas/resources/base.yml
+    #Block:
+    #  $ref: ./schemas/resources/block.yml
+    #Casting:
+    #  $ref: ./schemas/resources/casting.yml
+    #CategoryFavorite:
+    #  $ref: ./schemas/resources/category-favorite.yml
+    #CategoryRecommendation:
+    #  $ref: ./schemas/resources/category-recommendation.yml
+    #Category:
+    #  $ref: ./schemas/resources/category.yml
+    #Chapter:
+    #  $ref: ./schemas/resources/chapter.yml
+    #Character:
+    #  $ref: ./schemas/resources/character.yml
+    #CharacterVoice:
+    #  $ref: ./schemas/resources/character-voice.yml
+    #CommentLike:
+    #  $ref: ./schemas/resources/comment-like.yml
+    #Comment:
+    #  $ref: ./schemas/resources/comment.yml
+    #CommunityRecommendationFollow:
+    #  $ref: ./schemas/resources/community-recommendation-follow.yml
+    #CommunityRecommendationRequest:
+    #  $ref: ./schemas/resources/community-recommendation-request.yml
+    #CommunityRecommendation:
+    #  $ref: ./schemas/resources/community-recommendation.yml
+    #Destination:
+    #  $ref: ./schemas/resources/destination.yml
+    #DramaCasting:
+    #  $ref: ./schemas/resources/drama-casting.yml
+    #DramaCharacter:
+    #  $ref: ./schemas/resources/drama-character.yml
+    #Drama:
+    #  $ref: ./schemas/resources/drama.yml
+    #DramasMediaAttribute: # DramaMediaAttribute?
+    #  $ref: ./schemas/resources/dramas-media-attribute.yml
+    #Episode:
+    #  $ref: ./schemas/resources/episode.yml
+    #Favorite:
+    #  $ref: ./schemas/resources/favorite.yml
+    #Feed:
+    #  $ref: ./schemas/resources/feed.yml
+    #Follow:
+    #  $ref: ./schemas/resources/follow.yml
+    #Franchise: # deprecated
+    #  $ref: ./schemas/resources/franchise.yml
+    #Genre: # deprecated
+    #  $ref: ./schemas/resources/genre.yml
+    #GroupActionLog:
+    #  $ref: ./schemas/resources/group-action-log.yml
+    #GroupBan:
+    #  $ref: ./schemas/resources/group-ban.yml
+    #GroupCategory:
+    #  $ref: ./schemas/resources/group-category.yml
+    #GroupInvite:
+    #  $ref: ./schemas/resources/group-invite.yml
+    #GroupMemberNote:
+    #  $ref: ./schemas/resources/group-member-note.yml
+    #GroupMember:
+    #  $ref: ./schemas/resources/group-member.yml
+    #GroupNeighbor:
+    #  $ref: ./schemas/resources/group-neighbor.yml
+    #GroupPermission:
+    #  $ref: ./schemas/resources/group-permission.yml
+    #GroupReport:
+    #  $ref: ./schemas/resources/group-report.yml
+    #Group:
+    #  $ref: ./schemas/resources/group.yml
+    #GroupTicketMessage:
+    #  $ref: ./schemas/resources/group-ticket-message.yml
+    #GroupTicket:
+    #  $ref: ./schemas/resources/group-ticket.yml
+    #Installment: # deprecated
+    #  $ref: ./schemas/resources/installment.yml
+    #Item:
+    #  $ref: ./schemas/resources/item.yml
+    #LeaderChatMessage:
+    #  $ref: ./schemas/resources/leader-chat-message.yml
+    #LibraryEntryLog:
+    #  $ref: ./schemas/resources/library-entry-log.yml
+    #LibraryEntry:
+    #  $ref: ./schemas/resources/library-entry.yml
+    #LibraryEvent:
+    #  $ref: ./schemas/resources/library-event.yml
+    #LinkedAccount:
+    #  $ref: ./schemas/resources/linked-account.yml
+    #ListImport:
+    #  $ref: ./schemas/resources/list-import.yml
+    #MangaCharacter:
+    #  $ref: ./schemas/resources/manga-character.yml
+    #MangaMediaAttribute:
+    #  $ref: ./schemas/resources/manga-media-attribute.yml
+    #Manga:
+    #  $ref: ./schemas/resources/manga.yml
+    #MangaStaff:
+    #  $ref: ./schemas/resources/manga-staff.yml
+    #Mapping:
+    #  $ref: ./schemas/resources/mapping.yml
+    #MediaAttribute:
+    #  $ref: ./schemas/resources/media-attribute.yml
+    #MediaAttributeVote:
+    #  $ref: ./schemas/resources/media-attribute-vote.yml
+    #MediaCharacter:
+    #  $ref: ./schemas/resources/media-character.yml
+    #MediaIgnore:
+    #  $ref: ./schemas/resources/media-ignore.yml
+    #MediaProduction:
+    #  $ref: ./schemas/resources/media-production.yml
+    #MediaReaction:
+    #  $ref: ./schemas/resources/media-reaction.yml
+    #MediaReactionVote:
+    #  $ref: ./schemas/resources/media-reaction-vote.yml
+    #MediaRelationship:
+    #  $ref: ./schemas/resources/media-relationship.yml
+    #Media:
+    #  $ref: ./schemas/resources/media.yml
+    #MediaStaff:
+    #  $ref: ./schemas/resources/media-staff.yml
+    #Naughty:
+    #  $ref: ./schemas/resources/naughty.yml
+    #NextUnit:
+    #  $ref: ./schemas/resources/next-unit.yml
+    #NotificationSetting:
+    #  $ref: ./schemas/resources/notification-setting.yml
+    #OneSignalPlayer:
+    #  $ref: ./schemas/resources/one-signal-player.yml
+    #Owner:
+    #  $ref: ./schemas/resources/owner.yml
+    #Person:
+    #  $ref: ./schemas/resources/person.yml
+    #PostFollow:
+    #  $ref: ./schemas/resources/post-follow.yml
+    #PostLike:
+    #  $ref: ./schemas/resources/post-like.yml
+    #Post:
+    #  $ref: ./schemas/resources/post.yml
+    #Producer:
+    #  $ref: ./schemas/resources/producer.yml
+    #ProfileLink:
+    #  $ref: ./schemas/resources/profile-link.yml
+    #ProfileLinkSite:
+    #  $ref: ./schemas/resources/profile-link-site.yml
+    #QuoteLike:
+    #  $ref: ./schemas/resources/quote-like.yml
+    #Quote:
+    #  $ref: ./schemas/resources/quote.yml
+    #Report:
+    #  $ref: ./schemas/resources/report.yml
+    #Repost:
+    #  $ref: ./schemas/resources/repost.yml
+    #Resource:
+    #  $ref: ./schemas/resources/resource.yml
+    #ReviewLike: #deprecated
+    #  $ref: ./schemas/resources/review-like.yml
+    #Review: #deprecated
+    #  $ref: ./schemas/resources/review.yml
+    #Role:
+    #  $ref: ./schemas/resources/role.yml
+    #SiteAnnouncement:
+    #  $ref: ./schemas/resources/site-announcement.yml
+    #Source:
+    #  $ref: ./schemas/resources/source.yml
+    #SpoiledUnit:
+    #  $ref: ./schemas/resources/spoiled-unit.yml
+    #Stat:
+    #  $ref: ./schemas/resources/stat.yml
+    #Streamer:
+    #  $ref: ./schemas/resources/streamer.yml
+    #StreamingLink:
+    #  $ref: ./schemas/resources/streaming-link.yml
+    #Subject:
+    #  $ref: ./schemas/resources/subject.yml
+    #Target:
+    #  $ref: ./schemas/resources/target.yml
+    #Unit:
+    #  $ref: ./schemas/resources/unit.yml
+    #Upload:
+    #  $ref: ./schemas/resources/upload.yml
+    #User:
+    #  $ref: ./schemas/resources/user.yml
+    #UserRole:
+    #  $ref: ./schemas/resources/user-role.yml
+    #Video:
+    #  $ref: ./schemas/resources/video.yml

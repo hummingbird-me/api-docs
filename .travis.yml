@@ -6,8 +6,8 @@ cache:
   yarn: true
 matrix:
   fast_finish: true
-script: run-s test snow-html
-after_success: test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "source" && bash tools/deploy.sh
+script: yarn build && yarn lint
+after_success: test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "source" && yarn start:bundle && bash tools/deploy.sh
 notifications:
   email: false
   slack:
