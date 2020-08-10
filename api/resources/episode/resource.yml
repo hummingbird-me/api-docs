@@ -1,0 +1,14 @@
+type: object
+required:
+- data
+properties:
+  data:
+    type: object
+    $ref: ../../schemas/resources/episode.yml
+  included:
+    type: array
+    readOnly: true
+    description: Included resources
+    items:
+      type: object
+

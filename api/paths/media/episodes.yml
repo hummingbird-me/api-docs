@@ -6,7 +6,7 @@
 get:
   tags:
   - Episodes
-  summary: Get Episodes Collection
+  summary: Get Episode Collection
   description: Get a collection of episode resources
   responses:
     '200':
@@ -38,20 +38,20 @@ post:
   security:
   - OAuth2: [admin]
   tags:
-  - Anime
-  summary: Create Anime
+  - Episodes
+  summary: Create Episode
   requestBody:
     content:
       application/vnd.api+json:
         schema:
-          $ref: ../../resources/anime/resource.yml
+          $ref: ../../resources/episode/resource.yml
   responses:
     '201':
       description: Created
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/anime/resource.yml
+            $ref: ../../resources/episode/resource.yml
     '403':
       description: Forbidden
       content:

@@ -3,6 +3,5 @@ properties:
   media:
     oneOf:
     - $ref: ../relationships/anime.yml
-    - $ref: ../relationships/manga.yml
   videos:
     $ref: ../relationships/videos.yml
