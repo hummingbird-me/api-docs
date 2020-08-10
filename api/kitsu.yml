@@ -30,10 +30,10 @@ info:
 
     As per the JSON:API specification, all requests to the API should contain these headers:
 
-    ```
+    <pre>
     Accept: application/vnd.api+json
     Content-Type: application/vnd.api+json
-    ```
+    </pre>
 
     ## Filtering and Search
 
@@ -118,7 +118,7 @@ info:
 
     <SecurityDefinitions />
 
-    ## Request Headers
+    ### Request Headers
 
     OAuth does not use the JSON:API headers, instead one of the following headers are required:
 
@@ -135,20 +135,10 @@ info:
     **NOTE:** Application registration has not yet been implemented.
     For now, `client_id` and `client_secret` can be omitted, provided as empty strings or with the following:
 
-    ```
+    <pre>
     CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
     CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
-    ```
-
-    ## Grant Types
-
-    OAuth 2 provides several grant types for different use cases.
-    The grant types defined are:
-
-    - **Authorization Code** for apps running on a web server,
-    browser-based and mobile apps (not yet implemented)
-    - **Password** for logging in with a username and Password
-    - **Client Credentials** for application access (not yet implemented)
+    </pre>
 
     ## Obtaining an Access Token
 
@@ -801,36 +791,6 @@ components:
       $ref: ./parameters/fields.yml
     Filter:
       $ref: ./parameters/filter.yml
-    #FilterAgeRating:
-    #  $ref: ./parameters/filter/ageRating.yml
-    #FilterAverageRating:
-    #  $ref: ./parameters/filter/averageRating.yml
-    #FilterCategories:
-    #  $ref: ./parameters/filter/categories.yml
-    #FilterChapterCount:
-    #  $ref: ./parameters/filter/chapterCount.yml
-    #FilterEpisodeCount:
-    #  $ref: ./parameters/filter/episodeCount.yml
-    #FilterSeason:
-    #  $ref: ./parameters/filter/season.yml
-    #FilterSeasonYear:
-    #  $ref: ./parameters/filter/seasonYear.yml
-    #FilterSince:
-    #  $ref: ./parameters/filter/since.yml
-    #FilterStatus:
-    #  $ref: ./parameters/filter/status.yml
-    #FilterStreamers:
-    #  $ref: ./parameters/filter/streamers.yml
-    #FilterSubTypeAnime:
-    #  $ref: ./parameters/filter/subtype_anime.yml
-    #FilterSubTypeManga:
-    #  $ref: ./parameters/filter/subtype_manga.yml
-    #FilterText:
-    #  $ref: ./parameters/filter/text.yml
-    #FilterUserCount:
-    #  $ref: ./parameters/filter/userCount.yml
-    #FilterYear:
-    #  $ref: ./parameters/filter/year.yml
     Page:
       $ref: ./parameters/page.yml
     Sort:
@@ -854,11 +814,6 @@ components:
       $ref: ./schemas/filters/resourceFilters/manga.yml
     ResourceFiltersMedia:
       $ref: ./schemas/filters/resourceFilters/media.yml
-
-    FilterAgeRating:
-      $ref: ./schemas/filters/ageRating.yml
-    FiltersAverageRating:
-      $ref: ./schemas/filters/averageRating.yml
 
     LinksPagination:
       $ref: ./schemas/links/pagination.yml
