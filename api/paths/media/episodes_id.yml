@@ -1,11 +1,10 @@
-  #- episode
-  #  GET /api/edge/episodes/:id episodes#show
-  #  PATCH /api/edge/episodes/:id episodes#update
-  #  PUT /api/edge/episodes/:id episodes#update
-  #  DELETE /api/edge/episodes/:id episodes#destroy
-
 parameters:
 - $ref: ../../parameters/path/id.yml
+- $ref: ../../parameters/fields.yml
+- $ref: ../../parameters/include.yml
+- $ref: ../../parameters/page.yml
+- $ref: ../../parameters/sort.yml
+- $ref: ../../schemas/filters/resource/base.yml
 
 get:
   tags:
@@ -18,7 +17,7 @@ get:
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/episode/resource.yml
+            $ref: ../../resources/episode/one.yml
     '400':
       description: Bad Request
       content:
@@ -42,14 +41,14 @@ patch:
     content:
       application/vnd.api+json:
         schema:
-          $ref: ../../resources/episode/resource.yml
+          $ref: ../../resources/episode/one.yml
   responses:
     '200':
       description: OK
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/episode/resource.yml
+            $ref: ../../resources/episode/one.yml
     '403':
       description: Forbidden
       content:

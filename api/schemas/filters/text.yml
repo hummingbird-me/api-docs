@@ -1,0 +1,5 @@
+properties:
+  text:
+    type: string
+    description: Search within `titles`, `abbreviatedTitles`, `description` `people` and `characters`
+    example: id

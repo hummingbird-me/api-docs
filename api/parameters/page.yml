@@ -1,6 +1,9 @@
 in: query
 name: page
-description: Resource pagination
+description: |
+  Resource pagination
+
+  [Pagination](/#section/JSON:API/Pagination)
 schema:
   type: object
   properties:

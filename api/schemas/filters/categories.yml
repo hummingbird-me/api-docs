@@ -1,0 +1,6 @@
+properties:
+  categories:
+    type: string
+    description: |
+      Filter media by categories. Uses the categories' `slug` value. Use a comma-deliminated list to filter by multiple categories
+    example: comedy

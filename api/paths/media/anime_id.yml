@@ -1,5 +1,10 @@
 parameters:
 - $ref: ../../parameters/path/id.yml
+- $ref: ../../parameters/fields.yml
+- $ref: ../../parameters/include.yml
+- $ref: ../../parameters/page.yml
+- $ref: ../../parameters/sort.yml
+- $ref: ../../schemas/filters/resource/anime.yml
 
 get:
   tags:
@@ -12,7 +17,7 @@ get:
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/anime/resource.yml
+            $ref: ../../resources/anime/one.yml
     '400':
       description: Bad Request
       content:
@@ -36,14 +41,14 @@ patch:
     content:
       application/vnd.api+json:
         schema:
-          $ref: ../../resources/anime/resource.yml
+          $ref: ../../resources/anime/one.yml
   responses:
     '200':
       description: OK
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/anime/resource.yml
+            $ref: ../../resources/anime/one.yml
     '403':
       description: Forbidden
       content:

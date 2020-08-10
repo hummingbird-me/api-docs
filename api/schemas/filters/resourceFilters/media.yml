@@ -1,0 +1,10 @@
+allOf:
+- $ref: ./base.yml
+- $ref: ./base_sluggable.yml
+- $ref: ../averageRating.yml
+- $ref: ../categories.yml
+- $ref: ../since.yml
+- $ref: ../status.yml
+- $ref: ../text.yml
+- $ref: ../userCount.yml
+- $ref: ../year.yml

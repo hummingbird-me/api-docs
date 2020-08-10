@@ -1,0 +1,9 @@
+type: object
+required:
+- data
+allOf:
+- properties:
+    data:
+      type: object
+      $ref: ../../schemas/resources/manga.yml
+- $ref: ./included.yml

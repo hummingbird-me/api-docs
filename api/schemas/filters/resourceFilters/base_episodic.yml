@@ -1,0 +1,3 @@
+allOf:
+- $ref: ../episodeCount.yml
+- $ref: ../episodeLength.yml

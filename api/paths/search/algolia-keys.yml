@@ -12,4 +12,4 @@ get:
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/algoliaKeys/collection.yml
+            $ref: ../../resources/algoliaKeys/many.yml

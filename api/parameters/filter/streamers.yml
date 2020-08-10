@@ -1,7 +1,0 @@
-in: query
-name: filter[streamers]
-description: |
-  Filter media by streaming providers. Uses the streamers' `slug` value. Use a comma-deliminated list to filter by multiple streamers
-schema:
-  type: string
-  example: crunchyroll

@@ -1,0 +1,6 @@
+properties:
+  streamers:
+    type: string
+    description: |
+      Filter media by streaming providers. Uses the streamers' `slug` value. Use a comma-deliminated list to filter by multiple streamers
+    example: crunchyroll

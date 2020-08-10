@@ -1,0 +1,4 @@
+properties:
+  status:
+    $ref: ../../schemas/enums/status.yml
+    description: Filter by status. Use a comma-deliminated list to filter by multiple statuses

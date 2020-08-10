@@ -1,6 +1,9 @@
 in: query
 name: include
-description: Include related resources. Use a dot-seperated path to include relationships of relationships. Use a comma-deliminated list to sort by multiple attributes - first in list takes priority
+description: |
+  Include related resources. Use a dot-seperated path to include relationships of relationships. Use a comma-deliminated list to include multiple relationships
+
+  [Inclusion of Related Resources](/#section/JSON:API/Inclusion-of-Related-Resources)
 schema:
   type: string
 example: characters,staff.person

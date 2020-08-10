@@ -1,6 +1,0 @@
-in: query
-name: filter[ageRating]
-description: |
-  Filter by `ageRating`. Use a comma-deliminated list to filter by multiple age ratings
-schema:
-  $ref: ../../schemas/enums/ageRating.yml

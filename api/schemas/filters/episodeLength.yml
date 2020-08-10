@@ -1,0 +1,10 @@
+properties:
+  episodeLength:
+    type: integer
+    description: |
+      Filter by `episodeLength`. Supports numeric ranges with Ruby syntax:
+      - `20..` to inclusively get media with `>= 20` minute episodes
+      - `..20` to inclusively get media with `<= 20` minute episodes
+      - `12..24` to inclusively get media with `>= 12` and `<= 24` minute episodes
+    example: 24
+    minimum: 0

@@ -12,6 +12,6 @@ get:
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/algoliaKeys/resource.yml
+            $ref: ../../resources/algoliaKeys/one.yml
   parameters:
   - $ref: ../../parameters/path/index.yml

@@ -1,0 +1,4 @@
+properties:
+  subtype:
+    $ref: ../../schemas/enums/subtype_anime.yml
+    description: Filter by subtype. Use a comma-deliminated list to filter by multiple subtypes

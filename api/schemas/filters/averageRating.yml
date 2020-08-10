@@ -1,0 +1,12 @@
+properties:
+  averageRating:
+    type: integer
+    description: |
+      <pre>filter[averageRating]=80</pre>
+
+      Filter by `averageRating`. Supports numeric ranges with Ruby syntax:
+      - `80..` to inclusively get media rated `>= 80%`
+      - `..80` to inclusively get media rated `<= 80%`
+      - `50..80` to inclusively get media rated `>= 50%` and `<= 80%`
+    minimum: 10
+    maximum: 100

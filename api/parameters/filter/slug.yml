@@ -1,6 +1,0 @@
-in: query
-name: filter[slug]
-description: Filter by `slug`
-schema:
-  type: string
-example: trigun

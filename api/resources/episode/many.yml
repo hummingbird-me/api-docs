@@ -1,0 +1,18 @@
+type: object
+required:
+- data
+- links
+- meta
+allOf:
+- properties:
+    data:
+      type: array
+      items:
+        $ref: ../../schemas/resources/episode.yml
+    meta:
+      allOf:
+        - $ref: ../../schemas/meta/count.yml
+    links:
+      $ref: ../../schemas/links/pagination.yml
+- $ref: ./included.yml
+

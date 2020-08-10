@@ -1,9 +1,9 @@
 in: query
 name: fields
 description: |
-  Return a specific set of attributes and relationships in the request response. Use a comma-deliminated list for multiple attributes/relationships
+  Return only the provided attributes and relationships in the request response. Use a comma-deliminated list for multiple attributes/relationships
 
-  Multiple `fields` queries of different types is possible
+  [Sparse Fieldsets](/#section/JSON:API/Sparse-Fieldsets)
 schema:
   type: object
   additionalProperties:

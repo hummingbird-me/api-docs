@@ -1,3 +1,10 @@
+parameters:
+- $ref: ../../parameters/fields.yml
+- $ref: ../../parameters/include.yml
+- $ref: ../../parameters/page.yml
+- $ref: ../../parameters/sort.yml
+- $ref: ../../schemas/filters/resource/manga.yml
+
 get:
   tags:
   - Manga
@@ -9,7 +16,7 @@ get:
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/manga/collection.yml
+            $ref: ../../resources/manga/many.yml
     '400':
       description: Bad Request
       content:
@@ -22,22 +29,6 @@ get:
         application/vnd.api+json:
           schema:
             $ref: ../../resources/error/404.yml
-  parameters:
-  - $ref: ../../parameters/fields.yml
-  - $ref: ../../parameters/include.yml
-  - $ref: ../../parameters/page.yml
-  - $ref: ../../parameters/sort.yml
-  - $ref: ../../parameters/filter/averageRating.yml
-  - $ref: ../../parameters/filter/categories.yml
-  - $ref: ../../parameters/filter/chapterCount.yml
-  - $ref: ../../parameters/filter/id.yml
-  - $ref: ../../parameters/filter/since.yml
-  - $ref: ../../parameters/filter/slug.yml
-  - $ref: ../../parameters/filter/status.yml
-  - $ref: ../../parameters/filter/subtype_manga.yml
-  - $ref: ../../parameters/filter/text.yml
-  - $ref: ../../parameters/filter/userCount.yml
-  - $ref: ../../parameters/filter/year.yml
 
 post:
   security:
@@ -49,14 +40,14 @@ post:
     content:
       application/vnd.api+json:
         schema:
-          $ref: ../../resources/manga/resource.yml
+          $ref: ../../resources/manga/one.yml
   responses:
     '201':
       description: Created
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/manga/resource.yml
+            $ref: ../../resources/manga/one.yml
     '403':
       description: Forbidden
       content:

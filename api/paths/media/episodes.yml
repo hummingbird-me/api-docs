@@ -1,7 +1,10 @@
 
-  #- episodes
-  #  GET /api/edge/episodes episodes#index
-  #  POST /api/edge/episodes episodes#create
+parameters:
+- $ref: ../../parameters/fields.yml
+- $ref: ../../parameters/include.yml
+- $ref: ../../parameters/page.yml
+- $ref: ../../parameters/sort.yml
+- $ref: ../../schemas/filters/resource/base.yml
 
 get:
   tags:
@@ -14,7 +17,7 @@ get:
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/episode/collection.yml
+            $ref: ../../resources/episode/many.yml
     '400':
       description: Bad Request
       content:
@@ -27,12 +30,6 @@ get:
         application/vnd.api+json:
           schema:
             $ref: ../../resources/error/404.yml
-  parameters:
-  - $ref: ../../parameters/fields.yml
-  - $ref: ../../parameters/include.yml
-  - $ref: ../../parameters/page.yml
-  - $ref: ../../parameters/sort.yml
-  - $ref: ../../parameters/filter/id.yml
 
 post:
   security:
@@ -44,14 +41,14 @@ post:
     content:
       application/vnd.api+json:
         schema:
-          $ref: ../../resources/episode/resource.yml
+          $ref: ../../resources/episode/one.yml
   responses:
     '201':
       description: Created
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/episode/resource.yml
+            $ref: ../../resources/episode/one.yml
     '403':
       description: Forbidden
       content:

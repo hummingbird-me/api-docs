@@ -1,0 +1,7 @@
+properties:
+  included:
+    type: array
+    readOnly: true
+    description: Included resources. Only present with the `include={relationship} query parameter
+    items:
+      type: object

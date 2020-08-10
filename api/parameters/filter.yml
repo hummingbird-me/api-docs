@@ -1,8 +1,14 @@
 in: query
 name: filter
-description: Filter resource collections
+description: |
+  Filter resources
+
+  [Filtering and Search](/#section/JSON:API/Filtering-and-Search)
 schema:
   type: object
 style: deepObject
 allowReserved: true
 explode: true
+example:
+  filter1: '1,2'
+  filter2: example

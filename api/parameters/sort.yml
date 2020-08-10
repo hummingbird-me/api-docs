@@ -1,6 +1,9 @@
 in: query
 name: sort
-description: Sort by ID or resource attributes. Ascending by default. Prefix with `-` to sort descending (e.g `-id`). Use a comma-deliminated list to sort by multiple attributes - first in list takes priority
+description: |
+  Sort by ID or resource attributes in ascending order. Prefix with `-` to sort descending. Use a comma-deliminated list to sort by multiple attributes.
+
+  [Sorting](/#section/JSON:API/Sorting)
 schema:
   type: string
 example: id

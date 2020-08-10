@@ -1,0 +1,5 @@
+properties:
+  ageRating:
+    $ref: ../enums/ageRating.yml
+    description: |
+      Filter by `ageRating`. Use a comma-deliminated list to filter by multiple age ratings

@@ -1,5 +1,0 @@
-in: query
-name: filter[status]
-description: Filter by status. Use a comma-deliminated list to filter by multiple statuses
-schema:
-  $ref: ../../schemas/enums/status.yml

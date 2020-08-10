@@ -1,0 +1,5 @@
+properties:
+  slug:
+    type: string
+    description: Filter by `slug`
+    example: trigun

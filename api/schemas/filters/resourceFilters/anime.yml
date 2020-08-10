@@ -1,0 +1,8 @@
+allOf:
+- $ref: ./media.yml
+- $ref: ./base_episodic.yml
+- $ref: ../ageRating.yml
+- $ref: ../season.yml
+- $ref: ../seasonYear.yml
+- $ref: ../streamers.yml
+- $ref: ../subtype_anime.yml

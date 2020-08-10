@@ -1,0 +1,4 @@
+$ref: ../../../parameters/filter.yml
+schema:
+  allOf:
+  - $ref: ../resourceFilters/anime.yml

@@ -1,6 +1,0 @@
-in: query
-name: filter[text]
-description: Search within `titles`, `abbreviatedTitles`, `description` `people` and `characters`
-schema:
-  type: string
-example: id

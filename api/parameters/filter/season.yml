@@ -1,8 +1,0 @@
-in: query
-name: filter[season]
-description: |
-  Filter by season. Use a comma-deliminated list to filter by multiple seasons
-
-  Dec-Feb = Winter; Mar-May = Spring; Jun-Aug = Summer; Oct-Nov = Fall
-schema:
-  $ref: ../../schemas/enums/season.yml

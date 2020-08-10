@@ -1,0 +1,4 @@
+allOf:
+- $ref: ./media.yml
+- $ref: ../chapterCount.yml
+- $ref: ../subtype_manga.yml
