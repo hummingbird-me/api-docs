@@ -1,0 +1,18 @@
+type: object
+title: Groups
+properties:
+  groups:
+    type: object
+    description: Search-only API Key and Index for groups
+    properties:
+      key:
+        type: string
+        format: base64
+        description: Algolia Search-only API Key for the groups index
+        example: ZXhhbXBsZSBncm91cHM=
+
+      index:
+        type: string
+        format: base64
+        description: Name of the groups index on Algolia
+        enum: [production_groups]

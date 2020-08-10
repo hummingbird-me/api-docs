@@ -1,0 +1,15 @@
+type: object
+allOf:
+- $ref: ./base.yml
+- properties:
+    errors:
+      properties:
+        title:
+          enum: [Record not found]
+        detail:
+          enum:
+          - The record identified by {id} could not be found.
+        code:
+          enum: ['404']
+        status:
+          enum: ['404']

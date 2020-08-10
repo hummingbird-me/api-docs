@@ -1,0 +1,20 @@
+in: query
+name: page
+description: Resource pagination
+schema:
+  type: object
+  properties:
+    limit:
+      type: integer
+      description: Number of resources to return per page. Maximum value for most resources is `20`
+      example: 20
+    offset:
+      type: integer
+      description: Number of resources to offset pagination by. Using the `links.next|prev` URL handles this for you, or you can do it manually with `limit * page` or `offset += limit`
+      example: 0
+example:
+  limit: 20
+  offset: 0
+style: deepObject
+allowReserved: true
+explode: true

@@ -1,0 +1,12 @@
+in: query
+name: filter[seasonYear]
+description: |
+  Filter by season year. Supports numeric ranges with Ruby syntax:
+  - `2020..` to inclusively get media from `>= 2020`
+  - `..2020` to inclusively get media from `<= 2020`
+  - `2015..2020` to inclusively get media from `>= 2015` and `<= 2020`
+
+  2020 is the season year for December 2019
+schema:
+  type: integer
+  example: 2020

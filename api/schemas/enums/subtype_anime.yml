@@ -1,0 +1,9 @@
+type: string
+enum:
+- ONA
+- OVA
+- TV
+- movie
+- music
+- special
+example: TV

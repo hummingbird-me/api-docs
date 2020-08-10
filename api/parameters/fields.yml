@@ -1,0 +1,16 @@
+in: query
+name: fields
+description: |
+  Return a specific set of attributes and relationships in the request response. Use a comma-deliminated list for multiple attributes/relationships
+
+  Multiple `fields` queries of different types is possible
+schema:
+  type: object
+  additionalProperties:
+    type: string
+example:
+  anime: slug
+  categories: slug,title
+style: deepObject
+allowReserved: true
+explode: true

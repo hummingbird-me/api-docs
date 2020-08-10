@@ -1,0 +1,5 @@
+type: object
+title: animeProductions
+deprecated: true
+readOnly: true
+description: Replaced by `productions`

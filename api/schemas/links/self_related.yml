@@ -3,9 +3,10 @@ readOnly: true
 properties:
   self:
     type: string
-    description: Retrieve only the relationship(s) resource ID and type
+    description: Retrieve only the relationship resource ID and type
     example: https://kitsu.io/api/edge/...
+
   related:
     type: string
-    description: The relationship(s) resource data
+    description: The relationship resource data
     example: https://kitsu.io/api/edge/...

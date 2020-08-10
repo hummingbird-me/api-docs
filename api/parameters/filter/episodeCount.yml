@@ -1,0 +1,11 @@
+in: query
+name: filter[episodeCount]
+description: |
+  Filter by `episodeCount`. Supports numeric ranges with Ruby syntax:
+  - `20..` to inclusively get media with `>= 20` episodes
+  - `..20` to inclusively get media with `<= 20` episodes
+  - `12..24` to inclusively get media with `>= 12` and `<= 24` episodes
+schema:
+  type: integer
+  example: 100
+  minimum: 0

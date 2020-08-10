@@ -7,7 +7,7 @@ allOf:
 - type: object
   properties:
     type:
-      enum: [anime]
+      enum: [manga]
 
     links:
       $ref: ../links/self.yml
@@ -20,37 +20,30 @@ allOf:
       - type: object
         properties:
           subtype:
-            $ref: ../enums/subtype_anime.yml
+            $ref: ../enums/subtype_manga.yml
 
-          showType:
-            readOnly: true
+          mangaType:
             deprecated: true
+            readOnly: true
             description: Replaced by `subtype`
 
-          episodeCount:
+          chapterCount:
             type: integer
             nullable: true
             minimum: 1
 
-          episodeLength:
+          volumeCount:
             type: integer
-            format: seconds
             nullable: true
             minimum: 1
 
-          youtubeVideoId:
+          serialization:
             type: string
             nullable: true
-            description: Promotional video for the media. For short ONA/OVAs, this may be the actual short if it was released on YouTube officially
-
-          nsfw:
-            type: boolean
-            readOnly: true
-            example: false
-
+            description: Magazine the media was published in
 
     relationships:
       description: Related resources
       allOf:
       - $ref: ./resourceRelationships/media.yml
-      - $ref: ./resourceRelationships/anime.yml
+      - $ref: ./resourceRelationships/manga.yml

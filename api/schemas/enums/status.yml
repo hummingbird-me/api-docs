@@ -1,0 +1,8 @@
+type: string
+enum:
+- tba
+- unreleased
+- upcoming
+- current
+- finished
+example: finished

@@ -1,0 +1,22 @@
+get:
+  tags:
+  - Algolia
+  summary: Single Algolia Key
+  description: |
+    Get an Algolia Key needed to search Kitsu with Algolia.
+
+    These keys **can** contain private information for requests with a valid Authorization header - [check the Algolia section description for details](/#tag/Algolia).
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/algoliaKeys/resource.yml
+  parameters:
+  - name: index
+    in: path
+    description: ''
+    required: true
+    schema:
+      $ref: ../../schemas/enums/algoliaIndex.yml

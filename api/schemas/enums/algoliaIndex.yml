@@ -1,0 +1,7 @@
+type: string
+enum:
+- character
+- group
+- media
+- post
+- user

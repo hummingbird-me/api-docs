@@ -1,0 +1,342 @@
+type: object
+properties:
+  slug:
+    type: string
+    description: Unique URL-safe identifier
+
+  description:
+    type: string
+    description: Short synopsis of the media
+
+  synopsis:
+    type: string
+    deprecated: true
+    description: Replaced by the `description` attribute
+
+  coverImageTopOffset:
+    type: integer
+    nullable: true
+    deprecated: true
+
+  coverImage:
+    type: object
+    nullable: true
+    description: Banner displayed at the top of the media page
+    properties:
+      tiny:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../tiny.jpg
+      small:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../small.jpg
+      large:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../large.jpg
+      original:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../original.jpg
+      meta:
+        type: object
+        properties:
+          dimensions:
+            type: object
+            properties:
+              tiny:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [840]
+                  height:
+                    type: integer
+                    enum: [200]
+              small:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [1640]
+                  height:
+                    type: integer
+                    enum: [400]
+              large:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [3360]
+                  height:
+                    type: integer
+                    enum: [800]
+
+  posterImage:
+    type: object
+    nullable: true
+    properties:
+      tiny:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../tiny.jpg
+      small:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../small.jpg
+      medium:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../medium.jpg
+      large:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../large.jpg
+      original:
+        type: string
+        format: uri
+        example: https://media.kitsu.io/.../original.jpg
+      meta:
+        type: object
+        properties:
+          dimensions:
+            type: object
+            properties:
+              tiny:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [110]
+                  height:
+                    type: integer
+                    enum: [156]
+              small:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [284]
+                  height:
+                    type: integer
+                    enum: [402]
+              medium:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [390]
+                  height:
+                    type: integer
+                    enum: [554]
+              large:
+                type: object
+                properties:
+                  width:
+                    type: integer
+                    enum: [550]
+                  height:
+                    type: integer
+                    enum: [780]
+
+  titles:
+    type: object
+    description: Localised media titles. Any ISO 639-1 (`en`) or ICU Locale (`en_us`) may appear here
+    additionalProperties:
+      type: string
+    example:
+      en: Trigun
+      en_jp: Trigun
+      ja_jp: トライガン
+
+  canonicalTitle:
+    type: string
+    description: The most commonly used title from the `titles` attribute
+    example: Trigun
+
+  abbreviatedTitles:
+    type: array
+    description: Abbreviations or other names the media is known by
+    items:
+      type: string
+
+  averageRating:
+    type: string
+    nullable: true
+    readOnly: true
+    maximum: 100
+    minimum: 10
+    format: percentage
+    description: The bayesian average of the media. Requires at least 50 user ratings
+    example: '82.28'
+
+  ratingFrequencies:
+    type: object
+    readOnly: true
+    description: Number of user ratings for each rating value. Key is the rating stored as 2,3..20 and displayed as 1,1.5..10
+    properties:
+      2:
+        type: string
+        minimum: 0
+        format: integer
+        description: Minimum rating of 1/10
+        example: '460'
+      3:
+        type: string
+        minimum: 0
+        format: integer
+        example: '10'
+      4:
+        type: string
+        minimum: 0
+        format: integer
+        example: '63'
+      5:
+        type: string
+        minimum: 0
+        format: integer
+        example: '3'
+      6:
+        type: string
+        minimum: 0
+        format: integer
+        example: '59'
+      7:
+        type: string
+        minimum: 0
+        format: integer
+        example: '3'
+      8:
+        type: string
+        minimum: 0
+        format: integer
+        example: '523'
+      9:
+        type: string
+        minimum: 0
+        format: integer
+        example: '8'
+      10:
+        type: string
+        minimum: 0
+        format: integer
+        example: '378'
+      11:
+        type: string
+        minimum: 0
+        format: integer
+        example: '23'
+      12:
+        type: string
+        minimum: 0
+        format: integer
+        example: '1118'
+      13:
+        type: string
+        minimum: 0
+        format: integer
+        example: '63'
+      14:
+        type: string
+        minimum: 0
+        format: integer
+        example: '3392'
+      15:
+        type: string
+        minimum: 0
+        format: integer
+        example: '159'
+      16:
+        type: string
+        minimum: 0
+        format: integer
+        example: '4700'
+      17:
+        type: string
+        minimum: 0
+        format: integer
+        example: '236'
+      18:
+        type: string
+        minimum: 0
+        format: integer
+        example: '3532'
+      19:
+        type: string
+        minimum: 0
+        format: integer
+        example: '113'
+      20:
+        type: string
+        minimum: 0
+        format: integer
+        description: Maximum rating of 10/10
+        example: '7320'
+
+  userCount:
+    type: integer
+    readOnly: true
+    minimum: 0
+    description: Number of users who have the media in their library
+    example: 44322
+
+  favoritesCount:
+    type: integer
+    nullable: true
+    readOnly: true
+    minimum: 0
+    description: Number of users who have favorited the media
+    example: 1219
+
+  startDate:
+    type: string
+    nullable: true
+    format: date
+    description: Date the media started airing/publishing. YYYY-MM-DD
+    example: '1998-04-01'
+
+  endDate:
+    type: string
+    nullable: true
+    format: date
+    description: Date the media finished airing/publishing. YYYY-MM-DD
+    example: '1998-09-30'
+
+  nextRelease:
+    type: string
+    readOnly: true
+
+  popularityRank:
+    type: integer
+    minimum: 1
+    readOnly: true
+    example: 165
+
+  ratingRank:
+    type: integer
+    minimum: 1
+    readOnly: true
+    example: 217
+
+  # Age Ratings
+  ageRating:
+    $ref: ../enums/ageRating.yml
+
+  ageRatingGuide:
+    type: string
+    nullable: true
+    description: Additional content warnings
+    example: Teens 13 or older
+
+  status:
+    type: string
+    readOnly: true
+    description: |
+      `tba` (to be announced) if there is no start/end dates `unreleased` if start date is in the future and `upcoming` if start date is within 3 months
+    enum: [tba, finished, current, upcoming, unreleased]
+
+  tba:
+    type: string
+    nullable: true
+    description: Expected release year or season

@@ -1,0 +1,13 @@
+type: object
+properties:
+  episodes:
+    $ref: ../relationships/episodes.yml
+  streamingLinks:
+    $ref: ../relationships/streamingLinks.yml
+  animeProductions:
+    $ref: ../relationships/animeProductions.yml
+  animeCharacters:
+    $ref: ../relationships/animeCharacters.yml
+  animeStaff:
+    $ref: ../relationships/animeStaff.yml
+

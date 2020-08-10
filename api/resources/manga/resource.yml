@@ -4,7 +4,7 @@ required:
 properties:
   data:
     type: object
-    $ref: ../../schemas/resources/anime.yml
+    $ref: ../../schemas/resources/manga.yml
   included:
     type: array
     readOnly: true

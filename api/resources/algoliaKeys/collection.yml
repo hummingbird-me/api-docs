@@ -1,0 +1,6 @@
+allOf:
+  - $ref: ../../schemas/resources/algoliaKeys/characters.yml
+  - $ref: ../../schemas/resources/algoliaKeys/groups.yml
+  - $ref: ../../schemas/resources/algoliaKeys/media.yml
+  - $ref: ../../schemas/resources/algoliaKeys/posts.yml
+  - $ref: ../../schemas/resources/algoliaKeys/users.yml

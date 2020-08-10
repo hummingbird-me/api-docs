@@ -1,0 +1,10 @@
+type: string
+enum:
+- manga
+- manhwa
+- manhua
+- novel
+- oneshot
+- doujin
+- oel
+example: manga

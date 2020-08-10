@@ -1,0 +1,18 @@
+type: object
+title: Users
+properties:
+  users:
+    type: object
+    description: Search-only API Key and Index for users
+    properties:
+      key:
+        type: string
+        format: base64
+        description: Algolia Search-only API Key for the users index
+        example: ZXhhbXBsZSB1c2Vycw==
+
+      index:
+        type: string
+        format: base64
+        description: Name of the users index on Algolia
+        enum: [production_users]

@@ -1,0 +1,18 @@
+type: object
+title: Characters
+properties:
+  characters:
+    type: object
+    description: Search-only API Key and Index for characters
+    properties:
+      key:
+        type: string
+        format: base64
+        description: Algolia Search-only API Key for the characters index
+        example: ZXhhbXBsZSBjaGFyYWN0ZXJz
+
+      index:
+        type: string
+        format: base64
+        description: Name of the characters index on Algolia
+        enum: [production_characters]

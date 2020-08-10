@@ -1,0 +1,18 @@
+type: object
+title: Media
+properties:
+  media:
+    type: object
+    description: Search-only API Key and Index for anime and manga
+    properties:
+      key:
+        type: string
+        format: base64
+        description: Algolia Search-only API Key for the media index
+        example: ZXhhbXBsZSBtZWRpYQ==
+
+      index:
+        type: string
+        format: base64
+        description: Name of the media index on Algolia
+        enum: [production_media]

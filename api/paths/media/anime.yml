@@ -1,0 +1,71 @@
+get:
+  tags:
+  - Anime
+  summary: Get Anime Collection
+  description: Get a collection of anime resources
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/anime/collection.yml
+    '400':
+      description: Bad Request
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/400.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml
+  parameters:
+  - $ref: ../../parameters/fields.yml
+  - $ref: ../../parameters/include.yml
+  - $ref: ../../parameters/page.yml
+  - $ref: ../../parameters/sort.yml
+  - $ref: ../../parameters/filter/averageRating.yml
+  - $ref: ../../parameters/filter/categories.yml
+  - $ref: ../../parameters/filter/since.yml
+  - $ref: ../../parameters/filter/status.yml
+  - $ref: ../../parameters/filter/userCount.yml
+  - $ref: ../../parameters/filter/year.yml
+  - $ref: ../../parameters/filter/seasonYear.yml
+  - $ref: ../../parameters/filter/season.yml
+  - $ref: ../../parameters/filter/streamers.yml
+  - $ref: ../../parameters/filter/episodeCount.yml
+  - $ref: ../../parameters/filter/subtype_anime.yml
+  - $ref: ../../parameters/filter/ageRating.yml
+post:
+  tags:
+  - Anime
+  summary: Create Anime
+  description: |
+    Users must be authenticated and have the `admin` User Role to create a resource.
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: ../../resources/anime/resource.yml
+  responses:
+    '201':
+      description: Created
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/anime/resource.yml
+    '403':
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/403.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml

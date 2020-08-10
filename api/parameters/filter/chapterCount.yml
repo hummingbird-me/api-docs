@@ -1,0 +1,11 @@
+in: query
+name: filter[chapterCount]
+description: |
+  Filter by `chapterCount`. Supports numeric ranges with Ruby syntax:
+  - `100..` to inclusively get manga with `>= 100` chapters
+  - `..100` to inclusively get manga with `<= 100` chapters
+  - `100..200` to inclusively get manga with `>= 100` and `<= 200` chapters
+schema:
+  type: integer
+  example: 100
+  minimum: 0

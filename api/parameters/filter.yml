@@ -1,0 +1,8 @@
+in: query
+name: filter
+description: Filter resource collections
+schema:
+  type: object
+style: deepObject
+allowReserved: true
+explode: true

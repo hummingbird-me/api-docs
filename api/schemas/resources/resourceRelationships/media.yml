@@ -1,0 +1,24 @@
+type: object
+properties:
+  genres:
+    $ref: ../relationships/genres.yml
+  categories:
+    $ref: ../relationships/categories.yml
+  castings:
+    $ref: ../relationships/castings.yml
+  installments:
+    $ref: ../relationships/installments.yml
+  mappings:
+    $ref: ../relationships/mappings.yml
+  reviews:
+    $ref: ../relationships/reviews.yml
+  mediaRelationships:
+    $ref: ../relationships/mediaRelationships.yml
+  characters:
+    $ref: ../relationships/characters.yml
+  staff:
+    $ref: ../relationships/staff.yml
+  productions:
+    $ref: ../relationships/productions.yml
+  quotes:
+    $ref: ../relationships/quotes.yml

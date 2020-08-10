@@ -1,0 +1,5 @@
+type: object
+title: castings
+deprecated: true
+readOnly: true
+description: Replaced by `staff`

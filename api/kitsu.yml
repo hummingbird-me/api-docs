@@ -2,548 +2,728 @@ openapi: 3.0.3
 
 info:
   version: 'edge'
-  title: Kitsu JSON:API
-  description: NYI
+  title: Kitsu JSON:API Documentation
   termsOfService: https://kitsu.io/terms
   contact:
     url: https://kitsu.io
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+  description: |
+    Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
+
+    With the Kitsu API you can do everything the client can do and much more.
+
+    Base API path: https://kitsu.io/api/edge
+
+    # JSON:API
+
+    The Kitsu API implements the [JSON:API specification](https://jsonapi.org/format/). This means there are some notable semantics to how you consume it, but understanding it will take a lot of the work of using it out of your hands.
+
+    We have included a short overview of the capabilities, but you can consult the [JSON:API Specification](https://jsonapi.org/format/) for more information.
+
+    You can be more specific about the data you want to retrieve by using URL parameters and are outlined below.
+
+    **Note**: This documentation will display parameters with brackets ([ and ]) for readability, but actual URLs will need to be percent-encoded (%5B and %5D).
+
+    ## Request Headers
+
+    As per the JSON:API specification, all requests to the API should contain these headers:
+
+    ```
+    Accept: application/vnd.api+json
+    Content-Type: application/vnd.api+json
+    ```
+
+    ## Filtering and Search
+
+    Filtering lets you query data that contains certain matching attributes or relationships. These take the form of `filter[attribute]=value`.
+
+    For example, you can request all the anime of the Adventure category:
+
+    ```
+    /anime?filter[categories]=adventure
+    ```
+
+    For some models, you can also search based on the query text:
+
+    ```
+    /anime?filter[text]=cowboy%20bebop
+    ```
+
+    For more advanced search capabilities, consider using [Algolia](/#tag/Algolia).
+
+    https://jsonapi.org/format/#fetching-filtering
+
+    ## Pagination
+
+    You can choose how much of a resource to receive by specifying pagination parameters.
+
+    Pagination is supported via `limit` and `offset`. Resources are paginated in groups of 10 by default and can be increased to a maximum of 20 (some routes may increase the limit).
+
+    ```
+    /anime?page[limit]=5&page[offset]=0
+    ```
+
+    The response will include URLs for the first, next and last page of resources in the links object based on your request.
+
+    https://jsonapi.org/format/#fetching-pagination
+
+    ## Sorting
+
+    Sorting by attributes is also supported. By default, sorts are applied in ascending order. You can request a descending order by prepending `-` to the parameter.
+
+    You can use a comma-delimited list to sort by multiple attributes.
+
+    ```
+    /users?sort=-followersCount,-followingCount
+    ```
+
+    https://jsonapi.org/format/#fetching-sorting
+
+    ## Inclusion of Related Resources
+
+    You can include related resources with `include=[relationship]`. You can also specify successive relationships using `.`. A comma-delimited list can be used to request multiple relationships.
+
+    ```
+    /anime?include=categories,mediaRelationships.destination
+    ```
+
+    https://jsonapi.org/format/#fetching-includes
+
+    ## Sparse Fieldsets
+
+    You can request a resource to only return a specific set of fields in its response. For example, to only receive a user's name and creation date:
+
+    ```
+    /users?fields[users]=name,createdAt
+    ```
+
+    https://jsonapi.org/format/#fetching-sparse-fieldsets
+
+    ## Client Implementations
+
+    JSON:API has a great advantage in that since its standardised, API-agnostic tools can be made to abstract away the semantics of consuming and working with the data. It is recommended that you use a JSON:API client to implement the Kitsu API for this reason.
+
+    Many implementations in over 13 languages can be found on the [JSON:API website](https://jsonapi.org/implementations/#client-libraries).
 
 servers:
 - url: https://kitsu.io/api/edge
   description: Production API
 
 x-tagGroups:
+  - name: Search
+    tags:
+    - Algolia
   - name: Media
     tags:
     - Anime
+    - Manga
+
+tags:
+- name: Algolia
+  externalDocs:
+    url: https://www.algolia.com/doc/api-client/getting-started/instantiate-client-index/
+  description: |
+    Kitsu uses [Algolia](https://www.algolia.com) for searching. Algolia's search provides more accurate search results and allows you to build complex search filters to find exactly what you want. Refer to the [Algolia Docs](https://www.algolia.com/doc/api-client/getting-started/instantiate-client-index/) for further usage.
+
+    **Important Notes**:
+    - These keys are **not** static;
+    - These keys respect user content settings - Mature content will **not** be visible if:
+      - The keys are requested without a valid `Authorization` header
+      - The user associated with the `Authorization` header has mature content disabled in their settings.
+    - These keys are unique for each logged-in user and **must not be shared**.
+      - Sharing keys requested with a valid `Authorization` header will leak blocked accounts, blocked media and private groups the user has joined.
+- name: Anime
+  description: Anime with an age rating of `R18` requires a valid `Authorization` header and mature content enabled in the users' settings
+- name: Manga
+  description: Manga with an age rating of `R18` requires a valid `Authorization` header and mature content enabled in the users' settings
 
 paths:
+  #- activity
+  #  DELETE /api/edge/activities/:id activities#destroy
+  #  GET /api/edge/feeds/:group/:id feeds#show
+  #  POST /api/edge/feeds/:group/:id/_read feeds#mark_read
+  #  POST /api/edge/feeds/:group/:id/_seen feeds#mark_seen
+  #  DELETE /api/edge/feeds/:group/:id/activities/:uuid feeds#destroy_activity
+
+  /algolia-keys:
+    $ref: ./paths/search/algolia-keys.yml
+  /algolia-keys/{index}:
+    $ref: ./paths/search/algolia-keys_index.yml
+
   /anime:
-    $ref: ./paths/anime.yml
+    $ref: ./paths/media/anime.yml
   /anime/{id}:
-    $ref: ./paths/anime-id.yml
-
-
-#- users
-#  GET /api/edge/users users#index
-#  POST /api/edge/users users#create
-
-
-#- user
-#  GET /api/edge/users/:id users#show
-#  PATCH /api/edge/users/:id users#update
-#  PUT /api/edge/users/:id users#update
-#  DELETE /api/edge/users/:id users#destroy
-
-#- profile_links
-#  GET /api/edge/profile-links profile_links#index
-#  POST /api/edge/profile-links profile_links#create
-
-#- profile_link
-#  GET /api/edge/profile-links/:id profile_links#show
-#  PATCH /api/edge/profile-links/:id profile_links#update
-#  PUT /api/edge/profile-links/:id profile_links#update
-#  DELETE /api/edge/profile-links/:id profile_links#destroy
-
-#- profile_link_sites
-#  GET /api/edge/profile-link-sites profile_link_sites#index
-
-#- profile_link_site
-#  GET /api/edge/profile-link-sites/:id profile_link_sites#show
-
-#- follows
-#  GET /api/edge/follows follows#index
-#  POST /api/edge/follows follows#create
-
-#- follow
-#  GET /api/edge/follows/:id follows#show
-#  PATCH /api/edge/follows/:id follows#update
-#  PUT /api/edge/follows/:id follows#update
-#  DELETE /api/edge/follows/:id follows#destroy
-
-#- media_ignores
-#  GET /api/edge/media-ignores media_ignores#index
-#  POST /api/edge/media-ignores media_ignores#create
-
-#- media_ignore
-#  GET /api/edge/media-ignores/:id media_ignores#show
-#  PATCH /api/edge/media-ignores/:id media_ignores#update
-#  PUT /api/edge/media-ignores/:id media_ignores#update
-#  DELETE /api/edge/media-ignores/:id media_ignores#destroy
-
-#- post_follows
-#  GET /api/edge/post-follows post_follows#index
-#  POST /api/edge/post-follows post_follows#create
-
-#- post_follow
-#  GET /api/edge/post-follows/:id post_follows#show
-#  PATCH /api/edge/post-follows/:id post_follows#update
-#  PUT /api/edge/post-follows/:id post_follows#update
-#  DELETE /api/edge/post-follows/:id post_follows#destroy
-
-#- blocks
-#  GET /api/edge/blocks blocks#index
-#  POST /api/edge/blocks blocks#create
-
-#- block
-#  GET /api/edge/blocks/:id blocks#show
-#  PATCH /api/edge/blocks/:id blocks#update
-#  PUT /api/edge/blocks/:id blocks#update
-#  DELETE /api/edge/blocks/:id blocks#destroy
-
-#- linked_accounts
-#  GET /api/edge/linked-accounts linked_accounts#index
-#  POST /api/edge/linked-accounts linked_accounts#create
-
-#- linked_account
-#  GET /api/edge/linked-accounts/:id linked_accounts#show
-#  PATCH /api/edge/linked-accounts/:id linked_accounts#update
-#  PUT /api/edge/linked-accounts/:id linked_accounts#update
-#  DELETE /api/edge/linked-accounts/:id linked_accounts#destroy
-
-#- list_imports
-#  GET /api/edge/list-imports list_imports#index
-#  POST /api/edge/list-imports list_imports#create
-
-#- list_import
-#  GET /api/edge/list-imports/:id list_imports#show
-#  PATCH /api/edge/list-imports/:id list_imports#update
-#  PUT /api/edge/list-imports/:id list_imports#update
-#  DELETE /api/edge/list-imports/:id list_imports#destroy
-
-#- library_entry_logs
-#  GET /api/edge/library-entry-logs library_entry_logs#index
-
-#- library_entry_log
-#  GET /api/edge/library-entry-logs/:id library_entry_logs#show
-
-#- user_roles
-#  GET /api/edge/user-roles user_roles#index
-#  POST /api/edge/user-roles user_roles#create
-
-#- user_role
-#  GET /api/edge/user-roles/:id user_roles#show
-#  PATCH /api/edge/user-roles/:id user_roles#update
-#  PUT /api/edge/user-roles/:id user_roles#update
-#  DELETE /api/edge/user-roles/:id user_roles#destroy
-
-#- roles
-#  GET /api/edge/roles roles#index
-#  POST /api/edge/roles roles#create
-
-#- role
-#  GET /api/edge/roles/:id roles#show
-#  PATCH /api/edge/roles/:id roles#update
-#  PUT /api/edge/roles/:id roles#update
-#  DELETE /api/edge/roles/:id roles#destroy
-
-#- notification_settings
-#  GET /api/edge/notification-settings notification_settings#index
-#  POST /api/edge/notification-settings notification_settings#create
-
-#- notification_setting
-#  GET /api/edge/notification-settings/:id notification_settings#show
-#  PATCH /api/edge/notification-settings/:id notification_settings#update
-#  PUT /api/edge/notification-settings/:id notification_settings#update
-#  DELETE /api/edge/notification-settings/:id notification_settings#destroy
-
-#- one_signal_players
-#  GET /api/edge/one-signal-players one_signal_players#index
-#  POST /api/edge/one-signal-players one_signal_players#create
-
-#- one_signal_player
-#  GET /api/edge/one-signal-players/:id one_signal_players#show
-#  PATCH /api/edge/one-signal-players/:id one_signal_players#update
-#  PUT /api/edge/one-signal-players/:id one_signal_players#update
-#  DELETE /api/edge/one-signal-players/:id one_signal_players#destroy
-
-#- library_entries__issues
-#  GET /api/edge/library-entries/_issues library_entries#issues
-
-#- library_entries__bulk
-#  DELETE /api/edge/library-entries/_bulk library_entries#bulk_delete
-#  PATCH /api/edge/library-entries/_bulk library_entries#bulk_update
-#  PUT /api/edge/library-entries/_bulk library_entries#bulk_update
-
-#- library_entries
-#  GET /api/edge/library-entries library_entries#index
-#  POST /api/edge/library-entries library_entries#create
-
-#- library_entry
-#  GET /api/edge/library-entries/:id library_entries#show
-#  PATCH /api/edge/library-entries/:id library_entries#update
-#  PUT /api/edge/library-entries/:id library_entries#update
-#  DELETE /api/edge/library-entries/:id library_entries#destroy
-
-#- favorites
-#  GET /api/edge/favorites favorites#index
-#  POST /api/edge/favorites favorites#create
-
-#- favorite
-#  GET /api/edge/favorites/:id favorites#show
-#  PATCH /api/edge/favorites/:id favorites#update
-#  PUT /api/edge/favorites/:id favorites#update
-#  DELETE /api/edge/favorites/:id favorites#destroy
-
-#- category_favorites
-#  GET /api/edge/category-favorites category_favorites#index
-#  POST /api/edge/category-favorites category_favorites#create
-
-#- category_favorite
-#  GET /api/edge/category-favorites/:id category_favorites#show
-#  PATCH /api/edge/category-favorites/:id category_favorites#update
-#  PUT /api/edge/category-favorites/:id category_favorites#update
-#  DELETE /api/edge/category-favorites/:id category_favorites#destroy
-
-#- categories
-#  GET /api/edge/categories categories#index
-#  POST /api/edge/categories categories#create
-
-#- category
-#  GET /api/edge/categories/:id categories#show
-#  PATCH /api/edge/categories/:id categories#update
-#  PUT /api/edge/categories/:id categories#update
-#  DELETE /api/edge/categories/:id categories#destroy
-
-#- anime_index
-#  GET /api/edge/anime anime#index
-#  POST /api/edge/anime anime#create
-
-#- anime
-#  GET /api/edge/anime/:id anime#show
-#  PATCH /api/edge/anime/:id anime#update
-#  PUT /api/edge/anime/:id anime#update
-#  DELETE /api/edge/anime/:id anime#destroy
-
-#- manga_index
-#  GET /api/edge/manga manga#index
-#  POST /api/edge/manga manga#create
-
-#- manga
-#  GET /api/edge/manga/:id manga#show
-#  PATCH /api/edge/manga/:id manga#update
-#  PUT /api/edge/manga/:id manga#update
-#  DELETE /api/edge/manga/:id manga#destroy
-
-#- mappings
-#  GET /api/edge/mappings mappings#index
-#  POST /api/edge/mappings mappings#create
-
-#- mapping
-#  GET /api/edge/mappings/:id mappings#show
-#  PATCH /api/edge/mappings/:id mappings#update
-#  PUT /api/edge/mappings/:id mappings#update
-#  DELETE /api/edge/mappings/:id mappings#destroy
-
-#- streaming_links
-#  GET /api/edge/streaming-links streaming_links#index
-#  POST /api/edge/streaming-links streaming_links#create
-
-#- streaming_link
-#  GET /api/edge/streaming-links/:id streaming_links#show
-#  PATCH /api/edge/streaming-links/:id streaming_links#update
-#  PUT /api/edge/streaming-links/:id streaming_links#update
-#  DELETE /api/edge/streaming-links/:id streaming_links#destroy
-
-#- streamers
-#  GET /api/edge/streamers streamers#index
-#  POST /api/edge/streamers streamers#create
-
-#- streamer
-#  GET /api/edge/streamers/:id streamers#show
-#  PATCH /api/edge/streamers/:id streamers#update
-#  PUT /api/edge/streamers/:id streamers#update
-#  DELETE /api/edge/streamers/:id streamers#destroy
-
-#- episodes
-#  GET /api/edge/episodes episodes#index
-#  POST /api/edge/episodes episodes#create
-
-#- episode
-#  GET /api/edge/episodes/:id episodes#show
-#  PATCH /api/edge/episodes/:id episodes#update
-#  PUT /api/edge/episodes/:id episodes#update
-#  DELETE /api/edge/episodes/:id episodes#destroy
-
-#- chapters
-#  GET /api/edge/chapters chapters#index
-#  POST /api/edge/chapters chapters#create
-
-#- chapter
-#  GET /api/edge/chapters/:id chapters#show
-#  PATCH /api/edge/chapters/:id chapters#update
-#  PUT /api/edge/chapters/:id chapters#update
-#  DELETE /api/edge/chapters/:id chapters#destroy
-
-#- stats
-#  GET /api/edge/stats stats#index
-
-#- stat
-#  GET /api/edge/stats/:id stats#show
-
-#- media_reaction_votes
-#  GET /api/edge/media-reaction-votes media_reaction_votes#index
-#  POST /api/edge/media-reaction-votes media_reaction_votes#create
-
-#- media_reaction_vote
-#  GET /api/edge/media-reaction-votes/:id media_reaction_votes#show
-#  PATCH /api/edge/media-reaction-votes/:id media_reaction_votes#update
-#  PUT /api/edge/media-reaction-votes/:id media_reaction_votes#update
-#  DELETE /api/edge/media-reaction-votes/:id media_reaction_votes#destroy
-
-#- media_reactions
-#  GET /api/edge/media-reactions media_reactions#index
-#  POST /api/edge/media-reactions media_reactions#create
-
-#- media_reaction
-#  GET /api/edge/media-reactions/:id media_reactions#show
-#  PATCH /api/edge/media-reactions/:id media_reactions#update
-#  PUT /api/edge/media-reactions/:id media_reactions#update
-#  DELETE /api/edge/media-reactions/:id media_reactions#destroy
-
-#- trending
-#  GET /api/edge/trending/:namespace trending#index
-
-#- characters
-#  GET /api/edge/characters characters#index
-#  POST /api/edge/characters characters#create
-
-#- character
-#  GET /api/edge/characters/:id characters#show
-#  PATCH /api/edge/characters/:id characters#update
-#  PUT /api/edge/characters/:id characters#update
-#  DELETE /api/edge/characters/:id characters#destroy
-
-#- people
-#  GET /api/edge/people people#index
-#  POST /api/edge/people people#create
-
-#- person
-#  GET /api/edge/people/:id people#show
-#  PATCH /api/edge/people/:id people#update
-#  PUT /api/edge/people/:id people#update
-#  DELETE /api/edge/people/:id people#destroy
-
-#- producers
-#  GET /api/edge/producers producers#index
-#  POST /api/edge/producers producers#create
-
-#- producer
-#  GET /api/edge/producers/:id producers#show
-#  PATCH /api/edge/producers/:id producers#update
-#  PUT /api/edge/producers/:id producers#update
-#  DELETE /api/edge/producers/:id producers#destroy
-
-#- posts
-#  GET /api/edge/posts posts#index
-#  POST /api/edge/posts posts#create
-
-#- post
-#  GET /api/edge/posts/:id posts#show
-#  PATCH /api/edge/posts/:id posts#update
-#  PUT /api/edge/posts/:id posts#update
-#  DELETE /api/edge/posts/:id posts#destroy
-
-#- post_likes
-#  GET /api/edge/post-likes post_likes#index
-#  POST /api/edge/post-likes post_likes#create
-
-#- post_like
-#  GET /api/edge/post-likes/:id post_likes#show
-#  PATCH /api/edge/post-likes/:id post_likes#update
-#  PUT /api/edge/post-likes/:id post_likes#update
-#  DELETE /api/edge/post-likes/:id post_likes#destroy
-
-#- comments
-#  GET /api/edge/comments comments#index
-#  POST /api/edge/comments comments#create
-
-#- comment
-#  GET /api/edge/comments/:id comments#show
-#  PATCH /api/edge/comments/:id comments#update
-#  PUT /api/edge/comments/:id comments#update
-#  DELETE /api/edge/comments/:id comments#destroy
-#  GET /api/edge/comment-likes comment_likes#index
-#  POST /api/edge/comment-likes comment_likes#create
-
-#- comment_like
-#  GET /api/edge/comment-likes/:id comment_likes#show
-#  PATCH /api/edge/comment-likes/:id comment_likes#update
-#  PUT /api/edge/comment-likes/:id comment_likes#update
-#  DELETE /api/edge/comment-likes/:id comment_likes#destroy
-
-#- reports
-#  GET /api/edge/reports reports#index
-#  POST /api/edge/reports reports#create
-
-#- report
-#  GET /api/edge/reports/:id reports#show
-#  PATCH /api/edge/reports/:id reports#update
-#  PUT /api/edge/reports/:id reports#update
-#  DELETE /api/edge/reports/:id reports#destroy
-
-#- activity
-#  DELETE /api/edge/activities/:id activities#destroy
-#  GET /api/edge/feeds/:group/:id feeds#show
-#  POST /api/edge/feeds/:group/:id/_read feeds#mark_read
-#  POST /api/edge/feeds/:group/:id/_seen feeds#mark_seen
-#  DELETE /api/edge/feeds/:group/:id/activities/:uuid feeds#destroy_activity
-
-#- embeds
-#  POST /api/edge/embeds embeds#create
-
-#- site_announcements
-#  GET /api/edge/site-announcements site_announcements#index
-#  POST /api/edge/site-announcements site_announcements#create
-
-#- site_announcement
-#  GET /api/edge/site-announcements/:id site_announcements#show
-#  PATCH /api/edge/site-announcements/:id site_announcements#update
-#  PUT /api/edge/site-announcements/:id site_announcements#update
-#  DELETE /api/edge/site-announcements/:id site_announcements#destroy
-
-#- groups
-#  GET /api/edge/groups groups#index
-#  POST /api/edge/groups groups#create
-
-#- group
-#  GET /api/edge/groups/:id groups#show
-#  PATCH /api/edge/groups/:id groups#update
-#  PUT /api/edge/groups/:id groups#update
-#  DELETE /api/edge/groups/:id groups#destroy
-#  GET /api/edge/group-members group_members#index
-#  POST /api/edge/group-members group_members#create
-
-#- group_member
-#  GET /api/edge/group-members/:id group_members#show
-#  PATCH /api/edge/group-members/:id group_members#update
-#  PUT /api/edge/group-members/:id group_members#update
-#  DELETE /api/edge/group-members/:id group_members#destroy
-
-#- group_permissions
-#  GET /api/edge/group-permissions group_permissions#index
-#  POST /api/edge/group-permissions group_permissions#create
-
-#- group_permission
-#  GET /api/edge/group-permissions/:id group_permissions#show
-#  PATCH /api/edge/group-permissions/:id group_permissions#update
-#  PUT /api/edge/group-permissions/:id group_permissions#update
-#  DELETE /api/edge/group-permissions/:id group_permissions#destroy
-#  GET /api/edge/group-neighbors group_neighbors#index
-#  POST /api/edge/group-neighbors group_neighbors#create
-
-#- group_neighbor
-#  GET /api/edge/group-neighbors/:id group_neighbors#show
-#  PATCH /api/edge/group-neighbors/:id group_neighbors#update
-#  PUT /api/edge/group-neighbors/:id group_neighbors#update
-#  DELETE /api/edge/group-neighbors/:id group_neighbors#destroy
-
-#- group_categories
-#  GET /api/edge/group-categories group_categories#index
-#  POST /api/edge/group-categories group_categories#create
-#  GET /api/edge/group-categories/:id group_categories#show
-#  PATCH /api/edge/group-categories/:id group_categories#update
-#  PUT /api/edge/group-categories/:id group_categories#update
-#  DELETE /api/edge/group-categories/:id group_categories#destroy
-#  GET /api/edge/group-tickets group_tickets#index
-#  POST /api/edge/group-tickets group_tickets#create
-
-#- group_ticket
-#  GET /api/edge/group-tickets/:id group_tickets#show
-#  PATCH /api/edge/group-tickets/:id group_tickets#update
-#  PUT /api/edge/group-tickets/:id group_tickets#update
-#  DELETE /api/edge/group-tickets/:id group_tickets#destroy
-#  GET /api/edge/group-ticket-messages group_ticket_messages#index
-#  POST /api/edge/group-ticket-messages group_ticket_messages#create
-
-#- group_ticket_message
-#  GET /api/edge/group-ticket-messages/:id group_ticket_messages#show
-#  PATCH /api/edge/group-ticket-messages/:id group_ticket_messages#update
-#  PUT /api/edge/group-ticket-messages/:id group_ticket_messages#update
-#  DELETE /api/edge/group-ticket-messages/:id group_ticket_messages#destroy
-#  GET /api/edge/group-reports group_reports#index
-#  POST /api/edge/group-reports group_reports#create
-
-#- group_report
-#  GET /api/edge/group-reports/:id group_reports#show
-#  PATCH /api/edge/group-reports/:id group_reports#update
-#  PUT /api/edge/group-reports/:id group_reports#update
-#  DELETE /api/edge/group-reports/:id group_reports#destroy
-
-#- group_bans
-#  GET /api/edge/group-bans group_bans#index
-#  POST /api/edge/group-bans group_bans#create
-
-#- group_ban
-#  GET /api/edge/group-bans/:id group_bans#show
-#  PATCH /api/edge/group-bans/:id group_bans#update
-#  PUT /api/edge/group-bans/:id group_bans#update
-#  DELETE /api/edge/group-bans/:id group_bans#destroy
-#  GET /api/edge/group-member-notes group_member_notes#index
-#  POST /api/edge/group-member-notes group_member_notes#create
-
-#- group_member_note
-#  GET /api/edge/group-member-notes/:id group_member_notes#show
-#  PATCH /api/edge/group-member-notes/:id group_member_notes#update
-#  PUT /api/edge/group-member-notes/:id group_member_notes#update
-#  DELETE /api/edge/group-member-notes/:id group_member_notes#destroy
-
-#- leader_chat_messages
-#  GET /api/edge/leader-chat-messages leader_chat_messages#index
-#  POST /api/edge/leader-chat-messages leader_chat_messages#create
-
-#- leader_chat_message
-#  GET /api/edge/leader-chat-messages/:id leader_chat_messages#show
-#  PATCH /api/edge/leader-chat-messages/:id leader_chat_messages#update
-#  PUT /api/edge/leader-chat-messages/:id leader_chat_messages#update
-#  DELETE /api/edge/leader-chat-messages/:id leader_chat_messages#destroy
-#  GET /api/edge/group-action-logs group_action_logs#index
-#  POST /api/edge/group-action-logs group_action_logs#create
-
-#- group_action_log
-#  GET /api/edge/group-action-logs/:id group_action_logs#show
-#  PATCH /api/edge/group-action-logs/:id group_action_logs#update
-#  PUT /api/edge/group-action-logs/:id group_action_logs#update
-#  DELETE /api/edge/group-action-logs/:id group_action_logs#destroy
-#  GET /api/edge/group-invites group_invites#index
-#  POST /api/edge/group-invites group_invites#create
-
-#- group_invite
-#  GET /api/edge/group-invites/:id group_invites#show
-#  PATCH /api/edge/group-invites/:id group_invites#update
-#  PUT /api/edge/group-invites/:id group_invites#update
-#  DELETE /api/edge/group-invites/:id group_invites#destroy
-#  POST /api/edge/group-invites/:id/_accept group_invites#accept
-#  POST /api/edge/group-invites/:id/_decline group_invites#decline
-#  POST /api/edge/group-invites/:id/_revoke group_invites#revoke
-#  GET /api/edge/groups/:id/_stats groups#stats
-#  POST /api/edge/groups/:id/_read groups#read
-
-#- algolia_keys
-#  GET /api/edge/algolia-keys/:action algolia_keys#:action
-#  GET /api/edge/algolia-keys algolia_keys#all
-
-#- uploads__bulk
-#  POST /api/edge/uploads/_bulk uploads#bulk_create
-
-#- uploads
-#  GET /api/edge/uploads uploads#index
-#  POST /api/edge/uploads uploads#create
-
-#- upload
-#  GET /api/edge/uploads/:id uploads#show
-#  PATCH /api/edge/uploads/:id uploads#update
-#  PUT /api/edge/uploads/:id uploads#update
-#  DELETE /api/edge/uploads/:id uploads#destroy
+    $ref: ./paths/media/anime_id.yml
+
+  #- blocks
+  #  GET /api/edge/blocks blocks#index
+  #  POST /api/edge/blocks blocks#create
+
+  #- block
+  #  GET /api/edge/blocks/:id blocks#show
+  #  PATCH /api/edge/blocks/:id blocks#update
+  #  PUT /api/edge/blocks/:id blocks#update
+  #  DELETE /api/edge/blocks/:id blocks#destroy
+
+  #- categories
+  #  GET /api/edge/categories categories#index
+  #  POST /api/edge/categories categories#create
+
+  #- category
+  #  GET /api/edge/categories/:id categories#show
+  #  PATCH /api/edge/categories/:id categories#update
+  #  PUT /api/edge/categories/:id categories#update
+  #  DELETE /api/edge/categories/:id categories#destroy
+
+  #- category_favorites
+  #  GET /api/edge/category-favorites category_favorites#index
+  #  POST /api/edge/category-favorites category_favorites#create
+
+  #- category_favorite
+  #  GET /api/edge/category-favorites/:id category_favorites#show
+  #  PATCH /api/edge/category-favorites/:id category_favorites#update
+  #  PUT /api/edge/category-favorites/:id category_favorites#update
+  #  DELETE /api/edge/category-favorites/:id category_favorites#destroy
+
+  #- chapters
+  #  GET /api/edge/chapters chapters#index
+  #  POST /api/edge/chapters chapters#create
+
+  #- chapter
+  #  GET /api/edge/chapters/:id chapters#show
+  #  PATCH /api/edge/chapters/:id chapters#update
+  #  PUT /api/edge/chapters/:id chapters#update
+  #  DELETE /api/edge/chapters/:id chapters#destroy
+
+  #- characters
+  #  GET /api/edge/characters characters#index
+  #  POST /api/edge/characters characters#create
+
+  #- character
+  #  GET /api/edge/characters/:id characters#show
+  #  PATCH /api/edge/characters/:id characters#update
+  #  PUT /api/edge/characters/:id characters#update
+  #  DELETE /api/edge/characters/:id characters#destroy
+
+  #- comments
+  #  GET /api/edge/comments comments#index
+  #  POST /api/edge/comments comments#create
+
+  #- comment
+  #  GET /api/edge/comments/:id comments#show
+  #  PATCH /api/edge/comments/:id comments#update
+  #  PUT /api/edge/comments/:id comments#update
+  #  DELETE /api/edge/comments/:id comments#destroy
+  #  GET /api/edge/comment-likes comment_likes#index
+  #  POST /api/edge/comment-likes comment_likes#create
+
+  #- comment_like
+  #  GET /api/edge/comment-likes/:id comment_likes#show
+  #  PATCH /api/edge/comment-likes/:id comment_likes#update
+  #  PUT /api/edge/comment-likes/:id comment_likes#update
+  #  DELETE /api/edge/comment-likes/:id comment_likes#destroy
+
+  #- embeds
+  #  POST /api/edge/embeds embeds#create
+
+  #- episodes
+  #  GET /api/edge/episodes episodes#index
+  #  POST /api/edge/episodes episodes#create
+
+  #- episode
+  #  GET /api/edge/episodes/:id episodes#show
+  #  PATCH /api/edge/episodes/:id episodes#update
+  #  PUT /api/edge/episodes/:id episodes#update
+  #  DELETE /api/edge/episodes/:id episodes#destroy
+
+  #- favorites
+  #  GET /api/edge/favorites favorites#index
+  #  POST /api/edge/favorites favorites#create
+
+  #- favorite
+  #  GET /api/edge/favorites/:id favorites#show
+  #  PATCH /api/edge/favorites/:id favorites#update
+  #  PUT /api/edge/favorites/:id favorites#update
+  #  DELETE /api/edge/favorites/:id favorites#destroy
+
+  #- follows
+  #  GET /api/edge/follows follows#index
+  #  POST /api/edge/follows follows#create
+
+  #- follow
+  #  GET /api/edge/follows/:id follows#show
+  #  PATCH /api/edge/follows/:id follows#update
+  #  PUT /api/edge/follows/:id follows#update
+  #  DELETE /api/edge/follows/:id follows#destroy
+
+  #- groups
+  #  GET /api/edge/groups groups#index
+  #  POST /api/edge/groups groups#create
+
+  #- group
+  #  GET /api/edge/groups/:id groups#show
+  #  PATCH /api/edge/groups/:id groups#update
+  #  PUT /api/edge/groups/:id groups#update
+  #  DELETE /api/edge/groups/:id groups#destroy
+
+  #- group_member
+  #  GET /api/edge/group-members group_members#index
+  #  POST /api/edge/group-members group_members#create
+  #  GET /api/edge/group-members/:id group_members#show
+  #  PATCH /api/edge/group-members/:id group_members#update
+  #  PUT /api/edge/group-members/:id group_members#update
+  #  DELETE /api/edge/group-members/:id group_members#destroy
+
+  #- group_permissions
+  #  GET /api/edge/group-permissions group_permissions#index
+  #  POST /api/edge/group-permissions group_permissions#create
+
+  #- group_permission
+  #  GET /api/edge/group-permissions/:id group_permissions#show
+  #  PATCH /api/edge/group-permissions/:id group_permissions#update
+  #  PUT /api/edge/group-permissions/:id group_permissions#update
+  #  DELETE /api/edge/group-permissions/:id group_permissions#destroy
+
+  #- group_neighbor
+  #  GET /api/edge/group-neighbors group_neighbors#index
+  #  POST /api/edge/group-neighbors group_neighbors#create
+  #  GET /api/edge/group-neighbors/:id group_neighbors#show
+  #  PATCH /api/edge/group-neighbors/:id group_neighbors#update
+  #  PUT /api/edge/group-neighbors/:id group_neighbors#update
+  #  DELETE /api/edge/group-neighbors/:id group_neighbors#destroy
+
+  #- group_categories
+  #  GET /api/edge/group-categories group_categories#index
+  #  POST /api/edge/group-categories group_categories#create
+  #  GET /api/edge/group-categories/:id group_categories#show
+  #  PATCH /api/edge/group-categories/:id group_categories#update
+  #  PUT /api/edge/group-categories/:id group_categories#update
+  #  DELETE /api/edge/group-categories/:id group_categories#destroy
+
+  #- group_ticket
+  #  GET /api/edge/group-tickets group_tickets#index
+  #  POST /api/edge/group-tickets group_tickets#create
+  #  GET /api/edge/group-tickets/:id group_tickets#show
+  #  PATCH /api/edge/group-tickets/:id group_tickets#update
+  #  PUT /api/edge/group-tickets/:id group_tickets#update
+  #  DELETE /api/edge/group-tickets/:id group_tickets#destroy
+  #  GET /api/edge/group-ticket-messages group_ticket_messages#index
+  #  POST /api/edge/group-ticket-messages group_ticket_messages#create
+
+  #- group_ticket_message
+  #  GET /api/edge/group-ticket-messages/:id group_ticket_messages#show
+  #  PATCH /api/edge/group-ticket-messages/:id group_ticket_messages#update
+  #  PUT /api/edge/group-ticket-messages/:id group_ticket_messages#update
+  #  DELETE /api/edge/group-ticket-messages/:id group_ticket_messages#destroy
+
+  #- group_report
+  #  GET /api/edge/group-reports group_reports#index
+  #  POST /api/edge/group-reports group_reports#create
+  #  GET /api/edge/group-reports/:id group_reports#show
+  #  PATCH /api/edge/group-reports/:id group_reports#update
+  #  PUT /api/edge/group-reports/:id group_reports#update
+  #  DELETE /api/edge/group-reports/:id group_reports#destroy
+
+  #- group_bans
+  #  GET /api/edge/group-bans group_bans#index
+  #  POST /api/edge/group-bans group_bans#create
+
+  #- group_ban
+  #  GET /api/edge/group-bans/:id group_bans#show
+  #  PATCH /api/edge/group-bans/:id group_bans#update
+  #  PUT /api/edge/group-bans/:id group_bans#update
+  #  DELETE /api/edge/group-bans/:id group_bans#destroy
+
+  #- group_member_note
+  #  GET /api/edge/group-member-notes group_member_notes#index
+  #  POST /api/edge/group-member-notes group_member_notes#create
+  #  GET /api/edge/group-member-notes/:id group_member_notes#show
+  #  PATCH /api/edge/group-member-notes/:id group_member_notes#update
+  #  PUT /api/edge/group-member-notes/:id group_member_notes#update
+  #  DELETE /api/edge/group-member-notes/:id group_member_notes#destroy
+
+  #- group_action_log
+  #  GET /api/edge/group-action-logs group_action_logs#index
+  #  POST /api/edge/group-action-logs group_action_logs#create
+  #  GET /api/edge/group-action-logs/:id group_action_logs#show
+  #  PATCH /api/edge/group-action-logs/:id group_action_logs#update
+  #  PUT /api/edge/group-action-logs/:id group_action_logs#update
+  #  DELETE /api/edge/group-action-logs/:id group_action_logs#destroy
+
+  #- group_invite
+  #  GET /api/edge/group-invites group_invites#index
+  #  POST /api/edge/group-invites group_invites#create
+  #  GET /api/edge/group-invites/:id group_invites#show
+  #  PATCH /api/edge/group-invites/:id group_invites#update
+  #  PUT /api/edge/group-invites/:id group_invites#update
+  #  DELETE /api/edge/group-invites/:id group_invites#destroy
+  #  POST /api/edge/group-invites/:id/_accept group_invites#accept
+  #  POST /api/edge/group-invites/:id/_decline group_invites#decline
+  #  POST /api/edge/group-invites/:id/_revoke group_invites#revoke
+  #  GET /api/edge/groups/:id/_stats groups#stats
+  #  POST /api/edge/groups/:id/_read groups#read
+
+  #- leader_chat_messages
+  #  GET /api/edge/leader-chat-messages leader_chat_messages#index
+  #  POST /api/edge/leader-chat-messages leader_chat_messages#create
+
+  #- leader_chat_message
+  #  GET /api/edge/leader-chat-messages/:id leader_chat_messages#show
+  #  PATCH /api/edge/leader-chat-messages/:id leader_chat_messages#update
+  #  PUT /api/edge/leader-chat-messages/:id leader_chat_messages#update
+  #  DELETE /api/edge/leader-chat-messages/:id leader_chat_messages#destroy
+
+  #- library_entries
+  #  GET /api/edge/library-entries library_entries#index
+  #  POST /api/edge/library-entries library_entries#create
+
+  #- library_entry
+  #  GET /api/edge/library-entries/:id library_entries#show
+  #  PATCH /api/edge/library-entries/:id library_entries#update
+  #  PUT /api/edge/library-entries/:id library_entries#update
+  #  DELETE /api/edge/library-entries/:id library_entries#destroy
+
+  #- library_entries__bulk
+  #  DELETE /api/edge/library-entries/_bulk library_entries#bulk_delete
+  #  PATCH /api/edge/library-entries/_bulk library_entries#bulk_update
+  #  PUT /api/edge/library-entries/_bulk library_entries#bulk_update
+
+  #- library_entries__issues
+  #  GET /api/edge/library-entries/_issues library_entries#issues
+
+  #- library_entry_logs
+  #  GET /api/edge/library-entry-logs library_entry_logs#index
+
+  #- library_entry_log
+  #  GET /api/edge/library-entry-logs/:id library_entry_logs#show
+
+  #- linked_accounts
+  #  GET /api/edge/linked-accounts linked_accounts#index
+  #  POST /api/edge/linked-accounts linked_accounts#create
+
+  #- linked_account
+  #  GET /api/edge/linked-accounts/:id linked_accounts#show
+  #  PATCH /api/edge/linked-accounts/:id linked_accounts#update
+  #  PUT /api/edge/linked-accounts/:id linked_accounts#update
+  #  DELETE /api/edge/linked-accounts/:id linked_accounts#destroy
+
+  #- list_imports
+  #  GET /api/edge/list-imports list_imports#index
+  #  POST /api/edge/list-imports list_imports#create
+
+  #- list_import
+  #  GET /api/edge/list-imports/:id list_imports#show
+  #  PATCH /api/edge/list-imports/:id list_imports#update
+  #  PUT /api/edge/list-imports/:id list_imports#update
+  #  DELETE /api/edge/list-imports/:id list_imports#destroy
+
+  #- manga_index
+  #  GET /api/edge/manga manga#index
+  #  POST /api/edge/manga manga#create
+
+  /manga:
+    $ref: ./paths/media/manga.yml
+  /manga/{id}:
+    $ref: ./paths/media/manga_id.yml
+
+  #- manga
+  #  GET /api/edge/manga/:id manga#show
+  #  PATCH /api/edge/manga/:id manga#update
+  #  PUT /api/edge/manga/:id manga#update
+  #  DELETE /api/edge/manga/:id manga#destroy
+
+  #- mappings
+  #  GET /api/edge/mappings mappings#index
+  #  POST /api/edge/mappings mappings#create
+
+  #- mapping
+  #  GET /api/edge/mappings/:id mappings#show
+  #  PATCH /api/edge/mappings/:id mappings#update
+  #  PUT /api/edge/mappings/:id mappings#update
+  #  DELETE /api/edge/mappings/:id mappings#destroy
+
+  #- media_ignores
+  #  GET /api/edge/media-ignores media_ignores#index
+  #  POST /api/edge/media-ignores media_ignores#create
+
+  #- media_ignore
+  #  GET /api/edge/media-ignores/:id media_ignores#show
+  #  PATCH /api/edge/media-ignores/:id media_ignores#update
+  #  PUT /api/edge/media-ignores/:id media_ignores#update
+  #  DELETE /api/edge/media-ignores/:id media_ignores#destroy
+
+  #- media_reactions
+  #  GET /api/edge/media-reactions media_reactions#index
+  #  POST /api/edge/media-reactions media_reactions#create
+
+  #- media_reaction
+  #  GET /api/edge/media-reactions/:id media_reactions#show
+  #  PATCH /api/edge/media-reactions/:id media_reactions#update
+  #  PUT /api/edge/media-reactions/:id media_reactions#update
+  #  DELETE /api/edge/media-reactions/:id media_reactions#destroy
+
+  #- media_reaction_votes
+  #  GET /api/edge/media-reaction-votes media_reaction_votes#index
+  #  POST /api/edge/media-reaction-votes media_reaction_votes#create
+
+  #- media_reaction_vote
+  #  GET /api/edge/media-reaction-votes/:id media_reaction_votes#show
+  #  PATCH /api/edge/media-reaction-votes/:id media_reaction_votes#update
+  #  PUT /api/edge/media-reaction-votes/:id media_reaction_votes#update
+  #  DELETE /api/edge/media-reaction-votes/:id media_reaction_votes#destroy
+
+  #- notification_settings
+  #  GET /api/edge/notification-settings notification_settings#index
+  #  POST /api/edge/notification-settings notification_settings#create
+
+  #- notification_setting
+  #  GET /api/edge/notification-settings/:id notification_settings#show
+  #  PATCH /api/edge/notification-settings/:id notification_settings#update
+  #  PUT /api/edge/notification-settings/:id notification_settings#update
+  #  DELETE /api/edge/notification-settings/:id notification_settings#destroy
+
+  #- one_signal_players
+  #  GET /api/edge/one-signal-players one_signal_players#index
+  #  POST /api/edge/one-signal-players one_signal_players#create
+
+  #- one_signal_player
+  #  GET /api/edge/one-signal-players/:id one_signal_players#show
+  #  PATCH /api/edge/one-signal-players/:id one_signal_players#update
+  #  PUT /api/edge/one-signal-players/:id one_signal_players#update
+  #  DELETE /api/edge/one-signal-players/:id one_signal_players#destroy
+
+  #- people
+  #  GET /api/edge/people people#index
+  #  POST /api/edge/people people#create
+
+  #- person
+  #  GET /api/edge/people/:id people#show
+  #  PATCH /api/edge/people/:id people#update
+  #  PUT /api/edge/people/:id people#update
+  #  DELETE /api/edge/people/:id people#destroy
+
+  #- posts
+  #  GET /api/edge/posts posts#index
+  #  POST /api/edge/posts posts#create
+
+  #- post
+  #  GET /api/edge/posts/:id posts#show
+  #  PATCH /api/edge/posts/:id posts#update
+  #  PUT /api/edge/posts/:id posts#update
+  #  DELETE /api/edge/posts/:id posts#destroy
+
+  #- post_follows
+  #  GET /api/edge/post-follows post_follows#index
+  #  POST /api/edge/post-follows post_follows#create
+
+  #- post_follow
+  #  GET /api/edge/post-follows/:id post_follows#show
+  #  PATCH /api/edge/post-follows/:id post_follows#update
+  #  PUT /api/edge/post-follows/:id post_follows#update
+  #  DELETE /api/edge/post-follows/:id post_follows#destroy
+
+  #- post_likes
+  #  GET /api/edge/post-likes post_likes#index
+  #  POST /api/edge/post-likes post_likes#create
+
+  #- post_like
+  #  GET /api/edge/post-likes/:id post_likes#show
+  #  PATCH /api/edge/post-likes/:id post_likes#update
+  #  PUT /api/edge/post-likes/:id post_likes#update
+  #  DELETE /api/edge/post-likes/:id post_likes#destroy
+
+  #- producers
+  #  GET /api/edge/producers producers#index
+  #  POST /api/edge/producers producers#create
+
+  #- producer
+  #  GET /api/edge/producers/:id producers#show
+  #  PATCH /api/edge/producers/:id producers#update
+  #  PUT /api/edge/producers/:id producers#update
+  #  DELETE /api/edge/producers/:id producers#destroy
+
+  #- profile_links
+  #  GET /api/edge/profile-links profile_links#index
+  #  POST /api/edge/profile-links profile_links#create
+
+  #- profile_link
+  #  GET /api/edge/profile-links/:id profile_links#show
+  #  PATCH /api/edge/profile-links/:id profile_links#update
+  #  PUT /api/edge/profile-links/:id profile_links#update
+  #  DELETE /api/edge/profile-links/:id profile_links#destroy
+
+  #- profile_link_sites
+  #  GET /api/edge/profile-link-sites profile_link_sites#index
+
+  #- profile_link_site
+  #  GET /api/edge/profile-link-sites/:id profile_link_sites#show
+
+  #- reports
+  #  GET /api/edge/reports reports#index
+  #  POST /api/edge/reports reports#create
+
+  #- report
+  #  GET /api/edge/reports/:id reports#show
+  #  PATCH /api/edge/reports/:id reports#update
+  #  PUT /api/edge/reports/:id reports#update
+  #  DELETE /api/edge/reports/:id reports#destroy
+
+  #- roles
+  #  GET /api/edge/roles roles#index
+  #  POST /api/edge/roles roles#create
+
+  #- role
+  #  GET /api/edge/roles/:id roles#show
+  #  PATCH /api/edge/roles/:id roles#update
+  #  PUT /api/edge/roles/:id roles#update
+  #  DELETE /api/edge/roles/:id roles#destroy
+
+  #- site_announcements
+  #  GET /api/edge/site-announcements site_announcements#index
+  #  POST /api/edge/site-announcements site_announcements#create
+
+  #- site_announcement
+  #  GET /api/edge/site-announcements/:id site_announcements#show
+  #  PATCH /api/edge/site-announcements/:id site_announcements#update
+  #  PUT /api/edge/site-announcements/:id site_announcements#update
+  #  DELETE /api/edge/site-announcements/:id site_announcements#destroy
+
+  #- stats
+  #  GET /api/edge/stats stats#index
+
+  #- stat
+  #  GET /api/edge/stats/:id stats#show
+
+  #- streamers
+  #  GET /api/edge/streamers streamers#index
+  #  POST /api/edge/streamers streamers#create
+
+  #- streamer
+  #  GET /api/edge/streamers/:id streamers#show
+  #  PATCH /api/edge/streamers/:id streamers#update
+  #  PUT /api/edge/streamers/:id streamers#update
+  #  DELETE /api/edge/streamers/:id streamers#destroy
+
+  #- streaming_links
+  #  GET /api/edge/streaming-links streaming_links#index
+  #  POST /api/edge/streaming-links streaming_links#create
+
+  #- streaming_link
+  #  GET /api/edge/streaming-links/:id streaming_links#show
+  #  PATCH /api/edge/streaming-links/:id streaming_links#update
+  #  PUT /api/edge/streaming-links/:id streaming_links#update
+  #  DELETE /api/edge/streaming-links/:id streaming_links#destroy
+
+  #- trending
+  #  GET /api/edge/trending/:namespace trending#index
+
+  #- uploads
+  #  GET /api/edge/uploads uploads#index
+  #  POST /api/edge/uploads uploads#create
+
+  #- upload
+  #  GET /api/edge/uploads/:id uploads#show
+  #  PATCH /api/edge/uploads/:id uploads#update
+  #  PUT /api/edge/uploads/:id uploads#update
+  #  DELETE /api/edge/uploads/:id uploads#destroy
+
+  #- uploads__bulk
+  #  POST /api/edge/uploads/_bulk uploads#bulk_create
+
+  #- users
+  #  GET /api/edge/users users#index
+  #  POST /api/edge/users users#create
+
+  #- user
+  #  GET /api/edge/users/:id users#show
+  #  PATCH /api/edge/users/:id users#update
+  #  PUT /api/edge/users/:id users#update
+  #  DELETE /api/edge/users/:id users#destroy
+  #- user_roles
+  #  GET /api/edge/user-roles user_roles#index
+  #  POST /api/edge/user-roles user_roles#create
+
+  #- user_role
+  #  GET /api/edge/user-roles/:id user_roles#show
+  #  PATCH /api/edge/user-roles/:id user_roles#update
+  #  PUT /api/edge/user-roles/:id user_roles#update
+  #  DELETE /api/edge/user-roles/:id user_roles#destroy
 
 components:
+  parameters:
+    Fields:
+      $ref: ./parameters/fields.yml
+    Filter:
+      $ref: ./parameters/filter.yml
+    FilterAgeRating:
+      $ref: ./parameters/filter/ageRating.yml
+    FilterAverageRating:
+      $ref: ./parameters/filter/averageRating.yml
+    FilterCategories:
+      $ref: ./parameters/filter/categories.yml
+    FilterChapterCount:
+      $ref: ./parameters/filter/chapterCount.yml
+    FilterEpisodeCount:
+      $ref: ./parameters/filter/episodeCount.yml
+    FilterSeason:
+      $ref: ./parameters/filter/season.yml
+    FilterSeasonYear:
+      $ref: ./parameters/filter/seasonYear.yml
+    FilterSince:
+      $ref: ./parameters/filter/since.yml
+    FilterStatus:
+      $ref: ./parameters/filter/status.yml
+    FilterStreamers:
+      $ref: ./parameters/filter/streamers.yml
+    FilterSubTypeAnime:
+      $ref: ./parameters/filter/subtype_anime.yml
+    FilterSubTypeManga:
+      $ref: ./parameters/filter/subtype_manga.yml
+    FilterText:
+      $ref: ./parameters/filter/text.yml
+    FilterUserCount:
+      $ref: ./parameters/filter/userCount.yml
+    FilterYear:
+      $ref: ./parameters/filter/year.yml
+    Page:
+      $ref: ./parameters/page.yml
+    Sort:
+      $ref: ./parameters/sort.yml
+
   # https://github.com/hummingbird-me/kitsu-server/tree/the-future/app/resources
   # https://github.com/hummingbird-me/kitsu-server/tree/the-future/app/models
   # https://github.com/hummingbird-me/kitsu-server/tree/the-future/app/policies
   schemas:
+    IDType:
+      $ref: ./schemas/id_type.yml
+
+    EnumAlgoliaIndex:
+      $ref: ./schemas/enums/algoliaIndex.yml
+    EnumSubTypeAnime:
+      $ref: ./schemas/enums/subtype_anime.yml
+
+    LinksPagination:
+      $ref: ./schemas/links/pagination.yml
+    LinksSelf:
+      $ref: ./schemas/links/self.yml
+    LinksSelfRelated:
+      $ref: ./schemas/links/self_related.yml
+
+    MetaCount:
+      $ref: ./schemas/meta/count.yml
+
+    AlgoliaCharacters:
+      $ref: ./schemas/resources/algoliaKeys/characters.yml
+    AlgoliaGroups:
+      $ref: ./schemas/resources/algoliaKeys/groups.yml
+    AlgoliaMedia:
+      $ref: ./schemas/resources/algoliaKeys/media.yml
+    AlgoliaPosts:
+      $ref: ./schemas/resources/algoliaKeys/posts.yml
+    AlgoliaUsers:
+      $ref: ./schemas/resources/algoliaKeys/users.yml
     #ActivityGroup:
     #  $ref: ./schemas/resources/activityGroup.yml
     #Activity:
@@ -552,8 +732,8 @@ components:
     #  $ref: ./schemas/resources/actor.yml
     Anime:
       $ref: ./schemas/resources/anime.yml
-    #Base: # Inherited by all resources
-    #  $ref: ./schemas/resources/base.yml
+    Base: # Inherited by all resources
+      $ref: ./schemas/resources/base.yml
     #Block:
     #  $ref: ./schemas/resources/block.yml
     #CategoryFavorite:
@@ -620,8 +800,8 @@ components:
     #  $ref: ./schemas/resources/linked-account.yml
     #ListImport:
     #  $ref: ./schemas/resources/list-import.yml
-    #Manga:
-    #  $ref: ./schemas/resources/manga.yml
+    Manga:
+      $ref: ./schemas/resources/manga.yml
     #Mapping:
     #  $ref: ./schemas/resources/mapping.yml
     #MediaCharacter:
@@ -636,8 +816,8 @@ components:
     #  $ref: ./schemas/resources/media-reaction-vote.yml
     #MediaRelationship:
     #  $ref: ./schemas/resources/media-relationship.yml
-    #Media:
-    #  $ref: ./schemas/resources/media.yml
+    Media:
+      $ref: ./schemas/resources/media.yml
     #MediaStaff:
     #  $ref: ./schemas/resources/media-staff.yml
     #Naughty:

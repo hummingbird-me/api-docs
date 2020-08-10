@@ -1,0 +1,15 @@
+type: object
+allOf:
+- $ref: ./base.yml
+- properties:
+    errors:
+      properties:
+        title:
+          enum: [Create/Update/Delete Forbidden]
+        detail:
+          enum:
+          - You don't have permission to create/update/delete this {resource}
+        code:
+          enum: ['403']
+        status:
+          enum: ['403']

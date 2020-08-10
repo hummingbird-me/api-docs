@@ -1,0 +1,16 @@
+type: object
+title: chapters
+properties:
+  links:
+    $ref: ../../links/self_related.yml
+  data:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '1'
+        type:
+          type: string
+          enum: [chapters]

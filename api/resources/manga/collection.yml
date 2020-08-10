@@ -7,7 +7,7 @@ properties:
   data:
     type: array
     items:
-      $ref: ../../schemas/resources/anime.yml
+      $ref: ../../schemas/resources/manga.yml
   meta:
     allOf:
       - $ref: ../../schemas/meta/count.yml

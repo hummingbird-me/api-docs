@@ -1,0 +1,7 @@
+type: string
+enum:
+- winter
+- spring
+- summer
+- fall
+example: spring

@@ -1,0 +1,7 @@
+type: object
+readOnly: true
+properties:
+  count:
+    type: integer
+    description: Total number of resources in the collection
+    example: 15000

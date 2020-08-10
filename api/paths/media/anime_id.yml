@@ -1,0 +1,71 @@
+get:
+  tags:
+  - Anime
+  description: Get an anime resource
+  summary: Get Anime
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/anime/resource.yml
+    '400':
+      description: Bad Request
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/400.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml
+patch:
+  tags:
+  - Anime
+  description: Update Anime
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: ../../resources/anime/resource.yml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/anime/resource.yml
+    '403':
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/403.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml
+delete:
+  tags:
+  - Anime
+  description: Delete Anime
+  responses:
+    '204':
+      description: No Content
+    '403':
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/403.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml

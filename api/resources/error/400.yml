@@ -1,0 +1,14 @@
+type: object
+allOf:
+- $ref: ./base.yml
+- properties:
+    errors:
+      properties:
+        title:
+          example: Invalid field
+        detail:
+          example: '{field} is not a valid relationship of {resource}'
+        code:
+          example: '112'
+        status:
+          enum: ['400']

@@ -1,0 +1,5 @@
+type: object
+title: mangaCharacters
+deprecated: true
+readOnly: true
+description: Replaced by `characters`

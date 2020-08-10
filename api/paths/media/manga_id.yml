@@ -1,0 +1,71 @@
+get:
+  tags:
+  - Manga
+  description: Get a manga resource
+  summary: Get Manga
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/manga/resource.yml
+    '400':
+      description: Bad Request
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/400.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml
+patch:
+  tags:
+  - Manga
+  description: Update Manga
+  requestBody:
+    content:
+      application/vnd.api+json:
+        schema:
+          $ref: ../../resources/manga/resource.yml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/manga/resource.yml
+    '403':
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/403.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml
+delete:
+  tags:
+  - Manga
+  description: Delete Manga
+  responses:
+    '204':
+      description: No Content
+    '403':
+      description: Forbidden
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/403.yml
+    '404':
+      description: Not Found
+      content:
+        application/vnd.api+json:
+          schema:
+            $ref: ../../resources/error/404.yml

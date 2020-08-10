@@ -1,0 +1,19 @@
+type: object
+title: Posts
+properties:
+  posts:
+    type: object
+    description: Search-only API Key and Index for posts
+    properties:
+      key:
+        type: string
+        format: base64
+        description: Algolia Search-only API Key for the posts index
+        example: ZXhhbXBsZSBwb3N0cw==
+
+      index:
+        type: string
+        format: base64
+        description: Name of the posts index on Algolia
+        enum: [production_posts]
+

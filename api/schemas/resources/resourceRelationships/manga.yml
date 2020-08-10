@@ -1,0 +1,9 @@
+type: object
+properties:
+  chapters:
+    $ref: ../relationships/chapters.yml
+  mangaCharacters:
+    $ref: ../relationships/mangaCharacters.yml
+  mangaStaff:
+    $ref: ../relationships/mangaStaff.yml
+

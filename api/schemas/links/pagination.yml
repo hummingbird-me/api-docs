@@ -1,18 +1,24 @@
 type: object
 readOnly: true
+required:
+- first
+- last
 properties:
   first:
     type: string
     description: First page of the collection
     example: https://kitsu.io/api/edge/...
+
   prev:
     type: string
-    description: Previous page of the collection. Not present if there is not a previous page
+    description: Previous page of the collection
     example: https://kitsu.io/api/edge/...
+
   next:
     type: string
-    description: Next page of the collection. Not present if there is not a next page
+    description: Next page of the collection
     example: https://kitsu.io/api/edge/...
+
   last:
     type: string
     description: Last page of the collection

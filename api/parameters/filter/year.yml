@@ -1,0 +1,10 @@
+in: query
+name: filter[year]
+description: |
+  Filter by year. Supports numeric ranges with Ruby syntax:
+  - `2020..` to inclusively get media from `>= 2020`
+  - `..2020` to inclusively get media from `<= 2020`
+  - `2015..2020` to inclusively get media from `>= 2015` and `<= 2020`
+schema:
+  type: integer
+  example: 2020

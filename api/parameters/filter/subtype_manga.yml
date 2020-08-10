@@ -1,0 +1,5 @@
+in: query
+name: filter[subtype]
+description: Filter by subtype. Use a comma-deliminated list to filter by multiple subtypes
+schema:
+  $ref: ../../schemas/enums/subtype_manga.yml

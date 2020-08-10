@@ -1,0 +1,4 @@
+
+type: string
+enum: [G, PG, R, R18]
+example: PG

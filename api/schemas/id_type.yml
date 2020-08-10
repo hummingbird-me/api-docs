@@ -1,0 +1,14 @@
+type: object
+required:
+- id
+- type
+properties:
+  id:
+    type: string
+    format: integer
+    description: ID of the resource
+    example: '1'
+
+  type:
+    type: string
+    description: Type of the resource

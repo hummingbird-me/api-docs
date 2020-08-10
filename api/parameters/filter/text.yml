@@ -1,0 +1,6 @@
+in: query
+name: sort
+description: Search within `titles`, `abbreviatedTitles`, `description` `people` and `characters`
+schema:
+  type: string
+example: id
