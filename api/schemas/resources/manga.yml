@@ -15,7 +15,6 @@ allOf:
     attributes:
       type: object
       allOf:
-      - $ref: ./base.yml
       - $ref: ./media.yml
       - type: object
         properties:

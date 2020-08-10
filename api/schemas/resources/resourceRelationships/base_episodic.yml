@@ -1,0 +1,4 @@
+type: object
+properties:
+  episodes:
+    $ref: ../relationships/episodes.yml

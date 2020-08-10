@@ -24,22 +24,27 @@ get:
             $ref: ../../resources/error/404.yml
   parameters:
   - $ref: ../../parameters/fields.yml
+  - $ref: ../../parameters/include.yml
   - $ref: ../../parameters/page.yml
   - $ref: ../../parameters/sort.yml
   - $ref: ../../parameters/filter/averageRating.yml
   - $ref: ../../parameters/filter/categories.yml
+  - $ref: ../../parameters/filter/chapterCount.yml
+  - $ref: ../../parameters/filter/id.yml
   - $ref: ../../parameters/filter/since.yml
+  - $ref: ../../parameters/filter/slug.yml
   - $ref: ../../parameters/filter/status.yml
+  - $ref: ../../parameters/filter/subtype_manga.yml
+  - $ref: ../../parameters/filter/text.yml
   - $ref: ../../parameters/filter/userCount.yml
   - $ref: ../../parameters/filter/year.yml
-  - $ref: ../../parameters/filter/chapterCount.yml
-  - $ref: ../../parameters/filter/subtype_manga.yml
+
 post:
+  security:
+  - OAuth2: [admin]
   tags:
   - Manga
   summary: Create Manga
-  description: |
-    Users must be authenticated and have the `admin` User Role to create a resource.
   requestBody:
     content:
       application/vnd.api+json:

@@ -1,0 +1,94 @@
+type: object
+required:
+- id
+- type
+allOf:
+- $ref: ../id_type.yml
+- type: object
+  properties:
+    type:
+      enum: [episodes]
+
+    links:
+      $ref: ../links/self.yml
+
+    attributes:
+      type: object
+      allOf:
+      - $ref: ./base.yml
+      - type: object
+        properties:
+          description:
+            type: string
+            description: Short synopsis of the episode
+
+          synopsis:
+            type: string
+            deprecated: true
+            description: Replaced by the `description` attribute
+
+          titles:
+            type: object
+            description: Localised episode titles. Any ISO 639-1 (`en`) or ICU Locale (`en_us`) may appear here
+            additionalProperties:
+              type: string
+            example:
+              en: And Between the Wasteland and Sky
+              en_jp: Soshite Kouya to Sora no Aida wo
+              ja_jp: そして荒野と空の間を
+
+          canonicalTitle:
+            type: string
+            nullable: true
+            description: The most commonly used title from the `titles` attribute
+            example: And Between the Wasteland and Sky
+
+          seasonNumber:
+            type: integer
+            nullable: true
+            example: 1
+
+          number:
+            type: integer
+            nullable: true
+            example: 8
+            description: Absolute episode number
+
+          relativeNumber:
+            type: integer
+            nullable: true
+            example: 8
+            description: Episode number relative to the `seasonNumber`
+
+          airDate:
+            type: string
+            nullable: true
+            format: date
+            description: Date the episode aired. YYYY-MM-DD
+            example: '1998-05-20'
+
+          length:
+            type: integer
+            format: minutes
+            nullable: true
+            minimum: 1
+            description: Length of the episode in minutes
+
+          thumbnail:
+            type: object
+            nullable: true
+            properties:
+              original:
+                type: string
+                format: uri
+                example: https://media.kitsu.io/.../original.jpg
+              meta:
+                type: object
+                properties:
+                  dimensions:
+                    type: object
+
+    relationships:
+      description: Related resources
+      allOf:
+      - $ref: ./resourceRelationships/episode.yml

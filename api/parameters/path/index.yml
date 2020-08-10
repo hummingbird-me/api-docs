@@ -1,0 +1,6 @@
+in: path
+name: index
+description: Short name of the Algolia Search Index
+required: true
+schema:
+  $ref: ../../schemas/enums/algoliaIndex.yml

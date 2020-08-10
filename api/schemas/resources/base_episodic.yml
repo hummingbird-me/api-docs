@@ -1,0 +1,23 @@
+# Implements
+#   filter[episodeCount]
+#   filter[episodeLength]
+type: object
+properties:
+  episodeCount:
+    type: integer
+    nullable: true
+    minimum: 1
+
+  episodeLength:
+    type: integer
+    format: seconds
+    nullable: true
+    minimum: 1
+    description: Length of the episode in seconds
+
+  totalLength:
+    type: integer
+    format: seconds
+    nullable: true
+    minimum: 1
+    readOnly: true

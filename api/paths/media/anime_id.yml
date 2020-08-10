@@ -1,3 +1,6 @@
+parameters:
+- $ref: ../../parameters/path/id.yml
+
 get:
   tags:
   - Anime
@@ -22,7 +25,10 @@ get:
         application/vnd.api+json:
           schema:
             $ref: ../../resources/error/404.yml
+
 patch:
+  security:
+  - OAuth2: [admin]
   tags:
   - Anime
   description: Update Anime
@@ -50,7 +56,10 @@ patch:
         application/vnd.api+json:
           schema:
             $ref: ../../resources/error/404.yml
+
 delete:
+  security:
+  - OAuth2: [admin]
   tags:
   - Anime
   description: Delete Anime

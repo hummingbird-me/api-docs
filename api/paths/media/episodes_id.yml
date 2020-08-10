@@ -1,0 +1,5 @@
+  #- episode
+  #  GET /api/edge/episodes/:id episodes#show
+  #  PATCH /api/edge/episodes/:id episodes#update
+  #  PUT /api/edge/episodes/:id episodes#update
+  #  DELETE /api/edge/episodes/:id episodes#destroy

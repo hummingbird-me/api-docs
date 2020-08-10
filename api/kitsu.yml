@@ -24,7 +24,7 @@ info:
 
     You can be more specific about the data you want to retrieve by using URL parameters and are outlined below.
 
-    **Note**: This documentation will display parameters with brackets ([ and ]) for readability, but actual URLs will need to be percent-encoded (%5B and %5D).
+    **NOTE:** This documentation will display parameters with brackets ([ and ]) for readability, but actual URLs will need to be percent-encoded (%5B and %5D).
 
     ## Request Headers
 
@@ -107,18 +107,155 @@ info:
 
     Many implementations in over 13 languages can be found on the [JSON:API website](https://jsonapi.org/implementations/#client-libraries).
 
+    # Authentication
+
+    Kitsu uses OAuth 2 for authentication.
+    Authentication is not required for most public-facing `GET` endpoints.
+
+    It is advised to use an OAuth2 client for the language you're using, however it is not required.
+
+    **NOTE:** NSFW/R18 content (feed posts, media, categories etc.) are hidden for all unauthenticated requests and for accounts that have NSFW content disabled in their settings.
+
+    <SecurityDefinitions />
+
+    ## Request Headers
+
+    OAuth does not use the JSON:API headers, instead one of the following headers are required:
+
+    | Header       | json               | x-www-form-urlencoded
+    | ------------ | ------------------ | ---------------------
+    | Content-Type | application/json   | application/x-www-form-urlencoded
+
+    ## App Registration
+
+    After registering your app, you will receieve a client ID and a client secret.
+    The client ID is considered public information and is used to build login URLs or included in source code.
+    The client secret **must** be kept confidential.
+
+    **NOTE:** Application registration has not yet been implemented.
+    For now, `client_id` and `client_secret` can be omitted, provided as empty strings or with the following:
+
+    ```
+    CLIENT_ID: dd031b32d2f56c990b1425efe6c42ad847e7fe3ab46bf1299f05ecd856bdb7dd
+    CLIENT_SECRET: 54d7307928f63414defd96399fc31ba847961ceaecef3a5fd93144e960c0e151
+    ```
+
+    ## Grant Types
+
+    OAuth 2 provides several grant types for different use cases.
+    The grant types defined are:
+
+    - **Authorization Code** for apps running on a web server,
+    browser-based and mobile apps (not yet implemented)
+    - **Password** for logging in with a username and Password
+    - **Client Credentials** for application access (not yet implemented)
+
+    ## Obtaining an Access Token
+
+    ### Password Grant
+
+    Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following body:
+
+    #### application/json
+
+    ```json5
+    {
+      grant_type: 'password',
+      username: '<email|slug>',
+      password: '<password>' // RFC3986 URl encoded string
+    }
+    ```
+
+    #### application/x-www-form-urlencoded
+
+    ```
+    grant_type=password&username=<email|slug>&password=<password>
+    ```
+
+    **IMPORTANT:** If you use `x-www-form-urlencoded`, you **must** URL encode the password field using the [RFC3986 encoding scheme](http://whatwebwhat.com/en/page/350/oauth-and-url-encoding).
+
+    ## Refreshing an Access Token
+
+    Send a `POST` request to `https://kitsu.io/api/oauth/token` with the following body:
+
+    **NOTE:** If the token was issued using a `client_secret` then the `client_id` and `client_secret` parameters must be provided.
+
+    #### application/json
+
+    ```json5
+    {
+      grant_type: 'refresh_token',
+      refresh_token: '<refresh_token>'
+    }
+    ```
+
+    #### application/x-www-form-urlencoded
+
+    ```
+    grant_type=refresh_token&refresh_token=<refresh_token>
+    ```
+
+    ## Using an Access Token
+
+    Once you've obtained the `access_token` using one of the grant types, you can add the following header to all API requests:
+
+    ```
+    Authorization: Bearer <access_token>
+    ```
+
+
+    ## Access Token Responses
+
+    ### Successful Response
+
+    If the request for an access token is valid, the server will respond with the following data:
+
+    ```json5
+    {
+      access_token: 'abc123', // Token used in Authorization header
+      created_at: 1518235801,
+      expires_in: 2591963, // Seconds until the access_token expires (30 days default)
+      refresh_token: '123abc', // Token used to get a new access_token
+      scope: 'public',
+      token_type: 'bearer'
+    }
+    ```
+
+    ### Unsuccessful Response
+
+    If the access token request is invalid, the server will respond with one of six errors in the following format:
+
+    ```json5
+    {
+      error: 'invalid_request',
+      error_description: '<reason_why>'
+    }
+    ```
+
+    These six errors are:
+
+    | Error                    | Status | Explanation
+    | ------------------------ | ------ | -----------
+    | `invalid_request`        | `400`  | The request is missing a parameter, uses an unsupported parameter or repeats a parameter.
+    | `invalid_client`         | `401`  | The request contains an invalid client ID or secret.
+    | `invalid_grant`          | `400`  | The authorization code (or password with the password grant) is invalid or expired.
+    | `invalid_scope`          | `400`  | The request contains an invalid scope (password or client credential grants).
+    | `unauthorized_client`    | `400`  | The client is not authorized to use the requested grant type.
+    | `unsupported_grant_type` | `400`  | The grant type requested is not recognized by the server.
+
 servers:
 - url: https://kitsu.io/api/edge
   description: Production API
 
 x-tagGroups:
-  - name: Search
-    tags:
-    - Algolia
-  - name: Media
-    tags:
-    - Anime
-    - Manga
+- name: Search
+  tags:
+  - Algolia
+- name: Media
+  tags:
+  - Anime
+  - Manga
+  - Episodes
 
 tags:
 - name: Algolia
@@ -127,7 +264,7 @@ tags:
   description: |
     Kitsu uses [Algolia](https://www.algolia.com) for searching. Algolia's search provides more accurate search results and allows you to build complex search filters to find exactly what you want. Refer to the [Algolia Docs](https://www.algolia.com/doc/api-client/getting-started/instantiate-client-index/) for further usage.
 
-    **Important Notes**:
+    **IMPORTANT:**
     - These keys are **not** static;
     - These keys respect user content settings - Mature content will **not** be visible if:
       - The keys are requested without a valid `Authorization` header
@@ -228,15 +365,10 @@ paths:
   #- embeds
   #  POST /api/edge/embeds embeds#create
 
-  #- episodes
-  #  GET /api/edge/episodes episodes#index
-  #  POST /api/edge/episodes episodes#create
-
-  #- episode
-  #  GET /api/edge/episodes/:id episodes#show
-  #  PATCH /api/edge/episodes/:id episodes#update
-  #  PUT /api/edge/episodes/:id episodes#update
-  #  DELETE /api/edge/episodes/:id episodes#destroy
+  /episodes:
+    $ref: ./paths/media/episodes.yml
+  /episodes/{id}:
+    $ref: ./paths/media/episodes_id.yml
 
   #- favorites
   #  GET /api/edge/favorites favorites#index
@@ -652,6 +784,18 @@ paths:
   #  DELETE /api/edge/user-roles/:id user_roles#destroy
 
 components:
+  # https://swagger.io/docs/specification/authentication/oauth2/
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: https://kitsu.io/api/oauth/token
+          scopes:
+            read: Not yet implemented
+            write: Not yet implemented
+            admin: Not yet implemented
+
   parameters:
     Fields:
       $ref: ./parameters/fields.yml
@@ -754,8 +898,8 @@ components:
     #  $ref: ./schemas/resources/comment.yml
     #Destination:
     #  $ref: ./schemas/resources/destination.yml
-    #Episode:
-    #  $ref: ./schemas/resources/episode.yml
+    Episode:
+      $ref: ./schemas/resources/episode.yml
     #Favorite:
     #  $ref: ./schemas/resources/favorite.yml
     #Feed:

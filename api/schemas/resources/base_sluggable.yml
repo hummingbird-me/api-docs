@@ -1,0 +1,7 @@
+# Implements:
+#   filter[slug]
+type: object
+properties:
+  slug:
+    type: string
+    description: Unique URL-safe identifier

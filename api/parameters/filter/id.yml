@@ -1,0 +1,6 @@
+in: query
+name: filter[id]
+description: Filter by `id`. Use a comma-deliminated list to filter by multiple IDs
+schema:
+  type: string
+example: '1,2'

@@ -14,9 +14,4 @@ get:
           schema:
             $ref: ../../resources/algoliaKeys/resource.yml
   parameters:
-  - name: index
-    in: path
-    description: ''
-    required: true
-    schema:
-      $ref: ../../schemas/enums/algoliaIndex.yml
+  - $ref: ../../parameters/path/index.yml

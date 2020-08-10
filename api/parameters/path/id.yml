@@ -1,0 +1,7 @@
+in: path
+name: id
+description: Resource ID
+required: true
+schema:
+  type: string
+example: '1'

@@ -15,8 +15,8 @@ allOf:
     attributes:
       type: object
       allOf:
-      - $ref: ./base.yml
       - $ref: ./media.yml
+      - $ref: ./base_episodic.yml
       - type: object
         properties:
           subtype:
@@ -26,17 +26,6 @@ allOf:
             readOnly: true
             deprecated: true
             description: Replaced by `subtype`
-
-          episodeCount:
-            type: integer
-            nullable: true
-            minimum: 1
-
-          episodeLength:
-            type: integer
-            format: seconds
-            nullable: true
-            minimum: 1
 
           youtubeVideoId:
             type: string

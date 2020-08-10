@@ -1,18 +1,20 @@
-parameters:
-- $ref: ../../parameters/path/id.yml
+
+  #- episodes
+  #  GET /api/edge/episodes episodes#index
+  #  POST /api/edge/episodes episodes#create
 
 get:
   tags:
-  - Manga
-  description: Get a manga resource
-  summary: Get Manga
+  - Episodes
+  summary: Get Episodes Collection
+  description: Get a collection of episode resources
   responses:
     '200':
       description: OK
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/manga/resource.yml
+            $ref: ../../resources/episode/collection.yml
     '400':
       description: Bad Request
       content:
@@ -25,47 +27,31 @@ get:
         application/vnd.api+json:
           schema:
             $ref: ../../resources/error/404.yml
+  parameters:
+  - $ref: ../../parameters/fields.yml
+  - $ref: ../../parameters/include.yml
+  - $ref: ../../parameters/page.yml
+  - $ref: ../../parameters/sort.yml
+  - $ref: ../../parameters/filter/id.yml
 
-patch:
+post:
   security:
   - OAuth2: [admin]
   tags:
-  - Manga
-  description: Update Manga
+  - Anime
+  summary: Create Anime
   requestBody:
     content:
       application/vnd.api+json:
         schema:
-          $ref: ../../resources/manga/resource.yml
+          $ref: ../../resources/anime/resource.yml
   responses:
-    '200':
-      description: OK
+    '201':
+      description: Created
       content:
         application/vnd.api+json:
           schema:
-            $ref: ../../resources/manga/resource.yml
-    '403':
-      description: Forbidden
-      content:
-        application/vnd.api+json:
-          schema:
-            $ref: ../../resources/error/403.yml
-    '404':
-      description: Not Found
-      content:
-        application/vnd.api+json:
-          schema:
-            $ref: ../../resources/error/404.yml
-
-delete:
-  security:
-  - OAuth2: [admin]
-  tags:
-  - Manga
-  description: Delete Manga
-  responses:
-    '204':
-      description: No Content
+            $ref: ../../resources/anime/resource.yml
     '403':
       description: Forbidden
       content:
