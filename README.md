@@ -15,18 +15,76 @@ Kitsu is a modern anime discovery platform that helps you track the anime you're
 
 ## Contributing
 
-The documentation is written with [API Blueprint][3] and [MSON][4]. Trivial changes can be added using GitHub's built-in editor. For bigger changes it is advised to follow the steps below.
+The documentation is written with [OpenAPI 3][3] and [YAML 1.2][4]. Trivial changes can be added using GitHub's built-in editor. For bigger changes it is advised to follow the steps below.
 
 If you have any questions you can:
-- Join our [Discord server][7]
-- Join our Slack by sending an email to josh@kitsu.io
+- Ask us in `#api` on our [Discord server][7]
 - Ping [@wopian], [@matthewdias] or [@nuck] on Kitsu.
+
+### File Structure
+
+The OpenAPI schema is split into multiple directories. While it looks complicated, it reduces the amount of repeated parameters and resource attributes/relationships to near zero.
+
+Resource, relationship and filter inheritence matches the model definitions on the server repo.
+
+```yaml
+api
+├───parameters  # Query Parameters
+│   └───path    # Path Parameters
+│
+├───paths       # Endpoints, grouped by tagGroups
+│
+├───resources   # Top-level JSON:API resource structures (one, many, included)
+│   ├───anime
+│   └───error   # JSON:API error responses
+│
+└───schemas                       # Data Models
+    ├───enums
+    │
+    ├───filters                   # Reusable JSON:API filter parameters
+    │   ├───resource              # Root filter parameter for each resource
+    │   └───resourceFilters       # Grouped filters (inheritance)
+    │
+    ├───links                     # JSON:API link properties
+    │
+    ├───meta                      # JSON:API meta properties
+    │
+    └───resources                 # JSON:API resources
+        ├───relationships         # JSON:API relationships
+        └───resourceRelationships # Grouped relationships (inheritance)
+```
+
+### Base Files
+
+These are defined as seperate resources in the server definitions and are inherited by all other definitions. Check `anime` and `media` in `api/schemas/resources` and `api/schemas/filters/resourceFilters` to see how inheritance is applied.
+
+#### Resources
+
+All resources inherit from `api/schemas/resources/base.yml`
+
+In addition:
+
+- Sluggable resources inherit from `api/schemas/resources/base_sluggable.yml`
+- Episodic resources inherit from `api/schemas/resources/base_episodic.yml`
+
+#### Resource Relationships
+
+- Episodic resources inherit from `api/schemas/resources/resourceRelationships/base_episodic.yml`
+
+#### Filters
+
+All resources inherit from `api/schemas/filters/resourceFilters/base.yml`
+
+In addiion:
+
+- Sluggable resources inherit from `api/schemas/filters/resourceFilters/base_sluggable.yml`
+- Episodic resources inherit from `api/schemas/filters/resourceFilters/base_episodic.yml`
 
 ### Requirements
 
 - [git](https://git-scm.com) > `2.0.0`
-- [node.js](https://nodejs.org) > `8.0.0`
-- [yarn](https://yarnpkg.com) > `1.0.0`
+- [node.js](https://nodejs.org) > `12.0.0`
+- [yarn](https://yarnpkg.com) > `1.22.0`
 
 ### Development
 
@@ -39,14 +97,13 @@ If you have any questions you can:
 4. Install dependencies (`yarn`)
 
 5. Make the appropriate changes in the source files
+  - Check the changes locally with `yarn start`
 
-6. Check your changes for issues (`yarn test`)
+6. Commit your changes (`git commit -am 'feat: improve docs'`)
 
-7. Commit your changes (`git commit -am 'feat: improve docs'`)
+7. Push to your branch (`git push origin improve-docs`)
 
-8. Push to your branch (`git push origin improve-docs`)
-
-9. [Create a Pull Request][6]
+8. [Create a Pull Request][6]
 
 ## Contributors
 
@@ -55,8 +112,8 @@ If you have any questions you can:
 [0]:https://github.com/hummingbird-me/hummingbird-server
 [1]:https://github.com/hummingbird-me/hummingbird-client
 [2]:https://travis-ci.org/hummingbird-me/api-docs
-[3]:https://apiblueprint.org
-[4]:https://github.com/apiaryio/mson
+[3]:http://spec.openapis.org/oas/v3.0.3
+[4]:https://yaml.org/spec/1.2/spec.html
 [5]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
 [6]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
 [7]:https://invite.gg/kitsu
