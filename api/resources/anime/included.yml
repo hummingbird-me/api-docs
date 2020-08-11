@@ -1,10 +1,8 @@
-properties:
-  included:
-    type: array
-    readOnly: true
-    description: Included resources. Only present with the `include={relationship} query parameter
-    items:
-      type: object
-      anyOf:
-      - $ref: ../../schemas/resources/episode.yml
+allOf:
+- $ref: ../included.yml
+- properties:
+    included:
+      items:
+        anyOf:
+        - $ref: ../../schemas/resources/episode.yml
 
