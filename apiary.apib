@@ -39,15 +39,15 @@ endpoints, or resources. You are expected to keep your applications
 running on the latest version of the API. For most applications,
 upgrading should take no more than a few hours of work.
 -->
-# JSON API
+# JSON:API
 
-The Kitsu API implements the JSON API specification. This means
+The Kitsu API implements the [JSON:API specification][jsonapi]. This means
 there are some notable semantics to how you consume it, but
 understanding it will take a lot of the work of using it out of your
 hands.
 
 These docs will include a short overview of the capabilities, but
-you can consult the [JSON API Specification][jsonapi] for more
+you can consult the [JSON:API Specification][jsonapi] for more
 information.
 
 You can be more specific about the data you want to retrieve by
@@ -59,7 +59,7 @@ percent-encoded (`%5B` and `%5D`).
 
 ## Request Headers
 
-As per the JSON API specification, all requests to the API should
+As per the JSON:API specification, all requests to the API should
 contain these headers:
 
 ```
@@ -131,13 +131,13 @@ creation date:
 
 ## Client Implementations
 
-JSON API has a great advantage in that since its standardised,
+JSON:API has a great advantage in that since its standardised,
 API-agnostic tools can be made to abstract away the semantics of
 consuming and working with the data. It is recommended that you use
-a JSON API client to implement the Kitsu API for this reason.
+a JSON:API client to implement the Kitsu API for this reason.
 
 Many implementations in over 13 languages can be found on the
-[JSON API website][jsonapi-client].
+[JSON:API website][jsonapi-client].
 # Authentication
 
 Kitsu uses OAuth 2 for authentication.
@@ -323,7 +323,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -386,7 +386,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -448,7 +448,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -483,7 +483,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -543,7 +543,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -604,7 +604,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -639,7 +639,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -705,7 +705,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -849,7 +849,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -912,7 +912,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -975,7 +975,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1037,7 +1037,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1221,7 +1221,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1287,7 +1287,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1428,7 +1428,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1491,7 +1491,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1553,7 +1553,7 @@ Yes           | Admin     | N   | N    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1689,7 +1689,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1827,7 +1827,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -1964,7 +1964,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2100,7 +2100,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2163,7 +2163,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2298,7 +2298,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2435,7 +2435,7 @@ Yes           | Admin     | Y   | N    | N     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2515,7 +2515,7 @@ Yes           | Admin     | Y   | Y    | N     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2622,7 +2622,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2770,7 +2770,7 @@ user's settings
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -2926,7 +2926,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3069,7 +3069,7 @@ Yes           | Admin     | Y   | N    | N     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3150,7 +3150,7 @@ Yes           | Admin     | N   | Y    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3241,7 +3241,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3378,7 +3378,7 @@ Yes           | Admin     | Y   | N    | N     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3523,7 +3523,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3662,7 +3662,7 @@ Yes           | Admin     | Y   | N    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3805,7 +3805,7 @@ Yes           | Admin     | Y   | N    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -3940,7 +3940,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4049,7 +4049,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4163,7 +4163,7 @@ Yes           | Admin     | Y   | N    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4300,7 +4300,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4412,7 +4412,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4548,7 +4548,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4684,7 +4684,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4824,7 +4824,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -4964,7 +4964,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5101,7 +5101,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5237,7 +5237,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5373,7 +5373,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5509,7 +5509,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5652,7 +5652,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5791,7 +5791,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5851,7 +5851,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -5959,7 +5959,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6095,7 +6095,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6234,7 +6234,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6369,7 +6369,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6513,7 +6513,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6620,7 +6620,7 @@ Yes           | Admin     | Y   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6727,7 +6727,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6848,7 +6848,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -6984,7 +6984,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -7105,7 +7105,7 @@ Yes           | Admin     | N   | N    | N     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -7244,7 +7244,7 @@ Yes           | Admin     | Y   | N    | Y     | N
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -7387,7 +7387,7 @@ Yes           | Admin     | Y   | Y    | Y     | Y
 
 **Filters**
 
-Filters can be used in `camelCase` or `snake_case` format
+Filters can be used in `camelCase` or `snake_case` format. See  [Introduction/JSON:API/filtering-and-search]*https://kitsu.docs.apiary.io/#introduction/json-api/filtering-and-search) for usage documentation
 
 Filter | Example | Notes
 -----: | :------ | :----
@@ -9775,7 +9775,7 @@ Filter | Example | Notes
 ## Error (object)
 Error objects provide additional information about errors
 encountered while performing an operation. See
-[JSON API/#error-objects](http://jsonapi.org/format/#error-objects)
+[JSON:API/#error-objects](http://jsonapi.org/format/#error-objects)
 
 ### Properties
 + title (string) - a short, human-readable summary of the error. It SHOULD NOT change from occurence to occurenace
