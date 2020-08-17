@@ -13,7 +13,7 @@ properties:
     format: seconds
     nullable: true
     minimum: 1
-    description: Length of the episode in seconds
+    description: Length of the episode in minutes
 
   totalLength:
     type: integer
