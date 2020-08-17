@@ -17,7 +17,7 @@ Kitsu is a modern anime discovery platform that helps you track the anime you're
 
 Legacy documentation is available on Apiary: https://kitsu.docs.apiary.io/
 
-The API documentation is currently being converted from API Blueprint to OpenAPI 3. You can view the progress at: https://hummingbird-me.github.io/api-docs
+The API documentation is currently being converted from API Blueprint to OpenAPI 3. You can view the progress at: https://hummingbird-me.github.io/api-docs and https://github.com/hummingbird-me/api-docs/issues/71
 
 ## Contributing
 
