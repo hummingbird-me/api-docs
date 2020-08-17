@@ -10,14 +10,14 @@ properties:
 
   episodeLength:
     type: integer
-    format: seconds
+    format: minutes
     nullable: true
     minimum: 1
     description: Length of the episode in minutes
 
   totalLength:
     type: integer
-    format: seconds
+    format: minutes
     nullable: true
     minimum: 1
     readOnly: true
