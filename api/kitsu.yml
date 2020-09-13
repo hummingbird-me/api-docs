@@ -88,6 +88,28 @@ info:
     ```
     /anime?include=categories,mediaRelationships.destination
     ```
+    
+    Included resources are added to a top-level array and linked to from the resources' relationship:
+    
+    ```json5
+    {
+      data: {
+        id: '1',
+        type: 'anime',
+        attributes: { ... },
+        relationships: {
+          categories: {
+            data: [
+              { id: '155', type: 'categories' } // Link ID and Type to included array
+            ]
+          }
+        }
+      },
+      included: [
+        { id: '155', type: 'categories', attributes: { ... }, relationships: { ... } }
+      ]
+    }
+    ```
 
     https://jsonapi.org/format/#fetching-includes
 
