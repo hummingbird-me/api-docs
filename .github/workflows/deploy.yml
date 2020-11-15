@@ -5,6 +5,7 @@ on:
     - openapi3
 jobs:
   deploy:
+    name: GitHub Pages
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
