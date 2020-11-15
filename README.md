@@ -1,13 +1,14 @@
-# API Docs [![Travis]][2]
+# API Docs
+[![API Docs Deployment](https://github.com/hummingbird-me/api-docs/workflows/API%20Docs%20Deployment/badge.svg)](https://hummingbird-me.github.io/api-docs)
 
 Kitsu is a modern anime discovery platform that helps you track the anime you're watching, discover new anime and socialize with other fans.
 
 ---
 **<p align="center">This is our [api docs] repository.<br />Check out the [tools], [web], [mobile] and [server] repositories.</p>**
 
-[tools]:https://github.com/hummingbird-me/hummingbird
-[web]:https://github.com/hummingbird-me/hummingbird-client
-[server]:https://github.com/hummingbird-me/hummingbird-server
+[tools]:https://github.com/hummingbird-me/kitsu-tools
+[web]:https://github.com/hummingbird-me/kitsu-web
+[server]:https://github.com/hummingbird-me/kitsu-server
 [mobile]:https://github.com/hummingbird-me/kitsu-mobile
 [api docs]:https://kitsu.docs.apiary.io
 
@@ -117,14 +118,12 @@ In addiion:
 
 [0]:https://github.com/hummingbird-me/hummingbird-server
 [1]:https://github.com/hummingbird-me/hummingbird-client
-[2]:https://travis-ci.org/hummingbird-me/api-docs
 [3]:http://spec.openapis.org/oas/v3.0.3
 [4]:https://yaml.org/spec/1.2/spec.html
 [5]:https://help.github.com/articles/fork-a-repo/#fork-an-example-repository
 [6]:https://help.github.com/articles/creating-a-pull-request/#creating-the-pull-request
 [7]:https://invite.gg/kitsu
 
-[travis]:https://flat.badgen.net/travis/hummingbird-me/api-docs/source?label=blueprint
 [@wopian]:https://kitsu.io/users/wopian
 [@matthewdias]:https://kitsu.io/users/matthewdias
 [@nuck]:https://kitsu.io/users/nuck
