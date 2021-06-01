@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
-    "redoc-cli": "~0.9.10"
+    "redoc-cli": "^0.11.4"
   }
 }
