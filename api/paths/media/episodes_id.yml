@@ -36,7 +36,8 @@ patch:
   - OAuth2: [admin]
   tags:
   - Episodes
-  description: Update Episode
+  description: Update an episode resource
+  summary: Update Episode
   requestBody:
     content:
       application/vnd.api+json:
@@ -67,7 +68,8 @@ delete:
   - OAuth2: [admin]
   tags:
   - Episodes
-  description: Delete Episode
+  description: Delete an episode resource
+  summary: Delete Episode
   responses:
     '204':
       description: No Content

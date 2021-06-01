@@ -36,7 +36,8 @@ patch:
   - OAuth2: [admin]
   tags:
   - Manga
-  description: Update Manga
+  description: Update a manga resource
+  summary: Update Manga
   requestBody:
     content:
       application/vnd.api+json:
@@ -67,7 +68,8 @@ delete:
   - OAuth2: [admin]
   tags:
   - Manga
-  description: Delete Manga
+  description: Delete a manga resource
+  summary: Delete Manga
   responses:
     '204':
       description: No Content

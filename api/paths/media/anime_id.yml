@@ -36,7 +36,8 @@ patch:
   - OAuth2: [admin]
   tags:
   - Anime
-  description: Update Anime
+  description: Update an anime resource
+  summary: Update Anime
   requestBody:
     content:
       application/vnd.api+json:
@@ -67,7 +68,8 @@ delete:
   - OAuth2: [admin]
   tags:
   - Anime
-  description: Delete Anime
+  description: Delete an anime resource
+  summary: Delete Anime
   responses:
     '204':
       description: No Content

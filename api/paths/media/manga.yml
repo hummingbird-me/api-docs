@@ -35,6 +35,7 @@ post:
   - OAuth2: [admin]
   tags:
   - Manga
+  description: Create a manga resource
   summary: Create Manga
   requestBody:
     content:

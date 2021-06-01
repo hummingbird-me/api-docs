@@ -88,9 +88,9 @@ info:
     ```
     /anime?include=categories,mediaRelationships.destination
     ```
-    
+
     Included resources are added to a top-level array and linked to from the resources' relationship:
-    
+
     ```json5
     {
       data: {

@@ -36,6 +36,7 @@ post:
   - OAuth2: [admin]
   tags:
   - Episodes
+  description: Create an episode resource
   summary: Create Episode
   requestBody:
     content:

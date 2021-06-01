@@ -35,6 +35,7 @@ post:
   - OAuth2: [admin]
   tags:
   - Anime
+  description: Create an anime resource
   summary: Create Anime
   requestBody:
     content:
