@@ -51,7 +51,7 @@ info:
     /anime?filter[text]=cowboy%20bebop
     ```
 
-    For more advanced search capabilities, consider using [Algolia](/#tag/Algolia).
+    For more advanced search capabilities, consider using [Algolia](./#tag/Algolia).
 
     https://jsonapi.org/format/#fetching-filtering
 
