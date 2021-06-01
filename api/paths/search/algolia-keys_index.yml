@@ -5,7 +5,7 @@ get:
   description: |
     Get an Algolia Key needed to search Kitsu with Algolia.
 
-    These keys **can** contain private information for requests with a valid Authorization header - [check the Algolia section description for details](/#tag/Algolia).
+    These keys **can** contain private information for requests with a valid Authorization header - [check the Algolia section description for details](./#tag/Algolia).
   responses:
     '200':
       description: OK
