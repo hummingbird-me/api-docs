@@ -12,7 +12,7 @@
     "start:bundle": "yarn build && yarn lint && yarn serve:bundle"
   },
   "dependencies": {
-    "@redocly/openapi-cli": "1.0.0-beta.49",
+    "@redocly/openapi-cli": "1.0.0-beta.59",
     "redoc-cli": "0.11.4"
   },
   "resolutions": {
